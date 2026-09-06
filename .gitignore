@@ -1,5 +1,24 @@
-# Local KiCad stuff
-.history/
-*.kicad_prl
+# STM32CubeIDE build output
+**/Debug/
+**/Release/
 
-*.lck
+# Compiled output
+*.elf
+*.map
+*.bin
+*.hex
+*.srec
+*.lst
+*.o
+*.d
+*.a
+*.su
+*.crl
+
+# IDE / temporary files
+*.log
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
