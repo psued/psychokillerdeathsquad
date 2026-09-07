@@ -31,3 +31,11 @@
 | B3F-4050                          |       10 | Action switches              | https://www.digikey.no/en/products/detail/aratas-formerly-omron-components/B3F-4050/95200            |
 | Keystone 2468                     |        3 | 2 × AAA battery holders      | https://www.digikey.no/en/products/detail/keystone-electronics/2468/303817                           |
 | Adafruit 3006                     |        2 | MAX98357A development boards | https://www.digikey.no/en/products/detail/adafruit-industries-llc/3006/6058477                       |
+|S25FL256LAGMFI003                  |        3 | Flash memory                 | https://www.digikey.no/en/products/detail/infineon-technologies/S25FL256LAGMFI003/6601085            |
+|HD15-SN-24                         |        5 | CONN D-SUB HD RCPT 15P       | https://www.digikey.no/en/products/detail/adam-tech/HD15-SN-24/9832440?gclsrc=aw.ds&gad_source=1&gad_campaignid=18529674927&gbraid=0AAAAADrbLlirzypD8YR7m6EJCs7gc-iTl&gclid=CjwKCAjwwfnUBhAtEiwAfQpAYq-h6Z2JL93zDoTNlkZDOEd5jNgGCoQPx6zBe6z1RvD3hYllAowwqRoCqTcQAvD_BwE      |
+|2000-1-1-20-00-BK                  |        5 | 	
+CONN RCPT HDMI 19POS                |        5 | HDMI connector female         | https://www.digikey.no/en/products/detail/cnc-tech/2000-1-1-20-00-BK/4867009 |
+TPD4E05U06DQAR                      |       20 | low-capacitance ESD protection| https://www.digikey.no/en/products/detail/texas-instruments/TPD4E05U06DQAR/3996774                    |
+PCA9306DCUR                         |        5 |  I²C level-shifter            | https://www.digikey.no/en/products/detail/texas-instruments/PCA9306DCUR/768359                        |
+AP22653W6-7                         |        5 |  power switch                 | https://www.digikey.com/en/products/detail/diodes-incorporated/AP22653W6-7/10481162                   |
+74LVC1G17W5-7                       |        5 |  hot plug detect              |  https://www.digikey.no/en/products/detail/diodes-incorporated/74LVC1G17W5-7/3829454
