@@ -17,6 +17,7 @@
 | B-WB1M-WPAN1             |           2 | Bluetooth development          | https://no.rs-online.com/web/p/microcontroller-development-tools/2876250 |
 | Duracell MN2400 P8 BOOST | 1 pack of 8 | AAA alkaline batteries         | https://no.rs-online.com/web/p/aaa-batteries/0665474                     |
 | LAPP 28208               |         5 m | 8-core 26 AWG controller cable | https://no.rs-online.com/web/p/control-cable/2856065                     |
+| Digilent Pmod MicroSD    |           1 | FPGA SD card development       | https://no.rs-online.com/web/p/memory-development-tools/1840482          |
 
 ## DigiKey
 
