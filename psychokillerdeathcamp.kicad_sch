@@ -57,6 +57,52 @@
 		)
 	)
 	(sheet
+		(at 102.235 145.415)
+		(size 59.055 33.655)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "90636b6a-bd15-4f6b-9b9f-5f5f42de0752")
+		(property "Sheetname" "Audio"
+			(at 102.235 144.7034 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "audio.kicad_sch"
+			(at 102.235 179.6546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 21.59 123.19)
 		(size 67.31 55.88)
 		(exclude_from_sim no)
@@ -83,7 +129,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "untitled.kicad_sch"
+		(property "Sheetfile" "MCU.kicad_sch"
 			(at 21.59 179.6546 0)
 			(show_name no)
 			(do_not_autoplace no)

@@ -661,7 +661,7 @@
         "uuid": "bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc"
       }
     ],
-    "used_designators": "U1-4,IC1-2,R1-9,J1-2,C1-21,#PWR1-12,L1-3,FB1",
+    "used_designators": "U1-4,J1-2,R1-12,IC1-2,C1-29,L1-4,#PWR1-15,FB1",
     "variants": []
   },
   "sheets": [
@@ -680,6 +680,10 @@
     [
       "bd183db4-cb21-4b4a-9f0a-6d20d3a32314",
       "MCU"
+    ],
+    [
+      "90636b6a-bd15-4f6b-9b9f-5f5f42de0752",
+      "Audio"
     ]
   ],
   "text_variables": {},

@@ -2,4 +2,5 @@
 .history/
 *.kicad_prl
 
+*.bak
 *.lck
