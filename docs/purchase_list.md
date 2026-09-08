@@ -16,7 +16,6 @@
 | STLINK-V3SET             |           1 | Debugger                       | https://no.rs-online.com/web/p/debuggers-in-circuit-emulators/1827791    |
 | B-WB1M-WPAN1             |           2 | Bluetooth development          | https://no.rs-online.com/web/p/microcontroller-development-tools/2876250 |
 | Duracell MN2400 P8 BOOST | 1 pack of 8 | AAA alkaline batteries         | https://no.rs-online.com/web/p/aaa-batteries/0665474                     |
-| LAPP 28208               |         5 m | 8-core 26 AWG controller cable | https://no.rs-online.com/web/p/control-cable/2856065                     |
 | Digilent Pmod MicroSD    |           1 | FPGA SD card development       | https://no.rs-online.com/web/p/memory-development-tools/1840482          |
 
 ## DigiKey
@@ -34,10 +33,7 @@
 | Adafruit 3006                     |        2 | MAX98357A development boards   | https://www.digikey.no/en/products/detail/adafruit-industries-llc/3006/6058477                       |
 | S25FL256LAGMFI003                 |        3 | Flash memory                   | https://www.digikey.no/en/products/detail/infineon-technologies/S25FL256LAGMFI003/6601085            |
 | HD15-SN-24                        |        5 | CONN D-SUB HD RCPT 15P         | https://www.digikey.no/en/products/detail/adam-tech/HD15-SN-24/9832440                               |
-| 2000-1-1-20-00-BK                 |        5 | HDMI connector female          | https://www.digikey.no/en/products/detail/cnc-tech/2000-1-1-20-00-BK/4867009                         |
 | TPD4E05U06DQAR                    |       20 | low-capacitance ESD protection | https://www.digikey.no/en/products/detail/texas-instruments/TPD4E05U06DQAR/3996774                   |
 | PCA9306DCUR                       |        5 | I²C level-shifter              | https://www.digikey.no/en/products/detail/texas-instruments/PCA9306DCUR/768359                       |
 | AP22653W6-7                       |        5 | power switch                   | https://www.digikey.com/en/products/detail/diodes-incorporated/AP22653W6-7/10481162                  |
 | 74LVC1G17W5-7                     |        5 | hot plug detect                | https://www.digikey.no/en/products/detail/diodes-incorporated/74LVC1G17W5-7/3829454                  |
-| 694106301002                      |        3 | Barrel jack connector          | https://www.digikey.no/no/products/detail/w%C3%BCrth-elektronik/694106301002/5047522                 |
-| SWI36-12-E-P5                     |        1 | Power adapter (12V, 3A)        | https://www.digikey.no/no/products/detail/bel-power-solutions/SWI36-12-E-P5/22042276                 |
