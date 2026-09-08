@@ -12,6 +12,8 @@
 | JS102011SCQN             |           5 | Controller power switches      | https://no.rs-online.com/web/p/slide-switches/1544695                    |
 | Molex 43045-0800         |           5 | Console controller headers     | https://no.rs-online.com/web/p/pcb-headers/2332977                       |
 | Molex 43025-0800         |           5 | Controller cable housings      | https://no.rs-online.com/web/p/wire-housings-plugs/2332775               |
+| Molex 43650-0200         |           5 | Speaker header                 | https://no.rs-online.com/web/p/pcb-headers/6704698                       |
+| Molex 43645-0200         |           5 | Speaker cable housing          | https://no.rs-online.com/web/p/wire-housings-plugs/4476754               |
 | Molex 43030-0010         |         100 | Micro-Fit contacts             | https://no.rs-online.com/web/p/crimp-contacts/2333021                    |
 | STLINK-V3SET             |           1 | Debugger                       | https://no.rs-online.com/web/p/debuggers-in-circuit-emulators/1827791    |
 | B-WB1M-WPAN1             |           2 | Bluetooth development          | https://no.rs-online.com/web/p/microcontroller-development-tools/2876250 |
