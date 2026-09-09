@@ -6035,7 +6035,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.94x3.34mm_ThermalVias"
+		(property "Footprint" "footprint_library:Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.60x2.59mm_ThermalVias"
 			(at 139.7 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -6414,7 +6414,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.94x3.34mm_ThermalVias"
+		(property "Footprint" "footprint_library:Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.60x2.59mm_ThermalVias"
 			(at 139.7 146.05 0)
 			(hide yes)
 			(show_name no)
@@ -6956,7 +6956,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-17N"
+		(property "Footprint" "footprint_library:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask3.30x3.30mm_ThermalVias"
 			(at 151.13 171.12 0)
 			(hide yes)
 			(show_name no)
@@ -7145,7 +7145,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_THT_Wurth:J_Wurth_WR-DC_694106301002"
+		(property "Footprint" "footprint_library:J_Wurth_WR-DC_694106301002"
 			(at 43.18 3.81 0)
 			(hide yes)
 			(show_name no)

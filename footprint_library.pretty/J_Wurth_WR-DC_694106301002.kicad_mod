@@ -1,0 +1,207 @@
+(footprint "J_Wurth_WR-DC_694106301002"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "DC Power Jacks, body 9x14.5x10.7mm, https://www.we-online.com/en/components/products/datasheet/694106301002?ki")
+	(tags "THT")
+	(property "Reference" "REF**"
+		(at 0 -2.3 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "a580e4ac-b934-4686-9f6c-95ffe1a32f04")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "J_Wurth_WR-DC_694106301002"
+		(at 0 14.9 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dbce91c2-f3b7-4f3c-8ca8-12d78366dfc3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a8465c20-1f47-4fe3-8ca3-c7a48968fb66")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a1a0ebdb-1f77-4c37-a710-1e2ac9307746")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -4.6 -1.1)
+		(end -4.6 13.6)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4f4866c7-e00d-44a5-9b7b-8aa79e0d97a5")
+	)
+	(fp_line
+		(start -4.6 -1.1)
+		(end 4.6 -1.1)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "b454055b-c4e8-4f93-b2e3-870316ab3597")
+	)
+	(fp_line
+		(start -4.6 13.6)
+		(end 4.6 13.6)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ec325b59-388f-45ef-b12d-c6a08d254f70")
+	)
+	(fp_line
+		(start -0.5 -1.585)
+		(end 0.5 -1.585)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "4859781a-c87d-46a1-8749-07cfdc016ff2")
+	)
+	(fp_line
+		(start 4.6 -1.1)
+		(end 4.6 0.79)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d0137a0d-32a0-41d7-97da-89fc5a88ec77")
+	)
+	(fp_line
+		(start 4.6 5.11)
+		(end 4.6 13.6)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c75666c6-2587-4310-9ab1-b0c1a2f5353d")
+	)
+	(fp_rect
+		(start -5 -1.5)
+		(end 5.95 14)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "c3afc82b-8189-48fb-9a66-4675d820f0f9")
+	)
+	(fp_line
+		(start -0.5 -1)
+		(end 0 -0.2)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "c1a2b2dc-c08e-4eb9-8880-80272631e9af")
+	)
+	(fp_line
+		(start 0.5 -1)
+		(end 0 -0.2)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "c71bf4ad-c8a3-4999-a723-748683b457e3")
+	)
+	(fp_rect
+		(start -4.5 -1)
+		(end 4.5 13.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "95bf54ec-9bf3-44ff-a68f-dce0368f8224")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -0.1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "b2a39735-ce8f-4516-ad44-8754ba14f8ad")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 4.2 1.7)
+		(drill oval 3.2 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "8cf39923-b35a-4d32-9e02-45095d78b1b8")
+	)
+	(pad "2" thru_hole oval
+		(at 0 5.8)
+		(size 3.8 1.7)
+		(drill oval 2.8 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "da28bd45-3d60-4daa-b971-058a10307942")
+	)
+	(pad "3" thru_hole oval
+		(at 4.8 2.95)
+		(size 1.7 3.8)
+		(drill oval 0.7 2.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "57e1ba8a-527d-4a46-8efc-495663f3af8d")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/3d_models/J_Wurth_WR-DC_694106301002.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
