@@ -1,5 +1,6 @@
 #include "time.h"
 
+#include "error.h"
 #include "main.h"
 
 extern TIM_HandleTypeDef htim2;
@@ -7,7 +8,7 @@ extern TIM_HandleTypeDef htim2;
 void time_init(void)
 {
 	if (HAL_TIM_Base_Start(&htim2) != HAL_OK) {
-		Error_Handler();
+		PANIC("Failed to start TIM2");
 	}
 }
 
