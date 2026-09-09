@@ -7,7 +7,7 @@
 **Supply:** 3.3 V  
 **HSE:** 16 MHz
 
-The internal SMPS uses a 2.2 µH Vishay IHHP0805ZHER2R2M01 inductor.
+The internal SMPS uses a 2.2 µH Vishay IHHP0805ZHER2R2M01 inductor between VLXSMPS and VDD11. The inductor and VDD11 capacitors are placed close to the MCU with a short SMPS power loop.
 
 ### Power
 
@@ -17,7 +17,7 @@ The internal SMPS uses a 2.2 µH Vishay IHHP0805ZHER2R2M01 inductor.
 | VDDSMPS | 3.3 V | 10 µF |
 | VDD11 | SMPS output | 2 × 2.2 µF + 2 × 100 nF |
 | VDDA | 3.3 V | 100 nF + 1 µF |
-| VREF+ | VDDA | 1 µF |
+| VREF+ | VDDA | 100 nF + 1 µF |
 | VDDUSB | 3.3 V | 100 nF |
 | VBAT | 3.3 V | 100 nF |
 
@@ -40,16 +40,28 @@ No LSE is used.
 
 SAI1 connects to a MAX98357AETE+T Class D amplifier driving a Visaton SC 5.9 ND 4 Ω speaker.
 
-| Signal | MCU | Direction |
-| --- | --- | --- |
-| BCLK | PA8 | MCU → amplifier |
-| LRCLK | PA9 | MCU → amplifier |
-| DATA | PA10 | MCU → amplifier |
-| AUDIO_EN | PE14 | MCU → amplifier |
+| Signal | MCU | Amplifier | Direction |
+| --- | --- | --- | --- |
+| BCLK | PA8 | BCLK | MCU → amplifier |
+| LRCLK | PA9 | LRCLK | MCU → amplifier |
+| DATA | PA10 | DIN | MCU → amplifier |
+| AUDIO_EN | PE14 | SD_MODE | MCU → amplifier |
 
-The amplifier uses the 5 V rail and requires no MCLK. `AUDIO_EN` is low during startup.
+The amplifier uses the 5 V rail and requires no MCLK. `AUDIO_EN` is low during startup. Driving it directly high enables the amplifier and selects the left I²S channel.
+
+`GAIN_SLOT` supports all five gain configurations through resistor/link population:
+
+| GAIN_SLOT | Gain |
+| --- | ---: |
+| 100 kΩ ±5% to GND | 15 dB |
+| Direct to GND | 12 dB |
+| Unconnected | 9 dB |
+| Direct to VDD | 6 dB |
+| 100 kΩ ±5% to VDD | 3 dB |
 
 The speaker connects across the differential amplifier outputs.
+
+Where PCB space permits, test points are included for BCLK, LRCLK, DATA, AUDIO_EN and GND.
 
 ## microSD
 
@@ -102,7 +114,7 @@ Two passive controllers connect directly to STM32U545 GPIO.
 | GND | 7 | | |
 | GND | 8 | | |
 
-Inputs are active low with external pull-ups and input protection, and use no MCU internal pulls. A pressed switch connects its input to ground. Exact pull-up and protection values are subject to revision.
+Inputs are active low with external pull-ups and input protection, and use no MCU internal pulls. A pressed switch connects its input to ground. Exact pull-up and protection values are not yet fixed.
 
 The controllers use Molex Micro-Fit 3.0 connectors and 8-core LAPP 28208 cable.
 
@@ -175,9 +187,14 @@ The STM32U545 uses SWD through an STDC14 connector.
 | SWDIO | PA13 |
 | SWCLK | PA14 |
 | NRST | NRST |
-| BOOT0 | PH3 |
+| target reference | 3.3 V |
+| GND | GND |
+
+BOOT0 is PH3, with appropriate bias and access for recovery.
 
 UART4 provides a 115200 8N1 debug interface on PA0 (TX) and PA1 (RX).
+
+Test points are provided for UART4 TX, RX and GND.
 
 ## Reserved Interfaces
 
