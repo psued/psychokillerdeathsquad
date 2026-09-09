@@ -3009,6 +3009,16 @@
 		)
 		(uuid "51b47f07-a656-40b5-b12a-b4389997dd65")
 	)
+	(text "9V - 18V\nUse 12V 3A adapter"
+		(exclude_from_sim no)
+		(at 30.226 15.748 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c4db72a1-87db-4928-9df1-fb3c025022ec")
+	)
 	(text "Ip>3.5A, Irms>3.1A"
 		(exclude_from_sim no)
 		(at 203.708 23.114 0)
@@ -3019,16 +3029,6 @@
 		)
 		(uuid "eb454684-b9c2-45d9-849b-b158fdfa731d")
 	)
-	(text "9V - 18V"
-		(exclude_from_sim no)
-		(at 30.48 26.67 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "f12e68ac-ac87-4ce3-807f-d07a3d0c6cb3")
-	)
 	(text "Ip>2.3A, Irms>1.6A"
 		(exclude_from_sim no)
 		(at 203.708 128.778 0)
@@ -3038,6 +3038,12 @@
 			)
 		)
 		(uuid "fa1b6378-ace8-4eab-a716-2f6047201333")
+	)
+	(junction
+		(at 54.61 22.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "01157259-66f7-43fb-884e-8fc8842a7b9b")
 	)
 	(junction
 		(at 154.94 130.81)
@@ -3116,12 +3122,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "27d92200-a416-4fff-a99e-333ddcbac0f5")
-	)
-	(junction
-		(at 54.61 22.86)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "28ce06d3-b427-44b0-abb0-eca5fa43d9ad")
 	)
 	(junction
 		(at 120.65 93.98)
@@ -3274,12 +3274,6 @@
 		(uuid "667c952c-fbee-4da6-8838-35d8a518f74b")
 	)
 	(junction
-		(at 27.94 39.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "67a5324e-d39a-499b-b805-c24d3ce5fbba")
-	)
-	(junction
 		(at 175.26 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3350,6 +3344,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "89f7477d-cae1-43c2-87a1-e93aaa115dd2")
+	)
+	(junction
+		(at 36.83 27.94)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "916ab752-6332-4b84-9193-93a59b889d9f")
 	)
 	(junction
 		(at 215.9 106.68)
@@ -4229,16 +4229,6 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 41.91) (xy 27.94 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4df1e662-3286-4653-b707-913f217b897f")
-	)
-	(wire
-		(pts
 			(xy 123.19 25.4) (xy 124.46 25.4)
 		)
 		(stroke
@@ -4246,16 +4236,6 @@
 			(type default)
 		)
 		(uuid "4e836abd-918b-49ec-9df7-d1ab58440dfc")
-	)
-	(wire
-		(pts
-			(xy 27.94 41.91) (xy 27.94 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f38f488-b772-449d-bccd-50a75f6cba06")
 	)
 	(wire
 		(pts
@@ -4406,16 +4386,6 @@
 			(type default)
 		)
 		(uuid "5ff11430-28f6-44f0-9a32-ed37cbe6bc1a")
-	)
-	(wire
-		(pts
-			(xy 29.21 39.37) (xy 27.94 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "611ef805-2368-4c88-85d2-82323f92e2cd")
 	)
 	(wire
 		(pts
@@ -4719,16 +4689,6 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 22.86) (xy 54.61 22.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8186e777-ed47-47c5-84cd-7b532408cdec")
-	)
-	(wire
-		(pts
 			(xy 120.65 93.98) (xy 120.65 106.68)
 		)
 		(stroke
@@ -4836,6 +4796,16 @@
 			(type default)
 		)
 		(uuid "8eff9070-271a-4cde-b5dd-7a0542874b0b")
+	)
+	(wire
+		(pts
+			(xy 36.83 27.94) (xy 39.37 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f5431bb-4c37-43c4-905d-fdebf95e8fbb")
 	)
 	(wire
 		(pts
@@ -5169,6 +5139,16 @@
 	)
 	(wire
 		(pts
+			(xy 36.83 25.4) (xy 36.83 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9e5d48b-f1eb-4e13-ae71-3af94236b61f")
+	)
+	(wire
+		(pts
 			(xy 154.94 130.81) (xy 189.23 130.81)
 		)
 		(stroke
@@ -5299,16 +5279,6 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 39.37) (xy 26.67 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cc9b2dd1-0fb4-4a1f-aa7c-beb8358df957")
-	)
-	(wire
-		(pts
 			(xy 63.5 158.75) (xy 74.93 158.75)
 		)
 		(stroke
@@ -5336,6 +5306,16 @@
 			(type default)
 		)
 		(uuid "d1b7b014-7e2f-4e7a-9636-07124f7f2be0")
+	)
+	(wire
+		(pts
+			(xy 36.83 22.86) (xy 54.61 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1c54728-6b5a-4ecb-9e19-a79da181a48f")
 	)
 	(wire
 		(pts
@@ -5516,16 +5496,6 @@
 			(type default)
 		)
 		(uuid "e4e4b282-e08f-457f-a2dd-85a9cd2b8516")
-	)
-	(wire
-		(pts
-			(xy 26.67 36.83) (xy 36.83 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e6894e4b-2ab0-431a-852c-41c4ee2632b3")
 	)
 	(wire
 		(pts
@@ -5776,54 +5746,6 @@
 			(type default)
 		)
 		(uuid "ff5295f4-817b-44c1-9058-b56df7b13836")
-	)
-	(global_label "POWER_IN"
-		(shape input)
-		(at 36.83 36.83 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "36a51d6a-5522-42ab-acf4-75e77158110f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 49.189 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "POWER_IN"
-		(shape input)
-		(at 36.83 22.86 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f186b88f-00f6-46c9-9fa6-75fb375c20cc")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 24.471 22.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -7191,7 +7113,7 @@
 	)
 	(symbol
 		(lib_id "symbol_library:694106301002")
-		(at 20.32 38.1 0)
+		(at 30.48 24.13 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7202,7 +7124,7 @@
 		(fields_autoplaced yes)
 		(uuid "37fc28d8-b01b-4801-ba09-1668ce328e3c")
 		(property "Reference" "J2"
-			(at 19.3675 33.02 0)
+			(at 29.5275 19.05 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7212,7 +7134,7 @@
 			)
 		)
 		(property "Value" "694106301002"
-			(at 33.02 15.24 0)
+			(at 43.18 1.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7224,7 +7146,7 @@
 			)
 		)
 		(property "Footprint" "Connector_THT_Wurth:J_Wurth_WR-DC_694106301002"
-			(at 33.02 17.78 0)
+			(at 43.18 3.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7236,7 +7158,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.we-online.com/catalog/datasheet/694106301002.pdf?ki"
-			(at 33.02 20.32 0)
+			(at 43.18 6.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7248,7 +7170,7 @@
 			)
 		)
 		(property "Description" "Power Jacks ED"
-			(at 20.32 38.1 0)
+			(at 30.48 24.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7259,7 +7181,7 @@
 			)
 		)
 		(property "Manufacturer" "Wurth Elektronik"
-			(at 33.02 22.86 0)
+			(at 43.18 8.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7271,7 +7193,7 @@
 			)
 		)
 		(property "Manufacturer URL" "https://www.we-online.com"
-			(at 33.02 25.4 0)
+			(at 43.18 11.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7283,7 +7205,7 @@
 			)
 		)
 		(property "Created Date" "20251209"
-			(at 33.02 27.94 0)
+			(at 43.18 13.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7295,7 +7217,7 @@
 			)
 		)
 		(property "Series" "WR-DC"
-			(at 33.02 30.48 0)
+			(at 43.18 16.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7307,7 +7229,7 @@
 			)
 		)
 		(property "Part Number" "694106301002"
-			(at 33.02 33.02 0)
+			(at 43.18 19.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7319,7 +7241,7 @@
 			)
 		)
 		(property "Mounting Technology" "THT"
-			(at 33.02 35.56 0)
+			(at 43.18 21.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7331,7 +7253,7 @@
 			)
 		)
 		(property "Center pin Ø (Value) (mm)" "2.0"
-			(at 33.02 38.1 0)
+			(at 43.18 24.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7343,7 +7265,7 @@
 			)
 		)
 		(property "Plug OD (mm)" "5.5"
-			(at 33.02 40.64 0)
+			(at 43.18 26.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7355,7 +7277,7 @@
 			)
 		)
 		(property "Type" "Right Angled"
-			(at 33.02 43.18 0)
+			(at 43.18 29.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7367,7 +7289,7 @@
 			)
 		)
 		(property "IR (A)" "5.0"
-			(at 33.02 45.72 0)
+			(at 43.18 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7379,7 +7301,7 @@
 			)
 		)
 		(property "Working Voltage (V (DC))" "30"
-			(at 33.02 48.26 0)
+			(at 43.18 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7895,7 +7817,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 29.21 39.37 90)
+		(at 39.37 27.94 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7906,7 +7828,7 @@
 		(fields_autoplaced yes)
 		(uuid "5b2949f2-3cc5-4589-a47c-0686f84aed0f")
 		(property "Reference" "#PWR015"
-			(at 35.56 39.37 0)
+			(at 45.72 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7917,7 +7839,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 33.02 39.3699 90)
+			(at 43.18 27.9399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7928,7 +7850,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 29.21 39.37 0)
+			(at 39.37 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7939,7 +7861,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 29.21 39.37 0)
+			(at 39.37 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7950,7 +7872,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 29.21 39.37 0)
+			(at 39.37 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11123,16 +11045,8 @@
 		(members "51b47f07-a656-40b5-b12a-b4389997dd65" "b313f87b-93b3-4afc-8f08-0f8d6d2a5ff5")
 	)
 	(group ""
-		(uuid "f1aae311-ff8f-4ca7-adfe-f81c709699ce")
-		(members "f12e68ac-ac87-4ce3-807f-d07a3d0c6cb3" "f186b88f-00f6-46c9-9fa6-75fb375c20cc")
-	)
-	(group ""
 		(uuid "f6c636a1-d27f-4788-b403-e7f43d82ad1d")
 		(members "4e1268b4-969d-4ad7-a4a8-6149fce86106" "eb454684-b9c2-45d9-849b-b158fdfa731d")
-	)
-	(group ""
-		(uuid "fb996fd2-adbf-46d1-8841-c201bbd3bb60")
-		(members "36a51d6a-5522-42ab-acf4-75e77158110f")
 	)
 	(group ""
 		(uuid "feaa4493-0272-498f-a1ed-75533dd167e1")

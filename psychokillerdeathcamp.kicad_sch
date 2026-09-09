@@ -10,6 +10,92 @@
 		(rev "0")
 	)
 	(lib_symbols)
+	(bus_entry
+		(at 163.83 152.4)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d3b59d9-5b90-44f8-b54b-27fc03227044")
+	)
+	(bus_entry
+		(at 163.83 149.86)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4009915d-64f7-4b8f-92f0-c8d3b50c9615")
+	)
+	(bus_entry
+		(at 163.83 154.94)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a374b31-adf3-4b98-a4c0-3e286c4124ed")
+	)
+	(bus_entry
+		(at 163.83 147.32)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab7edb01-f31d-43dd-9ae9-9b8bbe6bc346")
+	)
+	(wire
+		(pts
+			(xy 161.29 152.4) (xy 163.83 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a1f7db2-2afe-4013-a7e2-f1e71d7af9a4")
+	)
+	(bus
+		(pts
+			(xy 166.37 144.78) (xy 166.37 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a529a7d6-fadd-427f-821c-c96fa667f9fc")
+	)
+	(wire
+		(pts
+			(xy 161.29 154.94) (xy 163.83 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab7f996e-b9b2-4183-9887-cbb6754c4d8c")
+	)
+	(wire
+		(pts
+			(xy 161.29 149.86) (xy 163.83 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d848f869-a8ff-42c3-a755-70ea8c344d06")
+	)
+	(wire
+		(pts
+			(xy 161.29 147.32) (xy 163.83 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f49c98f4-5fc6-496a-b343-d43bb9655267")
+	)
 	(sheet
 		(at 100.33 63.5)
 		(size 95.25 64.77)
@@ -92,6 +178,46 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "AMP_BCLK" input
+			(at 161.29 147.32 0)
+			(uuid "58967e3b-fdc6-40fe-8d50-55864c329a1c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "AMP_DIN" input
+			(at 161.29 154.94 0)
+			(uuid "c16d955e-1c12-46b1-b927-e001e94430e4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "AMP_LRCLK" input
+			(at 161.29 149.86 0)
+			(uuid "cc9edeed-f94f-47d8-b85e-bc4b973f2ca6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "AMP_SD_MODE" input
+			(at 161.29 152.4 0)
+			(uuid "279a8227-af9e-4536-9649-bab14df62d50")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
