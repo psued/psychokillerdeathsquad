@@ -11,6 +11,15 @@
 	)
 	(lib_symbols)
 	(bus_entry
+		(at 106.68 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d8d25d3-cb04-490f-a759-991ec72dd701")
+	)
+	(bus_entry
 		(at 163.83 152.4)
 		(size 2.54 -2.54)
 		(stroke
@@ -20,6 +29,15 @@
 		(uuid "2d3b59d9-5b90-44f8-b54b-27fc03227044")
 	)
 	(bus_entry
+		(at 116.84 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34db3006-e7cb-4514-906c-519e642f245a")
+	)
+	(bus_entry
 		(at 163.83 149.86)
 		(size 2.54 -2.54)
 		(stroke
@@ -27,6 +45,15 @@
 			(type default)
 		)
 		(uuid "4009915d-64f7-4b8f-92f0-c8d3b50c9615")
+	)
+	(bus_entry
+		(at 104.14 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a676008-2f1e-4373-8cc8-4e3ba50de067")
 	)
 	(bus_entry
 		(at 163.83 154.94)
@@ -46,6 +73,52 @@
 		)
 		(uuid "ab7edb01-f31d-43dd-9ae9-9b8bbe6bc346")
 	)
+	(bus_entry
+		(at 114.3 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7da55b2-92be-42bc-9159-31b7be8da58b")
+	)
+	(bus_entry
+		(at 101.6 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c85222a7-e37e-4f66-9a66-0875b9863818")
+	)
+	(bus_entry
+		(at 111.76 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4338e3e-29d7-4cde-95a2-b0535879bc70")
+	)
+	(bus_entry
+		(at 109.22 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8d648b8-dc2b-4962-8a0d-3c6707cd7355")
+	)
+	(bus
+		(pts
+			(xy 101.6 29.21) (xy 116.84 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37cc9bdb-80c8-4189-bcfa-391f1bfa5ec0")
+	)
 	(wire
 		(pts
 			(xy 161.29 152.4) (xy 163.83 152.4)
@@ -55,6 +128,66 @@
 			(type default)
 		)
 		(uuid "4a1f7db2-2afe-4013-a7e2-f1e71d7af9a4")
+	)
+	(wire
+		(pts
+			(xy 106.68 31.75) (xy 106.68 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "554bdfc6-1710-44d9-9242-39157e3e3c2b")
+	)
+	(wire
+		(pts
+			(xy 111.76 31.75) (xy 111.76 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "560959d2-02cb-4a4e-8074-1630d9cd7a26")
+	)
+	(wire
+		(pts
+			(xy 119.38 31.75) (xy 119.38 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5970a797-0126-402b-99ee-c03d619176fc")
+	)
+	(wire
+		(pts
+			(xy 116.84 31.75) (xy 116.84 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c4ad7f7-5a3f-4e83-977e-7736c95b54d8")
+	)
+	(wire
+		(pts
+			(xy 109.22 31.75) (xy 109.22 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e812296-4697-41ba-bdd7-4aa967649f82")
+	)
+	(wire
+		(pts
+			(xy 104.14 31.75) (xy 104.14 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c033864-aee5-423b-a032-7c72cb6ac845")
 	)
 	(bus
 		(pts
@@ -88,6 +221,16 @@
 	)
 	(wire
 		(pts
+			(xy 114.3 31.75) (xy 114.3 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e041a275-f3a0-41da-be0b-0d9e1f65dabd")
+	)
+	(wire
+		(pts
 			(xy 161.29 147.32) (xy 163.83 147.32)
 		)
 		(stroke
@@ -95,6 +238,121 @@
 			(type default)
 		)
 		(uuid "f49c98f4-5fc6-496a-b343-d43bb9655267")
+	)
+	(sheet
+		(at 102.235 34.29)
+		(size 85.09 19.685)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "404528d8-c76d-4c6e-b8be-63bef63459b3")
+		(property "Sheetname" "SD cards"
+			(at 102.235 33.5784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sd_cards.kicad_sch"
+			(at 102.108 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SD_MCU_CLK" input
+			(at 104.14 34.29 90)
+			(uuid "d35572df-7e42-437a-953a-b82cbfa9744d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_MCU_CMD" input
+			(at 106.68 34.29 90)
+			(uuid "0fb4a66f-5884-4b8d-b51c-98bbdd2d2af3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_MCU_DAT0" input
+			(at 111.76 34.29 90)
+			(uuid "445d1e6a-8824-43ae-bc4a-606e260b9a68")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_MCU_DAT1" input
+			(at 114.3 34.29 90)
+			(uuid "9e7288e6-bea7-4a64-9cb0-04c1e2acb307")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_MCU_DAT2" input
+			(at 116.84 34.29 90)
+			(uuid "bbdd6348-4b2d-4171-a568-a3bc7c329f4a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_MCU_DAT3" input
+			(at 119.38 34.29 90)
+			(uuid "ed479f9c-86d4-4cac-8202-28259a4db0b2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_MCU_DET_A" input
+			(at 109.22 34.29 90)
+			(uuid "84e8ab26-ac6f-4246-b9f9-b8630b0c8ce3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc"
+					(page "6")
+				)
+			)
+		)
 	)
 	(sheet
 		(at 100.33 63.5)

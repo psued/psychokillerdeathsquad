@@ -661,7 +661,7 @@
         "uuid": "bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc"
       }
     ],
-    "used_designators": "L1-3,Y1,FB1,#PWR1-12,#PWR18,C1-21,C32-36,J1-2,R1-9,IC1-2,U1-4",
+    "used_designators": "U1-4,J1-2,J4,R1-12,R24-32,IC1-2,C1-29,C37-38,L1-4,#PWR1-15,#PWR20-21,FB1,CR1-2",
     "variants": []
   },
   "sheets": [
@@ -684,6 +684,10 @@
     [
       "90636b6a-bd15-4f6b-9b9f-5f5f42de0752",
       "Audio"
+    ],
+    [
+      "404528d8-c76d-4c6e-b8be-63bef63459b3",
+      "SD cards"
     ]
   ],
   "text_variables": {},

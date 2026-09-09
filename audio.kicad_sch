@@ -1343,36 +1343,6 @@
 		)
 		(uuid "5932207d-e421-4926-9037-43f120ff5d40")
 	)
-	(text "MCU PA9"
-		(exclude_from_sim no)
-		(at 169.164 75.946 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "02599f34-bdeb-4ce1-a269-a66a02ff12e2")
-	)
-	(text "MCU PE14\n(Left channel when high,\nshut down when low)"
-		(exclude_from_sim no)
-		(at 96.52 74.168 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "1a4b1e88-d3d6-4ec9-b471-1e7b6c429f83")
-	)
-	(text "MCU PA10"
-		(exclude_from_sim no)
-		(at 114.554 76.2 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "1c6e2c76-153b-48df-9f62-07d23ca78e7e")
-	)
 	(text "Off-board\n"
 		(exclude_from_sim no)
 		(at 202.184 84.328 0)
@@ -1392,16 +1362,6 @@
 			)
 		)
 		(uuid "74015059-74c1-4ac1-b0d0-154cba79094c")
-	)
-	(text "MCU PA8"
-		(exclude_from_sim no)
-		(at 157.48 75.946 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "eb079e88-cc20-4e93-8525-9d4f7ed62678")
 	)
 	(junction
 		(at 115.57 113.03)
@@ -1497,13 +1457,13 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 77.47) (xy 171.45 102.87)
+			(xy 114.3 95.25) (xy 115.57 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0384cb29-3ad0-40cb-8d72-2eff6b53feb0")
+		(uuid "03c5a4f4-15d3-4d43-82fc-e70bbb2848b8")
 	)
 	(wire
 		(pts
@@ -1534,16 +1494,6 @@
 			(type default)
 		)
 		(uuid "16ea85fd-ab12-4ba0-893c-44a0a90497a1")
-	)
-	(wire
-		(pts
-			(xy 170.18 81.28) (xy 157.48 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "197475ea-db6c-4edc-95b5-6c6e55d42f2d")
 	)
 	(wire
 		(pts
@@ -1647,16 +1597,6 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 82.55) (xy 113.03 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4c7d963f-6071-4d37-a7b0-e39206849bbd")
-	)
-	(wire
-		(pts
 			(xy 167.64 110.49) (xy 167.64 123.19)
 		)
 		(stroke
@@ -1684,6 +1624,16 @@
 			(type default)
 		)
 		(uuid "6832106b-80f7-40ee-832e-3712e7d3d87e")
+	)
+	(wire
+		(pts
+			(xy 113.03 95.25) (xy 113.03 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c6f3c3e-367d-4ec7-9655-312fd3a7253f")
 	)
 	(wire
 		(pts
@@ -1717,16 +1667,6 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 77.47) (xy 96.52 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "73554462-1b4d-4b31-89db-2ce1cc287e71")
-	)
-	(wire
-		(pts
 			(xy 114.3 123.19) (xy 140.97 123.19)
 		)
 		(stroke
@@ -1757,6 +1697,16 @@
 	)
 	(wire
 		(pts
+			(xy 171.45 102.87) (xy 171.45 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80531138-4317-46d5-93da-2aed646828e7")
+	)
+	(wire
+		(pts
 			(xy 114.3 110.49) (xy 114.3 123.19)
 		)
 		(stroke
@@ -1767,6 +1717,16 @@
 	)
 	(wire
 		(pts
+			(xy 170.18 87.63) (xy 170.18 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "836c1cec-95a1-453f-9119-9df0bcdb2239")
+	)
+	(wire
+		(pts
 			(xy 172.72 102.87) (xy 182.88 102.87)
 		)
 		(stroke
@@ -1774,16 +1734,6 @@
 			(type default)
 		)
 		(uuid "89d8ee32-ee98-42d5-aa62-48ff8b560b84")
-	)
-	(wire
-		(pts
-			(xy 114.3 77.47) (xy 114.3 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8e58f578-fdd8-40ba-83f2-e04d5f6ca822")
 	)
 	(wire
 		(pts
@@ -1857,7 +1807,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 95.25) (xy 114.3 95.25)
+			(xy 114.3 92.71) (xy 113.03 92.71)
 		)
 		(stroke
 			(width 0)
@@ -1877,13 +1827,13 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 82.55) (xy 113.03 82.55)
+			(xy 114.3 92.71) (xy 114.3 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d3fea834-f020-4368-abf2-d26fb5b6e954")
+		(uuid "d97f0ef4-985c-4696-bcce-b5cab65265f1")
 	)
 	(wire
 		(pts
@@ -1914,16 +1864,6 @@
 			(type default)
 		)
 		(uuid "e0a78b17-8013-408e-a91e-28055c757600")
-	)
-	(wire
-		(pts
-			(xy 157.48 77.47) (xy 157.48 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e54c2d69-4ba0-40ad-8b92-de9095c7631c")
 	)
 	(wire
 		(pts
@@ -1967,16 +1907,6 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 97.79) (xy 170.18 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fabec7fe-949b-4e28-bbd3-b6b1687a22e5")
-	)
-	(wire
-		(pts
 			(xy 104.14 123.19) (xy 114.3 123.19)
 		)
 		(stroke
@@ -1987,7 +1917,7 @@
 	)
 	(hierarchical_label "AMP_LRCLK"
 		(shape input)
-		(at 171.45 83.82 0)
+		(at 171.45 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1998,18 +1928,18 @@
 	)
 	(hierarchical_label "AMP_DIN"
 		(shape input)
-		(at 114.3 83.82 0)
+		(at 113.03 92.71 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "51372389-9a7a-4593-ad81-b88327b0563e")
 	)
 	(hierarchical_label "AMP_SD_MODE"
 		(shape input)
-		(at 113.03 83.82 180)
+		(at 113.03 95.25 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2020,7 +1950,7 @@
 	)
 	(hierarchical_label "AMP_BCLK"
 		(shape input)
-		(at 170.18 83.82 180)
+		(at 170.18 87.63 180)
 		(effects
 			(font
 				(size 1.27 1.27)
