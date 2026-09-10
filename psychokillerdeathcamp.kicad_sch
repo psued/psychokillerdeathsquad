@@ -20,6 +20,15 @@
 		(uuid "0d8d25d3-cb04-490f-a759-991ec72dd701")
 	)
 	(bus_entry
+		(at 129.54 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20bf7d4d-da75-46b6-a3f2-7f73c30ea122")
+	)
+	(bus_entry
 		(at 163.83 152.4)
 		(size 2.54 -2.54)
 		(stroke
@@ -47,6 +56,33 @@
 		(uuid "4009915d-64f7-4b8f-92f0-c8d3b50c9615")
 	)
 	(bus_entry
+		(at 134.62 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4993ab35-f6dd-4289-aa49-5c571ef4f8f8")
+	)
+	(bus_entry
+		(at 121.92 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "526469b4-b8e8-4afc-81ac-fcd9a21d6242")
+	)
+	(bus_entry
+		(at 127 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ba02eb9-bd98-46d7-a98f-1057945734d2")
+	)
+	(bus_entry
 		(at 104.14 29.21)
 		(size 2.54 2.54)
 		(stroke
@@ -54,6 +90,15 @@
 			(type default)
 		)
 		(uuid "6a676008-2f1e-4373-8cc8-4e3ba50de067")
+	)
+	(bus_entry
+		(at 124.46 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c45b88a-986b-4bda-a1b2-fdc26edb19dd")
 	)
 	(bus_entry
 		(at 163.83 154.94)
@@ -109,6 +154,34 @@
 		)
 		(uuid "d8d648b8-dc2b-4962-8a0d-3c6707cd7355")
 	)
+	(bus_entry
+		(at 132.08 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dca97427-c30e-4fb1-9a57-dcf469ccbb3e")
+	)
+	(bus_entry
+		(at 137.16 29.21)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9a257fb-847c-4e94-855c-29b0c8415dd2")
+	)
+	(wire
+		(pts
+			(xy 139.7 31.75) (xy 139.7 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17026847-ce6d-4e96-95ed-d87645d6d320")
+	)
 	(bus
 		(pts
 			(xy 101.6 29.21) (xy 116.84 29.21)
@@ -161,6 +234,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 31.75) (xy 129.54 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d7882d1-2059-4a90-8108-f6ec377b5b3b")
+	)
+	(wire
+		(pts
 			(xy 116.84 31.75) (xy 116.84 34.29)
 		)
 		(stroke
@@ -168,6 +251,16 @@
 			(type default)
 		)
 		(uuid "6c4ad7f7-5a3f-4e83-977e-7736c95b54d8")
+	)
+	(wire
+		(pts
+			(xy 132.08 31.75) (xy 132.08 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "891bab1e-79f4-47fb-b8f0-46c18ec6565b")
 	)
 	(wire
 		(pts
@@ -209,6 +302,36 @@
 		)
 		(uuid "ab7f996e-b9b2-4183-9887-cbb6754c4d8c")
 	)
+	(bus
+		(pts
+			(xy 121.92 29.21) (xy 137.16 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aef193de-94d8-4061-b65b-733028d64c25")
+	)
+	(wire
+		(pts
+			(xy 134.62 31.75) (xy 134.62 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b71b5b02-bf66-4f6f-8375-9c76d983244e")
+	)
+	(wire
+		(pts
+			(xy 124.46 31.75) (xy 124.46 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4343a9f-08ff-4e78-8ee0-7e3b9e98ea9f")
+	)
 	(wire
 		(pts
 			(xy 161.29 149.86) (xy 163.83 149.86)
@@ -231,6 +354,26 @@
 	)
 	(wire
 		(pts
+			(xy 137.16 31.75) (xy 137.16 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb63509c-ce67-4553-8899-d6301d7cdb4c")
+	)
+	(wire
+		(pts
+			(xy 127 31.75) (xy 127 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eecd39fd-2047-486c-bd34-e7a3fde65415")
+	)
+	(wire
+		(pts
 			(xy 161.29 147.32) (xy 163.83 147.32)
 		)
 		(stroke
@@ -241,7 +384,7 @@
 	)
 	(sheet
 		(at 102.235 34.29)
-		(size 85.09 19.685)
+		(size 38.989 19.685)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -346,6 +489,76 @@
 				(justify right)
 			)
 		)
+		(pin "SD_FPGA_CLK" input
+			(at 124.46 34.29 90)
+			(uuid "ed8b2de3-98ca-4243-a96e-766fb42dee65")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_FPGA_CMD" input
+			(at 127 34.29 90)
+			(uuid "7c94697a-36e6-4083-a924-d04793d9df89")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_FPGA_DAT0" input
+			(at 132.08 34.29 90)
+			(uuid "0042f052-9839-451d-ac50-a0d071925499")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_FPGA_DAT1" input
+			(at 134.62 34.29 90)
+			(uuid "6997b97e-1046-46df-b70a-15a78d67fe85")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_FPGA_DAT2" input
+			(at 137.16 34.29 90)
+			(uuid "61db4094-41ae-468d-98a1-ff595b818c9e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_FPGA_DAT3" input
+			(at 139.7 34.29 90)
+			(uuid "4dcb36b9-a993-47f0-bd57-650789893a4e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_FPGA_DET_A" input
+			(at 129.54 34.29 90)
+			(uuid "eb1e0a61-669d-4c03-a31f-a11d45e96dba")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc"
@@ -401,8 +614,8 @@
 		)
 	)
 	(sheet
-		(at 102.235 145.415)
-		(size 59.055 33.655)
+		(at 145.034 145.415)
+		(size 16.256 11.557)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -417,7 +630,7 @@
 		)
 		(uuid "90636b6a-bd15-4f6b-9b9f-5f5f42de0752")
 		(property "Sheetname" "Audio"
-			(at 102.235 144.7034 0)
+			(at 145.034 144.7034 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -428,7 +641,7 @@
 			)
 		)
 		(property "Sheetfile" "audio.kicad_sch"
-			(at 102.235 179.6546 0)
+			(at 145.034 157.5566 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
