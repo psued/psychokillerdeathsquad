@@ -186,6 +186,129 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -1370,6 +1493,12 @@
 		(uuid "00a2a9db-4ef0-4894-a442-ad10f0b407df")
 	)
 	(junction
+		(at 114.3 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0b8dffb8-4a64-4a9e-a9f0-ab06926b6fd2")
+	)
+	(junction
 		(at 167.64 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1400,6 +1529,12 @@
 		(uuid "42d39a9d-bdc1-437d-8051-c9dc9060dee9")
 	)
 	(junction
+		(at 172.72 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4abaea88-0152-410a-bf9d-009594bc2a5b")
+	)
+	(junction
 		(at 91.44 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1410,6 +1545,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "728a897b-4658-483c-bc2b-462a97d4d293")
+	)
+	(junction
+		(at 170.18 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "859a3730-e00f-4bef-abf6-379006f585b2")
+	)
+	(junction
+		(at 113.03 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a58649a8-e04a-4733-827c-07cf47318f7a")
 	)
 	(junction
 		(at 114.3 110.49)
@@ -1487,7 +1634,17 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 102.87) (xy 171.45 102.87)
+			(xy 172.72 82.55) (xy 172.72 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11562966-af71-414e-8595-b7a69039bbfb")
+	)
+	(wire
+		(pts
+			(xy 166.37 102.87) (xy 182.88 102.87)
 		)
 		(stroke
 			(width 0)
@@ -1627,16 +1784,6 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 95.25) (xy 113.03 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c6f3c3e-367d-4ec7-9655-312fd3a7253f")
-	)
-	(wire
-		(pts
 			(xy 114.3 100.33) (xy 114.3 110.49)
 		)
 		(stroke
@@ -1697,16 +1844,6 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 102.87) (xy 171.45 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "80531138-4317-46d5-93da-2aed646828e7")
-	)
-	(wire
-		(pts
 			(xy 114.3 110.49) (xy 114.3 123.19)
 		)
 		(stroke
@@ -1717,7 +1854,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 87.63) (xy 170.18 97.79)
+			(xy 170.18 78.74) (xy 170.18 86.36)
 		)
 		(stroke
 			(width 0)
@@ -1727,13 +1864,13 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 102.87) (xy 182.88 102.87)
+			(xy 170.18 86.36) (xy 170.18 97.79)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "89d8ee32-ee98-42d5-aa62-48ff8b560b84")
+		(uuid "8af0bdce-7502-4f3c-90ba-7e0779064b3c")
 	)
 	(wire
 		(pts
@@ -1757,6 +1894,16 @@
 	)
 	(wire
 		(pts
+			(xy 113.03 95.25) (xy 113.03 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9903c983-5ff5-416c-959e-d80e61760f0b")
+	)
+	(wire
+		(pts
 			(xy 182.88 105.41) (xy 181.61 105.41)
 		)
 		(stroke
@@ -1774,6 +1921,16 @@
 			(type default)
 		)
 		(uuid "a2d216d9-1c95-48b7-8f0d-861f59831cb3")
+	)
+	(wire
+		(pts
+			(xy 172.72 78.74) (xy 172.72 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7ccba41-6739-4553-960a-12d6b726d055")
 	)
 	(wire
 		(pts
@@ -1807,7 +1964,17 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 92.71) (xy 113.03 92.71)
+			(xy 113.03 87.63) (xy 113.03 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b85f270c-88eb-4605-b345-8db5e4ded9f9")
+	)
+	(wire
+		(pts
+			(xy 109.22 85.09) (xy 114.3 85.09)
 		)
 		(stroke
 			(width 0)
@@ -1827,13 +1994,13 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 92.71) (xy 114.3 95.25)
+			(xy 114.3 85.09) (xy 114.3 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d97f0ef4-985c-4696-bcce-b5cab65265f1")
+		(uuid "d86412c6-5560-407f-9dc1-68cb91cb1ddb")
 	)
 	(wire
 		(pts
@@ -1864,16 +2031,6 @@
 			(type default)
 		)
 		(uuid "e0a78b17-8013-408e-a91e-28055c757600")
-	)
-	(wire
-		(pts
-			(xy 172.72 113.03) (xy 172.72 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e62dd602-d435-4067-97d6-4e8dc2e2758b")
 	)
 	(wire
 		(pts
@@ -1917,7 +2074,7 @@
 	)
 	(hierarchical_label "AMP_LRCLK"
 		(shape input)
-		(at 171.45 87.63 0)
+		(at 172.72 78.74 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1928,7 +2085,7 @@
 	)
 	(hierarchical_label "AMP_DIN"
 		(shape input)
-		(at 113.03 92.71 180)
+		(at 109.22 85.09 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1939,7 +2096,7 @@
 	)
 	(hierarchical_label "AMP_SD_MODE"
 		(shape input)
-		(at 113.03 95.25 180)
+		(at 113.03 87.63 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1950,7 +2107,7 @@
 	)
 	(hierarchical_label "AMP_BCLK"
 		(shape input)
-		(at 170.18 87.63 180)
+		(at 170.18 78.74 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2118,6 +2275,162 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/90636b6a-bd15-4f6b-9b9f-5f5f42de0752"
 					(reference "C31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 113.03 95.25 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ae7ee5f-046f-4ec4-948a-f1403d5b6c0a")
+		(property "Reference" "TP4"
+			(at 109.728 90.17 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AMP_SD_MODE"
+			(at 109.728 92.71 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 113.03 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 113.03 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 113.03 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5bcf9024-4bcc-4ad4-92fa-cf634bdbd94d")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/90636b6a-bd15-4f6b-9b9f-5f5f42de0752"
+					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 114.3 85.09 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "46c1ba6f-e673-434f-bbe0-5e0c1a0a6acb")
+		(property "Reference" "TP3"
+			(at 116.84 80.5179 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "AMP_DIN"
+			(at 116.84 83.0579 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 119.38 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 114.3 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "edca5aa3-226f-4975-922c-88da6669fbfe")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/90636b6a-bd15-4f6b-9b9f-5f5f42de0752"
+					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -2327,6 +2640,83 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/90636b6a-bd15-4f6b-9b9f-5f5f42de0752"
 					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 170.18 86.36 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "83547432-13bf-47ed-a6c3-f448155085d5")
+		(property "Reference" "TP2"
+			(at 166.878 81.28 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AMP_BCLK"
+			(at 166.878 83.82 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 170.18 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 170.18 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "059a039a-0a2f-4ec7-972b-eaa859623406")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/90636b6a-bd15-4f6b-9b9f-5f5f42de0752"
+					(reference "TP2")
 					(unit 1)
 				)
 			)
@@ -2659,6 +3049,85 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/90636b6a-bd15-4f6b-9b9f-5f5f42de0752"
 					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 172.72 82.55 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e245c725-796c-4be2-8bd7-cf3d19352d97")
+		(property "Reference" "TP1"
+			(at 177.8 81.2799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "AMP_LRCLK"
+			(at 177.8 83.8199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 172.72 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 172.72 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "efda4dc6-51d1-4845-a285-492e8892e54b")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/90636b6a-bd15-4f6b-9b9f-5f5f42de0752"
+					(reference "TP1")
 					(unit 1)
 				)
 			)
