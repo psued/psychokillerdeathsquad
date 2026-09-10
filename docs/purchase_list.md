@@ -37,3 +37,27 @@
 | S25FL256LAGMFI003                 |        3 | Flash memory                   | <https://www.digikey.no/en/products/detail/infineon-technologies/S25FL256LAGMFI003/6601085>            |
 | HD15-SN-24                        |        5 | CONN D-SUB HD RCPT 15P         | <https://www.digikey.no/en/products/detail/adam-tech/HD15-SN-24/9832440>                               |
 | STLINK-V3SET                      |        1 | Debugger                       | <https://www.digikey.no/no/products/detail/stmicroelectronics/STLINK-V3SET/9636028>                    |
+| SIT8008BI-21-33E-100.000000       |        5 | 100 MHz FPGA oscillator        | <https://www.digikey.no/en/products/detail/sitime/SIT8008BI-21-33E-100-000000/11436869>              |
+| RC0805FR-0710KL                   |       10 | 10 kΩ FPGA JTAG TMS/TCK / oscillator OE pull-up resistors | <https://www.digikey.no/en/products/detail/yageo/RC0805FR-0710KL/727535>                             |
+| RC0805FR-074K7L                   |       10 | 4.7 kΩ FPGA configuration pull-up resistors | <https://www.digikey.no/en/products/detail/yageo/RC0805FR-074K7L/727929>                             |
+| RC0805FR-072K4L                   |       10 | 2.4 kΩ FPGA configuration flash CS# pull-up resistors | <https://www.digikey.no/en/products/detail/yageo/RC0805FR-072K4L/727690>                             |
+| RC0805FR-07330RL                  |       10 | 330 Ω FPGA DONE pull-up resistors | <https://www.digikey.no/en/products/detail/yageo/RC0805FR-07330RL/727866>                            |
+| CL21B104KACNNNC                   |       25 | 100 nF FPGA/SD local decoupling capacitors | <https://www.digikey.no/en/products/detail/samsung-electro-mechanics/CL21B104KACNNNC/3889185>        |
+| CL32A107MQVNNNE                   |        3 | 100 µF FPGA VCCBRAM bulk decoupling capacitor | <https://www.digikey.no/en/products/detail/samsung-electro-mechanics/CL32A107MQVNNNE/3886750>        |
+| GRM32ER70J476ME20L                |       10 | 47 µF FPGA rail bulk decoupling capacitors | <https://www.digikey.no/no/products/detail/murata-electronics/GRM32ER70J476ME20L/2548476>            |
+| C2012X7R1C475K125AB               |       25 | 4.7 µF FPGA rail decoupling capacitors | <https://www.digikey.com/en/products/detail/tdk/C2012X7R1C475K125AB/2619221>                         |
+| GRM188R71C474KA88D                |       40 | 0.47 µF FPGA local decoupling capacitors | <https://www.digikey.no/en/products/detail/murata-electronics/GRM188R71C474KA88D/702559>             |
+| RC0805FR-07300RL                  |       25 | 300 Ω VGA RGB DAC resistors    | <https://www.digikey.no/en/products/detail/yageo/RC0805FR-07300RL/730795>                            |
+| RC0805FR-07150RL                  |       25 | 150 Ω VGA RGB DAC resistors    | <https://www.digikey.no/en/products/detail/yageo/RC0805FR-07150RL/730560>                            |
+| RC0805FR-07110RL                  |       10 | 110 Ω VGA RGB output resistors | <https://www.digikey.no/en/products/detail/yageo/RC0805FR-07110RL/730506>                            |
+| RC0805FR-07100RL                  |       10 | 100 Ω VGA HSYNC/VSYNC series resistors | <https://www.digikey.no/en/products/detail/yageo/RC0805FR-07100RL/730490>                            |
+| 61301021121                       |        5 | 2×5 FPGA spare GPIO / debug header | <https://www.digikey.no/no/products/detail/w%C3%BCrth-elektronik/61301021121/2508441>                |
+
+## Mouser
+
+| Part                              | Quantity | Purpose                        | Purchase                                                                                             |
+| --------------------------------- | -------: | ----------------------------   | ---------------------------------------------------------------------------------------------------- |
+| XC7A100T-1FTG256C                 |        2 | Main FPGA                      | <https://no.mouser.com/en/ProductDetail/AMD-Xilinx/XC7A100T-1FTG256C?qs=rrS6PyfT74ca1pOAYTQZCg%3D%3D> |
+| 87831-1420                        |        5 | FPGA JTAG debug/programming header | <https://no.mouser.com/en/ProductDetail/Molex/87831-1420?qs=QtQX4uD3c2VDCL534TqpVg%3D%3D>            |
+| T520V337M2R5ATE025                |        3 | 330 µF FPGA VCCINT bulk decoupling capacitor | <https://no.mouser.com/en/ProductDetail/KEMET/T520V337M2R5ATE025?qs=sO%2FkvLVFr7Q6E5Sp2%2FozpQ%3D%3D> |
+| RC0805FR-0720KL                   |       25 | 20 kΩ microSD signal pull-up resistors | <https://no.mouser.com/en/ProductDetail/YAGEO/RC0805FR-0720KL?qs=QrWOOBGzeCZ4gGltMy5MTA%3D%3D>       |
