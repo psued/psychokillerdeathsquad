@@ -5,6 +5,361 @@
 	(uuid "51ae165b-cdcc-4114-92f6-4b5544aa64df")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:Conn_ST_STDC14"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at -8.89 16.51 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Value" "Conn_ST_STDC14"
+				(at 17.78 16.51 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right bottom)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.st.com/content/ccc/resource/technical/document/user_manual/group1/99/49/91/b6/b2/3a/46/e5/DM00526767/files/DM00526767.pdf/jcr:content/translations/en.DM00526767.pdf"
+				(at -8.89 -31.75 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "ST Debug Connector, standard ARM Cortex-M SWD and JTAG interface plus UART"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "ST STM32 Cortex Debug Connector ARM SWD JTAG"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "PinHeader?2x07?P1.27mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_ST_STDC14_0_1"
+				(rectangle
+					(start -10.16 15.24)
+					(end 10.16 -15.24)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Conn_ST_STDC14_1_1"
+				(pin no_connect line
+					(at -10.16 5.08 0)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 17.78 270)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 5.08 180)
+					(length 2.54)
+					(name "JTMS/SWDIO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -17.78 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 7.62 180)
+					(length 2.54)
+					(name "JCLK/SWCLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -17.78 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "JTDO/SWO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 -5.08 180)
+					(length 2.54)
+					(name "JRCLK/NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 0 180)
+					(length 2.54)
+					(name "JTDI/NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -17.78 90)
+					(length 2.54)
+					(name "GNDDetect"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 12.7 12.7 180)
+					(length 2.54)
+					(name "~{RST}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 -10.16 180)
+					(length 2.54)
+					(name "VCP_RX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 -12.7 180)
+					(length 2.54)
+					(name "VCP_TX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -3600,6 +3955,12 @@
 		(uuid "0d034385-ee42-433b-8ce9-80ef614ece7b")
 	)
 	(junction
+		(at 27.94 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1bad19e0-5d34-474d-855b-ecf7b0b37ff5")
+	)
+	(junction
 		(at 86.36 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3797,6 +4158,26 @@
 		(color 0 0 0 0)
 		(uuid "ee6ecac2-f15d-4bfb-b97d-4b208f328f6e")
 	)
+	(junction
+		(at 19.05 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "efb2e987-58d5-409c-a5b2-5aee2753821d")
+	)
+	(junction
+		(at 119.38 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f24b88b8-82cc-4439-a827-a4620d5c50e2")
+	)
+	(no_connect
+		(at 252.73 36.83)
+		(uuid "db56424c-394c-42d9-8e8a-4ef1659af000")
+	)
+	(no_connect
+		(at 257.81 36.83)
+		(uuid "fdafa143-7891-4969-b344-bf3c6c468690")
+	)
 	(wire
 		(pts
 			(xy 54.61 106.68) (xy 54.61 113.03)
@@ -3829,6 +4210,26 @@
 	)
 	(wire
 		(pts
+			(xy 270.51 110.49) (xy 270.51 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0793cbf3-fd44-47e7-9f2d-0fc899aea0aa")
+	)
+	(wire
+		(pts
+			(xy 189.23 44.45) (xy 189.23 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0802f5d6-6d3d-491d-860d-4d33ded996b8")
+	)
+	(wire
+		(pts
 			(xy 130.81 158.75) (xy 73.66 158.75)
 		)
 		(stroke
@@ -3836,6 +4237,16 @@
 			(type default)
 		)
 		(uuid "0bcdcdf3-acb7-4845-8ace-fc4b9466eb9d")
+	)
+	(wire
+		(pts
+			(xy 19.05 113.03) (xy 27.94 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ce48d7b-c760-405e-b0d8-73aebcd0674a")
 	)
 	(wire
 		(pts
@@ -3856,6 +4267,16 @@
 			(type default)
 		)
 		(uuid "14abc301-88f7-466f-bf16-39d2baafd3a5")
+	)
+	(wire
+		(pts
+			(xy 265.43 39.37) (xy 265.43 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15d2ab78-929a-4330-af31-465a9db31a43")
 	)
 	(wire
 		(pts
@@ -3939,6 +4360,16 @@
 	)
 	(wire
 		(pts
+			(xy 124.46 53.34) (xy 124.46 12.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22091675-2cf7-4967-96d8-14b6a8a2fbd9")
+	)
+	(wire
+		(pts
 			(xy 67.31 80.01) (xy 128.27 80.01)
 		)
 		(stroke
@@ -3966,6 +4397,16 @@
 			(type default)
 		)
 		(uuid "278f654c-da85-41dc-af01-c59814b7ea96")
+	)
+	(wire
+		(pts
+			(xy 247.65 38.1) (xy 247.65 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29f0e9e2-b95c-43b7-9fb9-2227379561a2")
 	)
 	(wire
 		(pts
@@ -4019,6 +4460,16 @@
 	)
 	(wire
 		(pts
+			(xy 16.51 113.03) (xy 19.05 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b2f47b0-9509-4a4d-80ce-0202abb1d34a")
+	)
+	(wire
+		(pts
 			(xy 127 123.19) (xy 146.05 123.19)
 		)
 		(stroke
@@ -4026,6 +4477,16 @@
 			(type default)
 		)
 		(uuid "3bb0d3ce-556e-48a1-9d99-bf0bf524a302")
+	)
+	(wire
+		(pts
+			(xy 171.45 40.64) (xy 262.89 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bd2e284-a2f3-43b3-81b4-c071eb77f395")
 	)
 	(wire
 		(pts
@@ -4046,6 +4507,16 @@
 			(type default)
 		)
 		(uuid "3cedb1d1-3364-44f6-893f-999ad5abd299")
+	)
+	(wire
+		(pts
+			(xy 124.46 12.7) (xy 275.59 12.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41006e90-7ace-417f-a471-bbfd1e88b904")
 	)
 	(wire
 		(pts
@@ -4119,6 +4590,16 @@
 	)
 	(wire
 		(pts
+			(xy 245.11 36.83) (xy 138.43 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50b3c53f-63f0-45f4-8411-72f8c62a921f")
+	)
+	(wire
+		(pts
 			(xy 127 67.31) (xy 127 123.19)
 		)
 		(stroke
@@ -4179,6 +4660,26 @@
 	)
 	(wire
 		(pts
+			(xy 16.51 21.59) (xy 16.51 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c676cb2-ddec-4728-96d1-d5e6c4e943db")
+	)
+	(wire
+		(pts
+			(xy 138.43 105.41) (xy 138.43 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f9a72a8-ee69-470c-be3e-2a9b66fb8531")
+	)
+	(wire
+		(pts
 			(xy 100.33 113.03) (xy 102.87 113.03)
 		)
 		(stroke
@@ -4209,6 +4710,16 @@
 	)
 	(wire
 		(pts
+			(xy 19.05 24.13) (xy 19.05 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62ef5414-3617-48dd-8b76-952205efb86e")
+	)
+	(wire
+		(pts
 			(xy 265.43 77.47) (xy 274.32 77.47)
 		)
 		(stroke
@@ -4236,6 +4747,16 @@
 			(type default)
 		)
 		(uuid "6c41515b-f8cd-46c4-9423-e029b69e24ef")
+	)
+	(wire
+		(pts
+			(xy 171.45 44.45) (xy 171.45 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c7ddfc8-0c81-4faa-9e7f-6fff020b77ec")
 	)
 	(wire
 		(pts
@@ -4329,6 +4850,26 @@
 	)
 	(wire
 		(pts
+			(xy 124.46 53.34) (xy 119.38 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85d4c231-02f7-47e1-b370-77485fc61cc2")
+	)
+	(wire
+		(pts
+			(xy 240.03 21.59) (xy 16.51 21.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "884cef3a-4304-4afc-9557-529280d6ec59")
+	)
+	(wire
+		(pts
 			(xy 114.3 135.89) (xy 113.03 135.89)
 		)
 		(stroke
@@ -4349,6 +4890,16 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 44.45) (xy 140.97 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c367701-fc66-4e82-9aba-d1718f25f74f")
+	)
+	(wire
+		(pts
 			(xy 78.74 53.34) (xy 91.44 53.34)
 		)
 		(stroke
@@ -4366,6 +4917,26 @@
 			(type default)
 		)
 		(uuid "8e1c7593-9735-40f9-8ce1-98e5bcdbae0b")
+	)
+	(wire
+		(pts
+			(xy 138.43 110.49) (xy 270.51 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8eb79af0-838c-4b68-889c-086ef25d3fac")
+	)
+	(wire
+		(pts
+			(xy 240.03 24.13) (xy 19.05 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94a688f9-402a-4475-bbe7-205a88e38100")
 	)
 	(wire
 		(pts
@@ -4396,6 +4967,16 @@
 			(type default)
 		)
 		(uuid "a50f86d0-9e1a-4a55-afa2-456bbddab17d")
+	)
+	(wire
+		(pts
+			(xy 275.59 12.7) (xy 275.59 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a75753a8-2d05-4e06-98ff-a971c724b029")
 	)
 	(wire
 		(pts
@@ -4446,6 +5027,16 @@
 			(type default)
 		)
 		(uuid "ada6ea1f-7a90-4c7b-9c22-79b3ca07c163")
+	)
+	(wire
+		(pts
+			(xy 260.35 41.91) (xy 260.35 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "adb4f86d-3f08-4f0b-b8a1-672b03ce1ded")
 	)
 	(wire
 		(pts
@@ -4609,6 +5200,16 @@
 	)
 	(wire
 		(pts
+			(xy 189.23 41.91) (xy 260.35 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7c3e0b3-b4c5-42ab-8295-5f4466e21944")
+	)
+	(wire
+		(pts
 			(xy 124.46 113.03) (xy 129.54 113.03)
 		)
 		(stroke
@@ -4626,6 +5227,26 @@
 			(type default)
 		)
 		(uuid "ca4415f3-d79b-4d08-bfb6-ddd3841dd22a")
+	)
+	(wire
+		(pts
+			(xy 140.97 38.1) (xy 247.65 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc4bf0e3-deae-43aa-b65c-663a47b6b54b")
+	)
+	(wire
+		(pts
+			(xy 173.99 44.45) (xy 173.99 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce72e336-9d81-4358-8a1e-3d1c6def3fdc")
 	)
 	(wire
 		(pts
@@ -4739,6 +5360,26 @@
 	)
 	(wire
 		(pts
+			(xy 262.89 40.64) (xy 262.89 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e150dee5-355f-4f1b-8f7b-7709c8427d35")
+	)
+	(wire
+		(pts
+			(xy 173.99 39.37) (xy 265.43 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e83b7347-76f5-4a39-bdbe-2a904325a082")
+	)
+	(wire
+		(pts
 			(xy 54.61 113.03) (xy 39.37 113.03)
 		)
 		(stroke
@@ -4806,6 +5447,16 @@
 			(type default)
 		)
 		(uuid "fbf3e52b-d9c9-43b7-b3e8-0a1e33cd826d")
+	)
+	(wire
+		(pts
+			(xy 138.43 36.83) (xy 138.43 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fbf7dad4-d6db-4e22-9ce5-db3e8f2f9918")
 	)
 	(wire
 		(pts
@@ -4910,6 +5561,122 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314"
 					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_ST_STDC14")
+		(at 257.81 24.13 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2025c20c-874d-47bd-8567-fabc42084c9c")
+		(property "Reference" "J2"
+			(at 257.81 8.89 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_ST_STDC14"
+			(at 257.81 11.43 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 257.81 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.st.com/content/ccc/resource/technical/document/user_manual/group1/99/49/91/b6/b2/3a/46/e5/DM00526767/files/DM00526767.pdf/jcr:content/translations/en.DM00526767.pdf"
+			(at 226.06 15.24 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "ST Debug Connector, standard ARM Cortex-M SWD and JTAG interface plus UART"
+			(at 257.81 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "032275c7-8b82-4b5c-a064-c204ea7ba1ff")
+		)
+		(pin "5"
+			(uuid "88c9df57-3dcb-4c32-a772-7c49f3d71494")
+		)
+		(pin "6"
+			(uuid "f0b88d70-59ad-4146-8df4-2161978fadf2")
+		)
+		(pin "3"
+			(uuid "fc456c46-424b-4c07-a920-7e41c486636a")
+		)
+		(pin "1"
+			(uuid "eee048f9-ef0a-4ff3-9373-3a5c1cc53688")
+		)
+		(pin "8"
+			(uuid "1845666b-735a-44f8-8561-2aa111a95cdd")
+		)
+		(pin "2"
+			(uuid "c7563edd-0bb2-4d43-9802-01df598848bf")
+		)
+		(pin "9"
+			(uuid "f0c0db7d-7488-4570-8ef2-da0ece4597c9")
+		)
+		(pin "12"
+			(uuid "b8784c60-b1fc-4c56-b1f0-a2c3a3541ead")
+		)
+		(pin "7"
+			(uuid "20e0fcd0-3c96-467e-918d-41df000541e9")
+		)
+		(pin "11"
+			(uuid "d9218cd6-94c3-48bd-aaea-fe2b506c3a30")
+		)
+		(pin "13"
+			(uuid "fcb52a3b-a193-4a61-8435-f0249297a242")
+		)
+		(pin "14"
+			(uuid "f8694f55-9add-4b7d-871f-a9c3a0d1b8ac")
+		)
+		(pin "10"
+			(uuid "4e2e0c67-fe69-4d25-bd7f-b91632c28099")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314"
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -5522,14 +6289,15 @@
 				)
 			)
 		)
-		(property "Value" "VDD"
-			(at 67.31 45.72 0)
+		(property "Value" "3.3V"
+			(at 69.85 49.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -6192,7 +6960,7 @@
 				)
 			)
 		)
-		(property "Value" "VDDA"
+		(property "Value" "3.3VA"
 			(at 149.86 123.1899 90)
 			(show_name no)
 			(do_not_autoplace no)
