@@ -180,19 +180,21 @@ SWDIO, SWCLK, NRST, BOOT0, target voltage and GND are exposed for programming an
 
 ## Main MCU Debug
 
-The STM32U545 uses SWD through an STDC14 connector.
+The STM32U545 uses SWD and UART debug through an STDC14 connector.
 
-| Signal | MCU |
-| --- | --- |
-| SWDIO | PA13 |
-| SWCLK | PA14 |
-| NRST | NRST |
-| target reference | 3.3 V |
-| GND | GND |
+| Signal | MCU | STDC14 |
+| --- | --- | --- |
+| SWDIO | PA13 | 4 |
+| SWCLK | PA14 | 6 |
+| NRST | NRST | 12 |
+| UART4 RX | PA1 | 13 |
+| UART4 TX | PA0 | 14 |
+| target reference | 3.3 V | 3 |
+| GND | GND | 5, 7 |
 
 BOOT0 is PH3, with appropriate bias and access for recovery.
 
-UART4 provides a 115200 8N1 debug interface on PA0 (TX) and PA1 (RX).
+UART4 uses 115200 baud, 8N1. The ST-LINK exposes UART4 to the host as a Virtual COM Port through the STDC14 connection.
 
 Test points are provided for UART4 TX, RX and GND.
 
