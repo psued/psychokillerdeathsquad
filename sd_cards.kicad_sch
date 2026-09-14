@@ -3703,8 +3703,128 @@
 		)
 		(uuid "ff3c20cb-08f3-4c16-9fb1-6e295158d1fb")
 	)
+	(label "SD_MCU_DET_A"
+		(at 107.95 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "058b170d-6959-40a7-874d-8b3954d55510")
+	)
+	(label "SD_FPGA_DET_A"
+		(at 242.57 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "12f69bec-c254-4f87-86f2-ae7bb5ddecb6")
+	)
+	(label "SD_MCU_DAT0"
+		(at 107.95 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "30c096d6-82cf-40d5-a6c2-27cfbcec2f7b")
+	)
+	(label "SD_MCU_DAT3"
+		(at 106.68 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "43a6ceab-2781-4818-8d35-7374a9016851")
+	)
+	(label "SD_MCU_DAT1"
+		(at 66.04 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6e1b357a-bc1f-4d79-8001-b7be53be7a81")
+	)
+	(label "SD_MCU_CMD"
+		(at 67.31 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "78eff672-cf2e-4258-a146-dbab903470c2")
+	)
+	(label "SD_FPGA_DAT2"
+		(at 201.93 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "80e3a00d-bb5b-4b32-9eae-e2f0365c3d8c")
+	)
+	(label "SD_FPGA_DAT1"
+		(at 201.93 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ade8d0c3-2ff1-4a6a-87c6-6786afe958ce")
+	)
+	(label "SD_MCU_DAT2"
+		(at 66.04 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ba112a78-348b-4d20-acab-88e18d61cb80")
+	)
+	(label "SD_FPGA_DAT3"
+		(at 242.57 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bcf5ec56-f544-4c9a-b0ba-8f63f4b123c0")
+	)
+	(label "SD_FPGA_DAT0"
+		(at 242.57 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c096a9d3-f468-4985-bf7d-3f65a19428f9")
+	)
+	(label "SD_FPGA_CMD"
+		(at 201.93 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f5385de2-17ba-4297-82f8-09ff937aedab")
+	)
 	(hierarchical_label "SD_MCU_DAT3"
-		(shape input)
+		(shape output)
 		(at 143.51 63.5 270)
 		(effects
 			(font
@@ -3715,7 +3835,7 @@
 		(uuid "1bec500b-8c49-4913-9e85-671eb8ce3400")
 	)
 	(hierarchical_label "SD_MCU_DAT2"
-		(shape input)
+		(shape output)
 		(at 130.81 60.96 180)
 		(effects
 			(font
@@ -3726,7 +3846,7 @@
 		(uuid "1c31835a-af1b-440a-af46-2d0ae4e9f127")
 	)
 	(hierarchical_label "SD_FPGA_DAT1"
-		(shape input)
+		(shape output)
 		(at 250.19 48.26 0)
 		(effects
 			(font
@@ -3737,7 +3857,7 @@
 		(uuid "25f0b5c6-79e4-4fe5-a2a1-45df76583897")
 	)
 	(hierarchical_label "SD_MCU_DET_A"
-		(shape input)
+		(shape output)
 		(at 71.12 45.72 0)
 		(effects
 			(font
@@ -3748,7 +3868,7 @@
 		(uuid "2f5e52d5-b275-4050-ba6e-46e9873c197d")
 	)
 	(hierarchical_label "SD_FPGA_DET_A"
-		(shape input)
+		(shape output)
 		(at 205.74 45.72 0)
 		(effects
 			(font
@@ -3759,7 +3879,7 @@
 		(uuid "3bec283d-54e2-4f91-81aa-2b12fe9c747d")
 	)
 	(hierarchical_label "SD_FPGA_CMD"
-		(shape input)
+		(shape output)
 		(at 224.79 60.96 0)
 		(effects
 			(font
@@ -3770,7 +3890,7 @@
 		(uuid "3d68d7cf-96d9-4955-8bef-3e63bf9e23f5")
 	)
 	(hierarchical_label "SD_FPGA_DAT2"
-		(shape input)
+		(shape output)
 		(at 265.43 60.96 180)
 		(effects
 			(font
@@ -3781,7 +3901,7 @@
 		(uuid "4970e2ae-2b5b-4b88-966d-60cd489f8adb")
 	)
 	(hierarchical_label "SD_FPGA_CLK"
-		(shape input)
+		(shape output)
 		(at 208.28 58.42 0)
 		(effects
 			(font
@@ -3792,7 +3912,7 @@
 		(uuid "4c80ffba-ab50-4d9e-ba9a-def13b8ba40f")
 	)
 	(hierarchical_label "SD_MCU_CLK"
-		(shape input)
+		(shape output)
 		(at 73.66 58.42 0)
 		(effects
 			(font
@@ -3802,19 +3922,8 @@
 		)
 		(uuid "572dd31a-ae72-4cdb-909b-3d36484a3c04")
 	)
-	(hierarchical_label "SD_FPGA_CMD"
-		(shape input)
-		(at 201.93 87.63 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "67268a03-994f-43bc-8bca-6c77579e832c")
-	)
 	(hierarchical_label "SD_MCU_DAT1"
-		(shape input)
+		(shape output)
 		(at 115.57 48.26 0)
 		(effects
 			(font
@@ -3824,41 +3933,8 @@
 		)
 		(uuid "70123ba4-23a1-4465-9dbd-d8d7284786a3")
 	)
-	(hierarchical_label "SD_MCU_DAT3"
-		(shape input)
-		(at 106.68 110.49 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "79292da7-08b7-42b6-9975-51fbc254b5ba")
-	)
-	(hierarchical_label "SD_FPGA_DAT2"
-		(shape input)
-		(at 201.93 110.49 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7cc6620f-4647-4a0d-821b-7debaef78c7e")
-	)
-	(hierarchical_label "SD_MCU_DET_A"
-		(shape input)
-		(at 107.95 87.63 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "8e70b9f2-42a0-48bc-9538-0551c57671d8")
-	)
 	(hierarchical_label "SD_MCU_CMD"
-		(shape input)
+		(shape output)
 		(at 90.17 60.96 0)
 		(effects
 			(font
@@ -3868,63 +3944,8 @@
 		)
 		(uuid "945b607a-8cea-4e7c-aa75-a077b13393f4")
 	)
-	(hierarchical_label "SD_FPGA_DAT3"
-		(shape input)
-		(at 242.57 110.49 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "99aab767-1ee5-4a5c-bce2-c482b33c2189")
-	)
-	(hierarchical_label "SD_FPGA_DAT1"
-		(shape input)
-		(at 201.93 105.41 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a7d79d7a-8068-47cc-9866-3f9132dac2ae")
-	)
-	(hierarchical_label "SD_MCU_DAT0"
-		(shape input)
-		(at 107.95 82.55 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "abfda81b-de61-40be-af84-b9ce1e997f95")
-	)
-	(hierarchical_label "SD_MCU_CMD"
-		(shape input)
-		(at 67.31 87.63 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c6aa0e62-da0a-4e2a-ae7d-6bcdb5a86497")
-	)
-	(hierarchical_label "SD_FPGA_DET_A"
-		(shape input)
-		(at 242.57 87.63 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "caf30f3f-47a1-45ab-bf54-07110c8ace12")
-	)
 	(hierarchical_label "SD_FPGA_DAT0"
-		(shape input)
+		(shape output)
 		(at 237.49 50.8 0)
 		(effects
 			(font
@@ -3935,7 +3956,7 @@
 		(uuid "d09b2f06-7c5c-47cb-9fa0-2f493a9cb67e")
 	)
 	(hierarchical_label "SD_MCU_DAT0"
-		(shape input)
+		(shape output)
 		(at 104.14 50.8 0)
 		(effects
 			(font
@@ -3946,7 +3967,7 @@
 		(uuid "dcff71df-800f-4ef0-ae30-890568314e00")
 	)
 	(hierarchical_label "SD_FPGA_DAT3"
-		(shape input)
+		(shape output)
 		(at 276.86 63.5 270)
 		(effects
 			(font
@@ -3955,39 +3976,6 @@
 			(justify right)
 		)
 		(uuid "e945f4ed-9bc5-4024-8cb8-f4c6d947c95c")
-	)
-	(hierarchical_label "SD_FPGA_DAT0"
-		(shape input)
-		(at 242.57 82.55 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e98a9052-b427-480a-8a98-fdd70586a890")
-	)
-	(hierarchical_label "SD_MCU_DAT2"
-		(shape input)
-		(at 66.04 110.49 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ef7e5e1e-01b7-4b42-bd2c-12143472b534")
-	)
-	(hierarchical_label "SD_MCU_DAT1"
-		(shape input)
-		(at 66.04 105.41 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ef8f6c5f-3075-4e49-a56d-a2e589e9206e")
 	)
 	(symbol
 		(lib_id "power:+3.3V")
