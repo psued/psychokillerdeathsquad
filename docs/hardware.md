@@ -165,18 +165,17 @@ Each wireless controller is powered directly from two AAA alkaline cells through
 
 ### STM32WB Debug and Recovery
 
-All STM32WB1MMC modules expose:
+All STM32WB1MMC modules use an STDC14 connector for SWD programming and debugging.
 
-| Signal | Module |
-| --- | --- |
-| SWDIO | PA13, pad 35 |
-| SWCLK | PA14, pad 34 |
-| NRST | pad 23 |
-| BOOT0 | pad 22 |
-| target reference | module supply |
-| GND | GND |
+| Signal | Module | STDC14 |
+| --- | --- | --- |
+| SWDIO | PA13, pad 35 | 4 |
+| SWCLK | PA14, pad 34 | 6 |
+| NRST | pad 23 | 12 |
+| target reference | module supply | 3 |
+| GND | GND | 5, 7 |
 
-SWDIO, SWCLK, NRST, BOOT0, target voltage and GND are exposed for programming and recovery.
+BOOT0 is pad 22, with appropriate bias and access for recovery.
 
 ## Main MCU Debug
 
