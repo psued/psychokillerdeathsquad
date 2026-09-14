@@ -1478,7 +1478,7 @@
 	)
 	(text "See amplifier datasheet\nfor gain configuration"
 		(exclude_from_sim no)
-		(at 70.612 104.902 0)
+		(at 73.152 104.902 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2981,17 +2981,6 @@
 				)
 			)
 		)
-		(property "Tolerance" "5%"
-			(at 96.012 105.41 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "1"
 			(uuid "563bc77c-9fbf-495e-99e3-8149036cafa3")
 		)
@@ -3706,17 +3695,6 @@
 				(font
 					(size 1.27 1.27)
 				)
-			)
-		)
-		(property "Tolerance" "5%"
-			(at 83.058 105.41 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 		(pin "1"

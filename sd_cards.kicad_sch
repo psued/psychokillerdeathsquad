@@ -2817,7 +2817,7 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 21.59) (xy 278.13 21.59)
+			(xy 265.43 21.59) (xy 276.86 21.59)
 		)
 		(stroke
 			(width 0)
@@ -3287,7 +3287,7 @@
 	)
 	(wire
 		(pts
-			(xy 278.13 41.91) (xy 278.13 63.5)
+			(xy 276.86 41.91) (xy 276.86 63.5)
 		)
 		(stroke
 			(width 0)
@@ -3517,7 +3517,7 @@
 	)
 	(wire
 		(pts
-			(xy 278.13 21.59) (xy 278.13 34.29)
+			(xy 276.86 21.59) (xy 276.86 34.29)
 		)
 		(stroke
 			(width 0)
@@ -3667,7 +3667,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 63.5) (xy 278.13 63.5)
+			(xy 195.58 63.5) (xy 276.86 63.5)
 		)
 		(stroke
 			(width 0)
@@ -3979,7 +3979,7 @@
 	)
 	(hierarchical_label "SD_FPGA_DAT3"
 		(shape input)
-		(at 278.13 63.5 270)
+		(at 276.86 63.5 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4256,18 +4256,6 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
-			(at 69.85 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "1"
 			(uuid "009d2265-0598-427e-864c-d501383f5e74")
 		)
@@ -4412,7 +4400,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "20k"
 			(at 106.68 39.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4456,7 +4444,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
+		(property "Tolerance" ""
 			(at 99.06 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4484,7 +4472,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 278.13 38.1 0)
+		(at 276.86 38.1 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4494,7 +4482,7 @@
 		(dnp no)
 		(uuid "2d7c6154-eea7-4aae-8e0b-04c856507787")
 		(property "Reference" "R514"
-			(at 280.67 36.8299 0)
+			(at 279.4 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4504,8 +4492,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
-			(at 280.67 39.3699 0)
+		(property "Value" "20k"
+			(at 279.4 39.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4516,7 +4504,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 276.352 38.1 90)
+			(at 275.082 38.1 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4527,7 +4515,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 278.13 38.1 0)
+			(at 276.86 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4538,7 +4526,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 278.13 38.1 0)
+			(at 276.86 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4548,8 +4536,8 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
-			(at 273.05 38.1 0)
+		(property "Tolerance" ""
+			(at 271.78 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4716,18 +4704,6 @@
 				(font
 					(size 1.27 1.27)
 				)
-			)
-		)
-		(property "Tolerance" "?%"
-			(at 204.47 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 		(pin "1"
@@ -5254,7 +5230,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "20k"
 			(at 267.97 39.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5298,7 +5274,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
+		(property "Tolerance" ""
 			(at 260.35 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5516,7 +5492,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "20k"
 			(at 252.73 39.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5560,7 +5536,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
+		(property "Tolerance" ""
 			(at 245.11 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5812,7 +5788,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
+		(property "Tolerance" ""
 			(at 200.66 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5860,7 +5836,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "20k"
 			(at 146.05 39.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5904,7 +5880,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
+		(property "Tolerance" ""
 			(at 138.43 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5996,7 +5972,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
+		(property "Tolerance" ""
 			(at 66.04 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6123,7 +6099,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "20k"
 			(at 92.71 39.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6167,17 +6143,6 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
-			(at 85.09 38.1 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "1"
 			(uuid "b7709355-4e03-4eca-bbaa-31e26f6bda88")
 		)
@@ -6215,7 +6180,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "20k"
 			(at 133.35 39.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6259,7 +6224,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
+		(property "Tolerance" ""
 			(at 125.73 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6464,7 +6429,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "20k"
 			(at 118.11 39.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6508,7 +6473,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
+		(property "Tolerance" ""
 			(at 110.49 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6638,7 +6603,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "20k"
 			(at 227.33 39.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6682,7 +6647,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
+		(property "Tolerance" ""
 			(at 219.71 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6730,7 +6695,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "20k"
 			(at 240.03 39.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6774,7 +6739,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "?%"
+		(property "Tolerance" ""
 			(at 232.41 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
