@@ -2231,6 +2231,12 @@
 		(uuid "181adb55-ee31-4229-a386-de4bcd574a03")
 	)
 	(junction
+		(at 113.03 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "18377c40-c982-46a2-9e3b-943a449de149")
+	)
+	(junction
 		(at 97.79 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2301,12 +2307,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "459ffa32-b349-4631-882b-cc27b8341572")
-	)
-	(junction
-		(at 90.17 96.52)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4883e6c4-bacc-434c-9d5a-92ed9030ffcb")
 	)
 	(junction
 		(at 87.63 78.74)
@@ -2806,7 +2806,17 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 93.98) (xy 121.92 93.98)
+			(xy 113.03 93.98) (xy 121.92 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b001059-e362-4878-909e-94c0c6fad642")
+	)
+	(wire
+		(pts
+			(xy 110.49 93.98) (xy 113.03 93.98)
 		)
 		(stroke
 			(width 0)
@@ -2846,17 +2856,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 96.52) (xy 121.92 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "37f397c3-d44f-4b6f-ad8c-5fdf8ee93835")
-	)
-	(wire
-		(pts
-			(xy 87.63 96.52) (xy 90.17 96.52)
+			(xy 87.63 96.52) (xy 121.92 96.52)
 		)
 		(stroke
 			(width 0)
@@ -4632,7 +4632,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 90.17 96.52 180)
+		(at 113.03 93.98 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4640,9 +4640,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "44a63e75-0757-4948-a6f2-0fbebef48321")
+		(uuid "4c26f900-1676-440c-a904-aa478f3fc5a1")
 		(property "Reference" "TP606"
-			(at 91.948 98.552 0)
+			(at 111.252 91.948 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4652,8 +4652,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "BT_MCU_NRST"
-			(at 91.948 101.092 0)
+		(property "Value" "BT_MCU_BOOT0"
+			(at 111.252 89.408 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4664,7 +4664,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 85.09 96.52 0)
+			(at 118.11 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4675,7 +4675,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 85.09 96.52 0)
+			(at 118.11 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4686,7 +4686,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 90.17 96.52 0)
+			(at 113.03 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4697,7 +4697,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b8ffb03d-0320-402d-9f21-6bd61506dead")
+			(uuid "fa66e6ea-472e-430d-9faf-b81a749b23c5")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
