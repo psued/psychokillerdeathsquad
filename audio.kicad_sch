@@ -2165,7 +2165,7 @@
 		(uuid "fea9b601-fd5a-43ed-b7b6-ac6f35e8f33d")
 	)
 	(hierarchical_label "AMP_LRCLK"
-		(shape input)
+		(shape output)
 		(at 172.72 78.74 0)
 		(effects
 			(font
@@ -2176,7 +2176,7 @@
 		(uuid "278b4ae9-097e-45bd-9a7b-0b871f860d0e")
 	)
 	(hierarchical_label "AMP_DIN"
-		(shape input)
+		(shape output)
 		(at 109.22 85.09 180)
 		(effects
 			(font
@@ -2187,7 +2187,7 @@
 		(uuid "51372389-9a7a-4593-ad81-b88327b0563e")
 	)
 	(hierarchical_label "AMP_SD_MODE"
-		(shape input)
+		(shape output)
 		(at 109.22 87.63 180)
 		(effects
 			(font
@@ -2198,7 +2198,7 @@
 		(uuid "aa310f32-0d4d-464e-aac9-6fb09dfd2dee")
 	)
 	(hierarchical_label "AMP_BCLK"
-		(shape input)
+		(shape output)
 		(at 170.18 78.74 180)
 		(effects
 			(font
@@ -2847,7 +2847,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 98.552 105.41 90)
 			(hide yes)
 			(show_name no)
@@ -3484,7 +3484,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 85.852 105.41 90)
 			(hide yes)
 			(show_name no)

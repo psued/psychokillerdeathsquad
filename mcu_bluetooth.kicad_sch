@@ -4172,7 +4172,7 @@
 		(uuid "ff74817d-7270-4712-b1d2-02bb46b62343")
 	)
 	(hierarchical_label "BT_MCU_HOST_IRQ"
-		(shape input)
+		(shape output)
 		(at 110.49 73.66 180)
 		(effects
 			(font
@@ -4183,7 +4183,7 @@
 		(uuid "1613d7e2-709f-4eed-8089-302be4354389")
 	)
 	(hierarchical_label "BT_MCU_TX"
-		(shape input)
+		(shape output)
 		(at 90.17 134.62 180)
 		(effects
 			(font
@@ -4194,7 +4194,7 @@
 		(uuid "290f0c93-49f0-47cb-9c66-290f15b9677d")
 	)
 	(hierarchical_label "BT_MCU_RX"
-		(shape input)
+		(shape output)
 		(at 90.17 129.54 180)
 		(effects
 			(font
@@ -4205,7 +4205,7 @@
 		(uuid "6ae7a9ec-b81c-4fc3-8432-3cfd6cb45153")
 	)
 	(hierarchical_label "BT_MCU_NRST"
-		(shape input)
+		(shape output)
 		(at 62.23 96.52 90)
 		(effects
 			(font
@@ -4715,7 +4715,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 108.712 106.68 90)
 			(hide yes)
 			(show_name no)
@@ -4885,7 +4885,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 85.852 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -5647,7 +5647,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 108.712 63.5 90)
 			(hide yes)
 			(show_name no)

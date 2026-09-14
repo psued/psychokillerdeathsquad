@@ -10,381 +10,9 @@
 		(rev "0")
 	)
 	(lib_symbols)
-	(bus_entry
-		(at 106.68 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0d8d25d3-cb04-490f-a759-991ec72dd701")
-	)
-	(bus_entry
-		(at 129.54 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "20bf7d4d-da75-46b6-a3f2-7f73c30ea122")
-	)
-	(bus_entry
-		(at 163.83 152.4)
-		(size 2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2d3b59d9-5b90-44f8-b54b-27fc03227044")
-	)
-	(bus_entry
-		(at 116.84 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34db3006-e7cb-4514-906c-519e642f245a")
-	)
-	(bus_entry
-		(at 163.83 149.86)
-		(size 2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4009915d-64f7-4b8f-92f0-c8d3b50c9615")
-	)
-	(bus_entry
-		(at 134.62 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4993ab35-f6dd-4289-aa49-5c571ef4f8f8")
-	)
-	(bus_entry
-		(at 121.92 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "526469b4-b8e8-4afc-81ac-fcd9a21d6242")
-	)
-	(bus_entry
-		(at 127 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5ba02eb9-bd98-46d7-a98f-1057945734d2")
-	)
-	(bus_entry
-		(at 104.14 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6a676008-2f1e-4373-8cc8-4e3ba50de067")
-	)
-	(bus_entry
-		(at 124.46 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c45b88a-986b-4bda-a1b2-fdc26edb19dd")
-	)
-	(bus_entry
-		(at 163.83 154.94)
-		(size 2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9a374b31-adf3-4b98-a4c0-3e286c4124ed")
-	)
-	(bus_entry
-		(at 163.83 147.32)
-		(size 2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ab7edb01-f31d-43dd-9ae9-9b8bbe6bc346")
-	)
-	(bus_entry
-		(at 114.3 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c7da55b2-92be-42bc-9159-31b7be8da58b")
-	)
-	(bus_entry
-		(at 101.6 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c85222a7-e37e-4f66-9a66-0875b9863818")
-	)
-	(bus_entry
-		(at 111.76 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d4338e3e-29d7-4cde-95a2-b0535879bc70")
-	)
-	(bus_entry
-		(at 109.22 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d8d648b8-dc2b-4962-8a0d-3c6707cd7355")
-	)
-	(bus_entry
-		(at 132.08 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dca97427-c30e-4fb1-9a57-dcf469ccbb3e")
-	)
-	(bus_entry
-		(at 137.16 29.21)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f9a257fb-847c-4e94-855c-29b0c8415dd2")
-	)
-	(wire
-		(pts
-			(xy 139.7 31.75) (xy 139.7 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "17026847-ce6d-4e96-95ed-d87645d6d320")
-	)
-	(bus
-		(pts
-			(xy 101.6 29.21) (xy 116.84 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "37cc9bdb-80c8-4189-bcfa-391f1bfa5ec0")
-	)
-	(wire
-		(pts
-			(xy 161.29 152.4) (xy 163.83 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4a1f7db2-2afe-4013-a7e2-f1e71d7af9a4")
-	)
-	(wire
-		(pts
-			(xy 106.68 31.75) (xy 106.68 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "554bdfc6-1710-44d9-9242-39157e3e3c2b")
-	)
-	(wire
-		(pts
-			(xy 111.76 31.75) (xy 111.76 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "560959d2-02cb-4a4e-8074-1630d9cd7a26")
-	)
-	(wire
-		(pts
-			(xy 119.38 31.75) (xy 119.38 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5970a797-0126-402b-99ee-c03d619176fc")
-	)
-	(wire
-		(pts
-			(xy 129.54 31.75) (xy 129.54 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5d7882d1-2059-4a90-8108-f6ec377b5b3b")
-	)
-	(wire
-		(pts
-			(xy 116.84 31.75) (xy 116.84 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c4ad7f7-5a3f-4e83-977e-7736c95b54d8")
-	)
-	(wire
-		(pts
-			(xy 132.08 31.75) (xy 132.08 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "891bab1e-79f4-47fb-b8f0-46c18ec6565b")
-	)
-	(wire
-		(pts
-			(xy 109.22 31.75) (xy 109.22 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8e812296-4697-41ba-bdd7-4aa967649f82")
-	)
-	(wire
-		(pts
-			(xy 104.14 31.75) (xy 104.14 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9c033864-aee5-423b-a032-7c72cb6ac845")
-	)
-	(bus
-		(pts
-			(xy 166.37 144.78) (xy 166.37 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a529a7d6-fadd-427f-821c-c96fa667f9fc")
-	)
-	(wire
-		(pts
-			(xy 161.29 154.94) (xy 163.83 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ab7f996e-b9b2-4183-9887-cbb6754c4d8c")
-	)
-	(bus
-		(pts
-			(xy 121.92 29.21) (xy 137.16 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aef193de-94d8-4061-b65b-733028d64c25")
-	)
-	(wire
-		(pts
-			(xy 134.62 31.75) (xy 134.62 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b71b5b02-bf66-4f6f-8375-9c76d983244e")
-	)
-	(wire
-		(pts
-			(xy 124.46 31.75) (xy 124.46 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c4343a9f-08ff-4e78-8ee0-7e3b9e98ea9f")
-	)
-	(wire
-		(pts
-			(xy 161.29 149.86) (xy 163.83 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d848f869-a8ff-42c3-a755-70ea8c344d06")
-	)
-	(wire
-		(pts
-			(xy 114.3 31.75) (xy 114.3 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e041a275-f3a0-41da-be0b-0d9e1f65dabd")
-	)
-	(wire
-		(pts
-			(xy 137.16 31.75) (xy 137.16 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb63509c-ce67-4553-8899-d6301d7cdb4c")
-	)
-	(wire
-		(pts
-			(xy 127 31.75) (xy 127 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eecd39fd-2047-486c-bd34-e7a3fde65415")
-	)
-	(wire
-		(pts
-			(xy 161.29 147.32) (xy 163.83 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f49c98f4-5fc6-496a-b343-d43bb9655267")
-	)
 	(sheet
-		(at 102.235 34.29)
-		(size 38.989 19.685)
+		(at 100.965 138.176)
+		(size 26.035 37.719)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -398,7 +26,7 @@
 		)
 		(uuid "404528d8-c76d-4c6e-b8be-63bef63459b3")
 		(property "Sheetname" "SD cards"
-			(at 102.235 33.5784 0)
+			(at 100.965 137.4644 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -409,7 +37,7 @@
 			)
 		)
 		(property "Sheetfile" "sd_cards.kicad_sch"
-			(at 102.108 54.61 0)
+			(at 101.092 176.784 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -419,9 +47,9 @@
 				(justify left top)
 			)
 		)
-		(pin "SD_MCU_CLK" input
-			(at 104.14 34.29 90)
-			(uuid "d35572df-7e42-437a-953a-b82cbfa9744d")
+		(pin "SD_FPGA_CLK" output
+			(at 127 139.7 0)
+			(uuid "85fda8ad-6c88-4e60-8fba-ffeae50392d1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -429,9 +57,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_MCU_CMD" input
-			(at 106.68 34.29 90)
-			(uuid "0fb4a66f-5884-4b8d-b51c-98bbdd2d2af3")
+		(pin "SD_FPGA_CMD" output
+			(at 127 142.24 0)
+			(uuid "76ef69b2-a7c7-4508-a0db-7cf30463eb73")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -439,9 +67,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_MCU_DAT0" input
-			(at 111.76 34.29 90)
-			(uuid "445d1e6a-8824-43ae-bc4a-606e260b9a68")
+		(pin "SD_FPGA_DAT0" output
+			(at 127 144.78 0)
+			(uuid "273e5da3-6f2e-467e-92ce-7466137a8ce7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -449,9 +77,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_MCU_DAT1" input
-			(at 114.3 34.29 90)
-			(uuid "9e7288e6-bea7-4a64-9cb0-04c1e2acb307")
+		(pin "SD_FPGA_DAT1" output
+			(at 127 147.32 0)
+			(uuid "5daff548-4d38-4c20-830c-d5bbc6e641d8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -459,9 +87,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_MCU_DAT2" input
-			(at 116.84 34.29 90)
-			(uuid "bbdd6348-4b2d-4171-a568-a3bc7c329f4a")
+		(pin "SD_FPGA_DAT2" output
+			(at 127 149.86 0)
+			(uuid "11214e13-a46c-4cec-9cef-11b1aeecc561")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -469,9 +97,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_MCU_DAT3" input
-			(at 119.38 34.29 90)
-			(uuid "ed479f9c-86d4-4cac-8202-28259a4db0b2")
+		(pin "SD_FPGA_DAT3" output
+			(at 127 152.4 0)
+			(uuid "26809011-5a7a-4c9d-b71d-1ec11dee6521")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -479,9 +107,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_MCU_DET_A" input
-			(at 109.22 34.29 90)
-			(uuid "84e8ab26-ac6f-4246-b9f9-b8630b0c8ce3")
+		(pin "SD_FPGA_DET_A" output
+			(at 127 154.94 0)
+			(uuid "61f1545f-eb5a-4f53-8888-053f204b0ba2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -489,9 +117,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_FPGA_CLK" input
-			(at 124.46 34.29 90)
-			(uuid "ed8b2de3-98ca-4243-a96e-766fb42dee65")
+		(pin "SD_MCU_CLK" output
+			(at 127 158.75 0)
+			(uuid "dc67b966-433e-440d-9c24-ad4f6b2a82c9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -499,9 +127,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_FPGA_CMD" input
-			(at 127 34.29 90)
-			(uuid "7c94697a-36e6-4083-a924-d04793d9df89")
+		(pin "SD_MCU_CMD" output
+			(at 127 161.29 0)
+			(uuid "bb86e3bb-9c17-4a2a-8a15-082a82a70976")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -509,9 +137,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_FPGA_DAT0" input
-			(at 132.08 34.29 90)
-			(uuid "0042f052-9839-451d-ac50-a0d071925499")
+		(pin "SD_MCU_DAT0" output
+			(at 127 163.83 0)
+			(uuid "fdc75896-3922-4515-8a4e-d79424afb850")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -519,9 +147,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_FPGA_DAT1" input
-			(at 134.62 34.29 90)
-			(uuid "6997b97e-1046-46df-b70a-15a78d67fe85")
+		(pin "SD_MCU_DAT1" output
+			(at 127 166.37 0)
+			(uuid "0cd44303-7995-486c-8e02-8bdaaeca3c15")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -529,9 +157,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_FPGA_DAT2" input
-			(at 137.16 34.29 90)
-			(uuid "61db4094-41ae-468d-98a1-ff595b818c9e")
+		(pin "SD_MCU_DAT2" output
+			(at 127 168.91 0)
+			(uuid "77eeafa0-be34-42d9-b738-2ff63585fddc")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -539,9 +167,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_FPGA_DAT3" input
-			(at 139.7 34.29 90)
-			(uuid "4dcb36b9-a993-47f0-bd57-650789893a4e")
+		(pin "SD_MCU_DAT3" output
+			(at 127 171.45 0)
+			(uuid "5cfdc994-be94-4ac2-a115-f1468870b983")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -549,9 +177,9 @@
 				(justify right)
 			)
 		)
-		(pin "SD_FPGA_DET_A" input
-			(at 129.54 34.29 90)
-			(uuid "eb1e0a61-669d-4c03-a31f-a11d45e96dba")
+		(pin "SD_MCU_DET_A" output
+			(at 127 173.99 0)
+			(uuid "0b9cac48-3d0a-4652-a107-0249e263eaa8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -568,8 +196,8 @@
 		)
 	)
 	(sheet
-		(at 100.33 63.5)
-		(size 95.25 64.77)
+		(at 237.49 33.655)
+		(size 18.415 8.89)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -584,7 +212,7 @@
 		)
 		(uuid "4e27f84f-b409-4451-a36b-8da2b783ead5")
 		(property "Sheetname" "Power"
-			(at 100.33 62.7884 0)
+			(at 237.49 32.9434 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -595,7 +223,7 @@
 			)
 		)
 		(property "Sheetfile" "power.kicad_sch"
-			(at 100.33 128.8546 0)
+			(at 237.49 43.1296 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -615,7 +243,7 @@
 	)
 	(sheet
 		(at 145.034 145.415)
-		(size 16.256 11.557)
+		(size 20.066 11.557)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -651,9 +279,9 @@
 				(justify left top)
 			)
 		)
-		(pin "AMP_BCLK" input
-			(at 161.29 147.32 0)
-			(uuid "58967e3b-fdc6-40fe-8d50-55864c329a1c")
+		(pin "AMP_BCLK" output
+			(at 165.1 147.32 0)
+			(uuid "a151ecd3-48af-4c3b-aba2-a5854fd6b69a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -661,9 +289,9 @@
 				(justify right)
 			)
 		)
-		(pin "AMP_DIN" input
-			(at 161.29 154.94 0)
-			(uuid "c16d955e-1c12-46b1-b927-e001e94430e4")
+		(pin "AMP_DIN" output
+			(at 165.1 149.86 0)
+			(uuid "d7181d8c-b5ac-4eb9-bc92-7df0b3ef92c6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -671,9 +299,9 @@
 				(justify right)
 			)
 		)
-		(pin "AMP_LRCLK" input
-			(at 161.29 149.86 0)
-			(uuid "cc9edeed-f94f-47d8-b85e-bc4b973f2ca6")
+		(pin "AMP_LRCLK" output
+			(at 165.1 152.4 0)
+			(uuid "04a859d6-c617-4cd1-a08c-a29d9ec5140a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -681,9 +309,9 @@
 				(justify right)
 			)
 		)
-		(pin "AMP_SD_MODE" input
-			(at 161.29 152.4 0)
-			(uuid "279a8227-af9e-4536-9649-bab14df62d50")
+		(pin "AMP_SD_MODE" output
+			(at 165.1 154.94 0)
+			(uuid "327e338b-87c6-49fa-81f1-ceca0740f0ee")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -695,6 +323,92 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc"
 					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 98.425 33.655)
+		(size 28.575 12.065)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "b1b1efd2-d586-4518-af4f-3c644368f394")
+		(property "Sheetname" "MCU Bluetooth"
+			(at 98.425 32.9434 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mcu_bluetooth.kicad_sch"
+			(at 98.425 46.3046 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "BT_MCU_HOST_IRQ" output
+			(at 127 35.56 0)
+			(uuid "3899a70d-61dd-4295-a3fb-f0d40a738b56")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "BT_MCU_NRST" output
+			(at 127 38.1 0)
+			(uuid "c253dbc6-48fb-4824-90a2-11c46ba0d9b6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "BT_MCU_RX" output
+			(at 127 40.64 0)
+			(uuid "449bcf9f-76ed-4bcf-af6c-f2c65bb8e0e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "BT_MCU_TX" output
+			(at 127 43.18 0)
+			(uuid "f46fa99d-5e68-4b83-8238-03fb4114d58f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc"
+					(page "7")
 				)
 			)
 		)
