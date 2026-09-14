@@ -1565,12 +1565,6 @@
 		(uuid "932fce5b-80e8-4a0d-b074-62988a0bbe24")
 	)
 	(junction
-		(at 175.26 102.87)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9f882b9b-ff2d-4fbf-9095-628228abacf5")
-	)
-	(junction
 		(at 109.22 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1593,12 +1587,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d379ae97-ca44-4867-8914-450c9266456b")
-	)
-	(junction
-		(at 180.34 105.41)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ef9cf77e-db49-4e0a-98c2-68b0155b4a89")
 	)
 	(junction
 		(at 100.33 113.03)
@@ -1738,7 +1726,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 105.41) (xy 177.8 105.41)
+			(xy 177.8 105.41) (xy 189.23 105.41)
 		)
 		(stroke
 			(width 0)
@@ -1945,16 +1933,6 @@
 			(type default)
 		)
 		(uuid "9903c983-5ff5-416c-959e-d80e61760f0b")
-	)
-	(wire
-		(pts
-			(xy 180.34 105.41) (xy 189.23 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "995d593c-7fe6-4bb3-8027-0fa8c25aff43")
 	)
 	(wire
 		(pts
@@ -2837,85 +2815,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 180.34 105.41 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "89aa4fb6-37e1-4c22-b4fe-23c62012797b")
-		(property "Reference" "TP407"
-			(at 182.88 107.4419 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "AMP_OUTP"
-			(at 182.88 109.9819 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 175.26 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 175.26 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 180.34 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5fc8fd6a-1d96-4434-909f-7619e1d2638a")
-		)
-		(instances
-			(project "psychokillerdeathcamp"
-				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/90636b6a-bd15-4f6b-9b9f-5f5f42de0752"
-					(reference "TP407")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 100.33 105.41 0)
 		(unit 1)
@@ -2991,85 +2890,6 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/90636b6a-bd15-4f6b-9b9f-5f5f42de0752"
 					(reference "R402")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 175.26 102.87 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ac755ace-5879-468b-8a2f-75ed549f86d8")
-		(property "Reference" "TP406"
-			(at 177.8 98.2979 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "AMP_OUTN"
-			(at 177.8 100.8379 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 180.34 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 180.34 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 175.26 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1da100eb-a1ce-4d3b-bc4f-8c78b70d9b87")
-		)
-		(instances
-			(project "psychokillerdeathcamp"
-				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/90636b6a-bd15-4f6b-9b9f-5f5f42de0752"
-					(reference "TP406")
 					(unit 1)
 				)
 			)

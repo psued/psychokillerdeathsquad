@@ -2472,12 +2472,6 @@
 		(uuid "63b38e36-7551-48b9-a5c2-6eb317f81d0c")
 	)
 	(junction
-		(at 200.66 69.85)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "66299852-4ce7-40aa-9ccb-17a83d35e1da")
-	)
-	(junction
 		(at 49.53 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2548,12 +2542,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b26fce52-b066-4871-8d94-37886c531109")
-	)
-	(junction
-		(at 66.04 69.85)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b879ca49-ce84-43f2-a41f-b0b3e6bdf6d0")
 	)
 	(junction
 		(at 143.51 21.59)
@@ -2667,16 +2655,6 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 69.85) (xy 66.04 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0db6e1b1-8e06-4cdc-8b81-4b21e88e291e")
-	)
-	(wire
-		(pts
 			(xy 15.24 74.93) (xy 15.24 85.09)
 		)
 		(stroke
@@ -2704,16 +2682,6 @@
 			(type default)
 		)
 		(uuid "12e7a577-e96a-42f6-b37a-43a663a1f37f")
-	)
-	(wire
-		(pts
-			(xy 200.66 69.85) (xy 200.66 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "12e87c00-9324-4e56-b137-efd91ba40e13")
 	)
 	(wire
 		(pts
@@ -2767,7 +2735,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 58.42) (xy 66.04 69.85)
+			(xy 66.04 58.42) (xy 66.04 82.55)
 		)
 		(stroke
 			(width 0)
@@ -3227,7 +3195,7 @@
 	)
 	(wire
 		(pts
-			(xy 200.66 58.42) (xy 200.66 69.85)
+			(xy 200.66 58.42) (xy 200.66 82.55)
 		)
 		(stroke
 			(width 0)
@@ -4814,85 +4782,6 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 200.66 69.85 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4b54e9a8-4104-4928-9996-5b1835edc1e9")
-		(property "Reference" "TP506"
-			(at 205.74 68.5799 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SD_FPGA_CLK"
-			(at 205.74 71.1199 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 200.66 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 200.66 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 200.66 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e26d6a4b-32db-4bd5-9dca-cdb015b46972")
-		)
-		(instances
-			(project "psychokillerdeathcamp"
-				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/404528d8-c76d-4c6e-b8be-63bef63459b3"
-					(reference "TP506")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
 		(at 73.66 50.8 180)
 		(unit 1)
 		(body_style 1)
@@ -5386,85 +5275,6 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/404528d8-c76d-4c6e-b8be-63bef63459b3"
 					(reference "CR502")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 66.04 69.85 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9580a268-d71b-471c-af0d-68f237e602fc")
-		(property "Reference" "TP502"
-			(at 71.12 68.5799 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SD_MCU_CLK"
-			(at 71.12 71.1199 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 66.04 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 66.04 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 66.04 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b32a0f16-9c61-47a5-a315-b458eaef11a1")
-		)
-		(instances
-			(project "psychokillerdeathcamp"
-				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/404528d8-c76d-4c6e-b8be-63bef63459b3"
-					(reference "TP502")
 					(unit 1)
 				)
 			)
