@@ -532,7 +532,7 @@
     "page_layout_descr_file": ""
   },
   "schematic": {
-    "annotate_start_num": 0,
+    "annotate_start_num": 200,
     "annotation": {
       "method": 0,
       "sort_order": 0
@@ -661,7 +661,7 @@
         "uuid": "bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc"
       }
     ],
-    "used_designators": "U1-4,U101-103,U401-402,U601,IC1-2,R1-12,R24-39,R101-112,R401-403,R501-515,R601-603,J1-2,J4-5,J101,J401,J501-502,C1-29,C37-40,C101-128,C401-402,C501-506,C601-603,#PWR1-15,#PWR20-23,#PWR101-109,#PWR401-404,#PWR501-503,#PWR601-602,L1-4,L101-104,FB1,FB101,CR1-4,CR501-504,TP1-20,TP101-107,TP401-409,TP501-511,TP601-606,JP1-4,JP101-104,LS401",
+    "used_designators": "U1-5,U601-602,J1-3,J202,J601-604,R1-12,R601-617,IC1-2,C1-31,C601-607,L1-4,#PWR1-19,#PWR232,#PWR601-602,FB1,LS1,TP1-6,TP601-614,CR601-604",
     "variants": []
   },
   "sheets": [
@@ -686,7 +686,7 @@
       "Audio"
     ],
     [
-      "404528d8-c76d-4c6e-b8be-63bef63459b3",
+      "838e0a7d-2533-4eaa-9ff9-76f163079bd3",
       "SD cards"
     ],
     [
