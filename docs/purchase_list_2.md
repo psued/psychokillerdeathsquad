@@ -4,7 +4,6 @@
 
 | Part                              | Quantity | Purpose                                            | Purchase                                                                                             |
 | --------------------------------- | -------: | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| FTSH-107-01-L-DV-K                |        4 | 2×7 STDC14 debug/programming headers               | <https://www.digikey.no/no/products/detail/samtec-inc/FTSH-107-01-L-DV-K/6678186>                    |
 | GMK316BJ106KL-T                   |       10 | 10µF 35V X5R 1206 buck input (C105/C106/C108/C120) | <https://www.digikey.no/no/products/detail/taiyo-yuden/GMK316BJ106KL-T/2217972>                      |
 | 865080545012                      |        5 | 100µF 35V SMD alu elec. input bulk (C103, C104)    | <https://www.digikey.no/no/products/detail/w%C3%BCrth-elektronik/865080545012/5728106>               |
 | T520A107M006ATE045                |        5 | 100µF 6.3V polymer Ta bulk (C208, C211, C212)      | <https://www.digikey.no/no/products/detail/kemet/T520A107M006ATE045/9373433>                         |
