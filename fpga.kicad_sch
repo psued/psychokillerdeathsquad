@@ -31414,7 +31414,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "01024b84-b266-4a74-9ce0-bdf418d94a14")
+			(uuid "01024b84-b266-4a74-9ce0-bdf418d94a15")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
@@ -31813,7 +31813,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "da79d91d-43a8-4bb2-add8-bebaaded4cd9")
+			(uuid "da79d91d-43a8-4bb2-add8-bebaaded4cda")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
@@ -32661,7 +32661,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Transistor_Power_Module:Infineon_AG-ECONO2"
+		(property "Footprint" "footprint_library:SHDR14W55P200_2X7_1665X630X640P"
 			(at 114.3 236.22 0)
 			(hide yes)
 			(show_name no)
@@ -34425,7 +34425,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "01024b84-b266-4a74-9ce0-bdf418d94a14")
+			(uuid "01024b84-b266-4a74-9ce0-bdf418d94a16")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
@@ -36540,7 +36540,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "e46f1009-8e49-41bb-936b-2791bb138a62")
+			(uuid "e46f1009-8e49-41bb-936b-2791bb138a63")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
@@ -36863,7 +36863,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f8050c36-d1b2-41d7-be9e-a68933fc4083")
+			(uuid "f8050c36-d1b2-41d7-be9e-a68933fc4084")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
@@ -37024,7 +37024,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "0de7082a-e3b0-4d7e-8b6b-ea25988679bb")
+			(uuid "0de7082a-e3b0-4d7e-8b6b-ea25988679bc")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
@@ -40218,7 +40218,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f8050c36-d1b2-41d7-be9e-a68933fc4083")
+			(uuid "f8050c36-d1b2-41d7-be9e-a68933fc4085")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
