@@ -7787,7 +7787,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder"
+		(property "Footprint" "footprint_library:IND_IHHP-0805ZH-01_VIS-M"
 			(at 133.35 113.03 0)
 			(hide yes)
 			(show_name no)
