@@ -31,3 +31,5 @@
 | CRCW080573K2FKEA                  |       10 | 73.2kΩ resistor (1 used)                           | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW080573K2FKEA/1175850>                     |
 | CRCW0805100KFKEA                  |       10 | 100kΩ resistor (5 used)                            | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW0805100KFKEA/1175865>                     |
 | CRCW0805121KFKEA                  |       10 | 121kΩ resistor (1 used)                            | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW0805121KFKEA/1175874>                     |
+| PRPC040SAAN-RC                    |        3 | 1x40 vertical pin strip gold 11.39mm 3A            | <https://www.digikey.no/no/products/detail/sullins-connector-solutions/PRPC040SAAN-RC/2775214>       |
+| NPC02SXON-RC                      |       10 | 2.54mm open-top shunt gold 3A                      | <https://www.digikey.no/no/products/detail/sullins-connector-solutions/NPC02SXON-RC/2618266>         |
