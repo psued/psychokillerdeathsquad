@@ -968,7 +968,7 @@
 				(justify left)
 			)
 		)
-		(pin "MISO" input
+		(pin "MISO" output
 			(at 52.07 102.87 270)
 			(uuid "f28147f4-f3fc-4c00-acea-c28241d47205")
 			(effects
@@ -978,7 +978,7 @@
 				(justify left)
 			)
 		)
-		(pin "MOSI" output
+		(pin "MOSI" input
 			(at 54.61 102.87 270)
 			(uuid "fd74de7a-1a6a-4dba-987d-b7158950448b")
 			(effects
@@ -1008,7 +1008,7 @@
 				(justify left)
 			)
 		)
-		(pin "AUX2" input
+		(pin "AUX2" output
 			(at 41.91 102.87 270)
 			(uuid "a17cd18e-054d-40e1-b553-6958b1aa552b")
 			(effects

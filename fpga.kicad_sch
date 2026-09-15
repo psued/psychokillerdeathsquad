@@ -5,6 +5,403 @@
 	(uuid "132b6f56-bca9-478d-af92-6ef3a27f75b0")
 	(paper "A3")
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x06"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x06"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x06_1_1"
+				(rectangle
+					(start -1.27 6.35)
+					(end 1.27 -8.89)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -7.62 0)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_02x07_Odd_Even"
 			(pin_names
 				(offset 1.016)
@@ -21381,7 +21778,7 @@
 	)
 	(text "VCCAUX avkobling"
 		(exclude_from_sim no)
-		(at 147.32 218.948 0)
+		(at 158.75 221.488 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -21391,7 +21788,7 @@
 	)
 	(text "VCCO_15 avkobling"
 		(exclude_from_sim no)
-		(at 146.05 245.11 0)
+		(at 162.306 244.602 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -21421,7 +21818,7 @@
 	)
 	(text "VCCO_14 avkobling"
 		(exclude_from_sim no)
-		(at 196.85 219.71 0)
+		(at 213.614 218.948 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -21431,7 +21828,7 @@
 	)
 	(text "VCCINT avkobling"
 		(exclude_from_sim no)
-		(at 146.558 186.182 0)
+		(at 160.274 186.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -21615,6 +22012,12 @@
 		(uuid "28520575-722e-4304-948d-d57c1b100e40")
 	)
 	(junction
+		(at 137.16 223.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "29194045-2004-44c2-a928-c6cdcb440805")
+	)
+	(junction
 		(at 152.4 231.14)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -21645,6 +22048,12 @@
 		(uuid "2d8e9527-d182-4c8a-a167-3384934a20d5")
 	)
 	(junction
+		(at 77.47 245.11)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2ecfa600-6d27-4fd7-8d63-4d7f3adf973c")
+	)
+	(junction
 		(at 322.58 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -21661,6 +22070,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "31834f57-2bfd-4b67-a484-225e019c6013")
+	)
+	(junction
+		(at 93.98 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3379a5ce-96dc-48a0-a5a7-2009d359fda5")
 	)
 	(junction
 		(at 133.35 231.14)
@@ -21765,6 +22180,18 @@
 		(uuid "4db9c6f5-5bb3-4386-9615-80f13610d5eb")
 	)
 	(junction
+		(at 287.02 19.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4fb0925f-0b55-4d65-b6c2-9ac8ad38bc5d")
+	)
+	(junction
+		(at 349.25 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "506d158e-7bc1-497d-9a18-fe832466fdc0")
+	)
+	(junction
 		(at 381 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -21831,6 +22258,12 @@
 		(uuid "5c62fad3-f6b2-4be9-b4d4-a095bc9b622c")
 	)
 	(junction
+		(at 266.7 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5c8cd394-86e2-4f37-84ac-4200fbda6033")
+	)
+	(junction
 		(at 139.7 223.52)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -21859,6 +22292,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "61e97724-f00d-4dfa-8e3b-02dc0bc7d091")
+	)
+	(junction
+		(at 96.52 173.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "64cc174c-27fb-4276-96f6-800cfae1b7c4")
 	)
 	(junction
 		(at 80.01 154.94)
@@ -21975,6 +22414,12 @@
 		(uuid "81d8433b-6622-461f-b807-2744536640e1")
 	)
 	(junction
+		(at 157.48 26.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "81fd7cfc-493c-4432-bd84-a8afefe14be3")
+	)
+	(junction
 		(at 80.01 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -22027,6 +22472,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8963e375-e9a0-45f5-9199-011dabc2b399")
+	)
+	(junction
+		(at 209.55 205.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "89dbfa25-b01c-4953-b308-428cacbc9fc7")
+	)
+	(junction
+		(at 325.12 29.21)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "89f396b5-a6bc-42b4-9137-8d7b95d0ce2d")
 	)
 	(junction
 		(at 363.22 95.25)
@@ -22119,6 +22576,12 @@
 		(uuid "9d1b84c3-f51b-4fc9-ae75-9caf24a0b032")
 	)
 	(junction
+		(at 266.7 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9e194108-657e-4643-ba74-20c014de961d")
+	)
+	(junction
 		(at 102.87 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -22141,6 +22604,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a31b295e-50d5-42a9-b7f5-56d2984be868")
+	)
+	(junction
+		(at 43.18 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a3768d66-fa90-4677-b4c5-c31858b62651")
 	)
 	(junction
 		(at 110.49 102.87)
@@ -22209,6 +22678,12 @@
 		(uuid "b4cd80c9-85cf-4426-9477-20e113bc5407")
 	)
 	(junction
+		(at 60.96 200.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b6997c7d-9b9c-4b28-99b2-c02a495569b9")
+	)
+	(junction
 		(at 158.75 209.55)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -22249,6 +22724,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bcaf4d24-4c31-445a-9214-5464b384799e")
+	)
+	(junction
+		(at 137.16 189.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bd318215-c8f1-4619-9d85-92221cc004b1")
 	)
 	(junction
 		(at 254 39.37)
@@ -22347,6 +22828,12 @@
 		(uuid "cb511a05-6d63-42e4-95ff-6bda36495b41")
 	)
 	(junction
+		(at 322.58 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cb719bbe-75ad-4cb8-b179-1272dc9576bf")
+	)
+	(junction
 		(at 29.21 147.32)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -22417,6 +22904,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dbdfecdb-3687-4a80-8a94-e4dc60f6d5ac")
+	)
+	(junction
+		(at 52.07 170.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dbff406d-9766-4673-b687-4cddfd4ec9a0")
+	)
+	(junction
+		(at 189.23 220.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dd180ee5-10db-4a32-bfa2-71c4cc9176f5")
 	)
 	(junction
 		(at 80.01 106.68)
@@ -22525,10 +23024,6 @@
 		(uuid "010ef8f9-e7fa-4390-a6cb-1906b1a9e5df")
 	)
 	(no_connect
-		(at 226.06 146.05)
-		(uuid "0149d6d4-1a81-4ae2-872e-b38841b43e20")
-	)
-	(no_connect
 		(at 398.78 196.85)
 		(uuid "01ec9eff-68fa-41dd-98d3-60f6e9c0edb5")
 	)
@@ -22627,10 +23122,6 @@
 	(no_connect
 		(at 124.46 95.25)
 		(uuid "2c389267-f3da-4270-bc18-99a5210e3292")
-	)
-	(no_connect
-		(at 226.06 143.51)
-		(uuid "2e8475ce-ab1e-4a3a-9538-a2ae7b8646c1")
 	)
 	(no_connect
 		(at 297.18 138.43)
@@ -22765,10 +23256,6 @@
 		(uuid "54180d2f-bdee-479d-8407-488dca326150")
 	)
 	(no_connect
-		(at 226.06 148.59)
-		(uuid "54e78e9f-3163-4808-b7b8-5c460dac12b5")
-	)
-	(no_connect
 		(at 124.46 102.87)
 		(uuid "551a38fe-fba9-42fb-858e-9490bf357f5d")
 	)
@@ -22871,10 +23358,6 @@
 	(no_connect
 		(at 124.46 67.31)
 		(uuid "803a5046-defb-4e9b-a15f-e19d46516066")
-	)
-	(no_connect
-		(at 226.06 140.97)
-		(uuid "808e4177-931e-4c8e-97c0-7e2aaad16b62")
 	)
 	(no_connect
 		(at 297.18 153.67)
@@ -23025,10 +23508,6 @@
 		(uuid "d27788f1-8968-4a03-a8b7-ebed12c16bc4")
 	)
 	(no_connect
-		(at 226.06 151.13)
-		(uuid "d2e70f03-42b2-49a3-a698-a85e87ae4e0c")
-	)
-	(no_connect
 		(at 226.06 74.93)
 		(uuid "d5dd3748-3344-4fa4-9e88-879ab04eb282")
 	)
@@ -23063,10 +23542,6 @@
 	(no_connect
 		(at 398.78 199.39)
 		(uuid "e55d6549-565d-44e6-8194-eda3119bd834")
-	)
-	(no_connect
-		(at 226.06 138.43)
-		(uuid "e868cd08-2517-496c-9998-6ff51a80ecf9")
 	)
 	(no_connect
 		(at 124.46 69.85)
@@ -23235,6 +23710,16 @@
 			(type default)
 		)
 		(uuid "06355a9f-1a59-421d-aaae-7eea6ea2e981")
+	)
+	(wire
+		(pts
+			(xy 60.96 200.66) (xy 60.96 242.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "071b0ec1-ce44-47bc-bdbc-3e12e9b32539")
 	)
 	(wire
 		(pts
@@ -23498,7 +23983,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 26.67) (xy 203.2 26.67)
+			(xy 147.32 26.67) (xy 157.48 26.67)
 		)
 		(stroke
 			(width 0)
@@ -23608,7 +24093,17 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 223.52) (xy 139.7 223.52)
+			(xy 266.7 87.63) (xy 279.4 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b8345f3-275a-49d2-9c17-4a3e4a7aea9f")
+	)
+	(wire
+		(pts
+			(xy 133.35 223.52) (xy 137.16 223.52)
 		)
 		(stroke
 			(width 0)
@@ -23668,6 +24163,16 @@
 	)
 	(wire
 		(pts
+			(xy 99.06 105.41) (xy 124.46 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1fd2f0e3-1d9d-442f-8ad8-b7195ce9bcfc")
+	)
+	(wire
+		(pts
 			(xy 290.83 38.1) (xy 290.83 39.37)
 		)
 		(stroke
@@ -23678,7 +24183,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 189.23) (xy 139.7 189.23)
+			(xy 133.35 189.23) (xy 137.16 189.23)
 		)
 		(stroke
 			(width 0)
@@ -23688,13 +24193,23 @@
 	)
 	(wire
 		(pts
-			(xy 322.58 81.28) (xy 322.58 83.82)
+			(xy 322.58 81.28) (xy 322.58 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "205a6026-982f-4cf8-a040-f042fa65d7e2")
+	)
+	(wire
+		(pts
+			(xy 287.02 19.05) (xy 350.52 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2442ba2e-0a91-4114-917f-3f9d9a35c5b2")
 	)
 	(wire
 		(pts
@@ -24298,6 +24813,16 @@
 	)
 	(wire
 		(pts
+			(xy 100.33 49.53) (xy 124.46 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "503be794-a7c7-4e2f-ae57-181bf55d2e6b")
+	)
+	(wire
+		(pts
 			(xy 80.01 137.16) (xy 80.01 139.7)
 		)
 		(stroke
@@ -24578,7 +25103,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 245.11) (xy 91.44 245.11)
+			(xy 53.34 245.11) (xy 77.47 245.11)
 		)
 		(stroke
 			(width 0)
@@ -24715,6 +25240,16 @@
 			(type default)
 		)
 		(uuid "6576cb65-552b-4ec7-a5a3-cec9214a0e54")
+	)
+	(wire
+		(pts
+			(xy 96.52 229.87) (xy 96.52 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6578af2f-ea99-4fdf-a673-060c10c49bca")
 	)
 	(wire
 		(pts
@@ -24858,6 +25393,16 @@
 	)
 	(wire
 		(pts
+			(xy 96.52 134.62) (xy 101.6 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70481760-4e98-4ec6-a098-d423ae4e7852")
+	)
+	(wire
+		(pts
 			(xy 146.05 223.52) (xy 152.4 223.52)
 		)
 		(stroke
@@ -24918,7 +25463,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 87.63) (xy 241.3 87.63)
+			(xy 238.76 87.63) (xy 266.7 87.63)
 		)
 		(stroke
 			(width 0)
@@ -25018,6 +25563,16 @@
 	)
 	(wire
 		(pts
+			(xy 322.58 82.55) (xy 322.58 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76dba261-9ca8-4b2b-8429-78273daa0327")
+	)
+	(wire
+		(pts
 			(xy 290.83 58.42) (xy 290.83 60.96)
 		)
 		(stroke
@@ -25045,6 +25600,16 @@
 			(type default)
 		)
 		(uuid "794cb124-1c43-44e1-8531-46a312467e64")
+	)
+	(wire
+		(pts
+			(xy 266.7 85.09) (xy 279.4 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79a5dcce-e03d-46db-b037-e1f2ec67fc69")
 	)
 	(wire
 		(pts
@@ -25088,7 +25653,7 @@
 	)
 	(wire
 		(pts
-			(xy 276.86 19.05) (xy 350.52 19.05)
+			(xy 276.86 19.05) (xy 287.02 19.05)
 		)
 		(stroke
 			(width 0)
@@ -25228,6 +25793,26 @@
 	)
 	(wire
 		(pts
+			(xy 189.23 220.98) (xy 191.77 220.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81cec594-46cb-4edf-9085-735e3d786e17")
+	)
+	(wire
+		(pts
+			(xy 101.6 46.99) (xy 100.33 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82b8e75c-0f06-4e8b-9f63-7d464f0e13f1")
+	)
+	(wire
+		(pts
 			(xy 158.75 209.55) (xy 165.1 209.55)
 		)
 		(stroke
@@ -25258,6 +25843,16 @@
 	)
 	(wire
 		(pts
+			(xy 93.98 247.65) (xy 100.33 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87e67fda-8ff7-490d-a6d1-4f599cfaf47f")
+	)
+	(wire
+		(pts
 			(xy 60.96 198.12) (xy 62.23 198.12)
 		)
 		(stroke
@@ -25275,6 +25870,16 @@
 			(type default)
 		)
 		(uuid "885d79ea-f4bf-4b71-8418-8ce5cee8d150")
+	)
+	(wire
+		(pts
+			(xy 101.6 134.62) (xy 101.6 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89d13ccf-1071-43c5-97f9-8ff5ce4a59e2")
 	)
 	(wire
 		(pts
@@ -25298,13 +25903,23 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 85.09) (xy 241.3 85.09)
+			(xy 238.76 85.09) (xy 266.7 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "8aec7701-cf53-45cc-89ad-8031c574c397")
+	)
+	(wire
+		(pts
+			(xy 96.52 173.99) (xy 96.52 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b633884-c986-4fb7-93d3-a7695e679780")
 	)
 	(wire
 		(pts
@@ -25778,16 +26393,6 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 105.41) (xy 124.46 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "af997349-d1fc-45f8-b188-580024c7a2c0")
-	)
-	(wire
-		(pts
 			(xy 290.83 48.26) (xy 290.83 49.53)
 		)
 		(stroke
@@ -25795,6 +26400,16 @@
 			(type default)
 		)
 		(uuid "b00b9264-be5a-4bc5-9d70-ca88704cd1c0")
+	)
+	(wire
+		(pts
+			(xy 43.18 62.23) (xy 52.07 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b037844e-89c4-418e-bd12-56253ac7a2e0")
 	)
 	(wire
 		(pts
@@ -25988,16 +26603,6 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 196.85) (xy 139.7 196.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bd17c3fe-0f16-4c81-a0ec-bb6954524741")
-	)
-	(wire
-		(pts
 			(xy 254 59.69) (xy 254 62.23)
 		)
 		(stroke
@@ -26068,23 +26673,13 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 170.18) (xy 80.01 170.18)
+			(xy 29.21 170.18) (xy 52.07 170.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c2a60a40-eb11-49f6-8360-5ce14ad22b2a")
-	)
-	(wire
-		(pts
-			(xy 100.33 49.53) (xy 124.46 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c3659cb7-7277-491c-a46a-c4e9fd3dcf56")
 	)
 	(wire
 		(pts
@@ -26208,6 +26803,16 @@
 	)
 	(wire
 		(pts
+			(xy 77.47 245.11) (xy 91.44 245.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7e93239-2522-440e-9454-a6fbae39499c")
+	)
+	(wire
+		(pts
 			(xy 194.31 250.19) (xy 194.31 251.46)
 		)
 		(stroke
@@ -26318,7 +26923,7 @@
 	)
 	(wire
 		(pts
-			(xy 345.44 40.64) (xy 353.06 40.64)
+			(xy 345.44 40.64) (xy 349.25 40.64)
 		)
 		(stroke
 			(width 0)
@@ -26338,7 +26943,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 247.65) (xy 100.33 247.65)
+			(xy 53.34 247.65) (xy 93.98 247.65)
 		)
 		(stroke
 			(width 0)
@@ -26385,6 +26990,16 @@
 			(type default)
 		)
 		(uuid "ce64d3de-cd39-46f4-901b-d0c0d1cff55e")
+	)
+	(wire
+		(pts
+			(xy 133.35 196.85) (xy 139.7 196.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cea4e2e6-d0f6-4810-91c1-e95894b07e6b")
 	)
 	(wire
 		(pts
@@ -26518,7 +27133,7 @@
 	)
 	(wire
 		(pts
-			(xy 313.69 29.21) (xy 364.49 29.21)
+			(xy 313.69 29.21) (xy 325.12 29.21)
 		)
 		(stroke
 			(width 0)
@@ -26598,7 +27213,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 229.87) (xy 87.63 229.87)
+			(xy 53.34 229.87) (xy 96.52 229.87)
 		)
 		(stroke
 			(width 0)
@@ -26618,7 +27233,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 198.12) (xy 60.96 242.57)
+			(xy 60.96 198.12) (xy 60.96 200.66)
 		)
 		(stroke
 			(width 0)
@@ -26635,6 +27250,16 @@
 			(type default)
 		)
 		(uuid "dd5fe2ae-3d0e-41bc-8a64-69fee7638c55")
+	)
+	(wire
+		(pts
+			(xy 349.25 40.64) (xy 353.06 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd8f5d70-a7cb-474b-94e4-159cc60d9e10")
 	)
 	(wire
 		(pts
@@ -26658,7 +27283,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.674 220.98) (xy 191.77 220.98)
+			(xy 185.674 220.98) (xy 189.23 220.98)
 		)
 		(stroke
 			(width 0)
@@ -26705,6 +27330,16 @@
 			(type default)
 		)
 		(uuid "e3b70fe9-6b34-4b2d-91f3-9699f047087c")
+	)
+	(wire
+		(pts
+			(xy 137.16 223.52) (xy 139.7 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3f2566a-0cd6-41b2-b41e-d35690f03e0f")
 	)
 	(wire
 		(pts
@@ -26755,6 +27390,16 @@
 			(type default)
 		)
 		(uuid "e74524db-c45a-4828-8449-c42d06b9bdbd")
+	)
+	(wire
+		(pts
+			(xy 137.16 189.23) (xy 139.7 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e88f82b6-f8e5-4bb1-882c-40b7c908344f")
 	)
 	(wire
 		(pts
@@ -26858,6 +27503,16 @@
 	)
 	(wire
 		(pts
+			(xy 52.07 170.18) (xy 80.01 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecc77ec8-e7d5-491e-bedc-2e5ac970cc36")
+	)
+	(wire
+		(pts
 			(xy 378.46 95.25) (xy 381 95.25)
 		)
 		(stroke
@@ -26935,6 +27590,16 @@
 			(type default)
 		)
 		(uuid "f0be09e9-5f41-4967-ae85-a9ee21fddfbb")
+	)
+	(wire
+		(pts
+			(xy 325.12 29.21) (xy 364.49 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1ad002d-f771-4f2f-949a-8b3bc777f66d")
 	)
 	(wire
 		(pts
@@ -27088,7 +27753,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 62.23) (xy 40.64 62.23)
+			(xy 40.64 62.23) (xy 43.18 62.23)
 		)
 		(stroke
 			(width 0)
@@ -27135,6 +27800,16 @@
 			(type default)
 		)
 		(uuid "fb6be12c-bcbb-4a0d-a572-e74314996bd4")
+	)
+	(wire
+		(pts
+			(xy 157.48 26.67) (xy 203.2 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb7fef7a-b47e-4897-977e-d96fa5bb60cf")
 	)
 	(wire
 		(pts
@@ -27200,7 +27875,7 @@
 		(uuid "b954dfbf-ab12-4b60-87d5-50f1870381b7")
 	)
 	(label "HSYNC"
-		(at 241.3 85.09 0)
+		(at 279.4 85.09 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -27210,7 +27885,7 @@
 		(uuid "cd267332-4737-49b5-bfc3-4309d0330e88")
 	)
 	(label "VSYNC"
-		(at 241.3 87.63 0)
+		(at 279.4 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -27256,7 +27931,7 @@
 		(uuid "203a5107-82ab-4cd7-912e-335a1c92fa22")
 	)
 	(hierarchical_label "AUX2"
-		(shape input)
+		(shape output)
 		(at 248.92 135.89 0)
 		(effects
 			(font
@@ -27267,7 +27942,7 @@
 		(uuid "24d37376-5554-4f0c-99b4-a7e4c64240de")
 	)
 	(hierarchical_label "MISO"
-		(shape input)
+		(shape output)
 		(at 116.84 146.05 180)
 		(effects
 			(font
@@ -27347,7 +28022,7 @@
 		(uuid "ac0f8222-1267-4982-854b-6bf663936374")
 	)
 	(hierarchical_label "MOSI"
-		(shape output)
+		(shape input)
 		(at 116.84 148.59 180)
 		(effects
 			(font
@@ -27427,6 +28102,85 @@
 			(justify left)
 		)
 		(uuid "faea5d30-531d-4628-9b7e-19a0c8844bda")
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 77.47 245.11 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "01182956-e25b-4dcb-bba8-acc1df447e41")
+		(property "Reference" "TP213"
+			(at 80.01 240.5379 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 80.01 243.0779 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 82.55 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 82.55 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 77.47 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f7c0001e-683e-494e-9986-786a2d859c2a")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP213")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -27867,7 +28621,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Package_LCC:PLCC-44_16.6x16.6mm_P1.27mm"
+		(property "Footprint" "Package_BGA:BGA-256_17.0x17.0mm_Layout16x16_P1.0mm_Ball0.5mm_Pad0.4mm_NSMD"
 			(at 175.26 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -29641,6 +30395,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 322.58 82.55 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2fe17f5e-e324-4df6-a983-9cfc3ff76e1b")
+		(property "Reference" "TP207"
+			(at 327.66 81.2799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 327.66 83.8199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 322.58 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 322.58 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 322.58 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "01024b84-b266-4a74-9ce0-bdf418d94a14")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP207")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 60.96 191.77 0)
 		(unit 1)
@@ -29650,10 +30483,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "31e69b40-b9e0-4d16-b4e1-5831e55beff8")
 		(property "Reference" "R204"
-			(at 63.5 190.4999 0)
+			(at 62.23 190.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29664,7 +30496,7 @@
 			)
 		)
 		(property "Value" "330"
-			(at 63.5 193.0399 0)
+			(at 62.484 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29717,6 +30549,85 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
 					(reference "R204")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 96.52 173.99 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "32ffd014-ffe7-40e1-94e0-1e83ab9a5e5c")
+		(property "Reference" "TP210"
+			(at 101.6 172.7199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 101.6 175.2599 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 96.52 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 96.52 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 96.52 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0a5caf86-4f76-46ff-9b87-a58e94ee3790")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP210")
 					(unit 1)
 				)
 			)
@@ -30360,6 +31271,161 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 87.63 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "46ae138b-59ed-4051-bf73-07af85ae8071")
+		(property "Reference" "TP215"
+			(at 269.24 89.6619 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 269.24 92.2019 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 261.62 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 261.62 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "da79d91d-43a8-4bb2-add8-bebaaded4cd9")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP215")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 60.96 200.66 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "47d22891-63a0-4a19-9216-e991403412dc")
+		(property "Reference" "TP209"
+			(at 54.864 195.58 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 54.61 198.12 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 60.96 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "01024b84-b266-4a74-9ce0-bdf418d94a14")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP209")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Polarized")
 		(at 194.31 246.38 0)
 		(unit 1)
@@ -30435,6 +31501,85 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
 					(reference "C208")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 137.16 189.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4c9e98fc-e7dc-4c89-8c12-74c65eca5a5c")
+		(property "Reference" "TP202"
+			(at 139.7 184.6579 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 139.7 187.1979 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 137.16 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e46f1009-8e49-41bb-936b-2791bb138a62")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP202")
 					(unit 1)
 				)
 			)
@@ -30601,6 +31746,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 85.09 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "51c4d4ff-e774-465f-a1fd-6c77bde625fe")
+		(property "Reference" "TP214"
+			(at 269.24 80.5179 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 269.24 83.0579 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 271.78 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 271.78 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "da79d91d-43a8-4bb2-add8-bebaaded4cd9")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP214")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 72.39 191.77 0)
 		(unit 1)
@@ -30610,10 +31834,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "5536deff-609b-4547-93e4-2c3defb5fac5")
 		(property "Reference" "R205"
-			(at 74.93 190.4999 0)
+			(at 73.66 190.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -30624,7 +31847,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 74.93 193.0399 0)
+			(at 73.914 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -31763,6 +32986,164 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 209.55 205.74 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "635e5685-7274-4acd-823e-b7584560c545")
+		(property "Reference" "TP206"
+			(at 214.63 204.4699 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 214.63 207.0099 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 209.55 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 209.55 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 209.55 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fd3642a9-c788-44dd-9ba0-7a5858d6a9d8")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP206")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 325.12 29.21 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "663c0f15-b60c-497d-b580-ec0de5f0f038")
+		(property "Reference" "TP218"
+			(at 327.66 24.6379 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 327.66 27.1779 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 330.2 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 325.12 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f8050c36-d1b2-41d7-be9e-a68933fc4083")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP218")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 91.44 191.77 0)
 		(unit 1)
@@ -31772,10 +33153,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "67022271-0d04-4aaa-b5ce-fc5e9143bc12")
 		(property "Reference" "R208"
-			(at 93.98 190.4999 0)
+			(at 92.71 190.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -31786,7 +33166,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 93.98 193.0399 0)
+			(at 92.71 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -31839,6 +33219,84 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
 					(reference "R208")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 93.98 247.65 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "69590786-b776-4ece-8590-78c5521aade8")
+		(property "Reference" "TP212"
+			(at 84.328 249.682 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 84.328 252.222 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 93.98 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8f293166-b89d-4732-b285-8389e716fae7")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP212")
 					(unit 1)
 				)
 			)
@@ -31938,7 +33396,7 @@
 		(dnp no)
 		(uuid "6cc1389e-8c94-4c0d-b3e7-5392c9f2d427")
 		(property "Reference" "R206"
-			(at 82.55 190.4999 0)
+			(at 81.28 190.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -31949,7 +33407,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 82.55 193.0399 0)
+			(at 81.28 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -32157,6 +33615,85 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
 					(reference "#PWR0220")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 137.16 223.52 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6feb5e3b-5e77-4537-934e-e2e7d54bfddf")
+		(property "Reference" "TP203"
+			(at 139.7 218.9479 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 139.7 221.4879 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 223.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 223.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 137.16 223.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0de7082a-e3b0-4d7e-8b6b-ea25988679bb")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP203")
 					(unit 1)
 				)
 			)
@@ -32821,6 +34358,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 52.07 170.18 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7d00a709-778a-416e-8fdb-e60975561bb3")
+		(property "Reference" "TP208"
+			(at 54.61 172.2119 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 54.61 174.7519 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 46.99 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 46.99 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 52.07 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "01024b84-b266-4a74-9ce0-bdf418d94a14")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP208")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 314.96 50.8 90)
 		(unit 1)
@@ -32934,7 +34550,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Package_LCC:PLCC-44_16.6x16.6mm_P1.27mm"
+		(property "Footprint" "Package_BGA:BGA-256_17.0x17.0mm_Layout16x16_P1.0mm_Ball0.5mm_Pad0.4mm_NSMD"
 			(at 347.98 168.91 0)
 			(hide yes)
 			(show_name no)
@@ -34619,6 +36235,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 43.18 62.23 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9b03a5c9-be0c-4cae-b002-6fdd1045490b")
+		(property "Reference" "TP205"
+			(at 45.72 64.2619 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 45.72 66.8019 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 38.1 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 43.18 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6dc6c01b-3255-46fc-b085-9425d2fba334")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP205")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 165.1 227.33 0)
 		(unit 1)
@@ -34772,6 +36467,85 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
 					(reference "#PWR0204")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 157.48 26.67 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9ec3be7c-bb9d-40fa-ae58-772fa8de642a")
+		(property "Reference" "TP201"
+			(at 160.02 22.0979 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 160.02 24.6379 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 157.48 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e46f1009-8e49-41bb-936b-2791bb138a62")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP201")
 					(unit 1)
 				)
 			)
@@ -35022,6 +36796,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 287.02 19.05 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a3ac77bb-761d-460d-a365-9087ea1e7b3d")
+		(property "Reference" "TP217"
+			(at 289.56 14.4779 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 289.56 17.0179 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 292.1 19.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 292.1 19.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 287.02 19.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f8050c36-d1b2-41d7-be9e-a68933fc4083")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP217")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 322.58 66.04 0)
 		(unit 1)
@@ -35098,6 +36951,85 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
 					(reference "R236")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 189.23 220.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a704cc72-10f3-440a-a207-001496e8b06c")
+		(property "Reference" "TP204"
+			(at 191.77 216.4079 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 191.77 218.9479 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.31 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 189.23 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0de7082a-e3b0-4d7e-8b6b-ea25988679bb")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP204")
 					(unit 1)
 				)
 			)
@@ -35776,7 +37708,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Package_LCC:PLCC-44_16.6x16.6mm_P1.27mm"
+		(property "Footprint" "Package_BGA:BGA-256_17.0x17.0mm_Layout16x16_P1.0mm_Ball0.5mm_Pad0.4mm_NSMD"
 			(at 54.61 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -37254,7 +39186,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Package_LCC:PLCC-44_16.6x16.6mm_P1.27mm"
+		(property "Footprint" "Package_BGA:BGA-256_17.0x17.0mm_Layout16x16_P1.0mm_Ball0.5mm_Pad0.4mm_NSMD"
 			(at 15.24 237.49 0)
 			(hide yes)
 			(show_name no)
@@ -38219,6 +40151,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 349.25 40.64 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d06a7752-e592-4a4c-98d4-2f4570183aa7")
+		(property "Reference" "TP219"
+			(at 351.79 42.6719 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 351.79 45.2119 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 344.17 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 344.17 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 349.25 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f8050c36-d1b2-41d7-be9e-a68933fc4083")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "TP219")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 100.33 191.77 0)
 		(unit 1)
@@ -38228,10 +40239,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d2fc7bac-660a-4d97-9b44-aa1ea4bb9d46")
 		(property "Reference" "R209"
-			(at 102.87 190.4999 0)
+			(at 101.6 190.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -38242,7 +40252,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 102.87 193.0399 0)
+			(at 101.6 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -38884,6 +40894,100 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
 					(reference "R235")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x06")
+		(at 231.14 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e5cd6c7e-db24-48f1-8000-f0d8c285a826")
+		(property "Reference" "J203"
+			(at 233.68 143.5099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x06"
+			(at 233.68 146.0499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical"
+			(at 231.14 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 231.14 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 231.14 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "5"
+			(uuid "ea41603b-cef7-4744-9be8-5ee797c0e7a6")
+		)
+		(pin "3"
+			(uuid "63241f2b-7a97-41e9-929a-5f0a3fc56ed1")
+		)
+		(pin "4"
+			(uuid "7ece3bac-ead3-4f23-8edf-70febe26b2fc")
+		)
+		(pin "6"
+			(uuid "aa587713-ee28-45f5-b4b6-a55065798234")
+		)
+		(pin "2"
+			(uuid "3482e374-7ac9-4928-8509-f663a8186ec3")
+		)
+		(pin "1"
+			(uuid "3c17880a-677f-4eea-a9f3-d0c18da5b825")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "J203")
 					(unit 1)
 				)
 			)
@@ -40341,30 +42445,28 @@
 			"6c73f4d3-4e45-4650-bac3-5e18d0e6565b" "6f0bede0-3cbb-4284-8cff-ccc76237b469"
 			"7622b6e6-38e0-4a5d-b364-d9eda05cae0a" "76db52ab-da7f-4705-93e6-525f6592fb72"
 			"7e89f400-46bd-4367-a65b-9dc60e75a550" "8054ae41-20c4-475b-a749-05d7e2a49695"
-			"ae35d183-9d30-4fee-a629-4c9e2e853f66" "bd17c3fe-0f16-4c81-a0ec-bb6954524741"
-			"d2ff51bd-1431-4d56-ac89-09ca08fb7935" "db765c92-4f1f-478b-b7b0-e953657bb74d"
-			"ea8aa257-743f-4aac-a228-c59b4b5469ba" "eac7cb36-7da8-44b3-a9d3-6abf5b7dd54d"
-			"f514a942-5371-4d25-ad95-5c00a435a292"
+			"ae35d183-9d30-4fee-a629-4c9e2e853f66" "d2ff51bd-1431-4d56-ac89-09ca08fb7935"
+			"db765c92-4f1f-478b-b7b0-e953657bb74d" "ea8aa257-743f-4aac-a228-c59b4b5469ba"
+			"eac7cb36-7da8-44b3-a9d3-6abf5b7dd54d" "f514a942-5371-4d25-ad95-5c00a435a292"
 		)
 	)
 	(group ""
 		(uuid "5f0b9524-f63d-4343-8b13-89ed1dcb954e")
 		(members "054784e0-e87a-4bf4-82ef-17d0270b71a7" "09223019-03f5-466d-b76c-eaaed9a74299"
 			"13381dfa-bc5b-49e6-a403-51500b90cb62" "2ad10378-c51c-4d2a-943f-334dbd4c78e4"
-			"2bf17277-9695-45ad-ad73-0a46c5e4917e" "2c6f7d7b-28a2-4265-8193-379a83ae5203"
-			"58a7cd1d-be78-4251-b476-ddf601d0f97f" "5c3134c8-e224-4e21-a7c9-da0571b7fcbe"
-			"5d107010-0108-4cc4-b172-d86315bbb49c" "63a8e39f-365a-41ea-8ba5-85a82061a9f5"
-			"7b9e4c6d-5196-4f3d-a330-ad70e19da279" "80fd5ec2-2147-4c01-abe8-8a492ef88b0d"
-			"81d8433b-6622-461f-b807-2744536640e1" "8412ba10-b6d8-4d89-8313-d349ca74c2b1"
-			"859a558f-f197-48f5-a54d-cccbbcd8653b" "8963e375-e9a0-45f5-9199-011dabc2b399"
-			"8cb31e53-193f-4bd7-97da-a105e90e72ef" "98f91686-c283-4f56-a9be-73a52e78d7ae"
-			"9a3fec15-4cbf-47c1-97d3-8c7f71136138" "a6622777-5bb0-42e3-8900-f771c5a5f39b"
-			"b2bc3db7-6422-46a4-b64e-308baad76a43" "b2cc943b-5e79-4041-8d6c-c4bbc9b5bb1e"
-			"b469b9ba-f0a8-4e02-b33b-a7a3e8462fa7" "b6dda28e-6c83-41e1-b5f3-c120a91bbc39"
-			"c7da2428-b07e-4115-893c-42bc00c7affa" "caa3dc65-59a6-4a1d-bb79-c6c2bf8c428b"
-			"ce64d3de-cd39-46f4-901b-d0c0d1cff55e" "d8430bc3-2474-40dc-a520-ab8795487f4f"
-			"dbb92f72-00cc-4ba7-9b7c-451426acb54c" "ecc2903f-13a2-41cc-9131-44abd3b12a14"
-			"f3cb7316-194e-4a55-83e9-22617a40686f"
+			"2c6f7d7b-28a2-4265-8193-379a83ae5203" "58a7cd1d-be78-4251-b476-ddf601d0f97f"
+			"5c3134c8-e224-4e21-a7c9-da0571b7fcbe" "5d107010-0108-4cc4-b172-d86315bbb49c"
+			"63a8e39f-365a-41ea-8ba5-85a82061a9f5" "7b9e4c6d-5196-4f3d-a330-ad70e19da279"
+			"80fd5ec2-2147-4c01-abe8-8a492ef88b0d" "81d8433b-6622-461f-b807-2744536640e1"
+			"8412ba10-b6d8-4d89-8313-d349ca74c2b1" "859a558f-f197-48f5-a54d-cccbbcd8653b"
+			"8963e375-e9a0-45f5-9199-011dabc2b399" "8cb31e53-193f-4bd7-97da-a105e90e72ef"
+			"98f91686-c283-4f56-a9be-73a52e78d7ae" "9a3fec15-4cbf-47c1-97d3-8c7f71136138"
+			"a6622777-5bb0-42e3-8900-f771c5a5f39b" "b2bc3db7-6422-46a4-b64e-308baad76a43"
+			"b2cc943b-5e79-4041-8d6c-c4bbc9b5bb1e" "b469b9ba-f0a8-4e02-b33b-a7a3e8462fa7"
+			"b6dda28e-6c83-41e1-b5f3-c120a91bbc39" "c7da2428-b07e-4115-893c-42bc00c7affa"
+			"caa3dc65-59a6-4a1d-bb79-c6c2bf8c428b" "ce64d3de-cd39-46f4-901b-d0c0d1cff55e"
+			"d8430bc3-2474-40dc-a520-ab8795487f4f" "dbb92f72-00cc-4ba7-9b7c-451426acb54c"
+			"ecc2903f-13a2-41cc-9131-44abd3b12a14" "f3cb7316-194e-4a55-83e9-22617a40686f"
 		)
 	)
 	(group ""
