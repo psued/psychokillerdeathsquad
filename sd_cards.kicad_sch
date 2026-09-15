@@ -4067,7 +4067,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "12058546-0a9d-44d7-84e1-2b7b6fa842f6")
-		(property "Reference" "CR603"
+		(property "Reference" "CR503"
 			(at 222.25 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4140,7 +4140,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "CR603")
+					(reference "CR503")
 					(unit 1)
 				)
 			)
@@ -4157,7 +4157,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1a973fcb-a990-4086-9678-583e6f586e65")
-		(property "Reference" "R604"
+		(property "Reference" "R501"
 			(at 68.5799 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4221,7 +4221,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R604")
+					(reference "R501")
 					(unit 1)
 				)
 			)
@@ -4239,7 +4239,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2a39ef85-e1a4-4ead-92d3-95a0fd1cf983")
-		(property "Reference" "J603"
+		(property "Reference" "J502"
 			(at 172.085 34.29 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4328,7 +4328,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "J603")
+					(reference "J502")
 					(unit 1)
 				)
 			)
@@ -4345,7 +4345,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2c81fc72-6b73-411a-a533-c9f903b1f539")
-		(property "Reference" "R607"
+		(property "Reference" "R504"
 			(at 106.68 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4420,7 +4420,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R607")
+					(reference "R504")
 					(unit 1)
 				)
 			)
@@ -4437,7 +4437,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2d7c6154-eea7-4aae-8e0b-04c856507787")
-		(property "Reference" "R617"
+		(property "Reference" "R514"
 			(at 279.4 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4512,7 +4512,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R617")
+					(reference "R514")
 					(unit 1)
 				)
 			)
@@ -4529,7 +4529,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "39450bb4-0006-469c-b4b3-91afa89024fa")
-		(property "Reference" "TP608"
+		(property "Reference" "TP502"
 			(at 62.992 19.558 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4590,7 +4590,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "TP608")
+					(reference "TP502")
 					(unit 1)
 				)
 			)
@@ -4607,7 +4607,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3e8c09f5-771c-4e05-ad4e-e666eaa492c3")
-		(property "Reference" "R611"
+		(property "Reference" "R508"
 			(at 203.1999 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4671,7 +4671,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R611")
+					(reference "R508")
 					(unit 1)
 				)
 			)
@@ -4689,7 +4689,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "46e962a0-ae56-4ad2-b396-c465af28e96b")
-		(property "Reference" "CR604"
+		(property "Reference" "CR504"
 			(at 222.25 95.25 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4762,7 +4762,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "CR604")
+					(reference "CR504")
 					(unit 1)
 				)
 			)
@@ -4779,7 +4779,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "523b5a3a-b741-4d0d-a4e6-42e9fc059620")
-		(property "Reference" "TP609"
+		(property "Reference" "TP503"
 			(at 75.438 52.832 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4840,7 +4840,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "TP609")
+					(reference "TP503")
 					(unit 1)
 				)
 			)
@@ -4858,7 +4858,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5e8efb54-41ee-4fcd-845f-8232ce94c7c7")
-		(property "Reference" "TP610"
+		(property "Reference" "TP504"
 			(at 95.25 54.6099 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4919,7 +4919,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "TP610")
+					(reference "TP504")
 					(unit 1)
 				)
 			)
@@ -5015,7 +5015,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "78a56de7-0cd2-4f93-9ad8-f3024e200c52")
-		(property "Reference" "C606"
+		(property "Reference" "C503"
 			(at 180.34 25.3999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5037,7 +5037,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 177.4952 30.48 0)
 			(hide yes)
 			(show_name no)
@@ -5079,7 +5079,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "C606")
+					(reference "C503")
 					(unit 1)
 				)
 			)
@@ -5096,7 +5096,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8c7f7d62-0f79-4369-99bb-3a7cd925bef3")
-		(property "Reference" "R616"
+		(property "Reference" "R513"
 			(at 267.97 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5171,7 +5171,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R616")
+					(reference "R513")
 					(unit 1)
 				)
 			)
@@ -5189,7 +5189,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9208abc7-70a7-47d8-95cb-d30bcfff155d")
-		(property "Reference" "CR602"
+		(property "Reference" "CR502"
 			(at 87.63 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5262,7 +5262,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "CR602")
+					(reference "CR502")
 					(unit 1)
 				)
 			)
@@ -5279,7 +5279,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9ddbea28-7745-4017-b4fb-934415d262b2")
-		(property "Reference" "R615"
+		(property "Reference" "R512"
 			(at 252.73 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5354,7 +5354,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R615")
+					(reference "R512")
 					(unit 1)
 				)
 			)
@@ -5372,7 +5372,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a17a9b6f-3005-4a8a-901c-fc79c609060e")
-		(property "Reference" "C605"
+		(property "Reference" "C502"
 			(at 58.42 25.3999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5436,7 +5436,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "C605")
+					(reference "C502")
 					(unit 1)
 				)
 			)
@@ -5453,7 +5453,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b17f0af1-1fe5-410f-a85a-b2b1d34c8797")
-		(property "Reference" "TP613"
+		(property "Reference" "TP507"
 			(at 210.058 52.832 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5514,7 +5514,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "TP613")
+					(reference "TP507")
 					(unit 1)
 				)
 			)
@@ -5531,7 +5531,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "be5528b9-2acc-4831-9207-ca749dc7702f")
-		(property "Reference" "R612"
+		(property "Reference" "R509"
 			(at 208.28 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5606,7 +5606,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R612")
+					(reference "R509")
 					(unit 1)
 				)
 			)
@@ -5623,7 +5623,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c2f1da4b-89be-4f80-b9da-9f086ebffe76")
-		(property "Reference" "R610"
+		(property "Reference" "R507"
 			(at 146.05 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5698,7 +5698,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R610")
+					(reference "R507")
 					(unit 1)
 				)
 			)
@@ -5715,7 +5715,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c449f1d6-a586-4cdb-b080-ecfb4e3a9341")
-		(property "Reference" "R605"
+		(property "Reference" "R502"
 			(at 73.66 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5790,7 +5790,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R605")
+					(reference "R502")
 					(unit 1)
 				)
 			)
@@ -5808,7 +5808,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c4fe4e2b-9c8b-4b68-a9ab-29e35fa97502")
-		(property "Reference" "TP607"
+		(property "Reference" "TP501"
 			(at 52.07 76.9619 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5869,7 +5869,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "TP607")
+					(reference "TP501")
 					(unit 1)
 				)
 			)
@@ -5886,7 +5886,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c752c849-323b-4876-8439-e8bec95c3760")
-		(property "Reference" "R606"
+		(property "Reference" "R503"
 			(at 92.71 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5950,7 +5950,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R606")
+					(reference "R503")
 					(unit 1)
 				)
 			)
@@ -5967,7 +5967,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d6def678-4b8d-4fc7-90f7-8015c4b03ab9")
-		(property "Reference" "R609"
+		(property "Reference" "R506"
 			(at 133.35 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6042,7 +6042,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R609")
+					(reference "R506")
 					(unit 1)
 				)
 			)
@@ -6060,7 +6060,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e0b81904-38df-4c7f-b4f6-db586c5edd2a")
-		(property "Reference" "TP614"
+		(property "Reference" "TP508"
 			(at 229.87 54.6099 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6121,7 +6121,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "TP614")
+					(reference "TP508")
 					(unit 1)
 				)
 			)
@@ -6138,7 +6138,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e1edd55f-643d-463c-a076-6a9883732acb")
-		(property "Reference" "TP612"
+		(property "Reference" "TP506"
 			(at 197.612 19.558 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6199,7 +6199,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "TP612")
+					(reference "TP506")
 					(unit 1)
 				)
 			)
@@ -6216,7 +6216,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e5386537-36c1-4537-a1e6-e14202099b04")
-		(property "Reference" "R608"
+		(property "Reference" "R505"
 			(at 118.11 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6291,7 +6291,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R608")
+					(reference "R505")
 					(unit 1)
 				)
 			)
@@ -6309,7 +6309,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e7a944c2-f738-402c-881f-8342a07894b8")
-		(property "Reference" "C604"
+		(property "Reference" "C501"
 			(at 45.72 25.3999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6331,7 +6331,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 42.8752 30.48 0)
 			(hide yes)
 			(show_name no)
@@ -6373,7 +6373,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "C604")
+					(reference "C501")
 					(unit 1)
 				)
 			)
@@ -6390,7 +6390,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e8945ac1-0ed9-4335-9af5-b0430dde56ec")
-		(property "Reference" "R613"
+		(property "Reference" "R510"
 			(at 227.33 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6465,7 +6465,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R613")
+					(reference "R510")
 					(unit 1)
 				)
 			)
@@ -6482,7 +6482,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "eafd1ff7-3eda-4c18-8628-cc933f1cc447")
-		(property "Reference" "R614"
+		(property "Reference" "R511"
 			(at 240.03 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6557,7 +6557,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "R614")
+					(reference "R511")
 					(unit 1)
 				)
 			)
@@ -6575,7 +6575,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ee1f3cbc-18b1-48c3-b6c8-3b7f0277e047")
-		(property "Reference" "J602"
+		(property "Reference" "J501"
 			(at 37.465 34.29 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6664,7 +6664,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "J602")
+					(reference "J501")
 					(unit 1)
 				)
 			)
@@ -6682,7 +6682,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f0e07416-7d42-41f4-8ab3-15c30a5a9485")
-		(property "Reference" "C607"
+		(property "Reference" "C504"
 			(at 193.04 25.3999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6746,7 +6746,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "C607")
+					(reference "C504")
 					(unit 1)
 				)
 			)
@@ -6842,7 +6842,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f4ef1668-2291-4e19-9712-502eb6559bd5")
-		(property "Reference" "TP611"
+		(property "Reference" "TP505"
 			(at 186.69 76.9619 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6903,7 +6903,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "TP611")
+					(reference "TP505")
 					(unit 1)
 				)
 			)
@@ -6921,7 +6921,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fdc94bf0-f988-4137-84c6-ba33ddbf14f5")
-		(property "Reference" "CR601"
+		(property "Reference" "CR501"
 			(at 86.36 95.25 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6994,7 +6994,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/838e0a7d-2533-4eaa-9ff9-76f163079bd3"
-					(reference "CR601")
+					(reference "CR501")
 					(unit 1)
 				)
 			)
