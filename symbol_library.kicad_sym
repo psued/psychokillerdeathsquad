@@ -2646,71 +2646,33 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "S25FL127S"
-		(pin_names
-			(offset 1.016)
-		)
+	(symbol "Oscillator"
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "U"
-			(at -6.604 6.858 0)
+		(property "Reference" "U2"
+			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Value" "S25FL127S"
-			(at -10.414 -18.034 0)
+		(property "Value" ""
+			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 0 -11.43 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-S25FL127S_128_Mb_(16_MB)_3.0V_SPI_Flash_Memory-DataSheet-v18_00-EN.pdf"
-			(at 0 -13.97 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "128 Mbit (16 MByte) 3.0 V SPI / Dual / Quad SPI NOR flash memory"
-			(at 3.302 -16.51 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_keywords" "SPI QSPI Quad SPI NOR flash memory nonvolatile"
+		(property "Footprint" ""
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2721,7 +2683,7 @@
 				)
 			)
 		)
-		(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* SOIC*5.28x5.23mm*P1.27mm* WSON*6x5mm*P1.27mm*"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2732,22 +2694,35 @@
 				)
 			)
 		)
-		(symbol "S25FL127S_1_1"
+		(property "Description" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Oscillator_0_1"
 			(rectangle
-				(start -17.78 6.35)
-				(end 7.62 -16.51)
+				(start -6.35 -1.27)
+				(end 6.35 -13.97)
 				(stroke
-					(width 0.254)
-					(type solid)
+					(width 0)
+					(type default)
 				)
 				(fill
-					(type background)
+					(type none)
 				)
 			)
+		)
+		(symbol "Oscillator_1_1"
 			(pin input line
-				(at -20.32 0 0)
+				(at 8.89 -3.81 180)
 				(length 2.54)
-				(name "~{S}"
+				(name "E/D"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2761,12 +2736,11 @@
 						)
 					)
 				)
-				(alternate "~{CS}" input line)
 			)
-			(pin bidirectional line
-				(at -20.32 -3.81 0)
+			(pin power_in line
+				(at 8.89 -6.35 180)
 				(length 2.54)
-				(name "DQ1"
+				(name "GND"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2780,13 +2754,11 @@
 						)
 					)
 				)
-				(alternate "MISO" output line)
-				(alternate "SO" output line)
 			)
-			(pin bidirectional line
-				(at -20.32 -7.62 0)
+			(pin output line
+				(at 8.89 -8.89 180)
 				(length 2.54)
-				(name "~{W}/V~{PP}/DQ2"
+				(name "OUTPUT"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2800,12 +2772,11 @@
 						)
 					)
 				)
-				(alternate "~{WP}" input line)
 			)
 			(pin power_in line
-				(at -17.78 -11.43 180)
+				(at 8.89 -11.43 180)
 				(length 2.54)
-				(name "VSS"
+				(name "VCC"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2820,10 +2791,220 @@
 					)
 				)
 			)
-			(pin bidirectional line
-				(at 10.16 -7.62 180)
-				(length 2.54)
-				(name "DQ0"
+		)
+		(embedded_fonts no)
+	)
+	(symbol "S25FL256LAGMFI003"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "IC"
+			(at 41.91 7.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Value" "S25FL256LAGMFI003"
+			(at 41.91 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm"
+			(at 41.91 -94.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "http://www.cypress.com/file/316171/download"
+			(at 41.91 -194.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "CYPRESS SEMICONDUCTOR - S25FL256LAGMFI003 - FLASH MEMORY, 256MBIT, SOIC-16"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "2.65"
+			(at 41.91 -394.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "727-S25FL256LAGMFI03"
+			(at 41.91 -494.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Infineon-Technologies/S25FL256LAGMFI003?qs=JseWDPAoSPYBUrLEMYi29A%3D%3D"
+			(at 41.91 -594.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Infineon"
+			(at 41.91 -694.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "S25FL256LAGMFI003"
+			(at 41.91 -794.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(symbol "S25FL256LAGMFI003_1_1"
+			(rectangle
+				(start 5.08 2.54)
+				(end 40.64 -20.32)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(pin passive line
+				(at 0 0 0)
+				(length 5.08)
+				(name "IO3_/_RESET#"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -2.54 0)
+				(length 5.08)
+				(name "VCC"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -5.08 0)
+				(length 5.08)
+				(name "RESET#"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -7.62 0)
+				(length 5.08)
+				(name "NC_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -10.16 0)
+				(length 5.08)
+				(name "NC_2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2837,13 +3018,11 @@
 						)
 					)
 				)
-				(alternate "MOSI" input line)
-				(alternate "SI" input line)
 			)
-			(pin input clock
-				(at 10.16 -3.81 180)
-				(length 2.54)
-				(name "C"
+			(pin passive line
+				(at 0 -12.7 0)
+				(length 5.08)
+				(name "RFU_1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2857,12 +3036,11 @@
 						)
 					)
 				)
-				(alternate "SCK" input clock)
 			)
-			(pin bidirectional line
-				(at 10.16 0 180)
-				(length 2.54)
-				(name "~{HOLD}/DQ3"
+			(pin passive line
+				(at 0 -15.24 0)
+				(length 5.08)
+				(name "CS#"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2876,12 +3054,11 @@
 						)
 					)
 				)
-				(alternate "~{RESET}/DQ3" bidirectional line)
 			)
-			(pin power_in line
-				(at 10.16 3.81 180)
-				(length 2.54)
-				(name "VCC"
+			(pin passive line
+				(at 0 -17.78 0)
+				(length 5.08)
+				(name "SO_/_IO1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2889,6 +3066,150 @@
 					)
 				)
 				(number "8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 45.72 -17.78 180)
+				(length 5.08)
+				(name "WP#_/_IO2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 45.72 -15.24 180)
+				(length 5.08)
+				(name "VSS"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 45.72 -12.7 180)
+				(length 5.08)
+				(name "DNU_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 45.72 -10.16 180)
+				(length 5.08)
+				(name "DNU_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 45.72 -7.62 180)
+				(length 5.08)
+				(name "DNU_3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 45.72 -5.08 180)
+				(length 5.08)
+				(name "RFU_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 45.72 -2.54 180)
+				(length 5.08)
+				(name "SI_/_IO0"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 45.72 0 180)
+				(length 5.08)
+				(name "SCK"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "16"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -5323,67 +5644,6 @@
 							(size 1.016 1.016)
 						)
 					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
-	(symbol "s25fl127s"
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "U"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
 				)
 			)
 		)

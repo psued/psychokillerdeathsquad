@@ -20980,7 +20980,7 @@
 					(justify left top)
 				)
 			)
-			(property "Footprint" "SOIC127P1030X265-16N"
+			(property "Footprint" "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm"
 				(at 41.91 -94.92 0)
 				(show_name no)
 				(do_not_autoplace no)
