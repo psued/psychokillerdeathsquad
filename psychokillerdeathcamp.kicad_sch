@@ -958,56 +958,6 @@
 				(justify left top)
 			)
 		)
-		(pin "Blå" output
-			(at 19.05 40.64 180)
-			(uuid "8b8cd7db-748d-423f-b318-fea1aacffebe")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "Grønn" output
-			(at 19.05 43.18 180)
-			(uuid "5d020562-bbaf-4454-808a-b1b99c29c4e5")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "HSYNC" output
-			(at 19.05 52.07 180)
-			(uuid "becedd65-15f2-459d-a233-dae9e7ad0db8")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "Rød" output
-			(at 19.05 45.72 180)
-			(uuid "9dfda534-5524-4574-9453-6d8780f645e9")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "VSYNC" output
-			(at 19.05 54.61 180)
-			(uuid "4b0fafc6-5d36-4969-9c0d-044b84d78f67")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "CS" input
 			(at 59.69 102.87 270)
 			(uuid "772e648a-1755-496b-9944-2c7b4a8ebd1a")
