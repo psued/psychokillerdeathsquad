@@ -17,8 +17,8 @@
 | C0805C100J5GACTU                  |       10 | 10pF 50V C0G 0805 crystal load (2 used)            | <https://www.digikey.no/no/products/result?keywords=C0805C100J5GACTU>                                |
 | C0805C332K5RACTU                  |       10 | 3.3nF 50V X7R 0805 soft-start (2 used)             | <https://www.digikey.no/no/products/result?keywords=C0805C332K5RACTU>                                |
 | C0805C220J5GACTU                  |       10 | 22pF 50V C0G 0805 feedforward (1 used)             | <https://www.digikey.no/no/products/result?keywords=C0805C220J5GACTU>                                |
-| TPS54294PWP                       |        1 | Buck converter (1.8V, 3.3V)                        | <https://www.digikey.no/no/products/detail/texas-instruments/tps54294pwp/2812688>                    |
-| TPS54325PWP                       |        2 | Buck converter (1.0V, 5V)                          | <https://www.digikey.no/no/products/detail/texas-instruments/tps54325pwp/2232812>                    |
+| TPS54294PWP                       |        3 | Buck converter (1.8V, 3.3V)                        | <https://www.digikey.no/no/products/detail/texas-instruments/tps54294pwp/2812688>                    |
+| TPS54325PWP                       |        5 | Buck converter (1.0V, 5V)                          | <https://www.digikey.no/no/products/detail/texas-instruments/tps54325pwp/2232812>                    |
 | LSXND6060YEL1R5NMG                |        4 | 1.5µH 8.2A I_sat 4.2A I_rms inductor               | <https://www.digikey.no/no/products/detail/taiyo-yuden/LSXND6060YEL1R5NMG/16660219>                  |
 | LSXND6060YEL2R2NMG                |        3 | 2.2µH 6.4A I_sat 3.6A I_rms inductor               | <https://www.digikey.no/no/products/detail/taiyo-yuden/LSXND6060YEL2R2NMG/16659254>                  |
 | LSXND6060YEL3R3NMG                |        3 | 3.3µH 5.6A I_sat 3.3A I_rms inductor               | <https://www.digikey.no/no/products/detail/taiyo-yuden/LSXND6060YEL3R3NMG/16658594>                  |
