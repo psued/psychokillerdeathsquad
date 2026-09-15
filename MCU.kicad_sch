@@ -1003,7 +1003,10 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:Crystal_GND24"
+		(symbol "Device:Crystal"
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -1014,25 +1017,23 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "Y"
-				(at 3.175 5.08 0)
+				(at 0 3.81 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "Crystal_GND24"
-				(at 3.175 3.175 0)
+			(property "Value" "Crystal"
+				(at 0 -3.81 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Footprint" ""
@@ -1057,31 +1058,9 @@
 					)
 				)
 			)
-			(property "Description" "Four pin crystal, GND on pins 2 and 4"
+			(property "Description" "Two pin crystal"
 				(at 0 0 0)
 				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property private "KLC_S3.3" "The rectangle is not a symbol body but a graphical element"
-				(at 0 -12.7 0)
-				(show_name yes)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property private "KLC_S4.1" "Some pins are on 50mil grid to make the symbol small"
-				(at 0 -15.24 0)
-				(show_name yes)
 				(do_not_autoplace no)
 				(hide yes)
 				(effects
@@ -1112,10 +1091,10 @@
 					)
 				)
 			)
-			(symbol "Crystal_GND24_0_1"
+			(symbol "Crystal_0_1"
 				(polyline
 					(pts
-						(xy -2.54 2.286) (xy -2.54 3.556) (xy 2.54 3.556) (xy 2.54 2.286)
+						(xy -2.54 0) (xy -1.905 0)
 					)
 					(stroke
 						(width 0)
@@ -1127,31 +1106,7 @@
 				)
 				(polyline
 					(pts
-						(xy -2.54 0) (xy -2.032 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -2.286) (xy -2.54 -3.556) (xy 2.54 -3.556) (xy 2.54 -2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.032 -1.27) (xy -2.032 1.27)
+						(xy -1.905 -1.27) (xy -1.905 1.27)
 					)
 					(stroke
 						(width 0.508)
@@ -1174,31 +1129,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -3.81) (xy 0 -3.556)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.032 0) (xy 2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.032 -1.27) (xy 2.032 1.27)
+						(xy 1.905 -1.27) (xy 1.905 1.27)
 					)
 					(stroke
 						(width 0.508)
@@ -1208,8 +1139,20 @@
 						(type none)
 					)
 				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 1.905 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 			)
-			(symbol "Crystal_GND24_1_1"
+			(symbol "Crystal_1_1"
 				(pin passive line
 					(at -3.81 0 0)
 					(length 1.27)
@@ -1229,9 +1172,9 @@
 					)
 				)
 				(pin passive line
-					(at 0 -5.08 90)
+					(at 3.81 0 180)
 					(length 1.27)
-					(name "G"
+					(name "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1239,43 +1182,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 1.27)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 90)
-					(length 1.27)
-					(hide yes)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4904,16 +4810,6 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 144.78) (xy 151.13 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "392d19fc-326b-48e5-82f6-6bde6ee43b19")
-	)
-	(wire
-		(pts
 			(xy 161.29 128.27) (xy 161.29 139.7)
 		)
 		(stroke
@@ -6052,7 +5948,7 @@
 		)
 		(uuid "ff955c94-35ff-431c-b78f-e7d3ae5476c2")
 	)
-	(hierarchical_label "MOSI"
+	(hierarchical_label "CS"
 		(shape output)
 		(at 181.61 44.45 90)
 		(effects
@@ -6073,6 +5969,17 @@
 			(justify left)
 		)
 		(uuid "0bfeb8f1-9dea-4536-865b-7d30a76e92bf")
+	)
+	(hierarchical_label "AUX2"
+		(shape input)
+		(at 219.71 105.41 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1ce51dcf-74a7-499e-84cf-703f5cdeac67")
 	)
 	(hierarchical_label "AMP_LRCLK"
 		(shape output)
@@ -6096,6 +6003,17 @@
 		)
 		(uuid "39936f61-f685-4bfc-832f-98991780e3b9")
 	)
+	(hierarchical_label "FRAME_SYNC"
+		(shape input)
+		(at 214.63 105.41 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "479c237e-8120-4d64-9dda-36170d1708f1")
+	)
 	(hierarchical_label "SD_MCU_DAT0"
 		(shape bidirectional)
 		(at 237.49 44.45 90)
@@ -6117,6 +6035,17 @@
 			(justify left)
 		)
 		(uuid "67e58512-2dea-436c-81e4-2557fb73e764")
+	)
+	(hierarchical_label "IRQ{slash}event"
+		(shape output)
+		(at 212.09 105.41 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6c1c5ad7-5a59-44d6-86e7-deeb3ada792b")
 	)
 	(hierarchical_label "SD_MCU_DAT3"
 		(shape bidirectional)
@@ -6162,6 +6091,17 @@
 		)
 		(uuid "968f0ce2-942f-426b-9c61-52c11ece18dc")
 	)
+	(hierarchical_label "READY{slash}STATUS"
+		(shape input)
+		(at 209.55 105.41 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "972ef049-144a-4adc-8d65-3605889b2849")
+	)
 	(hierarchical_label "SD_MCU_CMD"
 		(shape bidirectional)
 		(at 207.01 105.41 270)
@@ -6194,6 +6134,17 @@
 			(justify left)
 		)
 		(uuid "c489dbeb-4d67-43cb-ac30-c0349b148f94")
+	)
+	(hierarchical_label "AUX1"
+		(shape output)
+		(at 217.17 105.41 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e1b785be-d1ef-4e59-8291-14c5b18d59a9")
 	)
 	(hierarchical_label "AMP_SD_MODE"
 		(shape output)
@@ -6337,7 +6288,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Molex:Molex_Micro-Fit_3.0_43045-0800_2x04_P3.00mm_Horizontal"
+		(property "Footprint" ""
 			(at 233.68 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6681,84 +6632,6 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314"
 					(reference "C311")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 151.13 147.32 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "518c9358-1919-44e3-85dc-e00893ceb43b")
-		(property "Reference" "#PWR0232"
-			(at 151.13 153.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 151.13 152.4 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 151.13 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 151.13 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 151.13 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "36502c0c-ba1a-45db-8e48-188246d80384")
-		)
-		(instances
-			(project "psychokillerdeathcamp"
-				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314"
-					(reference "#PWR0232")
 					(unit 1)
 				)
 			)
@@ -7213,7 +7086,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Molex:Molex_Micro-Fit_3.0_43045-0800_2x04_P3.00mm_Horizontal"
+		(property "Footprint" ""
 			(at 264.16 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -7732,7 +7605,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder"
+		(property "Footprint" ""
 			(at 133.35 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -7871,7 +7744,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Crystal_GND24")
+		(lib_id "Device:Crystal")
 		(at 151.13 139.7 0)
 		(unit 1)
 		(body_style 1)
@@ -7883,7 +7756,7 @@
 		(fields_autoplaced yes)
 		(uuid "b76da0d3-3eae-4fde-944c-1953eb0e0ef9")
 		(property "Reference" "Y301"
-			(at 151.13 130.81 0)
+			(at 151.13 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7893,7 +7766,7 @@
 			)
 		)
 		(property "Value" "16 MHz"
-			(at 151.13 133.35 0)
+			(at 151.13 134.62 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7902,7 +7775,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_SMD_Abracon_ABM8AIG-4Pin_3.2x2.5mm"
+		(property "Footprint" ""
 			(at 151.13 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -7924,7 +7797,7 @@
 				)
 			)
 		)
-		(property "Description" "Four pin crystal, GND on pins 2 and 4"
+		(property "Description" "Two pin crystal"
 			(at 151.13 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -7940,12 +7813,6 @@
 		)
 		(pin "1"
 			(uuid "9952375d-d467-4a34-9322-7beb7ad3361a")
-		)
-		(pin "4"
-			(uuid "72057800-b475-4dbb-a066-265e142fd8d9")
-		)
-		(pin "3"
-			(uuid "34e3d11a-8beb-415d-b93f-ea671af52d35")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
