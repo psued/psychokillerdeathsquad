@@ -41653,7 +41653,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "SIT8008BI-21-33E-100.000000"
 			(at 90.17 96.52 0)
 			(show_name no)
 			(do_not_autoplace no)
