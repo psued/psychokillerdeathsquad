@@ -32194,7 +32194,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm"
 			(at 96.52 141.91 0)
 			(hide yes)
 			(show_name no)

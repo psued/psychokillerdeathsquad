@@ -7550,7 +7550,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_Taiyo-Yuden_NR-60xx_HandSoldering"
 			(at 203.2 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -8278,7 +8278,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_Taiyo-Yuden_NR-60xx_HandSoldering"
 			(at 203.2 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -8357,7 +8357,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_Taiyo-Yuden_NR-60xx_HandSoldering"
 			(at 203.2 25.4 0)
 			(hide yes)
 			(show_name no)
@@ -10570,7 +10570,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_Taiyo-Yuden_NR-60xx_HandSoldering"
 			(at 74.93 83.82 0)
 			(hide yes)
 			(show_name no)
