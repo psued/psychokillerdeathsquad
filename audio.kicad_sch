@@ -1144,7 +1144,7 @@
 						(type none)
 					)
 				)
-				(pin unspecified line
+				(pin input line
 					(at 0 0 0)
 					(length 7.62)
 					(name "DIN"
@@ -1162,7 +1162,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin input line
 					(at 0 -2.54 0)
 					(length 7.62)
 					(name "GAIN_SLOT"
@@ -1198,7 +1198,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin input line
 					(at 0 -7.62 0)
 					(length 7.62)
 					(name "*SD_MODE"
@@ -1324,24 +1324,6 @@
 						)
 					)
 				)
-				(pin power_out line
-					(at 50.8 -15.24 180)
-					(length 7.62)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin no_connect line
 					(at 50.8 -12.7 180)
 					(length 7.62)
@@ -1378,7 +1360,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin input line
 					(at 50.8 -7.62 180)
 					(length 7.62)
 					(name "LRCLK"
@@ -1414,7 +1396,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin input line
 					(at 50.8 -2.54 180)
 					(length 7.62)
 					(name "BCLK"
@@ -1432,7 +1414,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at 50.8 0 180)
 					(length 7.62)
 					(name "EPAD"
@@ -1443,6 +1425,26 @@
 						)
 					)
 					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "MAX98357AETE+T_1_1"
+				(pin power_in line
+					(at 50.8 -15.24 180)
+					(length 7.62)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
 						(effects
 							(font
 								(size 1.27 1.27)

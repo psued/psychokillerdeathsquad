@@ -20842,7 +20842,7 @@
 		)
 		(uuid "0a6b5796-cca3-4955-9d6f-bc5059d3edc8")
 	)
-	(hierarchical_label "SD_FPGA_DATA1"
+	(hierarchical_label "SD_FPGA_DAT1"
 		(shape bidirectional)
 		(at 246.38 97.79 0)
 		(effects
@@ -20946,7 +20946,7 @@
 		)
 		(uuid "b3a8a740-d244-44ab-88df-031db8367e7e")
 	)
-	(hierarchical_label "SD_FPGA_DATA2"
+	(hierarchical_label "SD_FPGA_DAT2"
 		(shape bidirectional)
 		(at 246.38 100.33 0)
 		(effects
@@ -20969,7 +20969,7 @@
 		)
 		(uuid "c5fba13a-be9d-4a03-9687-f4f1e3bf810a")
 	)
-	(hierarchical_label "SD_FPGA_DATA0"
+	(hierarchical_label "SD_FPGA_DAT0"
 		(shape bidirectional)
 		(at 246.38 95.25 0)
 		(effects
@@ -20993,7 +20993,7 @@
 		)
 		(uuid "fa28e955-cb25-49d3-beff-cac9baa23295")
 	)
-	(hierarchical_label "SD_FPGA_DATA3"
+	(hierarchical_label "SD_FPGA_DAT3"
 		(shape bidirectional)
 		(at 246.38 102.87 0)
 		(effects
@@ -35797,7 +35797,7 @@
 				)
 			)
 		)
-		(property "Value" "ESD5Zxx"
+		(property "Value" "ESDA051-1JY"
 			(at 372.11 82.55 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35818,7 +35818,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/esd5z2.5t1-d.pdf"
+		(property "Datasheet" ""
 			(at 372.11 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -35829,7 +35829,7 @@
 				)
 			)
 		)
-		(property "Description" "ESD Protection Diode, SOD-523"
+		(property "Description" ""
 			(at 372.11 86.36 0)
 			(hide yes)
 			(show_name no)

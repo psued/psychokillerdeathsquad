@@ -1218,7 +1218,7 @@
 				(justify right)
 			)
 		)
-		(pin "SD_FPGA_DATA0" bidirectional
+		(pin "SD_FPGA_DAT0" bidirectional
 			(at 85.09 31.75 0)
 			(uuid "98d6593b-aeca-429b-823c-f7ff92be524e")
 			(effects
@@ -1228,7 +1228,7 @@
 				(justify right)
 			)
 		)
-		(pin "SD_FPGA_DATA1" bidirectional
+		(pin "SD_FPGA_DAT1" bidirectional
 			(at 85.09 29.21 0)
 			(uuid "4875969c-ab08-4463-9cae-9367b131fd61")
 			(effects
@@ -1238,7 +1238,7 @@
 				(justify right)
 			)
 		)
-		(pin "SD_FPGA_DATA2" bidirectional
+		(pin "SD_FPGA_DAT2" bidirectional
 			(at 85.09 26.67 0)
 			(uuid "430fd785-8e9d-4c11-89d2-3d7d9ac0b0e2")
 			(effects
@@ -1248,7 +1248,7 @@
 				(justify right)
 			)
 		)
-		(pin "SD_FPGA_DATA3" bidirectional
+		(pin "SD_FPGA_DAT3" bidirectional
 			(at 85.09 24.13 0)
 			(uuid "1ca2ed2e-e412-4bad-848d-1f5aa2edcacd")
 			(effects
