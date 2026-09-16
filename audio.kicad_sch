@@ -2404,7 +2404,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 109.22 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -2483,7 +2483,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
 			(at 119.38 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -2769,7 +2769,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
 			(at 170.18 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -3090,7 +3090,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 106.68 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -3169,7 +3169,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
 			(at 115.57 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -3327,7 +3327,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
 			(at 167.64 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -3406,7 +3406,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
 			(at 172.72 87.63 0)
 			(hide yes)
 			(show_name no)

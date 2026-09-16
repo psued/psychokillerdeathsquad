@@ -23958,12 +23958,6 @@
 		(uuid "61e97724-f00d-4dfa-8e3b-02dc0bc7d091")
 	)
 	(junction
-		(at 96.52 173.99)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "64cc174c-27fb-4276-96f6-800cfae1b7c4")
-	)
-	(junction
 		(at 80.01 154.94)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -27173,16 +27167,6 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 229.87) (xy 96.52 173.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6578af2f-ea99-4fdf-a673-060c10c49bca")
-	)
-	(wire
-		(pts
 			(xy 29.21 160.02) (xy 29.21 162.56)
 		)
 		(stroke
@@ -27903,7 +27887,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 173.99) (xy 96.52 134.62)
+			(xy 96.52 134.62) (xy 96.52 229.87)
 		)
 		(stroke
 			(width 0)
@@ -30237,7 +30221,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
 			(at 82.55 245.11 0)
 			(hide yes)
 			(show_name no)
@@ -32699,7 +32683,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
 			(at 322.58 87.63 0)
 			(hide yes)
 			(show_name no)
@@ -32820,85 +32804,6 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
 					(reference "R204")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 96.52 173.99 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "32ffd014-ffe7-40e1-94e0-1e83ab9a5e5c")
-		(property "Reference" "TP210"
-			(at 101.6 172.7199 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 101.6 175.2599 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 96.52 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 96.52 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 96.52 173.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0a5caf86-4f76-46ff-9b87-a58e94ee3790")
-		)
-		(instances
-			(project "psychokillerdeathcamp"
-				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
-					(reference "TP210")
 					(unit 1)
 				)
 			)
@@ -33575,7 +33480,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 261.62 87.63 0)
 			(hide yes)
 			(show_name no)
@@ -33651,7 +33556,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 60.96 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -33811,7 +33716,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 142.24 189.23 0)
 			(hide yes)
 			(show_name no)
@@ -34050,7 +33955,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 271.78 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -35450,7 +35355,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
 			(at 209.55 210.82 0)
 			(hide yes)
 			(show_name no)
@@ -35620,7 +35525,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 330.2 29.21 0)
 			(hide yes)
 			(show_name no)
@@ -35779,7 +35684,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 88.9 247.65 0)
 			(hide yes)
 			(show_name no)
@@ -36176,7 +36081,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 142.24 223.52 0)
 			(hide yes)
 			(show_name no)
@@ -38711,7 +38616,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 38.1 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -39193,7 +39098,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 292.1 19.05 0)
 			(hide yes)
 			(show_name no)
@@ -39354,7 +39259,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 194.31 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -42639,7 +42544,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 344.17 40.64 0)
 			(hide yes)
 			(show_name no)
