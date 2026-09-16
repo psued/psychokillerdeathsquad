@@ -31,11 +31,12 @@
 | CRCW080573K2FKEA                  |       10 | 73.2kΩ resistor (1 used)                           | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW080573K2FKEA/1175850>                     |
 | CRCW0805100KFKEA                  |       10 | 100kΩ resistor (5 used)                            | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW0805100KFKEA/1175865>                     |
 | CRCW0805121KFKEA                  |       10 | 121kΩ resistor (1 used)                            | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW0805121KFKEA/1175874>                     |
-| PRPC040SAAN-RC                    |        3 | 1x40 vertical pin strip gold 11.39mm 3A            | <https://www.digikey.no/no/products/detail/sullins-connector-solutions/PRPC040SAAN-RC/2775214>       |
+| PRPC040SAAN-RC                    |        4 | 1x40 vertical pin strip gold 11.39mm 3A            | <https://www.digikey.no/no/products/detail/sullins-connector-solutions/PRPC040SAAN-RC/2775214>       |
 | NPC02SXON-RC                      |       10 | 2.54mm open-top shunt gold 3A                      | <https://www.digikey.no/no/products/detail/sullins-connector-solutions/NPC02SXON-RC/2618266>         |
 | LTST-C171KGKT                     |       10 | Green SMD LED Vf 2V                                | <https://www.digikey.no/no/products/detail/liteon/LTST-C171KGKT/386799>                              |
 | LTST-C171KFKT                     |       10 | Orange SMD LED Vf 2V                               | <https://www.digikey.no/no/products/detail/liteon/LTST-C171KFKT/386797>                              |
 | CRCW08051K00FKEA                  |       10 | 1kΩ resistor (for LEDs, 5 used)                    | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW08051K00FKEA/1175637>                     |
-| FTSH-107-01-L-DV-K-A              |        4 | STDC14 connector header                            | <https://www.digikey.no/en/products/detail/samtec-inc/FTSH-107-01-L-DV-K-A/7443623>                  |
+| FTSH-107-01-L-DV-K-A              |        6 | STDC14 connector header                            | <https://www.digikey.no/en/products/detail/samtec-inc/FTSH-107-01-L-DV-K-A/7443623>                  |
 | ESDA051-1JY                       |       10 | VGA ESD protection                                 | <https://www.digikey.no/en/products/detail/stmicroelectronics/ESDA051-1JY/11686344>                  |
 | CRCW080547K0FKEA                  |       10 | 47kΩ resistor (controller, 2 used)                 | <https://www.digikey.no/en/products/detail/vishay-dale/CRCW080547K0FKEA/1175827>                     |
+| 30-02682                          |    2 (m) | Controller cable                                   | <https://www.digikey.no/no/products/detail/tensility-international-corp/30-02682/25703646>           |
