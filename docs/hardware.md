@@ -36,6 +36,10 @@ The STM32U545 uses an Abracon ABM8W-16.0000MHZ-8-D1X-T3 16 MHz crystal with init
 
 No LSE is used.
 
+### Heartbeat LED
+
+PD13 drives an active-high heartbeat LED through a current-limiting resistor to ground. The LED is initially off and is used by firmware to indicate normal MCU operation.
+
 ## Audio
 
 SAI1 connects to a MAX98357AETE+T Class D amplifier driving a Visaton SC 5.9 ND 4 Ω speaker.
@@ -52,7 +56,7 @@ The amplifier uses the 5 V rail and requires no MCLK. `AUDIO_EN` is low during s
 `GAIN_SLOT` supports all five gain configurations through resistor/link population:
 
 | GAIN_SLOT | Gain |
-| --- | ---: |
+| --- | --- |
 | 100 kΩ ±5% to GND | 15 dB |
 | Direct to GND | 12 dB |
 | Unconnected | 9 dB |
@@ -104,7 +108,7 @@ Interface behavior is documented in [`fpga.md`](fpga.md).
 Two passive controllers connect directly to STM32U545 GPIO.
 
 | Signal | Connector pin | Controller 1 | Controller 2 |
-| --- | ---: | --- | --- |
+| --- | --- | --- | --- |
 | UP | 1 | PE2 | PE8 |
 | DOWN | 2 | PE3 | PE9 |
 | LEFT | 3 | PE4 | PE10 |
@@ -112,11 +116,13 @@ Two passive controllers connect directly to STM32U545 GPIO.
 | A | 5 | PE6 | PE12 |
 | B | 6 | PE7 | PE13 |
 | GND | 7 | | |
-| GND | 8 | | |
+| WIRED_PRESENT | 8 | PD10 | PD11 |
 
-Inputs are active low with external pull-ups and input protection, and use no MCU internal pulls. A pressed switch connects its input to ground. Exact pull-up and protection values are not yet fixed.
+Button inputs are active low with external pull-ups and input protection, and use no MCU internal pulls. A pressed switch connects its input to ground.
 
-The controllers use Molex Micro-Fit 3.0 connectors and 8-core LAPP 28208 cable.
+`WIRED_PRESENT` is active low with an external 10 kΩ pull-up to 3.3 V and uses no MCU internal pull. Connector pin 8 is connected to ground in the controller, so the signal is low while the wired controller is connected.
+
+The controllers use Molex Micro-Fit 3.0 connectors.
 
 ## Bluetooth
 
@@ -155,11 +161,8 @@ Both wireless controllers use the same STM32WB1MMC pin mapping.
 | RIGHT | PB4 | 33 |
 | A | PB5 | 26 |
 | B | PB6 | 27 |
-| STATUS_LED | PA8 | 10 |
 
 The six button inputs are active low with external 47 kΩ pull-ups. Pressing a button connects its input to ground.
-
-`STATUS_LED` is active high and initially off. PA8 drives the LED through a current-limiting resistor to ground. The resistor is selected for a low indicator current suitable for battery operation.
 
 Each wireless controller is powered directly from two AAA alkaline cells through a JS102011SCQN power switch. No regulator or charger is used.
 
