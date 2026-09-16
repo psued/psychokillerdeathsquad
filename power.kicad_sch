@@ -3824,6 +3824,12 @@
 		(uuid "6e029e0b-82c5-4425-b556-a8a74be6830c")
 	)
 	(junction
+		(at 175.26 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "70ded467-42be-49f8-88ff-674e1d7db791")
+	)
+	(junction
 		(at 123.19 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3882,6 +3888,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "916ab752-6332-4b84-9193-93a59b889d9f")
+	)
+	(junction
+		(at 165.1 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9cd0c7ad-fdba-4428-93da-7ced6ae6431b")
 	)
 	(junction
 		(at 215.9 106.68)
@@ -4229,6 +4241,16 @@
 	)
 	(wire
 		(pts
+			(xy 175.26 138.43) (xy 173.99 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1330a6c5-3bc2-468c-ace2-1c4192b17c12")
+	)
+	(wire
+		(pts
 			(xy 107.95 76.2) (xy 118.11 76.2)
 		)
 		(stroke
@@ -4569,7 +4591,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 135.89) (xy 161.29 135.89)
+			(xy 154.94 135.89) (xy 175.26 135.89)
 		)
 		(stroke
 			(width 0)
@@ -4969,6 +4991,16 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 138.43) (xy 166.37 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60f9596d-de0e-4315-a798-4394f391f0b7")
+	)
+	(wire
+		(pts
 			(xy 154.94 133.35) (xy 177.8 133.35)
 		)
 		(stroke
@@ -5256,6 +5288,16 @@
 			(type default)
 		)
 		(uuid "7d4942f4-081a-4445-ba2e-3f869b3f9fe8")
+	)
+	(wire
+		(pts
+			(xy 175.26 135.89) (xy 175.26 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d53aaa3-6c48-4316-8932-d7e6a52af9b7")
 	)
 	(wire
 		(pts
@@ -8715,6 +8757,87 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 170.18 138.43 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "44b4c94f-dddb-4789-a71c-966d70b247fd")
+		(property "Reference" "R114"
+			(at 168.9099 135.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100k"
+			(at 171.4499 135.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 170.18 140.208 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 170.18 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c6b9d027-744f-4246-8c6d-0dcaee6f76b7")
+		)
+		(pin "2"
+			(uuid "db0eabe6-17f8-44da-8d19-556f29dc6f13")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/4e27f84f-b409-4451-a36b-8da2b783ead5"
+					(reference "R114")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:L")
 		(at 203.2 83.82 90)
 		(unit 1)
@@ -10204,7 +10327,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 161.29 135.89 270)
+		(at 175.26 138.43 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10215,7 +10338,7 @@
 		(fields_autoplaced yes)
 		(uuid "8abab8bb-82e8-482c-b832-28618e8e630a")
 		(property "Reference" "TP104"
-			(at 166.37 134.6199 90)
+			(at 180.34 137.1599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10226,7 +10349,7 @@
 			)
 		)
 		(property "Value" "U103_PG"
-			(at 166.37 137.1599 90)
+			(at 180.34 139.6999 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10237,7 +10360,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 161.29 140.97 0)
+			(at 175.26 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10248,7 +10371,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 161.29 140.97 0)
+			(at 175.26 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10259,7 +10382,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 161.29 135.89 0)
+			(at 175.26 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

@@ -23772,6 +23772,12 @@
 		(uuid "3ef37469-03a6-44e7-bc13-38aed8e367c8")
 	)
 	(junction
+		(at 45.72 170.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "40c4ee9d-05fb-4e43-95b1-5620d42b718c")
+	)
+	(junction
 		(at 57.15 25.4)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -27149,6 +27155,16 @@
 	)
 	(wire
 		(pts
+			(xy 45.72 170.18) (xy 52.07 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64fcfce1-b074-4449-9282-ed7f9500da99")
+	)
+	(wire
+		(pts
 			(xy 72.39 195.58) (xy 72.39 224.79)
 		)
 		(stroke
@@ -28739,7 +28755,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 170.18) (xy 52.07 170.18)
+			(xy 29.21 170.18) (xy 45.72 170.18)
 		)
 		(stroke
 			(width 0)
@@ -28826,6 +28842,16 @@
 			(type default)
 		)
 		(uuid "c6491621-6b6a-44b0-a368-f9feb2fb4187")
+	)
+	(wire
+		(pts
+			(xy 45.72 170.18) (xy 45.72 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c64bc96b-aec3-41c3-b949-9f703a48f4be")
 	)
 	(wire
 		(pts
@@ -42924,6 +42950,84 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
 					(reference "R209")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 45.72 171.45 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d3aacfea-cb22-4402-8bd9-7856ef8ddc0e")
+		(property "Reference" "#PWR0305"
+			(at 45.72 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 45.72 176.53 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 45.72 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 45.72 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7428ae6f-84b9-4b39-9792-d2b79cb4b057")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
+					(reference "#PWR0305")
 					(unit 1)
 				)
 			)
