@@ -25,7 +25,7 @@
 | CRCW08050000Z0EA                  |       10 | 0Ω/jumper resistor (2 used)                        | <https://www.digikey.no/no/products/detail/vishay-dale/crcw08050000z0ea/1175125>                     |
 | CRCW08051R00FKEA                  |       10 | 1Ω resistor (1 used)                               | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW08051R00FKEA/1961651>                     |
 | RC0805FR-076K81L                  |       10 | 6.81kΩ resistor (1 used)                           | <https://www.digikey.no/no/products/detail/yageo/RC0805FR-076K81L/728068>                            |
-| RC0805FR-0710KL                   |       10 | 10kΩ resistor top-up (7 used, 10 ordered)          | <https://www.digikey.no/en/products/detail/yageo/RC0805FR-0710KL/727535>                             |
+| RC0805FR-0710KL                   |       25 | 10kΩ resistor top-up (27 used, 10 ordered)         | <https://www.digikey.no/en/products/detail/yageo/RC0805FR-0710KL/727535>                             |
 | CRCW080522K1FKEA                  |       10 | 22.1kΩ resistor (4 used)                           | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW080522K1FKEA/1175788>                     |
 | CRCW080530K1FKEA                  |       10 | 30.1kΩ resistor (1 used)                           | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW080530K1FKEA/1175804>                     |
 | CRCW080573K2FKEA                  |       10 | 73.2kΩ resistor (1 used)                           | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW080573K2FKEA/1175850>                     |
@@ -33,3 +33,9 @@
 | CRCW0805121KFKEA                  |       10 | 121kΩ resistor (1 used)                            | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW0805121KFKEA/1175874>                     |
 | PRPC040SAAN-RC                    |        3 | 1x40 vertical pin strip gold 11.39mm 3A            | <https://www.digikey.no/no/products/detail/sullins-connector-solutions/PRPC040SAAN-RC/2775214>       |
 | NPC02SXON-RC                      |       10 | 2.54mm open-top shunt gold 3A                      | <https://www.digikey.no/no/products/detail/sullins-connector-solutions/NPC02SXON-RC/2618266>         |
+| LTST-C171KGKT                     |       10 | Green SMD LED Vf 2V                                | <https://www.digikey.no/no/products/detail/liteon/LTST-C171KGKT/386799>                              |
+| LTST-C171KFKT                     |       10 | Orange SMD LED Vf 2V                               | <https://www.digikey.no/no/products/detail/liteon/LTST-C171KFKT/386797>                              |
+| CRCW08051K00FKEA                  |       10 | 1kΩ resistor (for LEDs, 5 used)                    | <https://www.digikey.no/no/products/detail/vishay-dale/CRCW08051K00FKEA/1175637>                     |
+| FTSH-107-01-L-DV-K-A              |        4 | STDC14 connector header                            | <https://www.digikey.no/en/products/detail/samtec-inc/FTSH-107-01-L-DV-K-A/7443623>                  |
+| ESDA051-1JY                       |       10 | VGA ESD protection                                 | <https://www.digikey.no/en/products/detail/stmicroelectronics/ESDA051-1JY/11686344>                  |
+| CRCW080547K0FKEA                  |       10 | 47kΩ resistor (controller, 2 used)                 | <https://www.digikey.no/en/products/detail/vishay-dale/CRCW080547K0FKEA/1175827>                     |
