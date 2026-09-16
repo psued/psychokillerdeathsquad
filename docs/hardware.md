@@ -120,7 +120,7 @@ Two passive controllers connect directly to STM32U545 GPIO.
 
 Button inputs are active low with external pull-ups and input protection, and use no MCU internal pulls. A pressed switch connects its input to ground.
 
-`WIRED_PRESENT` is active low with an external 10 kΩ pull-up to 3.3 V and uses no MCU internal pull. Connector pin 8 is connected to ground in the controller, so the signal is low while the wired controller is connected.
+`WIRED_PRESENT` is active low with an external 10 kΩ pull-up to 3.3 V on the main PCB and uses no MCU internal pull. Connector pin 8 is tied directly to GND on the controller PCB. When the cable is connected, this pulls `WIRED_PRESENT` low. When disconnected, the main-PCB pull-up holds the signal high.
 
 The controllers use Molex Micro-Fit 3.0 connectors.
 
@@ -199,6 +199,8 @@ BOOT0 is PH3, with appropriate bias and access for recovery.
 UART4 uses 115200 baud, 8N1. The ST-LINK exposes UART4 to the host as a Virtual COM Port through the STDC14 connection.
 
 Test points are provided for UART4 TX, RX and GND.
+
+NRST has a 100 nF capacitor to ground placed close to the MCU. The internal NRST pull-up is used; no external pull-up is required.
 
 ## Reserved Interfaces
 
