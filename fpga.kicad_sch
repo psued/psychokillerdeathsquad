@@ -23244,7 +23244,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 93.98 280.3652 0)
 			(hide yes)
 			(show_name no)
@@ -23416,7 +23416,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 124.1552 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -24772,7 +24772,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 97.79 273.558 90)
 			(hide yes)
 			(show_name no)
@@ -29035,7 +29035,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 108.712 177.8 90)
 			(hide yes)
 			(show_name no)
@@ -29471,10 +29471,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "43ee3d8f-1152-4603-8ced-039a1a1e7ff4")
+			(uuid "43ee3d8f-1152-4603-8ced-039a1a1e7ff5")
 		)
 		(pin "2"
-			(uuid "e94b5712-b382-44f6-bc55-1555925d6f8e")
+			(uuid "e94b5712-b382-44f6-bc55-1555925d6f8f")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
@@ -29756,7 +29756,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 116.84 173.228 90)
 			(hide yes)
 			(show_name no)
