@@ -4,6 +4,11 @@
 	(generator_version "10.0")
 	(uuid "68e1928c-d1e9-433a-aa3e-456557162192")
 	(paper "A4")
+	(title_block
+		(title "MCU Bluetooth")
+		(date "2026-09-17")
+		(rev "1")
+	)
 	(lib_symbols
 		(symbol "Connector:Conn_ST_STDC14"
 			(exclude_from_sim no)
@@ -2586,12 +2591,6 @@
 		(uuid "181adb55-ee31-4229-a386-de4bcd574a03")
 	)
 	(junction
-		(at 113.03 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "18377c40-c982-46a2-9e3b-943a449de149")
-	)
-	(junction
 		(at 97.79 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2710,12 +2709,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6c3236f1-f3e1-474c-b8c2-7431a1193cce")
-	)
-	(junction
-		(at 110.49 116.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "71417965-5994-4719-a23b-981f0d378e9d")
 	)
 	(junction
 		(at 167.64 45.72)
@@ -3123,16 +3116,6 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 93.98) (xy 110.49 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1880891d-adc7-4654-8a40-86f7ada3bf34")
-	)
-	(wire
-		(pts
 			(xy 64.77 45.72) (xy 87.63 45.72)
 		)
 		(stroke
@@ -3210,16 +3193,6 @@
 			(type default)
 		)
 		(uuid "2b001059-e362-4878-909e-94c0c6fad642")
-	)
-	(wire
-		(pts
-			(xy 110.49 93.98) (xy 113.03 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2c5a1940-9465-49b8-8b54-4c28b0869ede")
 	)
 	(wire
 		(pts
@@ -3523,16 +3496,6 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 110.49) (xy 110.49 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "77fea0c2-6421-443a-b1f8-aad28932707f")
-	)
-	(wire
-		(pts
 			(xy 87.63 110.49) (xy 87.63 116.84)
 		)
 		(stroke
@@ -3650,16 +3613,6 @@
 			(type default)
 		)
 		(uuid "8af3fbf4-4fc1-431b-9dbd-00e1c81d4e00")
-	)
-	(wire
-		(pts
-			(xy 87.63 116.84) (xy 110.49 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8d52fb01-9eb8-4871-a547-b831f04e4521")
 	)
 	(wire
 		(pts
@@ -4063,7 +4016,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 116.84) (xy 120.65 116.84)
+			(xy 87.63 116.84) (xy 120.65 116.84)
 		)
 		(stroke
 			(width 0)
@@ -4194,7 +4147,7 @@
 		(uuid "290f0c93-49f0-47cb-9c66-290f15b9677d")
 	)
 	(hierarchical_label "BT_MCU_RX"
-		(shape output)
+		(shape input)
 		(at 90.17 129.54 180)
 		(effects
 			(font
@@ -4205,7 +4158,7 @@
 		(uuid "6ae7a9ec-b81c-4fc3-8432-3cfd6cb45153")
 	)
 	(hierarchical_label "BT_MCU_NRST"
-		(shape output)
+		(shape input)
 		(at 62.23 96.52 90)
 		(effects
 			(font
@@ -4683,98 +4636,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 110.49 106.68 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "364b02bb-c8d0-48a8-98f0-72a172f0628e")
-		(property "Reference" "R603"
-			(at 113.03 105.4099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 113.03 107.9499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 108.712 106.68 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 110.49 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 110.49 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Tolerance" ""
-			(at 105.41 106.68 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "93580c15-e5c7-4f9c-888e-34fb9acd96d1")
-		)
-		(pin "2"
-			(uuid "2280f338-aa70-4e4e-ab6a-36548a3ce576")
-		)
-		(instances
-			(project "psychokillerdeathcamp"
-				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/b1b1efd2-d586-4518-af4f-3c644368f394"
-					(reference "R603")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 85.09 78.74 0)
 		(unit 1)
@@ -4796,7 +4657,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "BT_MCU_VDD"
+		(property "Value" "BT_VDD"
 			(at 83.312 74.168 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5126,7 +4987,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "BT_MCU_BOOT0"
+		(property "Value" "BT_BOOT0"
 			(at 111.252 89.408 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5480,7 +5341,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "BT_MCU_GND"
+		(property "Value" "BT_GND"
 			(at 122.428 150.622 0)
 			(show_name no)
 			(do_not_autoplace no)

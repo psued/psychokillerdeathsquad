@@ -5,9 +5,9 @@
 	(uuid "bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc")
 	(paper "A4")
 	(title_block
-		(title "psychokillerdeathcamp")
-		(date "2026-09-01")
-		(rev "0")
+		(title "psychokillerdeathsquad")
+		(date "2026-09-17")
+		(rev "1")
 	)
 	(lib_symbols)
 	(wire
@@ -826,7 +826,7 @@
 				(justify left)
 			)
 		)
-		(pin "BT_MCU_NRST" output
+		(pin "BT_MCU_NRST" input
 			(at 97.79 153.67 180)
 			(uuid "c253dbc6-48fb-4824-90a2-11c46ba0d9b6")
 			(effects
@@ -836,7 +836,7 @@
 				(justify left)
 			)
 		)
-		(pin "BT_MCU_RX" output
+		(pin "BT_MCU_RX" input
 			(at 97.79 148.59 180)
 			(uuid "449bcf9f-76ed-4bcf-af6c-f2c65bb8e0e7")
 			(effects
@@ -1012,7 +1012,7 @@
 				(justify right)
 			)
 		)
-		(pin "AMP_DIN" output
+		(pin "AMP_DATA" output
 			(at 87.63 110.49 0)
 			(uuid "2fb85553-1cfd-47de-b5f6-f8813c506fad")
 			(effects
@@ -1032,7 +1032,7 @@
 				(justify right)
 			)
 		)
-		(pin "AMP_SD_MODE" output
+		(pin "AMP_AUDIO_EN" output
 			(at 87.63 105.41 0)
 			(uuid "866c235c-48a6-462c-9936-fb593f1989d6")
 			(effects
@@ -1112,7 +1112,7 @@
 				(justify right)
 			)
 		)
-		(pin "USART3_TX" input
+		(pin "USART3_TX" output
 			(at 87.63 148.59 0)
 			(uuid "27907d6c-da72-41ab-ba67-182cafbfb0ae")
 			(effects
@@ -1132,7 +1132,7 @@
 				(justify right)
 			)
 		)
-		(pin "WB_NRST" input
+		(pin "WB_NRST" output
 			(at 87.63 153.67 0)
 			(uuid "ba93f9a8-3cfa-4695-9b77-1062334e2820")
 			(effects
