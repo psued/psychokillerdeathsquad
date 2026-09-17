@@ -5216,6 +5216,12 @@
 		(uuid "4d94d971-2b6a-4a61-a31e-2229265ece16")
 	)
 	(junction
+		(at 140.97 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4e163973-6ad9-4d9b-9507-f05cf7095703")
+	)
+	(junction
 		(at 274.32 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5400,6 +5406,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e4bfda76-e2b2-4732-a9d5-13eaf2986f0e")
+	)
+	(junction
+		(at 138.43 36.83)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e747df0f-489e-4541-9d8f-d46ab9ac6eb1")
 	)
 	(junction
 		(at 127 146.05)
@@ -6111,6 +6123,16 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 33.02) (xy 140.97 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c79f7fb-bb1c-48b8-b4a2-2a36eb43a10c")
+	)
+	(wire
+		(pts
 			(xy 238.76 127) (xy 238.76 139.7)
 		)
 		(stroke
@@ -6328,6 +6350,16 @@
 			(type default)
 		)
 		(uuid "568b0eb4-39e8-4db9-976b-6cd015012b11")
+	)
+	(wire
+		(pts
+			(xy 135.89 36.83) (xy 138.43 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57020961-a195-46fd-89e4-05f3880c941c")
 	)
 	(wire
 		(pts
@@ -7751,8 +7783,8 @@
 		)
 		(uuid "0bfeb8f1-9dea-4536-865b-7d30a76e92bf")
 	)
-	(hierarchical_label "AUX2"
-		(shape input)
+	(hierarchical_label "AUX1"
+		(shape output)
 		(at 219.71 105.41 270)
 		(effects
 			(font
@@ -7960,7 +7992,7 @@
 		)
 		(uuid "d51d38d0-1fdc-484d-92b8-6f3c4051f73e")
 	)
-	(hierarchical_label "AUX1"
+	(hierarchical_label "AUX0"
 		(shape output)
 		(at 217.17 105.41 270)
 		(effects
@@ -9937,6 +9969,162 @@
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314"
 					(reference "C313")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 135.89 36.83 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8e65edac-cb66-4a8b-a29a-4ec761512acb")
+		(property "Reference" "TP305"
+			(at 132.588 31.75 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MCU_UART4_TX"
+			(at 132.588 34.29 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 135.89 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.89 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 135.89 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d9adc880-c8de-4e9e-8d73-262d8154bc04")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314"
+					(reference "TP305")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 140.97 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "929569da-a2d4-4b84-8026-f019b624bba7")
+		(property "Reference" "TP306"
+			(at 143.51 28.4479 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MCU_UART4_RX"
+			(at 143.51 30.9879 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 146.05 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 140.97 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "363a55ab-f8de-4b1b-8062-a59e74a96388")
+		)
+		(instances
+			(project "psychokillerdeathcamp"
+				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314"
+					(reference "TP306")
 					(unit 1)
 				)
 			)

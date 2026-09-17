@@ -1042,7 +1042,7 @@
 				(justify right)
 			)
 		)
-		(pin "AUX1" output
+		(pin "AUX0" output
 			(at 38.1 102.87 90)
 			(uuid "85c16f3c-395c-43bc-94f5-96c3d118309c")
 			(effects
@@ -1052,7 +1052,7 @@
 				(justify right)
 			)
 		)
-		(pin "AUX2" input
+		(pin "AUX1" output
 			(at 40.64 102.87 90)
 			(uuid "a4026dc6-89ff-465a-bd58-8c66e2cb5406")
 			(effects
@@ -1228,7 +1228,7 @@
 				(justify left)
 			)
 		)
-		(pin "AUX1" input
+		(pin "AUX0" input
 			(at 38.1 82.55 270)
 			(uuid "f3ecf8d7-b2dc-4fba-a305-28f13159cc54")
 			(effects
@@ -1238,7 +1238,7 @@
 				(justify left)
 			)
 		)
-		(pin "AUX2" output
+		(pin "AUX1" input
 			(at 40.64 82.55 270)
 			(uuid "a17cd18e-054d-40e1-b553-6958b1aa552b")
 			(effects
@@ -1258,7 +1258,7 @@
 				(justify left)
 			)
 		)
-		(pin "IRQ{slash}event" input
+		(pin "IRQ{slash}event" output
 			(at 35.56 82.55 270)
 			(uuid "d7164661-3182-4f1c-ba6d-bdf4b7182064")
 			(effects

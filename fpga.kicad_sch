@@ -21025,8 +21025,8 @@
 		)
 		(uuid "203a5107-82ab-4cd7-912e-335a1c92fa22")
 	)
-	(hierarchical_label "AUX2"
-		(shape output)
+	(hierarchical_label "AUX1"
+		(shape input)
 		(at 265.43 135.89 0)
 		(effects
 			(font
@@ -21049,7 +21049,7 @@
 		(uuid "4d8e82b7-8064-44a3-9ae2-3e4bd3d07684")
 	)
 	(hierarchical_label "IRQ{slash}event"
-		(shape input)
+		(shape output)
 		(at 265.43 130.81 0)
 		(effects
 			(font
@@ -21129,7 +21129,7 @@
 		)
 		(uuid "bd4e4fdd-a29f-4399-8287-bd2e80dbc19f")
 	)
-	(hierarchical_label "AUX1"
+	(hierarchical_label "AUX0"
 		(shape input)
 		(at 265.43 133.35 0)
 		(effects
@@ -23305,84 +23305,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 243.84 119.38 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2117224e-8e60-4144-84f5-0ac37f6b279b")
-		(property "Reference" "#PWR0111"
-			(at 243.84 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 243.84 114.3 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 243.84 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 243.84 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 243.84 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0edfc3ac-0499-4b6a-a78e-f7e102c0622a")
-		)
-		(instances
-			(project "psychokillerdeathcamp"
-				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
-					(reference "#PWR0111")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 113.03 271.78 0)
 		(unit 1)
@@ -25399,7 +25321,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "53d9f154-527e-4e7b-956f-4388886cab86")
-		(property "Reference" "R116"
+		(property "Reference" "R245"
 			(at 250.19 140.9699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25421,7 +25343,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-8_W7.62mm"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 245.872 142.24 90)
 			(hide yes)
 			(show_name no)
@@ -25463,7 +25385,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
-					(reference "R116")
+					(reference "R245")
 					(unit 1)
 				)
 			)
@@ -29344,7 +29266,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7e1d8f2d-018d-4df1-acf0-42f6a1fb637b")
-		(property "Reference" "R118"
+		(property "Reference" "R247"
 			(at 262.89 148.5899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29366,7 +29288,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-8_W7.62mm"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 258.572 149.86 90)
 			(hide yes)
 			(show_name no)
@@ -29400,15 +29322,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "26256e31-0d0b-4c42-9977-88fe7d069f03")
+			(uuid "26256e31-0d0b-4c42-9977-88fe7d069f04")
 		)
 		(pin "1"
-			(uuid "411c8101-3900-4964-a5ba-b639f0f12405")
+			(uuid "411c8101-3900-4964-a5ba-b639f0f12406")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
-					(reference "R118")
+					(reference "R247")
 					(unit 1)
 				)
 			)
@@ -29669,7 +29591,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8916b25a-fb91-4a86-9e99-c74a029626b5")
-		(property "Reference" "R117"
+		(property "Reference" "R246"
 			(at 256.54 144.7799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29691,7 +29613,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-8_W7.62mm"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 252.222 146.05 90)
 			(hide yes)
 			(show_name no)
@@ -29725,15 +29647,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "26256e31-0d0b-4c42-9977-88fe7d069f03")
+			(uuid "26256e31-0d0b-4c42-9977-88fe7d069f05")
 		)
 		(pin "1"
-			(uuid "411c8101-3900-4964-a5ba-b639f0f12405")
+			(uuid "411c8101-3900-4964-a5ba-b639f0f12407")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
-					(reference "R117")
+					(reference "R246")
 					(unit 1)
 				)
 			)
@@ -32985,7 +32907,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c12b1d72-cfbf-455c-974e-ed9caa1c4a83")
-		(property "Reference" "R119"
+		(property "Reference" "R241"
 			(at 118.11 137.1599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33007,7 +32929,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-8_W7.62mm"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 113.792 138.43 90)
 			(hide yes)
 			(show_name no)
@@ -33041,15 +32963,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "26256e31-0d0b-4c42-9977-88fe7d069f03")
+			(uuid "26256e31-0d0b-4c42-9977-88fe7d069f06")
 		)
 		(pin "1"
-			(uuid "411c8101-3900-4964-a5ba-b639f0f12405")
+			(uuid "411c8101-3900-4964-a5ba-b639f0f12408")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac"
-					(reference "R119")
+					(reference "R241")
 					(unit 1)
 				)
 			)
