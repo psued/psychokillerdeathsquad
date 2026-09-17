@@ -4,6 +4,11 @@
 	(generator_version "10.0")
 	(uuid "04bd1d98-40c9-455f-bc01-12a71f3544b5")
 	(paper "A4")
+	(title_block
+		(title "MCU controller connections")
+		(date "2026-09-17")
+		(rev "1")
+	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_02x04_Odd_Even"
 			(pin_names
@@ -3592,7 +3597,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "06cacb35-dfe9-4128-a179-0c31cf3d6ad6")
-		(property "Reference" "R132"
+		(property "Reference" "R720"
 			(at 208.28 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3614,7 +3619,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 203.962 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -3656,7 +3661,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R132")
+					(reference "R720")
 					(unit 1)
 				)
 			)
@@ -3674,7 +3679,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0c67c5b3-3076-4847-a73c-d2b085c9534a")
-		(property "Reference" "J304"
+		(property "Reference" "J701"
 			(at 88.9 118.11 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3754,7 +3759,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "J304")
+					(reference "J701")
 					(unit 1)
 				)
 			)
@@ -3772,7 +3777,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1a36ad70-aba1-4559-bd5d-77bc97874519")
-		(property "Reference" "#PWR0111"
+		(property "Reference" "#PWR0701"
 			(at 41.91 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -3832,7 +3837,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "#PWR0111")
+					(reference "#PWR0701")
 					(unit 1)
 				)
 			)
@@ -3850,7 +3855,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2b9fb64d-cade-4106-8919-98cc717b12ec")
-		(property "Reference" "CR104"
+		(property "Reference" "CR704"
 			(at 204.47 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3923,7 +3928,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "CR104")
+					(reference "CR704")
 					(unit 1)
 				)
 			)
@@ -3941,7 +3946,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2c0ee6cf-7088-479e-bdf6-4ae43fbec782")
-		(property "Reference" "R133"
+		(property "Reference" "R721"
 			(at 233.68 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3963,7 +3968,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 229.362 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -4005,7 +4010,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R133")
+					(reference "R721")
 					(unit 1)
 				)
 			)
@@ -4023,7 +4028,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2f0b092f-fbeb-4b18-a94b-5fb3a1166201")
-		(property "Reference" "R142"
+		(property "Reference" "R726"
 			(at 256.54 78.74 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4043,7 +4048,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 256.54 86.868 90)
 			(hide yes)
 			(show_name no)
@@ -4085,7 +4090,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R142")
+					(reference "R726")
 					(unit 1)
 				)
 			)
@@ -4103,7 +4108,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2fb25804-bc6a-4f3b-ab06-69a20afd144c")
-		(property "Reference" "#PWR0113"
+		(property "Reference" "#PWR0703"
 			(at 156.21 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -4163,7 +4168,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "#PWR0113")
+					(reference "#PWR0703")
 					(unit 1)
 				)
 			)
@@ -4181,7 +4186,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "35d0bd23-c7ee-48c5-a575-70a202aae009")
-		(property "Reference" "R127"
+		(property "Reference" "R701"
 			(at 33.02 118.11 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4201,7 +4206,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 33.02 126.238 90)
 			(hide yes)
 			(show_name no)
@@ -4243,7 +4248,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R127")
+					(reference "R701")
 					(unit 1)
 				)
 			)
@@ -4261,7 +4266,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "36672049-3d06-4c30-8710-5494a0c7c58d")
-		(property "Reference" "CR101"
+		(property "Reference" "CR701"
 			(at 90.17 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4334,7 +4339,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "CR101")
+					(reference "CR701")
 					(unit 1)
 				)
 			)
@@ -4352,7 +4357,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "494ac303-1dfd-4bec-a56b-9ec6a2746b05")
-		(property "Reference" "R143"
+		(property "Reference" "R728"
 			(at 260.35 76.2 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4372,7 +4377,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 260.35 84.328 90)
 			(hide yes)
 			(show_name no)
@@ -4414,7 +4419,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R143")
+					(reference "R728")
 					(unit 1)
 				)
 			)
@@ -4432,7 +4437,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4a1f6fd8-1b69-4ba5-95e4-12378812d5b9")
-		(property "Reference" "R120"
+		(property "Reference" "R705"
 			(at 57.15 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4454,7 +4459,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 52.832 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -4496,7 +4501,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R120")
+					(reference "R705")
 					(unit 1)
 				)
 			)
@@ -4514,7 +4519,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4cca3bce-4345-4e71-8b71-e23b57d2e481")
-		(property "Reference" "R141"
+		(property "Reference" "R725"
 			(at 252.73 81.28 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4534,7 +4539,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 252.73 89.408 90)
 			(hide yes)
 			(show_name no)
@@ -4576,7 +4581,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R141")
+					(reference "R725")
 					(unit 1)
 				)
 			)
@@ -4594,7 +4599,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "52a34e17-3cc4-48df-b409-b5932028b70e")
-		(property "Reference" "R128"
+		(property "Reference" "R702"
 			(at 36.83 120.65 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4614,7 +4619,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 36.83 128.778 90)
 			(hide yes)
 			(show_name no)
@@ -4648,15 +4653,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "a0baeab2-48d0-45a2-81d8-fc76b23b3929")
+			(uuid "a0baeab2-48d0-45a2-81d8-fc76b23b392a")
 		)
 		(pin "1"
-			(uuid "be9fec19-d10a-4df0-8ef8-56d15cdb67fb")
+			(uuid "be9fec19-d10a-4df0-8ef8-56d15cdb67fc")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R128")
+					(reference "R702")
 					(unit 1)
 				)
 			)
@@ -4674,7 +4679,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6161f530-8ec0-448b-9091-67c19b9830d0")
-		(property "Reference" "R123"
+		(property "Reference" "R714"
 			(at 146.05 118.11 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4694,7 +4699,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 146.05 126.238 90)
 			(hide yes)
 			(show_name no)
@@ -4728,15 +4733,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "a0baeab2-48d0-45a2-81d8-fc76b23b3929")
+			(uuid "a0baeab2-48d0-45a2-81d8-fc76b23b392b")
 		)
 		(pin "1"
-			(uuid "be9fec19-d10a-4df0-8ef8-56d15cdb67fb")
+			(uuid "be9fec19-d10a-4df0-8ef8-56d15cdb67fd")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R123")
+					(reference "R714")
 					(unit 1)
 				)
 			)
@@ -4754,7 +4759,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "616f563e-cb60-4cac-860c-f3cefc4e7847")
-		(property "Reference" "J305"
+		(property "Reference" "J702"
 			(at 203.2 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4834,7 +4839,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "J305")
+					(reference "J702")
 					(unit 1)
 				)
 			)
@@ -4852,7 +4857,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "63998f2f-de04-4250-b917-ed8bd9f9928d")
-		(property "Reference" "R119"
+		(property "Reference" "R706"
 			(at 66.04 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4874,7 +4879,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 61.722 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -4908,15 +4913,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "2c615806-7475-4ecd-a977-bd6b7f3b7ee0")
+			(uuid "2c615806-7475-4ecd-a977-bd6b7f3b7ee1")
 		)
 		(pin "1"
-			(uuid "d7d4ac72-1231-4e8d-a649-95c78b9a81e7")
+			(uuid "d7d4ac72-1231-4e8d-a649-95c78b9a81e8")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R119")
+					(reference "R706")
 					(unit 1)
 				)
 			)
@@ -4934,7 +4939,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "66b1daf7-ccfc-4728-bbf8-fa63dc5f2d67")
-		(property "Reference" "R138"
+		(property "Reference" "R716"
 			(at 151.13 78.74 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4954,7 +4959,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 151.13 86.868 90)
 			(hide yes)
 			(show_name no)
@@ -4996,7 +5001,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R138")
+					(reference "R716")
 					(unit 1)
 				)
 			)
@@ -5014,7 +5019,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7c1b5bc7-cadb-43b8-bc69-ba166cf3a5b6")
-		(property "Reference" "CR103"
+		(property "Reference" "CR703"
 			(at 204.47 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5087,7 +5092,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "CR103")
+					(reference "CR703")
 					(unit 1)
 				)
 			)
@@ -5105,7 +5110,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7c9f34ff-1513-47e1-a282-76a89c9ae5b7")
-		(property "Reference" "CR102"
+		(property "Reference" "CR702"
 			(at 90.17 168.91 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5161,24 +5166,24 @@
 			)
 		)
 		(pin "5"
-			(uuid "ccea8b7d-acd7-4eb2-a7ca-5bcb762cb41c")
+			(uuid "ccea8b7d-acd7-4eb2-a7ca-5bcb762cb41d")
 		)
 		(pin "3"
-			(uuid "f5c98585-74a5-4f8b-aa1e-7921d50268cb")
+			(uuid "f5c98585-74a5-4f8b-aa1e-7921d50268cc")
 		)
 		(pin "1"
-			(uuid "32cfdf56-3970-4754-8f61-e289fe6bc834")
+			(uuid "32cfdf56-3970-4754-8f61-e289fe6bc835")
 		)
 		(pin "2"
-			(uuid "5a90a0be-4fea-44f6-a76d-a267c7ef3c0c")
+			(uuid "5a90a0be-4fea-44f6-a76d-a267c7ef3c0d")
 		)
 		(pin "4"
-			(uuid "46f9e1f6-61df-4cba-98bf-643d2ff87456")
+			(uuid "46f9e1f6-61df-4cba-98bf-643d2ff87457")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "CR102")
+					(reference "CR702")
 					(unit 1)
 				)
 			)
@@ -5196,7 +5201,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "84d3e840-66dc-4bef-94d7-e57c7c37169c")
-		(property "Reference" "R130"
+		(property "Reference" "R718"
 			(at 190.5 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5218,7 +5223,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 186.182 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -5260,7 +5265,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R130")
+					(reference "R718")
 					(unit 1)
 				)
 			)
@@ -5278,7 +5283,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "85c046fa-9df9-4379-a9d0-c99b4a30b842")
-		(property "Reference" "R121"
+		(property "Reference" "R704"
 			(at 48.26 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5300,7 +5305,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 43.942 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -5334,15 +5339,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "2c615806-7475-4ecd-a977-bd6b7f3b7ee0")
+			(uuid "2c615806-7475-4ecd-a977-bd6b7f3b7ee2")
 		)
 		(pin "1"
-			(uuid "d7d4ac72-1231-4e8d-a649-95c78b9a81e7")
+			(uuid "d7d4ac72-1231-4e8d-a649-95c78b9a81e9")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R121")
+					(reference "R704")
 					(unit 1)
 				)
 			)
@@ -5360,7 +5365,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8ca3b21f-b252-42c2-8b65-9e3cea573ed1")
-		(property "Reference" "R118"
+		(property "Reference" "R709"
 			(at 109.22 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5382,7 +5387,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 104.902 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -5416,15 +5421,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "2c615806-7475-4ecd-a977-bd6b7f3b7ee0")
+			(uuid "2c615806-7475-4ecd-a977-bd6b7f3b7ee3")
 		)
 		(pin "1"
-			(uuid "d7d4ac72-1231-4e8d-a649-95c78b9a81e7")
+			(uuid "d7d4ac72-1231-4e8d-a649-95c78b9a81ea")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R118")
+					(reference "R709")
 					(unit 1)
 				)
 			)
@@ -5442,7 +5447,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8e389970-3052-40fe-a534-17cc050f504b")
-		(property "Reference" "R136"
+		(property "Reference" "R727"
 			(at 260.35 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5464,7 +5469,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 256.032 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -5506,7 +5511,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R136")
+					(reference "R727")
 					(unit 1)
 				)
 			)
@@ -5524,7 +5529,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9b5021d8-ec49-4ef7-96ff-badc185c9742")
-		(property "Reference" "R129"
+		(property "Reference" "R703"
 			(at 40.64 123.19 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5544,7 +5549,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 40.64 131.318 90)
 			(hide yes)
 			(show_name no)
@@ -5578,15 +5583,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "a0baeab2-48d0-45a2-81d8-fc76b23b3929")
+			(uuid "a0baeab2-48d0-45a2-81d8-fc76b23b392c")
 		)
 		(pin "1"
-			(uuid "be9fec19-d10a-4df0-8ef8-56d15cdb67fb")
+			(uuid "be9fec19-d10a-4df0-8ef8-56d15cdb67fe")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R129")
+					(reference "R703")
 					(unit 1)
 				)
 			)
@@ -5604,7 +5609,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9b878dc4-34c5-4cf1-a075-fe750328f726")
-		(property "Reference" "R131"
+		(property "Reference" "R719"
 			(at 199.39 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5626,7 +5631,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 195.072 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -5668,7 +5673,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R131")
+					(reference "R719")
 					(unit 1)
 				)
 			)
@@ -5686,7 +5691,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b85d3fcd-1eae-4aeb-8698-90aa21860478")
-		(property "Reference" "R122"
+		(property "Reference" "R710"
 			(at 118.11 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5708,7 +5713,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 113.792 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -5750,7 +5755,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R122")
+					(reference "R710")
 					(unit 1)
 				)
 			)
@@ -5768,7 +5773,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c004ec58-63b2-41c4-b173-78d99d5807e9")
-		(property "Reference" "R117"
+		(property "Reference" "R708"
 			(at 100.33 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5790,7 +5795,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 96.012 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -5824,15 +5829,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "2c615806-7475-4ecd-a977-bd6b7f3b7ee0")
+			(uuid "2c615806-7475-4ecd-a977-bd6b7f3b7ee4")
 		)
 		(pin "1"
-			(uuid "d7d4ac72-1231-4e8d-a649-95c78b9a81e7")
+			(uuid "d7d4ac72-1231-4e8d-a649-95c78b9a81eb")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R117")
+					(reference "R708")
 					(unit 1)
 				)
 			)
@@ -5850,7 +5855,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ca02789b-8b27-4c69-be31-203c44d958b7")
-		(property "Reference" "#PWR0115"
+		(property "Reference" "#PWR0704"
 			(at 219.71 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -5910,7 +5915,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "#PWR0115")
+					(reference "#PWR0704")
 					(unit 1)
 				)
 			)
@@ -5928,7 +5933,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d92033b1-393e-4040-9612-498546c0bbf4")
-		(property "Reference" "#PWR0114"
+		(property "Reference" "#PWR0702"
 			(at 77.47 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -5988,7 +5993,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "#PWR0114")
+					(reference "#PWR0702")
 					(unit 1)
 				)
 			)
@@ -6006,7 +6011,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dd706192-2ab2-48c9-b728-53f6c9b037fe")
-		(property "Reference" "R125"
+		(property "Reference" "R712"
 			(at 138.43 123.19 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6026,7 +6031,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 138.43 131.318 90)
 			(hide yes)
 			(show_name no)
@@ -6060,15 +6065,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "a0baeab2-48d0-45a2-81d8-fc76b23b3929")
+			(uuid "a0baeab2-48d0-45a2-81d8-fc76b23b392d")
 		)
 		(pin "1"
-			(uuid "be9fec19-d10a-4df0-8ef8-56d15cdb67fb")
+			(uuid "be9fec19-d10a-4df0-8ef8-56d15cdb67ff")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R125")
+					(reference "R712")
 					(unit 1)
 				)
 			)
@@ -6086,7 +6091,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e19657f6-136a-4e0d-ab8d-55e8cb2c8e36")
-		(property "Reference" "R135"
+		(property "Reference" "R723"
 			(at 251.46 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6108,7 +6113,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 247.142 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -6150,7 +6155,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R135")
+					(reference "R723")
 					(unit 1)
 				)
 			)
@@ -6168,7 +6173,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e8a977e2-87fd-4a6f-bb15-2443425278ce")
-		(property "Reference" "R137"
+		(property "Reference" "R715"
 			(at 147.32 76.2 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6188,7 +6193,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 147.32 84.328 90)
 			(hide yes)
 			(show_name no)
@@ -6230,7 +6235,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R137")
+					(reference "R715")
 					(unit 1)
 				)
 			)
@@ -6248,7 +6253,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ea81da30-370f-4c36-ad68-67a012b189c6")
-		(property "Reference" "R116"
+		(property "Reference" "R707"
 			(at 91.44 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6270,7 +6275,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 87.122 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -6304,15 +6309,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "2c615806-7475-4ecd-a977-bd6b7f3b7ee0")
+			(uuid "2c615806-7475-4ecd-a977-bd6b7f3b7ee5")
 		)
 		(pin "1"
-			(uuid "d7d4ac72-1231-4e8d-a649-95c78b9a81e7")
+			(uuid "d7d4ac72-1231-4e8d-a649-95c78b9a81ec")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R116")
+					(reference "R707")
 					(unit 1)
 				)
 			)
@@ -6330,7 +6335,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "eae90690-8fdf-488b-9440-cab7a6c59c0f")
-		(property "Reference" "R126"
+		(property "Reference" "R711"
 			(at 134.62 125.73 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6350,7 +6355,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 134.62 133.858 90)
 			(hide yes)
 			(show_name no)
@@ -6384,15 +6389,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "a0baeab2-48d0-45a2-81d8-fc76b23b3929")
+			(uuid "a0baeab2-48d0-45a2-81d8-fc76b23b392e")
 		)
 		(pin "1"
-			(uuid "be9fec19-d10a-4df0-8ef8-56d15cdb67fb")
+			(uuid "be9fec19-d10a-4df0-8ef8-56d15cdb6800")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R126")
+					(reference "R711")
 					(unit 1)
 				)
 			)
@@ -6410,7 +6415,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ee2862b6-84ec-4933-81d2-17ccb253212c")
-		(property "Reference" "R139"
+		(property "Reference" "R717"
 			(at 154.94 81.28 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6430,7 +6435,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 154.94 89.408 90)
 			(hide yes)
 			(show_name no)
@@ -6472,7 +6477,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R139")
+					(reference "R717")
 					(unit 1)
 				)
 			)
@@ -6490,7 +6495,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ef4944da-402e-4bb0-8b05-71d3e6ba7d88")
-		(property "Reference" "R140"
+		(property "Reference" "R724"
 			(at 248.92 83.82 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6510,7 +6515,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 248.92 91.948 90)
 			(hide yes)
 			(show_name no)
@@ -6552,7 +6557,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R140")
+					(reference "R724")
 					(unit 1)
 				)
 			)
@@ -6570,7 +6575,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f1791d17-4c67-4d94-9e8c-8c0ea5a40a16")
-		(property "Reference" "R124"
+		(property "Reference" "R713"
 			(at 142.24 120.65 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6590,7 +6595,7 @@
 				)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 142.24 128.778 90)
 			(hide yes)
 			(show_name no)
@@ -6624,15 +6629,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "a0baeab2-48d0-45a2-81d8-fc76b23b3929")
+			(uuid "a0baeab2-48d0-45a2-81d8-fc76b23b392f")
 		)
 		(pin "1"
-			(uuid "be9fec19-d10a-4df0-8ef8-56d15cdb67fb")
+			(uuid "be9fec19-d10a-4df0-8ef8-56d15cdb6801")
 		)
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R124")
+					(reference "R713")
 					(unit 1)
 				)
 			)
@@ -6650,7 +6655,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fa11d6ec-a347-451d-9aa9-c5117c0d114b")
-		(property "Reference" "R134"
+		(property "Reference" "R722"
 			(at 242.57 30.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6672,7 +6677,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprint_library:MICROQFN-5L_STM-M"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 238.252 31.75 90)
 			(hide yes)
 			(show_name no)
@@ -6714,7 +6719,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314/e0ba281d-e798-4dbc-b3fd-e3c34849c573"
-					(reference "R134")
+					(reference "R722")
 					(unit 1)
 				)
 			)

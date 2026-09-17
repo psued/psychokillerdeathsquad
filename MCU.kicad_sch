@@ -4794,12 +4794,6 @@
 		(uuid "0d034385-ee42-433b-8ce9-80ef614ece7b")
 	)
 	(junction
-		(at 35.56 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "120372bb-bbf1-4403-ae65-d7b2ec11e6f7")
-	)
-	(junction
 		(at 123.19 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5688,16 +5682,6 @@
 			(type default)
 		)
 		(uuid "31e743f5-9ac1-4499-9e7f-fb7fa2796957")
-	)
-	(wire
-		(pts
-			(xy 35.56 53.34) (xy 21.59 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35746826-143d-4778-95f6-b0375ef8fd7d")
 	)
 	(wire
 		(pts
@@ -11091,7 +11075,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid "e0ba281d-e798-4dbc-b3fd-e3c34849c573")
-		(property "Sheetname" "Kontollere"
+		(property "Sheetname" "Controller connections"
 			(at 177.0884 162.56 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11102,7 +11086,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "Kontrollere.kicad_sch"
+		(property "Sheetfile" "controller_connections.kicad_sch"
 			(at 221.5646 162.56 90)
 			(show_name no)
 			(do_not_autoplace no)
