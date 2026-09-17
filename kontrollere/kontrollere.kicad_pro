@@ -8,7 +8,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "1"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -429,17 +429,13 @@
         "uuid": "8d55d12c-9220-476c-abf2-ad913197b138"
       }
     ],
-    "used_designators": "BT1,#PWR1-2,#PWR601-602,SW1-8,TP601-606,R1-8,R601-603,J1,J601,C601-603,U1,U601",
+    "used_designators": "#PWR1-2,#PWR601-602,BT1,SW1-8,TP1-3,TP601-606,J1-2,J601,#FLG1-2,SW_BTN_DOWN1,R1-8,R601-603,C1-3,C601-603,U1,U601,SW_BTN_LEFT1,SW_BTN_A1,SW_BTN_B1,SW_BTN_RIGHT1,SW_BTN_UP1",
     "variants": []
   },
   "sheets": [
     [
       "8d55d12c-9220-476c-abf2-ad913197b138",
       "kontrollere"
-    ],
-    [
-      "0cb787dc-c680-4d8d-a0ba-6b9542443cd0",
-      "Controller"
     ]
   ],
   "text_variables": {},
