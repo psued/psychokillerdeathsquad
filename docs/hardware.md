@@ -178,7 +178,7 @@ All STM32WB1MMC modules use an STDC14 connector for SWD programming and debuggin
 | target reference | module supply | 3 |
 | GND | GND | 5, 7 |
 
-BOOT0 is pad 22, with appropriate bias and access for recovery.
+BOOT0 is pad 22 and is internally pulled down by the module. No external BOOT0 bias resistor is required. BOOT0 is exposed on a test pad for recovery and may be driven to the module supply during reset.
 
 ## Main MCU Debug
 
@@ -194,7 +194,7 @@ The STM32U545 uses SWD and UART debug through an STDC14 connector.
 | target reference | 3.3 V | 3 |
 | GND | GND | 5, 7 |
 
-BOOT0 is PH3, with appropriate bias and access for recovery.
+BOOT0 is PH3 with an external 10 kΩ pull-down to GND. BOOT0 is exposed on a test pad for recovery and may be driven to 3.3 V during reset.
 
 UART4 uses 115200 baud, 8N1. The ST-LINK exposes UART4 to the host as a Virtual COM Port through the STDC14 connection.
 
