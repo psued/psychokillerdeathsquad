@@ -8201,7 +8201,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2d00cd5c-07b9-4a2a-b231-d5ba2944b78c")
-		(property "Reference" "R246"
+		(property "Reference" "R302"
 			(at 252.73 156.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8223,7 +8223,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 248.412 157.48 90)
 			(hide yes)
 			(show_name no)
@@ -8265,7 +8265,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314"
-					(reference "R246")
+					(reference "R302")
 					(unit 1)
 				)
 			)
@@ -8440,7 +8440,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "46e85fc7-6929-47a3-bc00-a4731cc03040")
-		(property "Reference" "R245"
+		(property "Reference" "R301"
 			(at 219.71 156.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8462,7 +8462,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 215.392 157.48 90)
 			(hide yes)
 			(show_name no)
@@ -8504,7 +8504,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314"
-					(reference "R245")
+					(reference "R301")
 					(unit 1)
 				)
 			)
@@ -9200,7 +9200,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "75ec6cb1-29a8-4f2d-b7b5-2f34b6f2ebd9")
-		(property "Reference" "R241"
+		(property "Reference" "R303"
 			(at 254 119.38 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9264,7 +9264,7 @@
 		(instances
 			(project "psychokillerdeathcamp"
 				(path "/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/bd183db4-cb21-4b4a-9f0a-6d20d3a32314"
-					(reference "R241")
+					(reference "R303")
 					(unit 1)
 				)
 			)
