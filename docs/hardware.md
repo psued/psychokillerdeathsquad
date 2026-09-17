@@ -103,9 +103,11 @@ The FPGA interface uses 3.3 V logic.
 
 Interface behavior is documented in [`fpga.md`](fpga.md).
 
-## Wired Controllers
+## Controllers
 
-Two passive controllers connect directly to STM32U545 GPIO.
+Two identical dual-mode controllers provide wired and Bluetooth input.
+
+Each controller uses the same six physical buttons for both sensing paths:
 
 | Signal | Connector pin | Controller 1 | Controller 2 |
 | --- | --- | --- | --- |
@@ -118,15 +120,29 @@ Two passive controllers connect directly to STM32U545 GPIO.
 | GND | 7 | | |
 | WIRED_PRESENT | 8 | PD10 | PD11 |
 
-Button inputs are active low with external pull-ups and input protection, and use no MCU internal pulls. A pressed switch connects its input to ground.
+The wired button inputs are active low with external pull-ups and input protection on the main PCB.
 
 `WIRED_PRESENT` is active low with an external 10 kΩ pull-up to 3.3 V on the main PCB and uses no MCU internal pull. Connector pin 8 is tied directly to GND on the controller PCB. When the cable is connected, this pulls `WIRED_PRESENT` low. When disconnected, the main-PCB pull-up holds the signal high.
 
 The controllers use Molex Micro-Fit 3.0 connectors.
 
+### Button Isolation
+
+Each physical button is shared by the wired and STM32WB sensing paths.
+
+One BAT54C dual Schottky diode is used for each button. The common cathode connects to the physical switch net, while the two anodes connect to the wired and STM32WB sensing nets.
+
+Each controller therefore uses six BAT54C devices.
+
+The wired side is pulled high by the main PCB. The STM32WB side uses its internal GPIO pull-up.
+
+When a button is released, both sensing inputs are high. Pressing the button pulls both sensing inputs low through their respective Schottky diode paths.
+
+The diode isolation prevents the wired and STM32WB sensing domains from directly driving or back-powering each other.
+
 ## Bluetooth
 
-Three STM32WB1MMC modules are used: one console module and one in each wireless controller.
+Three STM32WB1MMC modules are used: one console module and one in each controller.
 
 The modules use their integrated 32 MHz HSE, 32.768 kHz LSE and SMPS support. Each uses local 4.7 µF + 100 nF supply decoupling.
 
@@ -149,9 +165,9 @@ The UART baseline is 115200 baud, 8N1, without hardware flow control.
 
 `WB_HOST_IRQ` is active high and held while service is required. It has a 10 kΩ pull-down.
 
-### Wireless Controllers
+### Controller Modules
 
-Both wireless controllers use the same STM32WB1MMC pin mapping.
+Both controllers use the same STM32WB1MMC pin mapping.
 
 | Signal | GPIO | Module pad |
 | --- | --- | ---: |
@@ -162,9 +178,13 @@ Both wireless controllers use the same STM32WB1MMC pin mapping.
 | A | PB5 | 26 |
 | B | PB6 | 27 |
 
-The six button inputs are active low with external 47 kΩ pull-ups. Pressing a button connects its input to ground.
+The six button inputs are active low and use the STM32WB internal pull-ups.
 
-Each wireless controller is powered directly from two AAA alkaline cells through a JS102011SCQN power switch. No regulator or charger is used.
+Each STM32WB input connects to its physical button through one side of the corresponding BAT54C isolation device.
+
+Each controller is powered directly from two AAA alkaline cells through a JS102011SCQN power switch. No regulator or charger is used.
+
+The controller electronics can be powered independently of the wired connection.
 
 ### STM32WB Debug and Recovery
 
