@@ -148,9 +148,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  heartbeat_process();
-	  input_process();
-	  game_tick_process();
+	heartbeat_process();
+	input_process();
+	game_tick_process();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
