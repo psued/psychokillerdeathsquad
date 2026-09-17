@@ -3661,12 +3661,6 @@
 		(uuid "5307a632-9284-4d76-a857-4ffdc7a1cb37")
 	)
 	(junction
-		(at 215.9 78.74)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "57fd32ee-0fc9-418c-aff9-9a3e7f3bfd61")
-	)
-	(junction
 		(at 59.69 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3731,6 +3725,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "935ceff9-cde9-42c7-972d-cc0db139516a")
+	)
+	(junction
+		(at 215.9 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "94d216ab-1b0c-4a6d-8eaa-21bf7ba40817")
 	)
 	(junction
 		(at 59.69 58.42)
@@ -4137,6 +4137,16 @@
 			(type default)
 		)
 		(uuid "19b199b9-0536-4fcf-b24d-2215850c5c65")
+	)
+	(wire
+		(pts
+			(xy 215.9 78.74) (xy 237.49 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1abea12b-cafe-403b-b1a9-acb0d4bbff04")
 	)
 	(wire
 		(pts
@@ -4910,7 +4920,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 78.74) (xy 237.49 78.74)
+			(xy 172.72 78.74) (xy 215.9 78.74)
 		)
 		(stroke
 			(width 0)
@@ -5503,12 +5513,6 @@
 			(uuid "354cb901-d06f-4273-a9ee-e471465119ca")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "BT1")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "BT1")
@@ -5587,12 +5591,6 @@
 			(uuid "40fd9551-b5d9-442e-86b7-206f03037dc9")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "TP2")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "TP3")
@@ -5671,12 +5669,6 @@
 			(uuid "62cc8dd0-4d3c-4d34-b1a3-d7852e0bb206")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "TP3")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "TP1")
@@ -5697,7 +5689,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "22d36448-ffb1-4ea0-991b-070fb2e6ed44")
-		(property "Reference" "SW_BTN_RIGHT"
+		(property "Reference" "SW_BTN_RIGHT1"
 			(at 252.73 72.3899 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5759,15 +5751,9 @@
 			(uuid "0fe01739-6a63-47c5-adf1-86ceaf863ac2")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "BTN_RIGHT1")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
-					(reference "SW_BTN_RIGHT")
+					(reference "SW_BTN_RIGHT1")
 					(unit 1)
 				)
 			)
@@ -5785,7 +5771,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3375f95a-5613-4ebf-832c-eb8ebc47d33a")
-		(property "Reference" "SW_BTN_DOWN"
+		(property "Reference" "SW_BTN_DOWN1"
 			(at 270.51 72.3899 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5847,15 +5833,9 @@
 			(uuid "aa56bffa-61fb-4e2d-9d46-667b34d009d4")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "BTN_DOWN1")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
-					(reference "SW_BTN_DOWN")
+					(reference "SW_BTN_DOWN1")
 					(unit 1)
 				)
 			)
@@ -5873,7 +5853,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "33814000-2ed1-4df0-b611-f4d318b8f740")
-		(property "Reference" "SW_BTN_UP"
+		(property "Reference" "SW_BTN_UP1"
 			(at 184.15 72.3899 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5935,15 +5915,9 @@
 			(uuid "01482377-93a0-470d-af8a-09c3319c8265")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "BTN_UP1")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
-					(reference "SW_BTN_UP")
+					(reference "SW_BTN_UP1")
 					(unit 1)
 				)
 			)
@@ -6019,12 +5993,6 @@
 			(uuid "784ffc42-faa0-4596-95d6-b913a47b0c44")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "#PWR01")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "#PWR01")
@@ -6045,7 +6013,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "427e6b7c-df7f-4700-a86a-a5f00d023f7f")
-		(property "Reference" "SW_BTN_LEFT"
+		(property "Reference" "SW_BTN_LEFT1"
 			(at 200.66 72.3899 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6107,15 +6075,9 @@
 			(uuid "0e12ad98-5d4a-4352-8956-90351937043b")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "BTN_LEFT1")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
-					(reference "SW_BTN_LEFT")
+					(reference "SW_BTN_LEFT1")
 					(unit 1)
 				)
 			)
@@ -6133,7 +6095,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "466a7d61-525d-4756-8694-10e163402e02")
-		(property "Reference" "SW_BTN_B"
+		(property "Reference" "SW_BTN_B1"
 			(at 238.76 72.3899 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6195,15 +6157,9 @@
 			(uuid "20d00b2b-ba89-46db-af93-1455de9181e1")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "BTN_B1")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
-					(reference "SW_BTN_B")
+					(reference "SW_BTN_B1")
 					(unit 1)
 				)
 			)
@@ -6279,12 +6235,6 @@
 			(uuid "c710da95-3019-49bb-8e9b-9b4899feae38")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "TP1")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "TP2")
@@ -6382,12 +6332,6 @@
 			(uuid "d6f79896-b191-409b-b351-12ed85fb5221")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "J2")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "J2")
@@ -6473,12 +6417,6 @@
 			(uuid "eb9526a4-fcb9-4813-a41d-b4db4bb4e29b")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "SW1")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "SW1")
@@ -6499,7 +6437,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "64133737-901e-4190-bed5-c9a8c385297b")
-		(property "Reference" "#FLG02"
+		(property "Reference" "#FLG01"
 			(at 57.785 162.56 0)
 			(hide yes)
 			(show_name no)
@@ -6560,7 +6498,7 @@
 		(instances
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
-					(reference "#FLG02")
+					(reference "#FLG01")
 					(unit 1)
 				)
 			)
@@ -6640,103 +6578,9 @@
 			(uuid "efb4f607-82cb-4e81-b98c-c151b9d2489e")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "C1")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "C1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 215.9 73.66 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7b6609da-e6cf-4126-970f-2391625650a2")
-		(property "Reference" "SW_BTN_A"
-			(at 217.17 72.3899 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "B3F-4050"
-			(at 217.17 74.9299 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Button_Switch_THT:SW_SPST_Omron_B3F-40xx"
-			(at 210.82 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 210.82 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 215.9 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "0b397391-01f6-4b20-aea3-d9c2a6d5d319")
-		)
-		(pin "1"
-			(uuid "d5c30513-549a-4340-857e-159f150f9f00")
-		)
-		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "BTN_A1")
-					(unit 1)
-				)
-			)
-			(project "kontrollere"
-				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
-					(reference "SW_BTN_A")
 					(unit 1)
 				)
 			)
@@ -6754,7 +6598,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "91c94bcb-35f5-4065-b594-02c3764925c6")
-		(property "Reference" "#FLG01"
+		(property "Reference" "#FLG02"
 			(at 104.775 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6815,7 +6659,7 @@
 		(instances
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
-					(reference "#FLG01")
+					(reference "#FLG02")
 					(unit 1)
 				)
 			)
@@ -6895,12 +6739,6 @@
 			(uuid "4fa58df0-0a4f-46f7-a55a-41db136e00b8")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "C2")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "C2")
@@ -6993,12 +6831,6 @@
 			(uuid "b2895fad-5cf6-4aa0-8a43-b920744e43dd")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "R1")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "R1")
@@ -7306,12 +7138,6 @@
 			(uuid "a9475b97-e495-4764-89ab-6254f2a40c53")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "U1")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "U1")
@@ -7394,12 +7220,6 @@
 			(uuid "c559acfd-3f12-49e2-9434-eac9e5205f3f")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
-					(reference "C3")
-					(unit 1)
-				)
-			)
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "C3")
@@ -7516,15 +7336,91 @@
 			(uuid "63141961-bf60-44d9-989f-3a62976737ce")
 		)
 		(instances
-			(project "untitled"
-				(path "/18ff9b42-2a6b-4f12-b28d-f2b6fc7060ee"
+			(project "kontrollere"
+				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
 					(reference "J1")
 					(unit 1)
 				)
 			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 215.9 73.66 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fba0d90f-7cd7-4d98-91c2-57b285ae285c")
+		(property "Reference" "SW_BTN_A1"
+			(at 217.17 72.3899 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "B3F-4050"
+			(at 217.17 74.9299 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Button_Switch_THT:SW_SPST_Omron_B3F-40xx"
+			(at 210.82 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 210.82 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 215.9 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "ebbf739f-8c11-41c7-afe0-24b9c7e22fbc")
+		)
+		(pin "1"
+			(uuid "b11a1417-0041-4339-ae97-82d483aeec5c")
+		)
+		(instances
 			(project "kontrollere"
 				(path "/8d55d12c-9220-476c-abf2-ad913197b138"
-					(reference "J1")
+					(reference "SW_BTN_A1")
 					(unit 1)
 				)
 			)
