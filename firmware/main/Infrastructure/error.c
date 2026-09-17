@@ -1,7 +1,7 @@
 #include "error.h"
 
 #include "debug.h"
-#include "main.h"
+#include "stm32u5xx.h"
 
 void error_fatal(void)
 {

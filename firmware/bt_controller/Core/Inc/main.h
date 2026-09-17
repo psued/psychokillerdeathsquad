@@ -60,8 +60,6 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define STATUS_LED_Pin GPIO_PIN_8
-#define STATUS_LED_GPIO_Port GPIOA
 #define BTN_DOWN_Pin GPIO_PIN_2
 #define BTN_DOWN_GPIO_Port GPIOA
 #define BTN_DOWN_EXTI_IRQn EXTI2_IRQn

@@ -5,7 +5,7 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include "main.h"
+#include "stm32u5xx_hal.h"
 
 #define DEBUG_BUFFER_SIZE 256U
 #define DEBUG_TIMEOUT_MS   50U

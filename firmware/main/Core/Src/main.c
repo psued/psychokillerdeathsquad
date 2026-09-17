@@ -22,8 +22,13 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "time.h"
 #include "error.h"
+#include "time.h"
+#include "heartbeat.h"
+#include "input.h"
+#include "input_wired.h"
+#include "game.h"
+#include "game_tick.h"
 
 /* USER CODE END Includes */
 
@@ -132,6 +137,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   time_init();
+  heartbeat_init();
+  input_init();
+  game_init();
+  game_tick_init();
 
   /* USER CODE END 2 */
 
@@ -139,6 +148,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  heartbeat_process();
+	  input_process();
+	  game_tick_process();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -644,7 +656,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(WB_NRST_GPIO_Port, WB_NRST_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, FPGA_AUX0_Pin|FPGA_AUX1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, HEARTBEAT_LED_Pin|FPGA_AUX0_Pin|FPGA_AUX1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : P1_UP_Pin P1_DOWN_Pin P1_LEFT_Pin P1_RIGHT_Pin
                            P1_A_Pin P1_B_Pin P2_UP_Pin P2_DOWN_Pin
@@ -685,14 +697,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : FPGA_READY_Pin */
-  GPIO_InitStruct.Pin = FPGA_READY_Pin;
+  /*Configure GPIO pins : P1_WIRED_PRESENT_Pin P2_WIRED_PRESENT_Pin FPGA_READY_Pin */
+  GPIO_InitStruct.Pin = P1_WIRED_PRESENT_Pin|P2_WIRED_PRESENT_Pin|FPGA_READY_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(FPGA_READY_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : FPGA_AUX0_Pin FPGA_AUX1_Pin */
-  GPIO_InitStruct.Pin = FPGA_AUX0_Pin|FPGA_AUX1_Pin;
+  /*Configure GPIO pins : HEARTBEAT_LED_Pin FPGA_AUX0_Pin FPGA_AUX1_Pin */
+  GPIO_InitStruct.Pin = HEARTBEAT_LED_Pin|FPGA_AUX0_Pin|FPGA_AUX1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -714,6 +726,17 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if (htim->Instance == TIM6) {
+		input_wired_sample();
+	}
+
+	if (htim->Instance == TIM7) {
+		game_tick_pending();
+	}
+}
 
 /* USER CODE END 4 */
 

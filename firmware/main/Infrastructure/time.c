@@ -1,7 +1,7 @@
 #include "time.h"
 
 #include "error.h"
-#include "main.h"
+#include "stm32u5xx_hal.h"
 
 extern TIM_HandleTypeDef htim2;
 
