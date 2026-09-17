@@ -72,6 +72,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 151.13) (xy 97.79 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c67a1f7-97a6-44b4-9060-ab7ab33d36b9")
+	)
+	(wire
+		(pts
 			(xy 33.02 82.55) (xy 33.02 102.87)
 		)
 		(stroke
@@ -242,6 +252,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 153.67) (xy 97.79 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83a2ba5c-092c-45f4-89a2-37cb55daf1e1")
+	)
+	(wire
+		(pts
 			(xy 87.63 110.49) (xy 97.79 110.49)
 		)
 		(stroke
@@ -342,6 +362,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 148.59) (xy 97.79 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c95295e7-ea54-451f-90c2-2680e471d0e5")
+	)
+	(wire
+		(pts
 			(xy 154.94 52.07) (xy 143.51 52.07)
 		)
 		(stroke
@@ -402,6 +432,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 156.21) (xy 97.79 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1c9c6f1-cedc-428f-8600-6ea4836896ea")
+	)
+	(wire
+		(pts
 			(xy 146.05 138.43) (xy 87.63 138.43)
 		)
 		(stroke
@@ -421,8 +461,8 @@
 		(uuid "f9fc81c3-8e37-413e-8199-b0b28941531f")
 	)
 	(sheet
-		(at 215.265 102.87)
-		(size 50.165 45.72)
+		(at 154.94 76.708)
+		(size 49.022 45.72)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -437,7 +477,7 @@
 		)
 		(uuid "4e27f84f-b409-4451-a36b-8da2b783ead5")
 		(property "Sheetname" "Power"
-			(at 215.265 102.1584 0)
+			(at 154.94 75.9964 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -448,7 +488,7 @@
 			)
 		)
 		(property "Sheetfile" "power.kicad_sch"
-			(at 215.265 149.1746 0)
+			(at 154.94 123.0126 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -739,8 +779,8 @@
 		)
 	)
 	(sheet
-		(at 97.79 149.225)
-		(size 28.575 12.065)
+		(at 97.79 146.177)
+		(size 30.099 13.843)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -755,7 +795,7 @@
 		)
 		(uuid "b1b1efd2-d586-4518-af4f-3c644368f394")
 		(property "Sheetname" "MCU Bluetooth"
-			(at 97.79 148.5134 0)
+			(at 97.79 145.4654 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -766,7 +806,7 @@
 			)
 		)
 		(property "Sheetfile" "mcu_bluetooth.kicad_sch"
-			(at 97.79 161.8746 0)
+			(at 97.79 160.6046 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -777,7 +817,7 @@
 			)
 		)
 		(pin "BT_MCU_HOST_IRQ" output
-			(at 97.79 159.385 180)
+			(at 97.79 156.21 180)
 			(uuid "3899a70d-61dd-4295-a3fb-f0d40a738b56")
 			(effects
 				(font
@@ -787,7 +827,7 @@
 			)
 		)
 		(pin "BT_MCU_NRST" output
-			(at 97.79 156.845 180)
+			(at 97.79 153.67 180)
 			(uuid "c253dbc6-48fb-4824-90a2-11c46ba0d9b6")
 			(effects
 				(font
@@ -797,7 +837,7 @@
 			)
 		)
 		(pin "BT_MCU_RX" output
-			(at 97.79 154.305 180)
+			(at 97.79 148.59 180)
 			(uuid "449bcf9f-76ed-4bcf-af6c-f2c65bb8e0e7")
 			(effects
 				(font
@@ -807,7 +847,7 @@
 			)
 		)
 		(pin "BT_MCU_TX" output
-			(at 97.79 151.765 180)
+			(at 97.79 151.13 180)
 			(uuid "f46fa99d-5e68-4b83-8238-03fb4114d58f")
 			(effects
 				(font
@@ -826,7 +866,7 @@
 	)
 	(sheet
 		(at 20.32 102.87)
-		(size 67.31 58.42)
+		(size 67.31 57.15)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -852,7 +892,7 @@
 			)
 		)
 		(property "Sheetfile" "MCU.kicad_sch"
-			(at 20.32 161.8746 0)
+			(at 20.32 160.6046 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1055,6 +1095,46 @@
 		(pin "READY{slash}STATUS" input
 			(at 30.48 102.87 90)
 			(uuid "a01ca14f-59df-487e-bf71-e1677ab61517")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USART3_RX" input
+			(at 87.63 151.13 0)
+			(uuid "8f78ca1c-41fb-4c96-96be-eb847fa8b5fc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USART3_TX" input
+			(at 87.63 148.59 0)
+			(uuid "27907d6c-da72-41ab-ba67-182cafbfb0ae")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "WB_HOST_IRQ" input
+			(at 87.63 156.21 0)
+			(uuid "5c8dc883-4e35-4428-b47c-84fa2fe23cf5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "WB_NRST" input
+			(at 87.63 153.67 0)
+			(uuid "ba93f9a8-3cfa-4695-9b77-1062334e2820")
 			(effects
 				(font
 					(size 1.27 1.27)
