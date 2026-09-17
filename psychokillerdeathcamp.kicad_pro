@@ -270,6 +270,10 @@
         ""
       ],
       [
+        "pin_to_pin|533400|2324100|79077b99-a744-44c2-ad30-22988cb2e5ca|851c3004-99ff-4bd4-a91d-8796f149c10e|/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac|/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac|/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/4e27f84f-b409-4451-a36b-8da2b783ead5",
+        ""
+      ],
+      [
         "pin_to_pin|533400|2349500|674fb172-89c4-41a4-ba64-d963744b5bc7|e520b4f6-3666-4b0b-a9b9-e240f0ac301c|/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac|/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac|/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/4e27f84f-b409-4451-a36b-8da2b783ead5",
         ""
       ],
@@ -279,6 +283,10 @@
       ],
       [
         "pin_to_pin|533400|2527300|a2294a3c-fc1e-4026-ae58-e7c6a452f724|4deb5175-d189-4e99-b6bc-d391112fdac1|/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac|/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac|/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/4e27f84f-b409-4451-a36b-8da2b783ead5",
+        ""
+      ],
+      [
+        "pin_to_pin|533400|2527300|a2294a3c-fc1e-4026-ae58-e7c6a452f724|851c3004-99ff-4bd4-a91d-8796f149c10e|/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac|/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/f76ae774-b515-4743-930f-bcaf057c06ac|/bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc/4e27f84f-b409-4451-a36b-8da2b783ead5",
         ""
       ],
       [
@@ -569,7 +577,7 @@
     "page_layout_descr_file": ""
   },
   "schematic": {
-    "annotate_start_num": 200,
+    "annotate_start_num": 100,
     "annotation": {
       "method": 0,
       "sort_order": 0
@@ -698,7 +706,7 @@
         "uuid": "bb761b47-4aa1-4d7a-b464-2f14c3f8c1bc"
       }
     ],
-    "used_designators": "U1-4,U6-7,U201-202,J1-2,J201-204,#FLG201-209,R1-16,R18-19,R21-22,R40-58,R201-240,R242-244,R301-303,IC1-2,IC201,C1-29,C41-80,C129,C201-244,C315-318,L1-4,#PWR1-15,#PWR22,#PWR24-38,#PWR201-232,#PWR234-235,#PWR306-307,FB1,TP201-220,CR201-202,D201-203,SW201-202,SW301-303",
+    "used_designators": "U1-4,U6-7,U201-202,J1-2,J201-204,#FLG201-209,R1-16,R18-19,R21-22,R40-58,R201-240,R242-244,R301-303,IC1-2,IC201,C1-29,C41-80,C129-130,C201-244,C315-318,L1-4,#PWR1-15,#PWR22,#PWR24-38,#PWR201-232,#PWR234-235,#PWR306-307,FB1,FB201,TP201-220,CR201-202,D201-203,SW201-202,SW301-303",
     "variants": []
   },
   "sheets": [
