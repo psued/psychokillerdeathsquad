@@ -6900,6 +6900,16 @@
 		)
 		(uuid "ff5295f4-817b-44c1-9058-b56df7b13836")
 	)
+	(label "POWER_IN"
+		(at 39.37 22.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "07f3ca0d-3f7a-4c19-bee6-0beef0b2becd")
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 101.6 46.99 0)

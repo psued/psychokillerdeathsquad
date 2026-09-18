@@ -298,13 +298,13 @@
 	(embedded_fonts no)
 	(model "${KIPRJMOD}/3d_models/FTSH-107-01-L-DV-K-A.stp"
 		(offset
-			(xyz 0 0 0)
+			(xyz 0 0 0.406)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 0)
+			(xyz -90 0 0)
 		)
 	)
 )
