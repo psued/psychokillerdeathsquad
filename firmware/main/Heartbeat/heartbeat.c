@@ -18,7 +18,7 @@ void heartbeat_init(void)
 	HAL_GPIO_WritePin(
 		HEARTBEAT_LED_GPIO_Port,
 		HEARTBEAT_LED_Pin,
-		GPIO_PIN_RESET
+		GPIO_PIN_SET
 	);
 }
 

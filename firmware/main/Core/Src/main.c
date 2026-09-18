@@ -653,10 +653,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(AUDIO_EN_GPIO_Port, AUDIO_EN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(WB_NRST_GPIO_Port, WB_NRST_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOD, WB_NRST_Pin|HEARTBEAT_LED_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, HEARTBEAT_LED_Pin|FPGA_AUX0_Pin|FPGA_AUX1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, FPGA_AUX0_Pin|FPGA_AUX1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : P1_UP_Pin P1_DOWN_Pin P1_LEFT_Pin P1_RIGHT_Pin
                            P1_A_Pin P1_B_Pin P2_UP_Pin P2_DOWN_Pin
