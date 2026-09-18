@@ -22871,7 +22871,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "FPGA_GND"
+		(property "Value" "FPGA_VGA_GND"
 			(at 327.66 83.8199 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25783,7 +25783,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "FPGA_VCCO_0"
+		(property "Value" "FPGA_GND"
 			(at 214.63 207.0099 90)
 			(show_name no)
 			(do_not_autoplace no)
