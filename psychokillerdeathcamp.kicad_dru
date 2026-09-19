@@ -1,0 +1,12 @@
+(version 1)
+
+(rule "U201 (FPGA) clearance"
+    (constraint clearance (min 0.15mm))
+    (condition "A.intersectsCourtyard('U201')")
+)
+
+(rule "U201 (FPGA) vias"
+    (condition "A.Type == 'Via' && A.intersectsCourtyard('U201')")
+    (constraint via_diameter (max 0.6mm))
+    (constraint hole_size (max 0.25mm))
+)
