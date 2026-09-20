@@ -144,9 +144,9 @@ int main(void)
   time_init();
   heartbeat_init();
   input_init();
+  fpga_init();
   game_init();
   game_tick_init();
-  fpga_init();
 
   /* USER CODE END 2 */
 
