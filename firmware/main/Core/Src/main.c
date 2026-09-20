@@ -29,6 +29,7 @@
 #include "input_wired.h"
 #include "game.h"
 #include "game_tick.h"
+#include "fpga.h"
 
 /* USER CODE END Includes */
 
@@ -48,6 +49,8 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+
+CRC_HandleTypeDef hcrc;
 
 SAI_HandleTypeDef hsai_BlockA1;
 DMA_NodeTypeDef Node_GPDMA1_Channel0;
@@ -83,6 +86,7 @@ static void MX_TIM6_Init(void);
 static void MX_TIM7_Init(void);
 static void MX_ICACHE_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_CRC_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -134,6 +138,7 @@ int main(void)
   MX_TIM7_Init();
   MX_ICACHE_Init();
   MX_TIM2_Init();
+  MX_CRC_Init();
   /* USER CODE BEGIN 2 */
 
   time_init();
@@ -141,6 +146,7 @@ int main(void)
   input_init();
   game_init();
   game_tick_init();
+  fpga_init();
 
   /* USER CODE END 2 */
 
@@ -151,6 +157,7 @@ int main(void)
 	heartbeat_process();
 	input_process();
 	game_tick_process();
+	fpga_process();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -226,6 +233,40 @@ static void SystemPower_Config(void)
   }
 /* USER CODE BEGIN PWR */
 /* USER CODE END PWR */
+}
+
+/**
+  * @brief CRC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_CRC_Init(void)
+{
+
+  /* USER CODE BEGIN CRC_Init 0 */
+
+  /* USER CODE END CRC_Init 0 */
+
+  /* USER CODE BEGIN CRC_Init 1 */
+
+  /* USER CODE END CRC_Init 1 */
+  hcrc.Instance = CRC;
+  hcrc.Init.DefaultPolynomialUse = DEFAULT_POLYNOMIAL_DISABLE;
+  hcrc.Init.DefaultInitValueUse = DEFAULT_INIT_VALUE_DISABLE;
+  hcrc.Init.GeneratingPolynomial = 4129;
+  hcrc.Init.CRCLength = CRC_POLYLENGTH_16B;
+  hcrc.Init.InitValue = 0xFFFF;
+  hcrc.Init.InputDataInversionMode = CRC_INPUTDATA_INVERSION_NONE;
+  hcrc.Init.OutputDataInversionMode = CRC_OUTPUTDATA_INVERSION_DISABLE;
+  hcrc.InputDataFormat = CRC_INPUTDATA_FORMAT_BYTES;
+  if (HAL_CRC_Init(&hcrc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN CRC_Init 2 */
+
+  /* USER CODE END CRC_Init 2 */
+
 }
 
 /**
@@ -735,6 +776,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 	if (htim->Instance == TIM7) {
 		game_tick_pending();
+	}
+}
+
+void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin)
+{
+	if (GPIO_Pin == FPGA_FRAME_Pin) {
+		fpga_frame();
 	}
 }
 
