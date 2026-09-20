@@ -1,6 +1,6 @@
 # FPGA Interface
 
-The STM32U545 owns game state and simulation. The FPGA owns rendering and video timing.
+The STM32U545 owns game state and simulation. The FPGA owns rendering and video output.
 
 The MCU sends complete render snapshots to the FPGA over SPI.
 
@@ -9,16 +9,16 @@ The MCU sends complete render snapshots to the FPGA over SPI.
 | Signal | Direction | Behaviour |
 | --- | --- | --- |
 | SCK | MCU → FPGA | SPI clock |
-| MISO | FPGA → MCU | SPI data |
-| MOSI | MCU → FPGA | SPI data |
-| CS | MCU → FPGA | active low |
-| READY | FPGA → MCU | active high level |
-| IRQ | FPGA → MCU | active high held level |
-| FRAME | FPGA → MCU | active high pulse |
-| AUX0 | MCU → FPGA | reserved |
-| AUX1 | MCU → FPGA | reserved |
+| MISO | FPGA → MCU | Reserved |
+| MOSI | MCU → FPGA | Snapshot data |
+| CS | MCU → FPGA | Active low |
+| READY | FPGA → MCU | Active-high readiness level |
+| IRQ | FPGA → MCU | Reserved, active-high held level |
+| FRAME | FPGA → MCU | Active-high frame-boundary pulse |
+| AUX0 | MCU → FPGA | Reserved, initially low |
+| AUX1 | MCU → FPGA | Reserved, initially low |
 
-Pin mapping and electrical biasing are documented in [`hardware.md`](hardware.md).
+Pin mapping and electrical connections are documented in [`hardware.md`](hardware.md).
 
 ## SPI
 
@@ -27,109 +27,100 @@ The STM32U545 is the SPI master.
 | Property | Value |
 | --- | --- |
 | Mode | 0 |
-| Data size | 8 bit |
+| Data size | 8 bits |
 | Bit order | MSB first |
-| Chip select | software controlled, active low |
+| Chip select | Software controlled, active low |
 | Baseline clock | 10 MHz |
 
-A transaction is active while `CS` is low.
+The MCU checks `READY` before starting a snapshot transfer. Once a transfer begins, it completes even if `READY` becomes low.
 
-## READY
+A transfer begins when `CS` goes low and ends when `CS` goes high.
 
-`READY` indicates whether the FPGA is initialized and available for communication.
+`FRAME` produces one pulse at each video frame boundary.
 
-| READY | State |
-| --- | --- |
-| LOW | not ready |
-| HIGH | ready |
+`IRQ` remains low in the baseline implementation.
 
-Communication begins after `READY` becomes high.
+## Rendering
 
-## IRQ
+The logical rendering area is **320 × 240 pixels**, displayed at **640 × 480** using 2× scaling.
 
-`IRQ` indicates a pending FPGA condition requiring MCU service.
+Each snapshot contains 24 fixed layer slots. Each layer describes an image, source rectangle, destination position, depth and rendering flags.
 
-The FPGA holds `IRQ` high until the condition has been serviced. The MCU detects the rising edge, while the held level preserves the pending state if servicing is delayed.
+Enabled layers have equal source and destination dimensions. Horizontal mirroring is supported.
 
-`IRQ` remains asserted until the pending condition is serviced. The conditions represented by `IRQ` and their acknowledgement through the SPI protocol are subject to revision.
-
-## FRAME
-
-`FRAME` produces one active-high pulse at each video frame boundary.
-
-The MCU detects the rising edge.
-
-`FRAME` reports FPGA video timing and does not drive the MCU game simulation.
-
-## AUX0 and AUX1
-
-`AUX0` and `AUX1` are reserved MCU outputs and are initially low.
-
-No baseline protocol depends on them.
-
-## Timing and State Updates
-
-The game simulation runs independently at approximately 60 Hz.
-
-Each update produces a complete render snapshot:
-
-    game simulation
-          │
-          ▼
-    render snapshot
-          │
-         SPI
-          │
-          ▼
-    pending FPGA state
-          │
-     frame boundary
-          │
-          ▼
-     active FPGA state
-          │
-          ▼
-       rendering
-
-Receiving a snapshot updates pending state only. At a suitable frame boundary, the FPGA atomically makes the complete pending snapshot active.
-
-If no new snapshot is available, the current active state remains in use.
-
-A snapshot is expected to be approximately 64 bytes. At 60 updates per second this is approximately 3.84 kB/s. A 64-byte transfer at 10 MHz takes approximately 51.2 µs.
+The FPGA uses the latest valid snapshot for rendering without applying partially received data.
 
 ## Render Snapshot
 
-A render snapshot contains the state required for rendering, including information such as:
+Each snapshot contains 24 layer descriptors of 16 bytes each.
 
-- game state
-- player positions
-- orientation
-- animation state
-- health
-- map state
-- effects
+| Component | Size |
+| --- | ---: |
+| Layer descriptors | 384 bytes |
+| CRC-16 | 2 bytes |
+| Total | 386 bytes |
 
-The exact representation is subject to revision.
+All 24 slots are transmitted in order.
 
-## Startup and Failure Behaviour
+### Layer Descriptor
 
-The interface starts with `CS` high and `READY`, `IRQ` and `FRAME` low through their external biasing. `AUX0` and `AUX1` are driven low after MCU GPIO initialization.
+| Offset | Field | Size | Description |
+| ---: | --- | ---: | --- |
+| 0 | `image_id` | 2 | Image identifier |
+| 2 | `src_x` | 2 | Source X |
+| 4 | `src_y` | 2 | Source Y |
+| 6 | `width` | 2 | Rectangle width |
+| 8 | `height` | 2 | Rectangle height |
+| 10 | `dst_x` | 2 | Destination X |
+| 12 | `dst_y` | 2 | Destination Y |
+| 14 | `z` | 1 | Layer depth |
+| 15 | `flags` | 1 | Layer flags |
 
-Neither side depends on a particular reset completion order.
+All 16-bit fields are unsigned and little-endian.
 
-An incomplete or invalid transfer does not replace active render state. If no new valid snapshot is available, the FPGA continues rendering the current state.
+`image_id` identifies an image available to the FPGA. `src_x` and `src_y` specify the source rectangle within that image. `dst_x` and `dst_y` specify its position in the logical rendering area.
 
-## Protocol
+### Flags
 
-The SPI payload format is subject to revision.
+| Bit | Name | Behaviour |
+| ---: | --- | --- |
+| 0 | ENABLED | Layer is rendered |
+| 1 | FLIP_X | Mirror horizontally |
+| 2–7 | Reserved | Zero |
 
-It will specify:
+A disabled layer is transmitted as 16 zero bytes.
 
-- message type and payload length
-- render snapshot layout
-- field representation and byte order
-- FPGA status
-- IRQ conditions and acknowledgement
-- validation and versioning
+### Geometry
 
-Protocol fields use fixed-size representations rather than compiler-dependent structure layout.
+For enabled layers:
+
+- `width` and `height` are greater than zero.
+- `width` is at most 320 and `height` is at most 240.
+- `dst_x + width` is at most 320.
+- `dst_y + height` is at most 240.
+
+The MCU clips enabled layers to the logical rendering area before transmission.
+
+## Snapshot Transfer
+
+Each SPI transfer contains the 384-byte snapshot payload followed by a two-byte CRC.
+
+The CRC covers the payload in transmission order and is transmitted low byte first.
+
+| CRC property | Value |
+| --- | --- |
+| Algorithm | CRC-16/IBM-3740 (CCITT-FALSE) |
+| Polynomial | `0x1021` |
+| Initial value | `0xFFFF` |
+| Input reflection | False |
+| Output reflection | False |
+| Final XOR | `0x0000` |
+| Check value for `123456789` | `0x29B1` |
+
+An incomplete transfer or a CRC mismatch does not produce a new valid snapshot.
+
+## Startup
+
+`CS` is initially high. `READY`, `IRQ` and `FRAME` are initially low. `AUX0` and `AUX1` are initially low after MCU GPIO initialization.
+
+The FPGA asserts `READY` when it can receive snapshot transfers. The MCU does not start a transfer while `READY` is low.
