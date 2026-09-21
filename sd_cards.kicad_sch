@@ -2688,16 +2688,6 @@
 		)
 		(uuid "058b170d-6959-40a7-874d-8b3954d55510")
 	)
-	(label "SD_FPGA_DET_A"
-		(at 242.57 87.63 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "12f69bec-c254-4f87-86f2-ae7bb5ddecb6")
-	)
 	(label "SD_MCU_DAT0"
 		(at 107.95 82.55 0)
 		(effects
@@ -2717,6 +2707,26 @@
 			(justify left bottom)
 		)
 		(uuid "43a6ceab-2781-4818-8d35-7374a9016851")
+	)
+	(label "SD_FPGA_DAT3"
+		(at 242.57 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4e04246c-9472-46f4-b079-89b9feb3c525")
+	)
+	(label "SD_FPGA_DAT2"
+		(at 242.57 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5e2bc9e5-a606-4deb-b213-d121fca39235")
 	)
 	(label "SD_MCU_DAT1"
 		(at 66.04 105.41 180)
@@ -2738,23 +2748,13 @@
 		)
 		(uuid "78eff672-cf2e-4258-a146-dbab903470c2")
 	)
-	(label "SD_FPGA_DAT2"
-		(at 201.93 110.49 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "80e3a00d-bb5b-4b32-9eae-e2f0365c3d8c")
-	)
 	(label "SD_FPGA_DAT1"
-		(at 201.93 105.41 180)
+		(at 242.57 110.49 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "ade8d0c3-2ff1-4a6a-87c6-6786afe958ce")
 	)
@@ -2768,25 +2768,25 @@
 		)
 		(uuid "ba112a78-348b-4d20-acab-88e18d61cb80")
 	)
-	(label "SD_FPGA_DAT3"
-		(at 242.57 110.49 0)
+	(label "SD_FPGA_DET_A"
+		(at 201.93 110.49 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
-		(uuid "bcf5ec56-f544-4c9a-b0ba-8f63f4b123c0")
+		(uuid "baf6d42b-4456-40cb-9d47-5d308026289f")
 	)
 	(label "SD_FPGA_DAT0"
-		(at 242.57 82.55 0)
+		(at 201.93 105.41 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
-		(uuid "c096a9d3-f468-4985-bf7d-3f65a19428f9")
+		(uuid "bfe1ab30-6da3-40f0-8ee4-9a65216f50c8")
 	)
 	(label "SD_FPGA_CMD"
 		(at 201.93 87.63 180)
