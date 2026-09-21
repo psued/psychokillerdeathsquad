@@ -5650,6 +5650,16 @@
 		)
 		(uuid "5c2e4103-c6ae-4e64-8947-0439040e8489")
 	)
+	(label "VDD"
+		(at 91.44 45.72 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "62a88a77-557d-40e0-9af6-23d31a6911bf")
+	)
 	(label "DOWN_BT"
 		(at 247.65 104.14 180)
 		(effects
