@@ -9405,7 +9405,7 @@
 				)
 			)
 		)
-		(property "Description" "test point"
+		(property "Description" ""
 			(at 91.44 113.03 0)
 			(hide yes)
 			(show_name no)
