@@ -13,4 +13,5 @@
 
 (rule "STDC14 hole clearance"
    (constraint hole_clearance (min 0.15mm))
-   (condition "A.memberOfFootprint('footprint_library:CONN_FTSH-x07-01-x-DV-K-A_SAI')"))
+   (condition "A.memberOfFootprint('footprint_library:CONN_FTSH-x07-01-x-DV-K-A_SAI')")
+)
