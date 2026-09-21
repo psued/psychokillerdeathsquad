@@ -6,7 +6,12 @@
 )
 
 (rule "U201 (FPGA) vias"
-    (condition "A.Type == 'Via' && A.intersectsCourtyard('U201')")
+    (condition "A.Type == 'Via' && A.intersectsArea('U201')")
     (constraint via_diameter (max 0.6mm))
     (constraint hole_size (max 0.25mm))
+)
+
+(rule "STDC14 hole clearance"
+   (constraint hole_clearance (min 0.15mm))
+   (condition "A.memberOfFootprint('footprint_library:CONN_FTSH-x07-01-x-DV-K-A_SAI')")
 )

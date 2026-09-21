@@ -213,9 +213,12 @@
         0.0,
         0.15,
         0.2,
+        0.3,
         0.35,
         0.4,
-        0.5
+        0.5,
+        0.8,
+        1.0
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -574,7 +577,7 @@
       {
         "name": "Ground",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
+        "priority": 2,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.5,
         "tuning_profile": ""
@@ -582,9 +585,25 @@
       {
         "name": "Power",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 3,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.4,
+        "tuning_profile": ""
+      },
+      {
+        "name": "SW 2A",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.8,
+        "tuning_profile": ""
+      },
+      {
+        "name": "SW 3A",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.5,
+        "track_width": 1.4,
         "tuning_profile": ""
       }
     ],
@@ -621,6 +640,26 @@
       {
         "netclass": "Power",
         "pattern": "/Power/POWER_IN"
+      },
+      {
+        "netclass": "SW 3A",
+        "pattern": "/Power/SW_1V0"
+      },
+      {
+        "netclass": "SW 3A",
+        "pattern": "/Power/SW_5V"
+      },
+      {
+        "netclass": "SW 2A",
+        "pattern": "/Power/SW_1V8"
+      },
+      {
+        "netclass": "SW 2A",
+        "pattern": "/Power/SW_3V3"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Power/VOUT_*"
       }
     ]
   },
