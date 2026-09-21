@@ -1,0 +1,11 @@
+(version 1)
+
+(rule "STDC14 hole clearance"
+   (constraint hole_clearance (min 0.15mm))
+   (condition "A.memberOfFootprint('footprint_library:CONN_FTSH-x07-01-x-DV-K-A_SAI')")
+)
+
+(rule "STDC14 GND single spoke"
+   (constraint min_resolved_spokes 1)
+   (condition "A.memberOfFootprint('footprint_library:CONN_FTSH-x07-01-x-DV-K-A_SAI')")
+)
