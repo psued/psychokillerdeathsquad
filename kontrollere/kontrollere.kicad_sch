@@ -5710,6 +5710,16 @@
 		)
 		(uuid "950fe38b-a3bc-41d7-9787-f62e6d459898")
 	)
+	(label "VDD_BAT"
+		(at 87.63 24.13 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "96bbee99-326f-4fa1-801d-4227790af695")
+	)
 	(label "DOWN_WIRED"
 		(at 226.06 52.07 0)
 		(effects
@@ -6798,7 +6808,7 @@
 				)
 			)
 		)
-		(property "Description" "Switch, single pole double throw"
+		(property "Description" ""
 			(at 87.63 34.29 0)
 			(hide yes)
 			(show_name no)
