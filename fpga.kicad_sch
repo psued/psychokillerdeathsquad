@@ -24770,7 +24770,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7u"
+		(property "Value" "0.47u"
 			(at 235.204 248.666 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30796,7 +30796,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7u"
+		(property "Value" "0.47u"
 			(at 241.554 248.666 0)
 			(show_name no)
 			(do_not_autoplace no)
