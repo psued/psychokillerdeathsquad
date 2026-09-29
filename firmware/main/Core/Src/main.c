@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "app_filex.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -30,6 +31,7 @@
 #include "game.h"
 #include "game_tick.h"
 #include "fpga.h"
+#include "storage.h"
 
 /* USER CODE END Includes */
 
@@ -133,18 +135,19 @@ int main(void)
   MX_SPI2_Init();
   MX_UART4_Init();
   MX_USART3_UART_Init();
-  MX_SDMMC1_SD_Init();
   MX_TIM6_Init();
   MX_TIM7_Init();
   MX_ICACHE_Init();
   MX_TIM2_Init();
   MX_CRC_Init();
+  MX_FileX_Init();
   /* USER CODE BEGIN 2 */
 
   time_init();
   heartbeat_init();
   input_init();
   fpga_init();
+  (void)storage_init();
   game_init();
   game_tick_init();
 
@@ -158,6 +161,7 @@ int main(void)
 	input_process();
 	game_tick_process();
 	fpga_process();
+	storage_process();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

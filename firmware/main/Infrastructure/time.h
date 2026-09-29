@@ -4,19 +4,19 @@
 #include <stdint.h>
 
 /**
- * Starts the microsecond system timebase.
+ * Start the microsecond system timebase.
  */
 void time_init(void);
 
 /**
- * Returns the monotonic system time in milliseconds.
+ * Return the monotonic system time in milliseconds.
  *
  * The counter wraps after approximately 49.7 days.
  */
 uint32_t time_ms(void);
 
 /**
- * Returns the monotonic system time in microseconds.
+ * Return the monotonic system time in microseconds.
  *
  * The counter wraps after approximately 71.6 minutes.
  */

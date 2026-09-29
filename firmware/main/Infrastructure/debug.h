@@ -2,7 +2,7 @@
 #define DEBUG_H
 
 /**
- * Writes formatted output to the debug UART.
+ * Write formatted output to the debug UART.
  *
  * Output exceeding the internal buffer will be truncated.
  * This function is blocking and must not be called from interrupts

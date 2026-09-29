@@ -3,9 +3,6 @@
 
 #include <stdint.h>
 
-/**
- * Generic errors returned by recoverable operations.
- */
 typedef enum {
 	ERROR_NONE = 0,
 	ERROR_TIMEOUT,
@@ -17,7 +14,7 @@ typedef enum {
 } Error;
 
 /**
- * Terminates execution after an unrecoverable low-level failure.
+ * Terminate execution after an unrecoverable low-level failure.
  *
  * If a debugger is attached, execution stops at a breakpoint.
  * Otherwise, or after continuing from the breakpoint, the MCU resets.
@@ -26,7 +23,7 @@ void error_fatal(void)
 	__attribute__((noreturn));
 
 /**
- * Handles a failed assertion.
+ * Handle a failed assertion.
  */
 void assert_failed(
 	const char *expression,
@@ -35,7 +32,7 @@ void assert_failed(
 ) __attribute__((noreturn));
 
 /**
- * Handles an unrecoverable runtime failure.
+ * Handle an unrecoverable runtime failure.
  */
 void panic_failed(
 	const char *reason,
@@ -44,7 +41,7 @@ void panic_failed(
 ) __attribute__((noreturn));
 
 /**
- * Verifies a programming invariant.
+ * Verify a programming invariant.
  */
 #define ASSERT(condition)                                            \
 	do {                                                             \
@@ -54,7 +51,7 @@ void panic_failed(
 	} while (0)
 
 /**
- * Reports an unrecoverable runtime failure.
+ * Report an unrecoverable runtime failure.
  */
 #define PANIC(reason) \
 	panic_failed((reason), __FILE__, (uint32_t)__LINE__)

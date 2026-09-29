@@ -48,7 +48,7 @@ void fpga_process(void);
 /**
  * Submit the latest render snapshot.
  *
- * Returns ERROR_NONE on success, otherwise an error code.
+ * Return ERROR_NONE on success, otherwise an error code.
  */
 Error fpga_submit(const RenderSnapshot *snapshot);
 
