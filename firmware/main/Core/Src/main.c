@@ -705,14 +705,12 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : P1_UP_Pin P1_DOWN_Pin P1_LEFT_Pin P1_RIGHT_Pin
                            P1_A_Pin P1_B_Pin P2_UP_Pin P2_DOWN_Pin
-                           P2_LEFT_Pin P2_RIGHT_Pin P2_A_Pin P2_B_Pin
-                           SD_DETECT_Pin */
+                           P2_LEFT_Pin P2_RIGHT_Pin P2_A_Pin P2_B_Pin */
   GPIO_InitStruct.Pin = P1_UP_Pin|P1_DOWN_Pin|P1_LEFT_Pin|P1_RIGHT_Pin
                           |P1_A_Pin|P1_B_Pin|P2_UP_Pin|P2_DOWN_Pin
-                          |P2_LEFT_Pin|P2_RIGHT_Pin|P2_A_Pin|P2_B_Pin
-                          |SD_DETECT_Pin;
+                          |P2_LEFT_Pin|P2_RIGHT_Pin|P2_A_Pin|P2_B_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pin : FPGA_CS_Pin */
@@ -728,6 +726,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(AUDIO_EN_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : SD_DETECT_Pin */
+  GPIO_InitStruct.Pin = SD_DETECT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(SD_DETECT_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : WB_NRST_Pin */
   GPIO_InitStruct.Pin = WB_NRST_Pin;
