@@ -120,9 +120,11 @@ Each controller uses the same six physical buttons for both sensing paths:
 | GND | 7 | | |
 | WIRED_PRESENT | 8 | PD10 | PD11 |
 
-The wired button inputs are active low with external pull-ups and input protection on the main PCB.
+The wired button inputs are active low and use the STM32U545 internal pull-ups. The main PCB provides optional external pull-up footprints and input protection.
 
-`WIRED_PRESENT` is active low with an external 10 kΩ pull-up to 3.3 V on the main PCB and uses no MCU internal pull. Connector pin 8 is tied directly to GND on the controller PCB. When the cable is connected, this pulls `WIRED_PRESENT` low. When disconnected, the main-PCB pull-up holds the signal high.
+`WIRED_PRESENT` is active low and uses the STM32U545 internal pull-up. The main PCB provides an optional external pull-up footprint. Connector pin 8 is tied directly to GND on the controller PCB. When the cable is connected, this pulls `WIRED_PRESENT` low. When disconnected, the internal pull-up holds the signal high.
+
+The optional external pull-ups are initially left unpopulated.
 
 The controllers use Molex Micro-Fit 3.0 connectors.
 
@@ -134,7 +136,7 @@ One BAT54C dual Schottky diode is used for each button. The common cathode conne
 
 Each controller therefore uses six BAT54C devices.
 
-The wired side is pulled high by the main PCB. The STM32WB side uses its internal GPIO pull-up.
+The wired side uses the STM32U545 internal GPIO pull-up, with an optional external pull-up footprint on the main PCB. The STM32WB side uses its internal GPIO pull-up.
 
 When a button is released, both sensing inputs are high. Pressing the button pulls both sensing inputs low through their respective Schottky diode paths.
 
