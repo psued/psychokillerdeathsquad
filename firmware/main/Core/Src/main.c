@@ -698,10 +698,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(AUDIO_EN_GPIO_Port, AUDIO_EN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, WB_NRST_Pin|HEARTBEAT_LED_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(WB_NRST_GPIO_Port, WB_NRST_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, FPGA_AUX0_Pin|FPGA_AUX1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, HEARTBEAT_LED_Pin|FPGA_AUX0_Pin|FPGA_AUX1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : P1_UP_Pin P1_DOWN_Pin P1_LEFT_Pin P1_RIGHT_Pin
                            P1_A_Pin P1_B_Pin P2_UP_Pin P2_DOWN_Pin
@@ -746,10 +746,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : P1_WIRED_PRESENT_Pin P2_WIRED_PRESENT_Pin FPGA_READY_Pin */
-  GPIO_InitStruct.Pin = P1_WIRED_PRESENT_Pin|P2_WIRED_PRESENT_Pin|FPGA_READY_Pin;
+  /*Configure GPIO pins : P1_WIRED_PRESENT_Pin P2_WIRED_PRESENT_Pin */
+  GPIO_InitStruct.Pin = P1_WIRED_PRESENT_Pin|P2_WIRED_PRESENT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /*Configure GPIO pins : HEARTBEAT_LED_Pin FPGA_AUX0_Pin FPGA_AUX1_Pin */
@@ -758,6 +758,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : FPGA_READY_Pin */
+  GPIO_InitStruct.Pin = FPGA_READY_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(FPGA_READY_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI4_IRQn, 7, 0);

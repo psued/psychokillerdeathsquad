@@ -8,12 +8,8 @@ void error_fatal(void)
 	if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) != 0U) {
 		__BKPT(0);
 	}
-
-	__disable_irq();
+	
 	NVIC_SystemReset();
-
-	while (1) {
-	}
 }
 
 void assert_failed(

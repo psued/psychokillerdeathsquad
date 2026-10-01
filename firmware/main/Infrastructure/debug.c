@@ -8,7 +8,7 @@
 #include "stm32u5xx_hal.h"
 
 #define DEBUG_BUFFER_SIZE 256U
-#define DEBUG_TIMEOUT_MS   50U
+#define DEBUG_TIMEOUT_MS  50U
 
 extern UART_HandleTypeDef huart4;
 

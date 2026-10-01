@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <string.h>
 
+#include "error.h"
 #include "main.h"
 
 extern CRC_HandleTypeDef hcrc;
@@ -15,7 +16,7 @@ extern SPI_HandleTypeDef hspi2;
 #define CRC_SIZE        2U
 #define PAYLOAD_SIZE    (RENDER_LAYER_COUNT * LAYER_WIRE_SIZE)
 #define PACKET_SIZE     (PAYLOAD_SIZE + CRC_SIZE)
-#define SPI_TIMEOUT_MS  5U
+#define SPI_TIMEOUT_MS  2U
 
 static RenderSnapshot pending_snapshot;
 static uint8_t packet[PACKET_SIZE];
@@ -48,8 +49,7 @@ static bool snapshot_valid(const RenderSnapshot *snapshot)
 			return false;
 		}
 
-		if (layer->dst_x > RENDER_WIDTH - layer->width ||
-			layer->dst_y > RENDER_HEIGHT - layer->height) {
+		if (layer->dst_x > RENDER_WIDTH - layer->width || layer->dst_y > RENDER_HEIGHT - layer->height) {
 			return false;
 		}
 	}
@@ -141,14 +141,11 @@ void fpga_process(void)
 	}
 }
 
-Error fpga_submit(const RenderSnapshot *snapshot)
+void fpga_submit(const RenderSnapshot *snapshot)
 {
-	if (snapshot == NULL || !snapshot_valid(snapshot)) {
-		return ERROR_INVALID_DATA;
-	}
+	ASSERT(snapshot != NULL);
+	ASSERT(snapshot_valid(snapshot));
 
 	pending_snapshot = *snapshot;
 	snapshot_pending = true;
-
-	return ERROR_NONE;
 }

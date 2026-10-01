@@ -26,7 +26,6 @@ static UCHAR media_cache[FX_STM32_SD_DEFAULT_SECTOR_SIZE]
 static StorageFile files[STORAGE_FILE_COUNT];
 
 static bool media_mounted;
-static bool media_open;
 static bool card_present_prev;
 
 static bool mount_pending;
@@ -47,6 +46,7 @@ static void media_invalidate(void)
 	}
 
 	if (media_mounted) {
+		(void)fx_media_abort(&media);
 		(void)HAL_SD_DeInit(&hsd1);
 	}
 
@@ -69,17 +69,6 @@ static Error media_mount(void)
 		return ERROR_IO;
 	}
 
-	if (media_open) {
-		status = fx_media_close(&media);
-
-		if (status != FX_SUCCESS) {
-			(void)HAL_SD_DeInit(&hsd1);
-			return ERROR_IO;
-		}
-
-		media_open = false;
-	}
-
 	status = fx_media_open(
 		&media,
 		"SD",
@@ -94,9 +83,7 @@ static Error media_mount(void)
 		return ERROR_IO;
 	}
 
-	media_open = true;
 	media_mounted = true;
-
 	return ERROR_NONE;
 }
 
@@ -176,9 +163,8 @@ Error storage_open(StorageFile **file, const char *path)
 	StorageFile *slot = NULL;
 	UINT status;
 
-	if (file == NULL || path == NULL) {
-		return ERROR_INVALID_DATA;
-	}
+	ASSERT(file != NULL);
+	ASSERT(path != NULL);
 
 	*file = NULL;
 
@@ -212,7 +198,8 @@ Error storage_open(StorageFile **file, const char *path)
 		status == FX_INVALID_NAME || 
 		status == FX_INVALID_PATH ||
 		status == FX_NOT_A_FILE
-	) {
+	)
+	{
 		return ERROR_INVALID_DATA;
 	}
 
@@ -241,19 +228,12 @@ Error storage_read(
 	ULONG actual = 0;
 	UINT status;
 
-	if (bytes_read == NULL) {
-		return ERROR_INVALID_DATA;
-	}
+	ASSERT(file != NULL);
+	ASSERT(bytes_read != NULL);
+	ASSERT(buffer != NULL || capacity == 0U);
+	ASSERT(file->in_use);
 
 	*bytes_read = 0;
-
-	if (file == NULL || (buffer == NULL && capacity != 0U)) {
-		return ERROR_INVALID_DATA;
-	}
-
-	if (!file->in_use) {
-		return ERROR_INVALID_DATA;
-	}
 
 	if (!file->valid || !media_mounted) {
 		return ERROR_UNAVAILABLE;
@@ -286,9 +266,8 @@ Error storage_seek(StorageFile *file, uint32_t offset)
 {
 	UINT status;
 
-	if (file == NULL || !file->in_use) {
-		return ERROR_INVALID_DATA;
-	}
+	ASSERT(file != NULL);
+	ASSERT(file->in_use);
 
 	if (!file->valid || !media_mounted) {
 		return ERROR_UNAVAILABLE;
@@ -311,9 +290,8 @@ Error storage_close(StorageFile *file)
 {
 	UINT status;
 
-	if (file == NULL || !file->in_use) {
-		return ERROR_INVALID_DATA;
-	}
+	ASSERT(file != NULL);
+	ASSERT(file->in_use);
 
 	if (!file->valid || !media_mounted) {
 		file->in_use = false;

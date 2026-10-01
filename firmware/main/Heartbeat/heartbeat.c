@@ -5,9 +5,7 @@
 #include "main.h"
 #include "time.h"
 
-enum {
-	HEARTBEAT_INTERVAL_MS = 1000
-};
+#define HEARTBEAT_INTERVAL_MS 1000U
 
 static uint32_t last_toggle;
 
@@ -18,7 +16,7 @@ void heartbeat_init(void)
 	HAL_GPIO_WritePin(
 		HEARTBEAT_LED_GPIO_Port,
 		HEARTBEAT_LED_Pin,
-		GPIO_PIN_SET
+		GPIO_PIN_RESET
 	);
 }
 

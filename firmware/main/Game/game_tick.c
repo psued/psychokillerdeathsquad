@@ -9,7 +9,7 @@
 
 extern TIM_HandleTypeDef htim7;
 
-static uint32_t pending_ticks;
+static volatile uint32_t pending_ticks;
 
 void game_tick_init(void)
 {
@@ -29,11 +29,11 @@ void game_tick_process(void)
 	__disable_irq();
 
 	uint32_t ticks = pending_ticks;
-	pending_ticks = 0;
+	pending_ticks = 0U;
 
 	__set_PRIMASK(primask);
 
-	while (ticks > 0) {
+	while (ticks > 0U) {
 		input_freeze();
 		game_tick();
 		ticks--;

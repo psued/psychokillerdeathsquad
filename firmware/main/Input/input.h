@@ -6,14 +6,12 @@
 
 typedef uint8_t InputButtons;
 
-enum {
-	INPUT_BUTTON_UP    = 1U << 0,
-	INPUT_BUTTON_DOWN  = 1U << 1,
-	INPUT_BUTTON_LEFT  = 1U << 2,
-	INPUT_BUTTON_RIGHT = 1U << 3,
-	INPUT_BUTTON_A     = 1U << 4,
-	INPUT_BUTTON_B     = 1U << 5
-};
+#define INPUT_BUTTON_UP    (1U << 0)
+#define INPUT_BUTTON_DOWN  (1U << 1)
+#define INPUT_BUTTON_LEFT  (1U << 2)
+#define INPUT_BUTTON_RIGHT (1U << 3)
+#define INPUT_BUTTON_A     (1U << 4)
+#define INPUT_BUTTON_B     (1U << 5)
 
 typedef enum {
 	INPUT_PLAYER_1 = 0,

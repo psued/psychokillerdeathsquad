@@ -10,21 +10,13 @@
 
 extern TIM_HandleTypeDef htim6;
 
-enum {
-	WIRED_BUTTON_COUNT = 6,
-	DEBOUNCE_SAMPLES = 10
-};
+#define WIRED_BUTTON_COUNT 6U
+#define DEBOUNCE_SAMPLES   10U
 
 typedef struct {
 	GPIO_TypeDef *port;
 	uint16_t pin;
-	InputButtons button;
-} ButtonMapping;
-
-typedef struct {
-	GPIO_TypeDef *port;
-	uint16_t pin;
-} PresenceMapping;
+} GPIOMapping;
 
 typedef struct {
 	InputState state;
@@ -41,26 +33,26 @@ static const InputButtons buttons[WIRED_BUTTON_COUNT] = {
 	INPUT_BUTTON_B
 };
 
-static const ButtonMapping button_mappings[INPUT_PLAYER_COUNT][WIRED_BUTTON_COUNT] = {
+static const GPIOMapping button_mappings[INPUT_PLAYER_COUNT][WIRED_BUTTON_COUNT] = {
 	[INPUT_PLAYER_1] = {
-		{ GPIOE, GPIO_PIN_2, INPUT_BUTTON_UP },
-		{ GPIOE, GPIO_PIN_3, INPUT_BUTTON_DOWN },
-		{ GPIOE, GPIO_PIN_4, INPUT_BUTTON_LEFT },
-		{ GPIOE, GPIO_PIN_5, INPUT_BUTTON_RIGHT },
-		{ GPIOE, GPIO_PIN_6, INPUT_BUTTON_A },
-		{ GPIOE, GPIO_PIN_7, INPUT_BUTTON_B }
+		{ P1_UP_GPIO_Port,    P1_UP_Pin },
+		{ P1_DOWN_GPIO_Port,  P1_DOWN_Pin },
+		{ P1_LEFT_GPIO_Port,  P1_LEFT_Pin },
+		{ P1_RIGHT_GPIO_Port, P1_RIGHT_Pin },
+		{ P1_A_GPIO_Port,     P1_A_Pin },
+		{ P1_B_GPIO_Port,     P1_B_Pin }
 	},
 	[INPUT_PLAYER_2] = {
-		{ GPIOE, GPIO_PIN_8, INPUT_BUTTON_UP },
-		{ GPIOE, GPIO_PIN_9, INPUT_BUTTON_DOWN },
-		{ GPIOE, GPIO_PIN_10, INPUT_BUTTON_LEFT },
-		{ GPIOE, GPIO_PIN_11, INPUT_BUTTON_RIGHT },
-		{ GPIOE, GPIO_PIN_12, INPUT_BUTTON_A },
-		{ GPIOE, GPIO_PIN_13, INPUT_BUTTON_B }
+		{ P2_UP_GPIO_Port,    P2_UP_Pin },
+		{ P2_DOWN_GPIO_Port,  P2_DOWN_Pin },
+		{ P2_LEFT_GPIO_Port,  P2_LEFT_Pin },
+		{ P2_RIGHT_GPIO_Port, P2_RIGHT_Pin },
+		{ P2_A_GPIO_Port,     P2_A_Pin },
+		{ P2_B_GPIO_Port,     P2_B_Pin }
 	}
 };
 
-static const PresenceMapping presence_mappings[INPUT_PLAYER_COUNT] = {
+static const GPIOMapping presence_mappings[INPUT_PLAYER_COUNT] = {
 	[INPUT_PLAYER_1] = {
 		P1_WIRED_PRESENT_GPIO_Port,
 		P1_WIRED_PRESENT_Pin
@@ -73,20 +65,15 @@ static const PresenceMapping presence_mappings[INPUT_PLAYER_COUNT] = {
 
 static WiredController controllers[INPUT_PLAYER_COUNT];
 
-static bool is_pressed(InputButtons state, InputButtons button)
-{
-	return (state & button) != 0;
-}
-
 static InputButtons sample_buttons(InputPlayer player)
 {
 	InputButtons sample = 0;
 
 	for (size_t i = 0; i < WIRED_BUTTON_COUNT; i++) {
-		const ButtonMapping *mapping = &button_mappings[player][i];
+		const GPIOMapping *mapping = &button_mappings[player][i];
 
 		if (HAL_GPIO_ReadPin(mapping->port, mapping->pin) == GPIO_PIN_RESET) {
-			sample |= mapping->button;
+			sample |= buttons[i];
 		}
 	}
 
@@ -95,8 +82,7 @@ static InputButtons sample_buttons(InputPlayer player)
 
 static bool sample_presence(InputPlayer player)
 {
-	const PresenceMapping *mapping = &presence_mappings[player];
-
+	const GPIOMapping *mapping = &presence_mappings[player];
 	return HAL_GPIO_ReadPin(mapping->port, mapping->pin) == GPIO_PIN_RESET;
 }
 
@@ -126,19 +112,19 @@ static void debounce_buttons(WiredController *controller, InputButtons sample)
 	for (size_t i = 0; i < WIRED_BUTTON_COUNT; i++) {
 		InputButtons button = buttons[i];
 
-		bool sampled_pressed = is_pressed(sample, button);
-		bool stable_pressed = is_pressed(controller->state.held, button);
+		bool sampled_held = (sample & button) != 0U;
+		bool stable_held = (controller->state.held & button) != 0U;
 
 		if (!debounce_accept(
-			stable_pressed,
-			sampled_pressed,
+			stable_held,
+			sampled_held,
 			&controller->button_counters[i]
 		))
 		{
 			continue;
 		}
 
-		if (sampled_pressed) {
+		if (sampled_held) {
 			controller->state.held |= button;
 		} else {
 			controller->state.held &= ~button;

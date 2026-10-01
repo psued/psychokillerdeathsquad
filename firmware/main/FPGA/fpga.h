@@ -3,16 +3,12 @@
 
 #include <stdint.h>
 
-#include "error.h"
-
 #define RENDER_LAYER_COUNT 24U
 
 typedef uint8_t RenderFlags;
 
-enum {
-	RENDER_FLAG_ENABLED = 1U << 0,
-	RENDER_FLAG_FLIP_X  = 1U << 1
-};
+#define RENDER_FLAG_ENABLED (1U << 0)
+#define RENDER_FLAG_FLIP_X  (1U << 1)
 
 typedef struct {
 	uint16_t image_id;
@@ -47,9 +43,7 @@ void fpga_process(void);
 
 /**
  * Submit the latest render snapshot.
- *
- * Return ERROR_NONE on success, otherwise an error code.
  */
-Error fpga_submit(const RenderSnapshot *snapshot);
+void fpga_submit(const RenderSnapshot *snapshot);
 
 #endif
