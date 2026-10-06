@@ -113,7 +113,6 @@
 		)
 		(capping no)
 		(filling no)
-		(zone_defaults)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -753,7 +752,7 @@
 			(uuid "b3400305-f833-4f9c-a279-4e8c9fe4293d")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Bruker/Documents/dataprosjekt/prosjektmappe/psychokillerdeathcamp/3d_models/B3F_4050.step"
+		(model "${KIPRJMOD}/../3d_models/B3F_4050.step"
 			(offset
 				(xyz 6.5 -2.5 0)
 			)
@@ -3877,7 +3876,7 @@
 			(uuid "12054321-5d74-4d9d-b34f-d2bbef88cf83")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Bruker/Documents/dataprosjekt/prosjektmappe/psychokillerdeathcamp/3d_models/B3F_4050.step"
+		(model "${KIPRJMOD}/../3d_models/B3F_4050.step"
 			(offset
 				(xyz 6 -2.5 0)
 			)
@@ -4654,7 +4653,7 @@
 			(uuid "ca6d1979-9bdd-4d18-ad8c-bc1b323d190e")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Bruker/Documents/dataprosjekt/prosjektmappe/psychokillerdeathcamp/3d_models/JS102011SCQN.stp"
+		(model "${KIPRJMOD}/../3d_models/JS102011SCQN.stp"
 			(offset
 				(xyz 0 0 3.375)
 			)
@@ -8708,7 +8707,7 @@
 			(uuid "f5598353-2113-4e28-ba0a-192fb547bfb7")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/Bruker/Documents/dataprosjekt/prosjektmappe/psychokillerdeathcamp/3d_models/430450800.stp"
+		(model "${KIPRJMOD}/../3d_models/430450800.stp"
 			(offset
 				(xyz 4.5 8.92 0.51)
 			)

@@ -570,7 +570,7 @@
       "netlist": "",
       "plot": "../output/",
       "specctra_dsn": "",
-      "step": "",
+      "step": "kontrollere.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
