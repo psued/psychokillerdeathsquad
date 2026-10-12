@@ -4767,7 +4767,7 @@
 			(uuid "2ba83f4e-84e3-4fa9-bf52-cbaf66c1641c")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_Abracon_ABM8AIG-4Pin_3.2x2.5mm.step"
+		(model "${KIPRJMOD}/3d_models/ABM8W-16.0000MHZ-8-D1X-T3.STEP"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -4775,7 +4775,7 @@
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -90 -0 -0)
 			)
 		)
 	)
