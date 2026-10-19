@@ -55,21 +55,19 @@ static void media_invalidate(void)
 
 static Error media_mount(void)
 {
-	UINT status;
-
 	hsd1.Instance = SDMMC1;
 	hsd1.Init.ClockEdge = SDMMC_CLOCK_EDGE_RISING;
 	hsd1.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
 	hsd1.Init.BusWide = SDMMC_BUS_WIDE_4B;
 	hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
-	hsd1.Init.ClockDiv = 0;
+	hsd1.Init.ClockDiv = 1;
 
 	if (HAL_SD_Init(&hsd1) != HAL_OK) {
 		(void)HAL_SD_DeInit(&hsd1);
 		return ERROR_IO;
 	}
 
-	status = fx_media_open(
+	const UINT status = fx_media_open(
 		&media,
 		"SD",
 		fx_stm32_sd_driver,
@@ -95,10 +93,10 @@ Error storage_init(void)
 		return ERROR_UNAVAILABLE;
 	}
 
-	Error error = media_mount();
+	const Error error = media_mount();
 
 	if (error != ERROR_NONE) {
-		uint32_t now = time_ms();
+		const uint32_t now = time_ms();
 
 		mount_started_at = now;
 		mount_last_attempt_at = now;
@@ -115,8 +113,8 @@ bool storage_available(void)
 
 void storage_process(void)
 {
-	bool present = card_present();
-	uint32_t now = time_ms();
+	const bool present = card_present();
+	const uint32_t now = time_ms();
 
 	if (present != card_present_prev) {
 		card_present_prev = present;
@@ -161,7 +159,6 @@ void storage_process(void)
 Error storage_open(StorageFile **file, const char *path)
 {
 	StorageFile *slot = NULL;
-	UINT status;
 
 	ASSERT(file != NULL);
 	ASSERT(path != NULL);
@@ -183,7 +180,7 @@ Error storage_open(StorageFile **file, const char *path)
 		return ERROR_BUSY;
 	}
 
-	status = fx_file_open(
+	const UINT status = fx_file_open(
 		&media,
 		&slot->fx_file,
 		(CHAR *)path,
@@ -221,12 +218,11 @@ Error storage_open(StorageFile **file, const char *path)
 Error storage_read(
 	StorageFile *file,
 	void *buffer,
-	size_t capacity,
+	const size_t capacity,
 	size_t *bytes_read
 )
 {
 	ULONG actual = 0;
-	UINT status;
 
 	ASSERT(file != NULL);
 	ASSERT(bytes_read != NULL);
@@ -243,10 +239,10 @@ Error storage_read(
 		return ERROR_NONE;
 	}
 
-	status = fx_file_read(
+	const UINT status = fx_file_read(
 		&file->fx_file,
 		buffer,
-		(ULONG)capacity,
+		capacity,
 		&actual
 	);
 
@@ -262,10 +258,8 @@ Error storage_read(
 	return ERROR_NONE;
 }
 
-Error storage_seek(StorageFile *file, uint32_t offset)
+Error storage_seek(StorageFile *file, const uint32_t offset)
 {
-	UINT status;
-
 	ASSERT(file != NULL);
 	ASSERT(file->in_use);
 
@@ -273,7 +267,7 @@ Error storage_seek(StorageFile *file, uint32_t offset)
 		return ERROR_UNAVAILABLE;
 	}
 
-	status = fx_file_seek(&file->fx_file, (ULONG)offset);
+	const UINT status = fx_file_seek(&file->fx_file, offset);
 
 	if (status != FX_SUCCESS) {
 		if (status == FX_IO_ERROR) {
@@ -288,8 +282,6 @@ Error storage_seek(StorageFile *file, uint32_t offset)
 
 Error storage_close(StorageFile *file)
 {
-	UINT status;
-
 	ASSERT(file != NULL);
 	ASSERT(file->in_use);
 
@@ -299,7 +291,7 @@ Error storage_close(StorageFile *file)
 		return ERROR_NONE;
 	}
 
-	status = fx_file_close(&file->fx_file);
+	const UINT status = fx_file_close(&file->fx_file);
 
 	if (status != FX_SUCCESS) {
 		if (status == FX_IO_ERROR) {

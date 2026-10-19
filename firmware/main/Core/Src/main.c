@@ -32,6 +32,7 @@
 #include "game_tick.h"
 #include "fpga.h"
 #include "storage.h"
+#include "audio.h"
 
 /* USER CODE END Includes */
 
@@ -148,6 +149,7 @@ int main(void)
   input_init();
   fpga_init();
   (void)storage_init();
+  (void)audio_init();
   game_init();
   game_tick_init();
 
@@ -157,11 +159,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	heartbeat_process();
-	input_process();
-	game_tick_process();
-	fpga_process();
-	storage_process();
+    audio_process();
+    heartbeat_process();
+    input_process();
+    game_tick_process();
+    fpga_process();
+    storage_process();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -386,7 +389,7 @@ static void MX_SDMMC1_SD_Init(void)
   hsd1.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
   hsd1.Init.BusWide = SDMMC_BUS_WIDE_4B;
   hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
-  hsd1.Init.ClockDiv = 0;
+  hsd1.Init.ClockDiv = 1;
   if (HAL_SD_Init(&hsd1) != HAL_OK)
   {
     Error_Handler();
@@ -797,6 +800,27 @@ void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin)
 {
 	if (GPIO_Pin == FPGA_FRAME_Pin) {
 		fpga_frame();
+	}
+}
+
+void HAL_SAI_TxHalfCpltCallback(SAI_HandleTypeDef *hsai)
+{
+	if (hsai == &hsai_BlockA1) {
+		audio_dma_half();
+	}
+}
+
+void HAL_SAI_TxCpltCallback(SAI_HandleTypeDef *hsai)
+{
+	if (hsai == &hsai_BlockA1) {
+		audio_dma_complete();
+	}
+}
+
+void HAL_SAI_ErrorCallback(SAI_HandleTypeDef *hsai)
+{
+	if (hsai == &hsai_BlockA1) {
+		audio_dma_error();
 	}
 }
 

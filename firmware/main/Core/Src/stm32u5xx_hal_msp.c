@@ -597,7 +597,7 @@ void HAL_SAI_MspInit(SAI_HandleTypeDef* hsai)
     NodeConfig.Init.Direction = DMA_MEMORY_TO_PERIPH;
     NodeConfig.Init.SrcInc = DMA_SINC_INCREMENTED;
     NodeConfig.Init.DestInc = DMA_DINC_FIXED;
-    NodeConfig.Init.SrcDataWidth = DMA_SRC_DATAWIDTH_WORD;
+    NodeConfig.Init.SrcDataWidth = DMA_SRC_DATAWIDTH_HALFWORD;
     NodeConfig.Init.DestDataWidth = DMA_DEST_DATAWIDTH_WORD;
     NodeConfig.Init.SrcBurstLength = 1;
     NodeConfig.Init.DestBurstLength = 1;
