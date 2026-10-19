@@ -264,14 +264,11 @@ static int32_t sfx_mix(void)
 		const uint8_t *data = &sfx_pool[asset->pool_offset];
 
 		const uint32_t index = voice->frame / AUDIO_SFX_UPSAMPLE_FACTOR;
-
 		const int32_t current = ((int32_t)data[index] - AUDIO_SFX_PCM_BIAS) * AUDIO_SFX_PCM_SCALE;
-
 		int32_t sample = current;
 
 		if (voice->frame % AUDIO_SFX_UPSAMPLE_FACTOR != 0U && index + 1U < asset->size_bytes) {
 			const int32_t next = ((int32_t)data[index + 1U] - AUDIO_SFX_PCM_BIAS) * AUDIO_SFX_PCM_SCALE;
-
 			sample = (current + next) / AUDIO_SFX_UPSAMPLE_FACTOR;
 		}
 

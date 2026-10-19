@@ -22,7 +22,7 @@ void heartbeat_init(void)
 
 void heartbeat_process(void)
 {
-	uint32_t now = time_ms();
+	const uint32_t now = time_ms();
 
 	if (now - last_toggle < HEARTBEAT_INTERVAL_MS) {
 		return;

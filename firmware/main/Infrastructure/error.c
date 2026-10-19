@@ -15,7 +15,7 @@ void error_fatal(void)
 void assert_failed(
 	const char *expression,
 	const char *file,
-	uint32_t line
+	const uint32_t line
 )
 {
 	debug_printf(
@@ -31,7 +31,7 @@ void assert_failed(
 void panic_failed(
 	const char *reason,
 	const char *file,
-	uint32_t line
+	const uint32_t line
 )
 {
 	debug_printf(

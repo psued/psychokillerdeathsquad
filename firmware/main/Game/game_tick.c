@@ -25,7 +25,7 @@ void game_tick_pending(void)
 
 void game_tick_process(void)
 {
-	uint32_t primask = __get_PRIMASK();
+	const uint32_t primask = __get_PRIMASK();
 	__disable_irq();
 
 	uint32_t ticks = pending_ticks;

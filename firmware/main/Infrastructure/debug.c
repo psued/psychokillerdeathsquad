@@ -18,7 +18,7 @@ void debug_printf(const char *format, ...)
 
 	va_list args;
 	va_start(args, format);
-	int length = vsnprintf(buffer, sizeof(buffer), format, args);
+	const int length = vsnprintf(buffer, sizeof(buffer), format, args);
 	va_end(args);
 
 	if (length <= 0) {

@@ -18,7 +18,7 @@ typedef struct {
 
 static PlayerInput players[INPUT_PLAYER_COUNT];
 
-static InputSource select_source(InputState wired, InputState wireless)
+static InputSource select_source(const InputState wired, const InputState wireless)
 {
 	if (wired.connected) {
 		return INPUT_SOURCE_WIRED;
@@ -32,9 +32,9 @@ static InputSource select_source(InputState wired, InputState wireless)
 }
 
 static InputButtons get_held(
-	InputSource source,
-	InputState wired,
-	InputState wireless
+	const InputSource source,
+	const InputState wired,
+	const InputState wireless
 )
 {
 	switch (source) {
@@ -52,9 +52,9 @@ static InputButtons get_held(
 	}
 }
 
-static void update_held(PlayerInput *input, InputButtons held)
+static void update_held(PlayerInput *input, const InputButtons held)
 {
-	InputButtons changed = input->pending.held ^ held;
+	const InputButtons changed = input->pending.held ^ held;
 
 	input->pending.pressed |= changed & held;
 	input->pending.released |= changed & input->pending.held;
@@ -63,8 +63,8 @@ static void update_held(PlayerInput *input, InputButtons held)
 
 static void change_source(
 	PlayerInput *input,
-	InputSource source,
-	InputButtons held
+	const InputSource source,
+	const InputButtons held
 )
 {
 	input->source = source;
@@ -87,11 +87,11 @@ void input_process(void)
 		player++
 	)
 	{
-		InputState wired = input_wired_get(player);
-		InputState wireless = input_wireless_get(player);
+		const InputState wired = input_wired_get(player);
+		const InputState wireless = input_wireless_get(player);
 
-		InputSource source = select_source(wired, wireless);
-		InputButtons held = get_held(source, wired, wireless);
+		const InputSource source = select_source(wired, wireless);
+		const InputButtons held = get_held(source, wired, wireless);
 
 		PlayerInput *input = &players[player];
 
@@ -119,7 +119,7 @@ void input_freeze(void)
 	}
 }
 
-ControllerState input_get(InputPlayer player)
+ControllerState input_get(const InputPlayer player)
 {
 	ASSERT(player < INPUT_PLAYER_COUNT);
 	return players[player].current;

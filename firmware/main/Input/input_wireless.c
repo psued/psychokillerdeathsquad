@@ -2,11 +2,11 @@
 
 #include "error.h"
 
-InputState input_wireless_get(InputPlayer player)
+InputState input_wireless_get(const InputPlayer player)
 {
 	ASSERT(player < INPUT_PLAYER_COUNT);
 
-	InputState state = {
+	const InputState state = {
 		.held = 0,
 		.connected = false
 	};

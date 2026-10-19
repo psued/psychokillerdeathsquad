@@ -57,7 +57,7 @@ static bool snapshot_valid(const RenderSnapshot *snapshot)
 	return true;
 }
 
-static void write_u16_le(uint8_t *dst, uint16_t value)
+static void write_u16_le(uint8_t *dst, const uint16_t value)
 {
 	dst[0] = (uint8_t)value;
 	dst[1] = (uint8_t)(value >> 8);
@@ -86,11 +86,11 @@ static void serialize_snapshot(uint8_t *dst, const RenderSnapshot *snapshot)
 	}
 }
 
-static Error transmit_packet(const uint8_t *data, uint16_t size)
+static Error transmit_packet(const uint8_t *data, const uint16_t size)
 {
 	HAL_GPIO_WritePin(FPGA_CS_GPIO_Port, FPGA_CS_Pin, GPIO_PIN_RESET);
 
-	HAL_StatusTypeDef status = HAL_SPI_Transmit(&hspi2, data, size, SPI_TIMEOUT_MS);
+	const HAL_StatusTypeDef status = HAL_SPI_Transmit(&hspi2, data, size, SPI_TIMEOUT_MS);
 
 	HAL_GPIO_WritePin(FPGA_CS_GPIO_Port, FPGA_CS_Pin, GPIO_PIN_SET);
 
@@ -128,7 +128,7 @@ void fpga_process(void)
 
 	serialize_snapshot(packet, &pending_snapshot);
 
-	uint16_t crc = (uint16_t)HAL_CRC_Calculate(
+	const uint16_t crc = (uint16_t)HAL_CRC_Calculate(
 		&hcrc,
 		(const uint32_t *)packet,
 		PAYLOAD_SIZE

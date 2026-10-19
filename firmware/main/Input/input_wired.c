@@ -35,37 +35,37 @@ static const InputButtons buttons[WIRED_BUTTON_COUNT] = {
 
 static const GPIOMapping button_mappings[INPUT_PLAYER_COUNT][WIRED_BUTTON_COUNT] = {
 	[INPUT_PLAYER_1] = {
-		{ P1_UP_GPIO_Port,    P1_UP_Pin },
-		{ P1_DOWN_GPIO_Port,  P1_DOWN_Pin },
-		{ P1_LEFT_GPIO_Port,  P1_LEFT_Pin },
-		{ P1_RIGHT_GPIO_Port, P1_RIGHT_Pin },
-		{ P1_A_GPIO_Port,     P1_A_Pin },
-		{ P1_B_GPIO_Port,     P1_B_Pin }
+		{.port = P1_UP_GPIO_Port,    .pin = P1_UP_Pin},
+		{.port = P1_DOWN_GPIO_Port,  .pin = P1_DOWN_Pin},
+		{.port = P1_LEFT_GPIO_Port,  .pin = P1_LEFT_Pin},
+		{.port = P1_RIGHT_GPIO_Port, .pin = P1_RIGHT_Pin},
+		{.port = P1_A_GPIO_Port,     .pin = P1_A_Pin},
+		{.port = P1_B_GPIO_Port,     .pin = P1_B_Pin}
 	},
 	[INPUT_PLAYER_2] = {
-		{ P2_UP_GPIO_Port,    P2_UP_Pin },
-		{ P2_DOWN_GPIO_Port,  P2_DOWN_Pin },
-		{ P2_LEFT_GPIO_Port,  P2_LEFT_Pin },
-		{ P2_RIGHT_GPIO_Port, P2_RIGHT_Pin },
-		{ P2_A_GPIO_Port,     P2_A_Pin },
-		{ P2_B_GPIO_Port,     P2_B_Pin }
+		{.port = P2_UP_GPIO_Port,    .pin = P2_UP_Pin},
+		{.port = P2_DOWN_GPIO_Port,  .pin = P2_DOWN_Pin},
+		{.port = P2_LEFT_GPIO_Port,  .pin = P2_LEFT_Pin},
+		{.port = P2_RIGHT_GPIO_Port, .pin = P2_RIGHT_Pin},
+		{.port = P2_A_GPIO_Port,     .pin = P2_A_Pin},
+		{.port = P2_B_GPIO_Port,     .pin = P2_B_Pin}
 	}
 };
 
 static const GPIOMapping presence_mappings[INPUT_PLAYER_COUNT] = {
 	[INPUT_PLAYER_1] = {
-		P1_WIRED_PRESENT_GPIO_Port,
-		P1_WIRED_PRESENT_Pin
+		.port = P1_WIRED_PRESENT_GPIO_Port,
+		.pin = P1_WIRED_PRESENT_Pin
 	},
 	[INPUT_PLAYER_2] = {
-		P2_WIRED_PRESENT_GPIO_Port,
-		P2_WIRED_PRESENT_Pin
+		.port = P2_WIRED_PRESENT_GPIO_Port,
+		.pin = P2_WIRED_PRESENT_Pin
 	}
 };
 
 static WiredController controllers[INPUT_PLAYER_COUNT];
 
-static InputButtons sample_buttons(InputPlayer player)
+static InputButtons sample_buttons(const InputPlayer player)
 {
 	InputButtons sample = 0;
 
@@ -80,15 +80,15 @@ static InputButtons sample_buttons(InputPlayer player)
 	return sample;
 }
 
-static bool sample_presence(InputPlayer player)
+static bool sample_presence(const InputPlayer player)
 {
 	const GPIOMapping *mapping = &presence_mappings[player];
 	return HAL_GPIO_ReadPin(mapping->port, mapping->pin) == GPIO_PIN_RESET;
 }
 
 static bool debounce_accept(
-	bool stable,
-	bool sample,
+	const bool stable,
+	const bool sample,
 	uint8_t *counter
 )
 {
@@ -107,13 +107,13 @@ static bool debounce_accept(
 	return true;
 }
 
-static void debounce_buttons(WiredController *controller, InputButtons sample)
+static void debounce_buttons(WiredController *controller, const InputButtons sample)
 {
 	for (size_t i = 0; i < WIRED_BUTTON_COUNT; i++) {
-		InputButtons button = buttons[i];
+		const InputButtons button = buttons[i];
 
-		bool sampled_held = (sample & button) != 0U;
-		bool stable_held = (controller->state.held & button) != 0U;
+		const bool sampled_held = (sample & button) != 0U;
+		const bool stable_held = (controller->state.held & button) != 0U;
 
 		if (!debounce_accept(
 			stable_held,
@@ -132,7 +132,7 @@ static void debounce_buttons(WiredController *controller, InputButtons sample)
 	}
 }
 
-static void debounce_presence(WiredController *controller, bool sample)
+static void debounce_presence(WiredController *controller, const bool sample)
 {
 	if (debounce_accept(
 		controller->state.connected,
@@ -161,22 +161,22 @@ void input_wired_sample(void)
 	{
 		WiredController *controller = &controllers[player];
 
-		InputButtons buttons_sample = sample_buttons(player);
-		bool presence_sample = sample_presence(player);
+		const InputButtons buttons_sample = sample_buttons(player);
+		const bool presence_sample = sample_presence(player);
 
 		debounce_buttons(controller, buttons_sample);
 		debounce_presence(controller, presence_sample);
 	}
 }
 
-InputState input_wired_get(InputPlayer player)
+InputState input_wired_get(const InputPlayer player)
 {
 	ASSERT(player < INPUT_PLAYER_COUNT);
 
-	uint32_t primask = __get_PRIMASK();
+	const uint32_t primask = __get_PRIMASK();
 	__disable_irq();
 
-	InputState state = controllers[player].state;
+	const InputState state = controllers[player].state;
 
 	__set_PRIMASK(primask);
 
