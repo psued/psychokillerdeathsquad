@@ -1,5 +1,19 @@
-# Local KiCad stuff
-.history/
-*.kicad_prl
+# Vivado local project and generated data
+/fpga/build/
+**/.Xil/
 
-*.lck
+# Vivado logs and journals
+*.jou
+*.log
+
+# Simulation outputs
+*.wdb
+*.vcd
+*.ppm
+
+# Generated FPGA files
+*.bit
+*.bin
+
+# Miscellaneous temporary files
+*.tmp
