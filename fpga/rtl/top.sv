@@ -47,8 +47,8 @@ module top(
         .y(y)
     );
 
-    logic [2:0] produced_toggle;
-    logic [2:0] produced_sync;
+    logic [1:0] produced_toggle;
+    logic [1:0] produced_sync;
 
     cdc_sync produced_sync_inst (
         .clk(vga_clk),
@@ -56,8 +56,8 @@ module top(
         .sync_out(produced_sync)
     );
 
-    logic [2:0] consumed_toggle;
-    logic [2:0] consumed_sync;
+    logic [1:0] consumed_toggle;
+    logic [1:0] consumed_sync;
 
     cdc_sync consumed_sync_inst (
         .clk(clk),
@@ -65,9 +65,10 @@ module top(
         .sync_out(consumed_sync)
     );
 
-    logic [1:0] write_buffer;
-    logic [9:0] write_x;
-    logic [9:0] render_x;
+    logic write_buffer;
+    logic [8:0] write_x;
+    logic [8:0] render_x;
+    logic line_done;
     logic write_enable;
     logic [11:0] pixel_in;
     logic stall;
@@ -76,7 +77,7 @@ module top(
         .clk(clk),
         .reset(system_reset),
 
-        .render_x(render_x),
+        .line_done(line_done),
 
         .consumed_sync(consumed_sync),
         .produced_toggle(produced_toggle),
@@ -93,16 +94,18 @@ module top(
         .write_x(write_x),
         .render_x(render_x),
         .write_enable(write_enable),
-        .pixel_in(pixel_in)
+        .pixel_in(pixel_in),
+        .line_done(line_done)
     );
 
     logic buffer_ready;
-    logic [1:0] read_buffer;
+    logic read_buffer;
 
     line_buffer_read_controller read_controller (
         .clk(vga_clk),
         .reset(system_reset),
         .x(x),
+        .y(y),
         .video_on_raw(video_on_raw),
 
         .produced_sync(produced_sync),
@@ -143,7 +146,7 @@ module top(
         .pixel_in(pixel_in),
 
         .read_buffer(read_buffer),
-        .read_x(x),
+        .read_x(x[9:1]),
         .read_enable(read_enable),
         .read_clk(vga_clk),
         .pixel_out(pixel_out)

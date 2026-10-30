@@ -2,12 +2,12 @@ module line_buffer_write_controller(
     input logic clk,
     input logic reset,
 
-    input logic [9:0] render_x,
+    input logic line_done,
 
-    input logic [2:0] consumed_sync,
-    output logic [2:0] produced_toggle,
+    input logic [1:0] consumed_sync,
+    output logic [1:0] produced_toggle,
 
-    output logic [1:0]  write_buffer,
+    output logic write_buffer,
     output logic stall
     );
 
@@ -16,18 +16,13 @@ module line_buffer_write_controller(
     always_ff @(posedge clk)
     begin
         if (reset) begin
-            write_buffer <= 2'd0;
-            produced_toggle <= 3'b000;
+            write_buffer <= 1'b0;
+            produced_toggle <= 2'b00;
             end
         else if (!stall) begin
-            if(render_x == 10'd639) begin
+            if(line_done) begin
                 produced_toggle[write_buffer] <= ~produced_toggle[write_buffer];
-                if (write_buffer == 2'd2) begin
-                    write_buffer <= 2'd0;
-                end
-                else begin
-                    write_buffer <= write_buffer + 2'd1;
-                end
+                write_buffer <= ~write_buffer;
             end
         end
     end
