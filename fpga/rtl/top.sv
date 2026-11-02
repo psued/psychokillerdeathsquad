@@ -1,12 +1,25 @@
-module top(
+module top #(
+    parameter int PIXELS_PER_CYCLE = 2,
+
+    localparam int LINE_PIXELS = 320,
+    localparam int FRAME_LINES = 240,
+    localparam int CHANNEL_BITS = 4,
+    localparam int PIXEL_SLOT_BITS = 16,
+    localparam int BUFFER_COUNT = 2,
+    localparam int HORIZONTAL_SCALE = 2,
+
+    localparam int PIXEL_BITS = 3 * CHANNEL_BITS,
+    localparam int X_WIDTH = $clog2(LINE_PIXELS),
+    localparam int WORD_WIDTH = PIXEL_SLOT_BITS * PIXELS_PER_CYCLE
+)(
     input  logic       clk,
     input  logic       reset,
 
     output logic       hsync,
     output logic       vsync,
-    output logic [3:0] red,
-    output logic [3:0] green,
-    output logic [3:0] blue
+    output logic [CHANNEL_BITS-1:0] red,
+    output logic [CHANNEL_BITS-1:0] green,
+    output logic [CHANNEL_BITS-1:0] blue
 
 );
 
@@ -34,8 +47,8 @@ module top(
     logic hsync_raw;
     logic vsync_raw;
     logic video_on_raw;
-    logic [9:0] x;
-    logic [9:0] y;
+    logic [9:0] x; // VGA raster: 0–799, including blanking.
+    logic [9:0] y; // VGA raster: 0–524, including blanking.
 
     vga_sync vga_sync_inst (
         .clk(vga_clk),
@@ -47,8 +60,8 @@ module top(
         .y(y)
     );
 
-    logic [1:0] produced_toggle;
-    logic [1:0] produced_sync;
+    logic [BUFFER_COUNT-1:0] produced_toggle;
+    logic [BUFFER_COUNT-1:0] produced_sync;
 
     cdc_sync produced_sync_inst (
         .clk(vga_clk),
@@ -56,8 +69,8 @@ module top(
         .sync_out(produced_sync)
     );
 
-    logic [1:0] consumed_toggle;
-    logic [1:0] consumed_sync;
+    logic [BUFFER_COUNT-1:0] consumed_toggle;
+    logic [BUFFER_COUNT-1:0] consumed_sync;
 
     cdc_sync consumed_sync_inst (
         .clk(clk),
@@ -66,11 +79,12 @@ module top(
     );
 
     logic write_buffer;
-    logic [8:0] write_x;
-    logic [8:0] render_x;
+    logic [X_WIDTH-1:0] write_x;
+    logic [X_WIDTH-1:0] render_x;
     logic line_done;
     logic write_enable;
-    logic [11:0] pixel_in;
+    logic [WORD_WIDTH-1:0] pixel_in;
+    logic [PIXELS_PER_CYCLE-1:0] write_mask;
     logic stall;
 
     line_buffer_write_controller write_controller (
@@ -86,7 +100,13 @@ module top(
         .stall(stall)
     );
 
-    mock_renderer mock_renderer_inst (
+    mock_renderer #(
+        .PIXELS_PER_CYCLE(PIXELS_PER_CYCLE),
+        .LINE_PIXELS(LINE_PIXELS),
+        .FRAME_LINES(FRAME_LINES),
+        .CHANNEL_BITS(CHANNEL_BITS),
+        .PIXEL_SLOT_BITS(PIXEL_SLOT_BITS)
+    ) mock_renderer_inst (
         .clk(clk),
         .reset(system_reset),
         .stall(stall),
@@ -95,6 +115,7 @@ module top(
         .render_x(render_x),
         .write_enable(write_enable),
         .pixel_in(pixel_in),
+        .write_mask(write_mask),
         .line_done(line_done)
     );
 
@@ -117,7 +138,7 @@ module top(
     );
 
     logic read_enable;
-    logic [11:0] pixel_out;
+    logic [PIXEL_BITS-1:0] pixel_out;
 
     line_buffer_reader line_buffer_reader_inst (
         .clk(vga_clk),
@@ -138,20 +159,23 @@ module top(
         .blue(blue)
     );
 
-    line_buffer_bram line_buffer (
+    line_buffer_bram #(
+        .PIXELS_PER_CYCLE(PIXELS_PER_CYCLE),
+        .LINE_PIXELS(LINE_PIXELS),
+        .PIXEL_BITS(PIXEL_BITS),
+        .PIXEL_SLOT_BITS(PIXEL_SLOT_BITS)
+    ) line_buffer (
         .write_buffer(write_buffer),
         .write_x(write_x),
         .write_enable(write_enable),
         .write_clk(clk),
         .pixel_in(pixel_in),
+        .write_mask(write_mask),
 
         .read_buffer(read_buffer),
-        .read_x(x[9:1]),
+        .read_x(X_WIDTH'(x / HORIZONTAL_SCALE)),
         .read_enable(read_enable),
         .read_clk(vga_clk),
         .pixel_out(pixel_out)
     );
-
-
-
 endmodule
