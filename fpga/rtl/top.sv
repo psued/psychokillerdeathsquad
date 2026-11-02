@@ -27,12 +27,25 @@ module top #(
     // Clock generation
     // ============================================================
 
+    logic clk_input;
+    logic system_clk;
     logic vga_clk;
     logic clk_locked;
 
+    // Share one globally buffered 100 MHz clock across both consumers.
+    IBUF system_clock_input (
+        .I(clk),
+        .O(clk_input)
+    );
+
+    BUFG system_clock_buffer (
+        .I(clk_input),
+        .O(system_clk)
+    );
+
     clk_wiz_vga clock_generator (
-        .clk_in1  (clk),          // 100 MHz Arty oscillator
-        .reset    (reset),        // BTN0, active high
+        .clk_in1  (system_clk),   // Buffered 100 MHz board oscillator.
+        .reset    (reset),        // Active-high user reset.
         .clk_out1 (vga_clk),      // generated 25 MHz clock
         .locked   (clk_locked)
     );
@@ -73,7 +86,7 @@ module top #(
     logic [BUFFER_COUNT-1:0] consumed_sync;
 
     cdc_sync consumed_sync_inst (
-        .clk(clk),
+        .clk(system_clk),
         .async_in(consumed_toggle),
         .sync_out(consumed_sync)
     );
@@ -88,7 +101,7 @@ module top #(
     logic stall;
 
     line_buffer_write_controller write_controller (
-        .clk(clk),
+        .clk(system_clk),
         .reset(system_reset),
 
         .line_done(line_done),
@@ -107,7 +120,7 @@ module top #(
         .CHANNEL_BITS(CHANNEL_BITS),
         .PIXEL_SLOT_BITS(PIXEL_SLOT_BITS)
     ) mock_renderer_inst (
-        .clk(clk),
+        .clk(system_clk),
         .reset(system_reset),
         .stall(stall),
 
@@ -168,7 +181,7 @@ module top #(
         .write_buffer(write_buffer),
         .write_x(write_x),
         .write_enable(write_enable),
-        .write_clk(clk),
+        .write_clk(system_clk),
         .pixel_in(pixel_in),
         .write_mask(write_mask),
 
