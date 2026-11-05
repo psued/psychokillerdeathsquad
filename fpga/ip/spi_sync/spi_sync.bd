@@ -1,0 +1,390 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x61557E3B33303137",
+      "device": "xc7a35ticsg324-1L",
+      "name": "spi_sync",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "fifo_generator_0": "",
+      "spi_0": "",
+      "xlconcat_0": "",
+      "xlslice_0": "",
+      "xlslice_1": "",
+      "util_vector_logic_0": "",
+      "util_vector_logic_1": "",
+      "xlconstant_0": "",
+      "xlconstant_1": ""
+    },
+    "ports": {
+      "SCLK": {
+        "direction": "I"
+      },
+      "rst": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "DIN": {
+        "direction": "I"
+      },
+      "CS": {
+        "direction": "I"
+      },
+      "DOUT": {
+        "direction": "O"
+      },
+      "data_recv": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "data_received": {
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "PortType": {
+            "value": "undef",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "spi_sync_rd_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "fifo_generator_0": {
+        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
+        "ip_revision": "14",
+        "xci_name": "spi_sync_fifo_generator_0_0",
+        "xci_path": "ip/spi_sync_fifo_generator_0_0/spi_sync_fifo_generator_0_0.xci",
+        "inst_hier_path": "fifo_generator_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "Fifo_Implementation": {
+            "value": "Independent_Clocks_Builtin_FIFO"
+          },
+          "Input_Data_Width": {
+            "value": "9"
+          },
+          "Input_Depth": {
+            "value": "512"
+          },
+          "Performance_Options": {
+            "value": "First_Word_Fall_Through"
+          },
+          "Read_Clock_Frequency": {
+            "value": "100"
+          },
+          "Write_Clock_Frequency": {
+            "value": "10"
+          }
+        }
+      },
+      "spi_0": {
+        "vlnv": "xilinx.com:module_ref:spi:1.0",
+        "ip_revision": "1",
+        "xci_name": "spi_sync_spi_0_0",
+        "xci_path": "ip/spi_sync_spi_0_0/spi_sync_spi_0_0.xci",
+        "inst_hier_path": "spi_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "spi",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "SCLK": {
+            "direction": "I"
+          },
+          "DIN": {
+            "direction": "I"
+          },
+          "DOUT": {
+            "direction": "O"
+          },
+          "CS": {
+            "direction": "I"
+          },
+          "data_send": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "data_recv": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "data_sent": {
+            "direction": "O"
+          },
+          "data_received": {
+            "direction": "O"
+          }
+        }
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "ip_revision": "7",
+        "xci_name": "spi_sync_xlconcat_0_0",
+        "xci_path": "ip/spi_sync_xlconcat_0_0/spi_sync_xlconcat_0_0.xci",
+        "inst_hier_path": "xlconcat_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "IN0_WIDTH": {
+            "value": "8"
+          }
+        }
+      },
+      "xlslice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "ip_revision": "5",
+        "xci_name": "spi_sync_xlslice_0_0",
+        "xci_path": "ip/spi_sync_xlslice_0_0/spi_sync_xlslice_0_0.xci",
+        "inst_hier_path": "xlslice_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "7"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "9"
+          }
+        }
+      },
+      "xlslice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "ip_revision": "5",
+        "xci_name": "spi_sync_xlslice_0_1",
+        "xci_path": "ip/spi_sync_xlslice_0_1/spi_sync_xlslice_0_1.xci",
+        "inst_hier_path": "xlslice_1",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "8"
+          },
+          "DIN_TO": {
+            "value": "8"
+          },
+          "DIN_WIDTH": {
+            "value": "9"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "ip_revision": "5",
+        "xci_name": "spi_sync_util_vector_logic_0_0",
+        "xci_path": "ip/spi_sync_util_vector_logic_0_0/spi_sync_util_vector_logic_0_0.xci",
+        "inst_hier_path": "util_vector_logic_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "ip_revision": "5",
+        "xci_name": "spi_sync_util_vector_logic_1_0",
+        "xci_path": "ip/spi_sync_util_vector_logic_1_0/spi_sync_util_vector_logic_1_0.xci",
+        "inst_hier_path": "util_vector_logic_1",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "10",
+        "xci_name": "spi_sync_xlconstant_0_0",
+        "xci_path": "ip/spi_sync_xlconstant_0_0/spi_sync_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0",
+        "has_run_ip_tcl": "true"
+      },
+      "xlconstant_1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "10",
+        "xci_name": "spi_sync_xlconstant_1_0",
+        "xci_path": "ip/spi_sync_xlconstant_1_0/spi_sync_xlconstant_1_0.xci",
+        "inst_hier_path": "xlconstant_1",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          },
+          "CONST_WIDTH": {
+            "value": "8"
+          }
+        }
+      }
+    },
+    "nets": {
+      "CS_0_1": {
+        "ports": [
+          "CS",
+          "spi_0/CS"
+        ]
+      },
+      "DIN_0_1": {
+        "ports": [
+          "DIN",
+          "spi_0/DIN"
+        ]
+      },
+      "SCLK_0_1": {
+        "ports": [
+          "SCLK",
+          "spi_0/SCLK",
+          "fifo_generator_0/wr_clk"
+        ]
+      },
+      "fifo_generator_0_dout": {
+        "ports": [
+          "fifo_generator_0/dout",
+          "xlslice_0/Din",
+          "xlslice_1/Din"
+        ]
+      },
+      "fifo_generator_0_empty": {
+        "ports": [
+          "fifo_generator_0/empty",
+          "util_vector_logic_1/Op1"
+        ]
+      },
+      "rd_clk_0_1": {
+        "ports": [
+          "clk",
+          "fifo_generator_0/rd_clk"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst",
+          "spi_0/rst",
+          "fifo_generator_0/rst"
+        ]
+      },
+      "spi_0_DOUT": {
+        "ports": [
+          "spi_0/DOUT",
+          "DOUT"
+        ]
+      },
+      "spi_0_data_received": {
+        "ports": [
+          "spi_0/data_received",
+          "xlconcat_0/In1"
+        ]
+      },
+      "spi_0_data_recv": {
+        "ports": [
+          "spi_0/data_recv",
+          "xlconcat_0/In0"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "data_received"
+        ]
+      },
+      "util_vector_logic_1_Res": {
+        "ports": [
+          "util_vector_logic_1/Res",
+          "util_vector_logic_0/Op1"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "fifo_generator_0/din"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "fifo_generator_0/wr_en",
+          "fifo_generator_0/rd_en"
+        ]
+      },
+      "xlconstant_1_dout": {
+        "ports": [
+          "xlconstant_1/dout",
+          "spi_0/data_send"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "xlslice_0/Dout",
+          "data_recv"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "xlslice_1/Dout",
+          "util_vector_logic_0/Op2"
+        ]
+      }
+    }
+  }
+}

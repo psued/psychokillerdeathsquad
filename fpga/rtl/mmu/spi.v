@@ -41,7 +41,7 @@ module spi(
             data_sent <= 0;
         end else begin
             if (!CS) begin
-                DOUT <= data_send[data_recv_sel];
+                DOUT <= data_send[data_send_sel];
                 data_send_sel <= data_send_sel - 1;
                 data_sent <= data_send_sel == 0;
             end

@@ -17,3 +17,10 @@
 
 # Miscellaneous temporary files
 *.tmp
+
+# IP block diagrams
+fpga/ip/*/*
+!fpga/ip/*/*.bd
+!fpga/ip/*/ip/
+fpga/ip/*/ip/*/*
+!fpga/ip/*/ip/*/*.xci

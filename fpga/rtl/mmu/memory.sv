@@ -18,13 +18,14 @@ localparam int ENABLED = ZH + 1;
 localparam int FLIPPED = ENABLED + 1;
 localparam int COLORBITSL = FLIPPED + 1;
 localparam int COLORBITSH = COLORBITSL + 7;
-localparam int BUSY = COLORBITSH + 1;
-localparam int FILENAMEL = BUSY + 1;
+localparam int FILENAMEL = COLORBITSH + 1;
 localparam int FILENAMEH = FILENAMEL + 15;
-localparam int ADDRL = FILENAMEH + 1;
+localparam int FILENAMEPREVL = FILENAMEH + 1;
+localparam int FILENAMEPREVH = FILENAMEPREVL + 15;
+localparam int ADDRL = FILENAMEPREVH + 1;
 localparam int ADDRH = ADDRL + 7;
 localparam int LAYERSIZE = ADDRH;
-localparam int NUMLAYERS = 12;
+localparam int NUMLAYERS = 24;
 
 module memory(
     input clk,
@@ -43,11 +44,24 @@ module memory(
     output [7:0] bits_per_color,
 
     input [7:0] addr, // relative to layer
-    output [31:0] data,
+    output [23:0] data,
 
-    output busy,
-    output [15:0] file_name
+    output [15:0] file_name,
+    output [15:0] file_name_prev,
+
+    input write_en,
+    input [7:0] write_addr, // relative to layer
+    input [23:0] write_data,
+    input write_mcu,
+    input [4:0] layer_write,
+    input [7:0] mcu_data,
+    input mcu_byte_done,
+    input [7:0] set_color_bits
     );
+
+    reg mcu_byte_done_prev;
+    wire pos_mcu_byte_done = mcu_byte_done && !mcu_byte_done_prev;
+    reg [3:0] mcu_counter;
 
     reg [LAYERSIZE:0] layers [NUMLAYERS];
 
@@ -61,35 +75,69 @@ module memory(
     assign enabled = layers[layer][ENABLED];
     assign flipped = layers[layer][FLIPPED];
     assign bits_per_color = layers[layer][COLORBITSH:COLORBITSL];
-    assign busy = layers[layer][BUSY];
 
-    wire [15:0] file_name = layers[layer][FILENAMEH:FILENAMEL];
+    // file name is only used by the writer
+    assign file_name = layers[layer_write][FILENAMEH:FILENAMEL];
+    assign file_name_prev = layers[layer_write][FILENAMEPREVH:FILENAMEPREVL];
+
     wire [7:0] address = layers[layer][ADDRH:ADDRL] + addr; // addresses should definitely be bigger
-
-
-    reg [7:0] write_addr;
-    reg [7:0] write_data;
+    wire [7:0] write_address = layers[layer_write][ADDRH:ADDRL] + write_addr; // addresses should definitely be bigger
 
     ram d(
         .clk(clk),
         .write_en(write_en),
         .read_addr(address),
-        .write_addr(write_addr),
+        .write_addr(write_address),
 
         .data_in(write_data),
         .data_out(data)
     );
 
+    integer i;
+
     always @ (posedge rst, posedge clk) begin
         if (rst) begin
+            mcu_byte_done_prev <= 0;
+            mcu_counter <= 0;
+
             for (i = 0; i < NUMLAYERS; i = i + 1)
                 layers[i] <= 0;
 
             // set start address of each layer
-            layers[1][ADDRH:ADDRL] <= 4;
+            // e.g. layers[1][ADDRH:ADDRL] <= 4;
         end else begin
+            mcu_byte_done_prev <= mcu_byte_done;
 
+            if (write_en)
+                layers[layer_write][COLORBITSH:COLORBITSL] <= set_color_bits;
+
+            if (write_mcu && pos_mcu_byte_done) begin
+                mcu_counter <= mcu_counter + 1;
+                case (mcu_counter)
+                    0: begin
+                        layers[layer_write][FILENAMEL+7:FILENAMEL] <= mcu_data;
+                        layers[layer_write][FILENAMEPREVH:FILENAMEPREVL] <= layers[layer_write][FILENAMEH:FILENAMEL];
+                    end
+                    1: layers[layer_write][FILENAMEH:FILENAMEH-7] <= mcu_data;
+                    2: layers[layer_write][SRCXL+7:SRCXL] <= mcu_data;
+                    3: layers[layer_write][SRCXH:SRCXH-7] <= mcu_data;
+                    4: layers[layer_write][SRCYL+7:SRCYL] <= mcu_data;
+                    5: layers[layer_write][SRCYH:SRCYH-7] <= mcu_data;
+                    6: layers[layer_write][WIDTHL+7:WIDTHL] <= mcu_data;
+                    7: layers[layer_write][WIDTHH:WIDTHH-7] <= mcu_data;
+                    8: layers[layer_write][HEIGHTL+7:HEIGHTL] <= mcu_data;
+                    9: layers[layer_write][HEIGHTH:HEIGHTH-7] <= mcu_data;
+                    10: layers[layer_write][DSTXL+7:DSTXL] <= mcu_data;
+                    11: layers[layer_write][DSTXH:DSTXH-7] <= mcu_data;
+                    12: layers[layer_write][DSTYL+7:DSTYL] <= mcu_data;
+                    13: layers[layer_write][DSTYH:DSTYH-7] <= mcu_data;
+                    14: layers[layer_write][ZH:ZL] <= mcu_data;
+                    15: begin // flags
+                        layers[layer_write][ENABLED] <= mcu_data[0];
+                        layers[layer_write][FLIPPED] <= mcu_data[1];
+                    end
+                endcase
+            end
         end
     end
-
 endmodule
