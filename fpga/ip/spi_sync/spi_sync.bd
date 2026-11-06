@@ -2,7 +2,7 @@
   "design": {
     "design_info": {
       "boundary_crc": "0x61557E3B33303137",
-      "device": "xc7a35ticsg324-1L",
+      "device": "xc7a100tftg256-1",
       "name": "spi_sync",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
@@ -180,6 +180,9 @@
         "parameters": {
           "IN0_WIDTH": {
             "value": "8"
+          },
+          "dout_width": {
+            "value": "9"
           }
         }
       },
@@ -199,6 +202,9 @@
           },
           "DIN_WIDTH": {
             "value": "9"
+          },
+          "DOUT_WIDTH": {
+            "value": "8"
           }
         }
       },
@@ -294,8 +300,8 @@
       "SCLK_0_1": {
         "ports": [
           "SCLK",
-          "spi_0/SCLK",
-          "fifo_generator_0/wr_clk"
+          "fifo_generator_0/wr_clk",
+          "spi_0/SCLK"
         ]
       },
       "fifo_generator_0_dout": {
@@ -320,8 +326,8 @@
       "rst_0_1": {
         "ports": [
           "rst",
-          "spi_0/rst",
-          "fifo_generator_0/rst"
+          "fifo_generator_0/rst",
+          "spi_0/rst"
         ]
       },
       "spi_0_DOUT": {
