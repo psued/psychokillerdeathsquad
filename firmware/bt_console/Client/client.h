@@ -17,10 +17,19 @@ typedef struct {
 	bool connected;
 } InputState;
 
+/**
+ * Initialize BLE client state and schedule controller discovery.
+ */
 void client_init(void);
 
+/**
+ * Process BLE connection, disconnection, and discovery events.
+ */
 void client_event_process(void *pckt);
 
+/**
+ * Return the current state of a controller.
+ */
 InputState client_get(InputPlayer player);
 
 #endif
