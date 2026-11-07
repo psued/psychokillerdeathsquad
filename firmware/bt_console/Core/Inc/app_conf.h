@@ -133,6 +133,15 @@
 
 /* USER CODE BEGIN Generic_Parameters */
 
+#undef CFG_BONDING_MODE
+#define CFG_BONDING_MODE 0
+
+#undef CFG_IO_CAPABILITY
+#define CFG_IO_CAPABILITY CFG_IO_CAPABILITY_NO_INPUT_NO_OUTPUT
+
+#undef CFG_MITM_PROTECTION
+#define CFG_MITM_PROTECTION CFG_MITM_PROTECTION_NOT_REQUIRED
+
 /* USER CODE END Generic_Parameters */
 
 /**< specific parameters */
@@ -153,6 +162,18 @@
 #define OOB_DEMO                                1   /* Out Of Box Demo */
 
 /* USER CODE BEGIN Specific_Parameters */
+
+#undef OOB_DEMO
+#define OOB_DEMO 0
+
+#undef CONN_P1
+#define CONN_P1 CONN_P(20)
+
+#undef CONN_P2
+#define CONN_P2 CONN_P(20)
+
+#undef SUPERV_TIMEOUT
+#define SUPERV_TIMEOUT 60U
 
 /* USER CODE END Specific_Parameters */
 
@@ -657,6 +678,8 @@ typedef enum
   CFG_TASK_HCI_ASYNCH_EVT_ID,
   /* USER CODE BEGIN CFG_Task_Id_With_HCI_Cmd_t */
 
+  CFG_TASK_CLIENT_ID,
+
   /* USER CODE END CFG_Task_Id_With_HCI_Cmd_t */
   CFG_LAST_TASK_ID_WITH_HCICMD,                                               /**< Shall be LAST in the list */
 } CFG_Task_Id_With_HCI_Cmd_t;
@@ -667,6 +690,8 @@ typedef enum
   CFG_FIRST_TASK_ID_WITH_NO_HCICMD = CFG_LAST_TASK_ID_WITH_HCICMD - 1,        /**< Shall be FIRST in the list */
   CFG_TASK_SYSTEM_HCI_ASYNCH_EVT_ID,
   /* USER CODE BEGIN CFG_Task_Id_With_NO_HCI_Cmd_t */
+
+  CFG_TASK_UART_ID,
 
   /* USER CODE END CFG_Task_Id_With_NO_HCI_Cmd_t */
   CFG_LAST_TASK_ID_WITH_NO_HCICMD                                            /**< Shall be LAST in the list */

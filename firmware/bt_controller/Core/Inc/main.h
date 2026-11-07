@@ -62,22 +62,16 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define BTN_DOWN_Pin GPIO_PIN_2
 #define BTN_DOWN_GPIO_Port GPIOA
-#define BTN_DOWN_EXTI_IRQn EXTI2_IRQn
 #define BTN_A_Pin GPIO_PIN_5
 #define BTN_A_GPIO_Port GPIOB
-#define BTN_A_EXTI_IRQn EXTI9_5_IRQn
 #define BTN_B_Pin GPIO_PIN_6
 #define BTN_B_GPIO_Port GPIOB
-#define BTN_B_EXTI_IRQn EXTI9_5_IRQn
 #define BTN_LEFT_Pin GPIO_PIN_3
 #define BTN_LEFT_GPIO_Port GPIOA
-#define BTN_LEFT_EXTI_IRQn EXTI3_IRQn
 #define BTN_RIGHT_Pin GPIO_PIN_4
 #define BTN_RIGHT_GPIO_Port GPIOB
-#define BTN_RIGHT_EXTI_IRQn EXTI4_IRQn
 #define BTN_UP_Pin GPIO_PIN_0
 #define BTN_UP_GPIO_Port GPIOA
-#define BTN_UP_EXTI_IRQn EXTI0_IRQn
 
 /* USER CODE BEGIN Private defines */
 

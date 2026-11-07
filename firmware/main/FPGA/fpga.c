@@ -57,7 +57,7 @@ static bool snapshot_valid(const RenderSnapshot *snapshot)
 	return true;
 }
 
-static void write_u16_le(uint8_t *dst, const uint16_t value)
+static void le16_write(uint8_t *dst, const uint16_t value)
 {
 	dst[0] = (uint8_t)value;
 	dst[1] = (uint8_t)(value >> 8);
@@ -74,13 +74,13 @@ static void serialize_snapshot(uint8_t *dst, const RenderSnapshot *snapshot)
 			continue;
 		}
 
-		write_u16_le(&out[0], layer->image_id);
-		write_u16_le(&out[2], layer->src_x);
-		write_u16_le(&out[4], layer->src_y);
-		write_u16_le(&out[6], layer->width);
-		write_u16_le(&out[8], layer->height);
-		write_u16_le(&out[10], layer->dst_x);
-		write_u16_le(&out[12], layer->dst_y);
+		le16_write(&out[0], layer->image_id);
+		le16_write(&out[2], layer->src_x);
+		le16_write(&out[4], layer->src_y);
+		le16_write(&out[6], layer->width);
+		le16_write(&out[8], layer->height);
+		le16_write(&out[10], layer->dst_x);
+		le16_write(&out[12], layer->dst_y);
 		out[14] = layer->z;
 		out[15] = layer->flags;
 	}
@@ -95,17 +95,17 @@ static Error transmit_packet(const uint8_t *data, const uint16_t size)
 	HAL_GPIO_WritePin(FPGA_CS_GPIO_Port, FPGA_CS_Pin, GPIO_PIN_SET);
 
 	switch (status) {
-	case HAL_OK:
-		return ERROR_NONE;
+		case HAL_OK:
+			return ERROR_NONE;
 
-	case HAL_TIMEOUT:
-		return ERROR_TIMEOUT;
+		case HAL_TIMEOUT:
+			return ERROR_TIMEOUT;
 
-	case HAL_BUSY:
-		return ERROR_BUSY;
+		case HAL_BUSY:
+			return ERROR_BUSY;
 
-	default:
-		return ERROR_IO;
+		default:
+			return ERROR_IO;
 	}
 }
 
@@ -134,7 +134,7 @@ void fpga_process(void)
 		PAYLOAD_SIZE
 	);
 
-	write_u16_le(&packet[PAYLOAD_SIZE], crc);
+	le16_write(&packet[PAYLOAD_SIZE], crc);
 
 	if (transmit_packet(packet, PACKET_SIZE) == ERROR_NONE) {
 		snapshot_pending = false;

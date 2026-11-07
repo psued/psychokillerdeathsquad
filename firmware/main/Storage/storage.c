@@ -191,12 +191,7 @@ Error storage_open(StorageFile **file, const char *path)
 		return ERROR_NOT_FOUND;
 	}
 
-	if (
-		status == FX_INVALID_NAME || 
-		status == FX_INVALID_PATH ||
-		status == FX_NOT_A_FILE
-	)
-	{
+	if (status == FX_INVALID_NAME || status == FX_INVALID_PATH || status == FX_NOT_A_FILE) {
 		return ERROR_INVALID_DATA;
 	}
 

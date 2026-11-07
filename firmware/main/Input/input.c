@@ -38,24 +38,23 @@ static InputButtons get_held(
 )
 {
 	switch (source) {
-	case INPUT_SOURCE_NONE:
-		return 0;
+		case INPUT_SOURCE_NONE:
+			return 0;
 
-	case INPUT_SOURCE_WIRED:
-		return wired.held;
+		case INPUT_SOURCE_WIRED:
+			return wired.held;
 
-	case INPUT_SOURCE_WIRELESS:
-		return wireless.held;
+		case INPUT_SOURCE_WIRELESS:
+			return wireless.held;
 
-	default:
-		PANIC("Invalid input source");
+		default:
+			PANIC("Invalid input source");
 	}
 }
 
 static void update_held(PlayerInput *input, const InputButtons held)
 {
 	const InputButtons changed = input->pending.held ^ held;
-
 	input->pending.pressed |= changed & held;
 	input->pending.released |= changed & input->pending.held;
 	input->pending.held = held;
@@ -68,7 +67,6 @@ static void change_source(
 )
 {
 	input->source = source;
-
 	input->pending.held = held;
 	input->pending.pressed = 0;
 	input->pending.released = 0;
@@ -77,16 +75,14 @@ static void change_source(
 void input_init(void)
 {
 	input_wired_init();
+	input_wireless_init();
 }
 
 void input_process(void)
 {
-	for (
-		InputPlayer player = INPUT_PLAYER_1;
-		player < INPUT_PLAYER_COUNT;
-		player++
-	)
-	{
+	input_wireless_process();
+
+	for (InputPlayer player = INPUT_PLAYER_1; player < INPUT_PLAYER_COUNT; player++) {
 		const InputState wired = input_wired_get(player);
 		const InputState wireless = input_wireless_get(player);
 
@@ -105,14 +101,8 @@ void input_process(void)
 
 void input_freeze(void)
 {
-	for (
-		InputPlayer player = INPUT_PLAYER_1;
-		player < INPUT_PLAYER_COUNT;
-		player++
-	)
-	{
+	for (InputPlayer player = INPUT_PLAYER_1; player < INPUT_PLAYER_COUNT; player++) {
 		PlayerInput *input = &players[player];
-
 		input->current = input->pending;
 		input->pending.pressed = 0;
 		input->pending.released = 0;
