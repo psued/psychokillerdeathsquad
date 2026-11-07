@@ -33,6 +33,8 @@
 #include "fpga.h"
 #include "storage.h"
 #include "audio.h"
+#include "debug.h"
+#include "watchdog.h"
 
 /* USER CODE END Includes */
 
@@ -54,6 +56,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 CRC_HandleTypeDef hcrc;
+
+IWDG_HandleTypeDef hiwdg;
 
 SAI_HandleTypeDef hsai_BlockA1;
 DMA_NodeTypeDef Node_GPDMA1_Channel0;
@@ -90,6 +94,7 @@ static void MX_TIM7_Init(void);
 static void MX_ICACHE_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_CRC_Init(void);
+static void MX_IWDG_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -142,14 +147,26 @@ int main(void)
   MX_TIM2_Init();
   MX_CRC_Init();
   MX_FileX_Init();
+  MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
 
   time_init();
   heartbeat_init();
   input_init();
   fpga_init();
-  (void)storage_init();
-  (void)audio_init();
+
+  Error error = storage_init();
+
+  if (error != ERROR_NONE) {
+	  debug_printf("Storage init failed: %d\r\n", error);
+  }
+
+  error = audio_init();
+
+  if (error != ERROR_NONE) {
+	  debug_printf("Audio init failed: %d\r\n", error);
+  }
+
   game_init();
   game_tick_init();
 
@@ -165,6 +182,7 @@ int main(void)
     game_tick_process();
     fpga_process();
     storage_process();
+    watchdog_process();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -190,8 +208,10 @@ void SystemClock_Config(void)
 
   /** Initializes the CPU, AHB and APB buses clocks
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+  RCC_OscInitStruct.LSIDiv = RCC_LSI_DIV1;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLMBOOST = RCC_PLLMBOOST_DIV1;
@@ -329,6 +349,36 @@ static void MX_ICACHE_Init(void)
   /* USER CODE BEGIN ICACHE_Init 2 */
 
   /* USER CODE END ICACHE_Init 2 */
+
+}
+
+/**
+  * @brief IWDG Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_IWDG_Init(void)
+{
+
+  /* USER CODE BEGIN IWDG_Init 0 */
+
+  /* USER CODE END IWDG_Init 0 */
+
+  /* USER CODE BEGIN IWDG_Init 1 */
+
+  /* USER CODE END IWDG_Init 1 */
+  hiwdg.Instance = IWDG;
+  hiwdg.Init.Prescaler = IWDG_PRESCALER_128;
+  hiwdg.Init.Window = 4095;
+  hiwdg.Init.Reload = 1999;
+  hiwdg.Init.EWI = 0;
+  if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN IWDG_Init 2 */
+
+  /* USER CODE END IWDG_Init 2 */
 
 }
 

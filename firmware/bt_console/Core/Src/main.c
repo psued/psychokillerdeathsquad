@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 
 #include "error.h"
+#include "watchdog.h"
 
 /* USER CODE END Includes */
 
@@ -46,6 +47,8 @@ CRC_HandleTypeDef hcrc;
 
 IPCC_HandleTypeDef hipcc;
 
+IWDG_HandleTypeDef hiwdg;
+
 LPTIM_HandleTypeDef hlptim1;
 
 RTC_HandleTypeDef hrtc;
@@ -65,6 +68,7 @@ static void MX_RTC_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_CRC_Init(void);
 static void MX_LPTIM1_Init(void);
+static void MX_IWDG_Init(void);
 static void MX_RF_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -116,6 +120,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_CRC_Init();
   MX_LPTIM1_Init();
+  MX_IWDG_Init();
   MX_RF_Init();
   /* USER CODE BEGIN 2 */
 
@@ -132,6 +137,7 @@ int main(void)
     MX_APPE_Process();
 
     /* USER CODE BEGIN 3 */
+    watchdog_process();
   }
   /* USER CODE END 3 */
 }
@@ -153,12 +159,13 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_HSE
-                              |RCC_OSCILLATORTYPE_LSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI1
+                              |RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
@@ -264,6 +271,35 @@ static void MX_IPCC_Init(void)
   /* USER CODE BEGIN IPCC_Init 2 */
 
   /* USER CODE END IPCC_Init 2 */
+
+}
+
+/**
+  * @brief IWDG Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_IWDG_Init(void)
+{
+
+  /* USER CODE BEGIN IWDG_Init 0 */
+
+  /* USER CODE END IWDG_Init 0 */
+
+  /* USER CODE BEGIN IWDG_Init 1 */
+
+  /* USER CODE END IWDG_Init 1 */
+  hiwdg.Instance = IWDG;
+  hiwdg.Init.Prescaler = IWDG_PRESCALER_128;
+  hiwdg.Init.Window = 4095;
+  hiwdg.Init.Reload = 1999;
+  if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN IWDG_Init 2 */
+
+  /* USER CODE END IWDG_Init 2 */
 
 }
 
