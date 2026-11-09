@@ -57,9 +57,7 @@ if {$board_name ne ""} {
 
 set rtl_dir [file join $fpga_dir rtl]
 
-set rtl_files [glob -nocomplain -directory $rtl_dir *.sv *.v]
-
-add_files -fileset sources_1 $rtl_files
+add_files -fileset sources_1 $rtl_dir
 
 # ============================================================
 # Simulation sources

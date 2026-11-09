@@ -37,6 +37,7 @@ module fat32(
     reg mbr_read;
     reg [8:0] counter;
     wire [4:0] counter_mod = counter[4:0];
+    reg [7:0] rootdir_sectors_read;
     
     reg fn1_match;
     reg fn2_match;
@@ -65,6 +66,7 @@ module fat32(
             
             mbr_read <= 0;
             counter <= 0;
+            rootdir_sectors_read <= 0;
             
             fn1_match <= 0;
             fn2_match <= 0;
@@ -82,6 +84,8 @@ module fat32(
                     fn1_match <= 0;
                     fn2_match <= 0;
                     flag_match <= 0;
+                    
+                    rootdir_sectors_read <= 0;
                 end else begin
                     read <= 0;
                 end
@@ -128,7 +132,13 @@ module fat32(
                         end
                         
                         if (counter == 511) begin // addr not fetched and end reached
-                            addr_fetch_failed <= 1;
+                            if (rootdir_sectors_read < sects_per_clus) begin
+                                addr <= addr + 1;
+                                read <= 1;
+                                rootdir_sectors_read <= rootdir_sectors_read + 1;
+                            end else begin
+                                addr_fetch_failed <= 1;
+                            end
                         end
                     end
                 end
