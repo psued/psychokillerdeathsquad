@@ -93,12 +93,18 @@ module top #(
 
     logic write_buffer;
     logic [X_WIDTH-1:0] write_x;
-    logic [X_WIDTH-1:0] render_x;
     logic line_done;
     logic write_enable;
     logic [WORD_WIDTH-1:0] pixel_in;
     logic [PIXELS_PER_CYCLE-1:0] write_mask;
     logic stall;
+
+    renderer_pkg::layer_descriptor_t snapshot [0:renderer_pkg::LAYER_COUNT-1];
+    logic [renderer_pkg::IMAGE_ID_WIDTH-1:0] mmu_request_image_id;
+    logic [15:0] mmu_request_x [0:PIXELS_PER_CYCLE-1];
+    logic [15:0] mmu_request_y [0:PIXELS_PER_CYCLE-1];
+    logic mmu_request_valid;
+    logic [PIXEL_BITS-1:0] mmu_pixel_output [0:PIXELS_PER_CYCLE-1];
 
     line_buffer_write_controller write_controller (
         .clk(system_clk),
@@ -113,23 +119,43 @@ module top #(
         .stall(stall)
     );
 
-    mock_renderer #(
-        .PIXELS_PER_CYCLE(PIXELS_PER_CYCLE),
-        .LINE_PIXELS(LINE_PIXELS),
-        .FRAME_LINES(FRAME_LINES),
-        .CHANNEL_BITS(CHANNEL_BITS),
-        .PIXEL_SLOT_BITS(PIXEL_SLOT_BITS)
-    ) mock_renderer_inst (
+    mock_snapshot snapshot_source (
+        .snapshot(snapshot)
+    );
+
+    renderer #(
+        .PIXELS_PER_CYCLE(PIXELS_PER_CYCLE)
+    ) renderer_inst (
         .clk(system_clk),
         .reset(system_reset),
         .stall(stall),
+        .snapshot(snapshot),
 
-        .write_x(write_x),
-        .render_x(render_x),
-        .write_enable(write_enable),
-        .pixel_in(pixel_in),
-        .write_mask(write_mask),
-        .line_done(line_done)
+        .mmu_request_image_id(mmu_request_image_id),
+        .mmu_request_x(mmu_request_x),
+        .mmu_request_y(mmu_request_y),
+        .mmu_request_valid(mmu_request_valid),
+        .mmu_pixel_output(mmu_pixel_output),
+
+        .bram_write_x(write_x),
+        .bram_write_enable(write_enable),
+        .bram_pixel_in(pixel_in),
+        .bram_write_mask(write_mask),
+        .line_done(line_done),
+        .rendering()
+    );
+
+    mock_mmu #(
+        .LATENCY(3),
+        .PIXELS_PER_CYCLE(PIXELS_PER_CYCLE)
+    ) mock_mmu_inst (
+        .clk(system_clk),
+        .reset(system_reset),
+        .x(mmu_request_x),
+        .y(mmu_request_y),
+        .image_id(mmu_request_image_id),
+        .request_valid(mmu_request_valid),
+        .pixel_out(mmu_pixel_output)
     );
 
     logic buffer_ready;
