@@ -106,14 +106,6 @@ set_property -dict [list \
 generate_target all [get_ips clk_wiz_vga]
 
 # ============================================================
-# SPI synchronizer IP block
-# ============================================================
-
-set spi_sync_file [file join $fpga_dir "ip" "spi_sync" "spi_sync.bd"]
-
-add_files -fileset sources_1 $spi_sync_file
-
-# ============================================================
 # Project configuration
 # ============================================================
 
