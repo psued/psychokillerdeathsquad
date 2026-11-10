@@ -99,7 +99,8 @@ module top #(
     logic [PIXELS_PER_CYCLE-1:0] write_mask;
     logic stall;
 
-    renderer_pkg::layer_descriptor_t snapshot [0:renderer_pkg::LAYER_COUNT-1];
+    renderer_pkg::layer_descriptor_t current_layer;
+    logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] layer_counter;
     logic [renderer_pkg::IMAGE_ID_WIDTH-1:0] mmu_request_image_id;
     logic [15:0] mmu_request_x [0:PIXELS_PER_CYCLE-1];
     logic [15:0] mmu_request_y [0:PIXELS_PER_CYCLE-1];
@@ -120,7 +121,8 @@ module top #(
     );
 
     mock_snapshot snapshot_source (
-        .snapshot(snapshot)
+        .layer_counter(layer_counter),
+        .current_layer(current_layer)
     );
 
     renderer #(
@@ -129,7 +131,8 @@ module top #(
         .clk(system_clk),
         .reset(system_reset),
         .stall(stall),
-        .snapshot(snapshot),
+        .current_layer(current_layer),
+        .layer_counter(layer_counter),
 
         .mmu_request_image_id(mmu_request_image_id),
         .mmu_request_x(mmu_request_x),
@@ -142,7 +145,7 @@ module top #(
         .bram_pixel_in(pixel_in),
         .bram_write_mask(write_mask),
         .line_done(line_done),
-        .rendering()
+        .frame_done()
     );
 
     mock_mmu #(
