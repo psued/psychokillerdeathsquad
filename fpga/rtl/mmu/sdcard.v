@@ -250,7 +250,7 @@ module sdcard(
                         awaiting_resp <= 0;
                     end
                     
-                    if (multiread_counter == size) begin // CMD12 only
+                    if (size != 0 && multiread_counter == size) begin // CMD12 only
                         cmd_ready <= 1;
                         reading <= 0;
                     end

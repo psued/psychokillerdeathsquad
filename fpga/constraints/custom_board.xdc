@@ -35,3 +35,17 @@ set_property -dict { PACKAGE_PIN A14 IOSTANDARD LVCMOS33 } [get_ports {blue[0]}]
 set_property -dict { PACKAGE_PIN C14 IOSTANDARD LVCMOS33 } [get_ports hsync]
 set_property -dict { PACKAGE_PIN B14 IOSTANDARD LVCMOS33 } [get_ports vsync]
 
+# SD card
+set_property -dict { PACKAGE_PIN B15 IOSTANDARD LVCMOS33 } [get_ports SD_SCLK]
+set_property -dict { PACKAGE_PIN A15 IOSTANDARD LVCMOS33 } [get_ports SD_DI]
+set_property -dict { PACKAGE_PIN C16 IOSTANDARD LVCMOS33 } [get_ports SD_DO]
+set_property -dict { PACKAGE_PIN C12 IOSTANDARD LVCMOS33 } [get_ports SD_CS]
+
+# MCU communication
+set_property -dict { PACKAGE_PIN T9  IOSTANDARD LVCMOS33 } [get_ports MCU_SCLK]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets MCU_SCLK_IBUF]
+set_property -dict { PACKAGE_PIN P8  IOSTANDARD LVCMOS33 } [get_ports MCU_MISO]
+set_property -dict { PACKAGE_PIN R8  IOSTANDARD LVCMOS33 } [get_ports MCU_MOSI]
+set_property -dict { PACKAGE_PIN T10 IOSTANDARD LVCMOS33 } [get_ports MCU_CS]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets MCU_CS_IBUF]
+set_property -dict { PACKAGE_PIN R7  IOSTANDARD LVCMOS33 } [get_ports MCU_READY]
