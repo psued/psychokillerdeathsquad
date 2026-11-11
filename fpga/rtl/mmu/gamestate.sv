@@ -19,6 +19,8 @@ module gamestate(
 
     input [7:0] addr, // relative to layer
     output [23:0] data,
+
+    // input rendering,
     // end: for renderer
 
     output SD_SCLK,
@@ -29,12 +31,9 @@ module gamestate(
     input MCU_SCLK,
     output MCU_MISO,
     input MCU_MOSI,
-    input MCU_CS
+    input MCU_CS,
+    output MCU_READY
     );
-
-    // TODO: READY signal
-    // don't send before fs_init_done
-    // other ideas in later todos
 
     reg selected_mem; // selected for rendering
     wire selected0 = selected_mem == 0;
@@ -189,6 +188,10 @@ module gamestate(
     assign data = data0;
 
 
+    reg READY;
+    assign MCU_READY = READY && fs_init_done;
+
+
     reg [8:0] mcu_byte_counter;
     wire [3:0] mcu_byte_counter_mod = mcu_byte_counter[3:0];
     reg populate_memory;
@@ -198,6 +201,7 @@ module gamestate(
 
     always @ (posedge rst, posedge clk) begin
         if (rst) begin
+            READY <= 1;
             selected_mem <= 1;
 
             file_name <= 0;
@@ -228,19 +232,21 @@ module gamestate(
             if (write_en0)
                 write_en0 <= 0;
 
-            if (fetch_file) begin
-                fs_reading <= 1;
+            if (fetch_file)
                 fetch_file <= 0;
-            end else if (file_addr_fetched) begin
+
+            if (file_addr_fetched && reading_file && !fetch_file && !sd_reading) begin
                 fs_reading <= 0;
                 sd_read <= 1;
             end
 
             if (pos_mcu_byte_done) begin
                 mcu_byte_counter <= mcu_byte_counter + 1;
-                // TODO: set READY low on first read
 
-                if (mcu_byte_counter_mod == 0 && mcu_byte_counter != 0) begin
+                if (mcu_byte_counter == 0)
+                    READY <= 0;
+
+                if (mcu_byte_counter_mod == 15) begin
                     if (write_mcu0)
                         layer0_sel <= layer0_sel + 1;
                 end
@@ -254,13 +260,15 @@ module gamestate(
                 end
             end
 
-            if (populate_memory && !reading_file) begin
+            if (populate_memory && !reading_file && !sd_reading) begin
                 if (layer0_sel == 24) begin
                     layer0_sel <= 0;
                     populate_memory <= 0;
-                    // TODO: set READY high
+
+                    // TODO: change this to only set when memory changes
+                    READY <= 1;
                 end else begin
-                    if (file_name0 == file_name_prev0) begin
+                    if (file_name0 == file_name_prev0 || file_name0 != 'h3030) begin
                         layer0_sel <= layer0_sel + 1;
                     end else begin
                         sd_byte_counter <= 0;
@@ -269,6 +277,7 @@ module gamestate(
 
                         file_name <= file_name0;
                         fetch_file <= 1;
+                        fs_reading <= 1;
                     end
                 end
             end
