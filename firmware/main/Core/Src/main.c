@@ -170,6 +170,8 @@ int main(void)
   game_init();
   game_tick_init();
 
+  debug_printf("Firmware started!\r\n");
+
   /* USER CODE END 2 */
 
   /* Infinite loop */

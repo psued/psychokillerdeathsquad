@@ -83,24 +83,88 @@ typedef struct {
 } MusicStream;
 
 static const AudioMapping audio_mappings[AUDIO_COUNT] = {
-	[SFX_HIT] = {
-		.path = "AUDIO/HIT.PCM",
+	[SFX_HIT_LIGHT] = {
+		.path = "AUDIO/SFX/SFX_HIT_LIGHT.PCM",
+		.type = AUDIO_TYPE_SFX
+	},
+	[SFX_HIT_HEAVY] = {
+		.path = "AUDIO/SFX/SFX_HIT_HEAVY.PCM",
 		.type = AUDIO_TYPE_SFX
 	},
 	[SFX_BLOCK] = {
-		.path = "AUDIO/BLOCK.PCM",
+		.path = "AUDIO/SFX/SFX_BLOCK.PCM",
 		.type = AUDIO_TYPE_SFX
 	},
-	[SFX_MENU_SELECT] = {
-		.path = "AUDIO/SELECT.PCM",
+	[SFX_GRAB] = {
+		.path = "AUDIO/SFX/SFX_GRAB.PCM",
 		.type = AUDIO_TYPE_SFX
 	},
-	[MUSIC_MENU] = {
-		.path = "AUDIO/MENU.PCM",
+	[SFX_SLAM] = {
+		.path = "AUDIO/SFX/SFX_SLAM.PCM",
+		.type = AUDIO_TYPE_SFX
+	},
+	[SFX_SWITCH] = {
+		.path = "AUDIO/SFX/SFX_SWITCH.PCM",
+		.type = AUDIO_TYPE_SFX
+	},
+	[SFX_SELECT] = {
+		.path = "AUDIO/SFX/SFX_SELECT.PCM",
+		.type = AUDIO_TYPE_SFX
+	},
+	[MUSIC_MENU_1] = {
+		.path = "AUDIO/MUSIC/MUSIC_MENU_1.PCM",
 		.type = AUDIO_TYPE_MUSIC
 	},
-	[MUSIC_BATTLE] = {
-		.path = "AUDIO/BATTLE.PCM",
+	[MUSIC_MENU_2] = {
+		.path = "AUDIO/MUSIC/MUSIC_MENU_2.PCM",
+		.type = AUDIO_TYPE_MUSIC
+	},
+	[MUSIC_SELECT] = {
+		.path = "AUDIO/MUSIC/MUSIC_SELECT.PCM",
+		.type = AUDIO_TYPE_MUSIC
+	},
+	[MUSIC_BATTLE_BRAZIL] = {
+		.path = "AUDIO/MUSIC/MUSIC_BATTLE_BRAZIL.PCM",
+		.type = AUDIO_TYPE_MUSIC
+	},
+	[MUSIC_BATTLE_USA] = {
+		.path = "AUDIO/MUSIC/MUSIC_BATTLE_USA.PCM",
+		.type = AUDIO_TYPE_MUSIC
+	},
+	[MUSIC_BATTLE_BRITAIN] = {
+		.path = "AUDIO/MUSIC/MUSIC_BATTLE_BRITAIN.PCM",
+		.type = AUDIO_TYPE_MUSIC
+	},
+	[MUSIC_BATTLE_CHINA] = {
+		.path = "AUDIO/MUSIC/MUSIC_BATTLE_CHINA.PCM",
+		.type = AUDIO_TYPE_MUSIC
+	},
+	[MUSIC_BATTLE_JAPAN] = {
+		.path = "AUDIO/MUSIC/MUSIC_BATTLE_JAPAN.PCM",
+		.type = AUDIO_TYPE_MUSIC
+	},
+	[MUSIC_BATTLE_EGYPT] = {
+		.path = "AUDIO/MUSIC/MUSIC_BATTLE_EGYPT.PCM",
+		.type = AUDIO_TYPE_MUSIC
+	},
+	[MUSIC_BATTLE_DUNGEON] = {
+		.path = "AUDIO/MUSIC/MUSIC_BATTLE_DUNGEON.PCM",
+		.type = AUDIO_TYPE_MUSIC
+	},
+	[MUSIC_BATTLE_VOLCANO] = {
+		.path = "AUDIO/MUSIC/MUSIC_BATTLE_VOLCANO.PCM",
+		.type = AUDIO_TYPE_MUSIC
+	},
+	[MUSIC_ROUND_OVER] = {
+		.path = "AUDIO/MUSIC/MUSIC_ROUND_OVER.PCM",
+		.type = AUDIO_TYPE_MUSIC
+	},
+	[MUSIC_MATCH_OVER] = {
+		.path = "AUDIO/MUSIC/MUSIC_MATCH_OVER.PCM",
+		.type = AUDIO_TYPE_MUSIC
+	},
+	[MUSIC_CREDITS] = {
+		.path = "AUDIO/MUSIC/MUSIC_CREDITS.PCM",
 		.type = AUDIO_TYPE_MUSIC
 	}
 };
@@ -797,7 +861,7 @@ void audio_process(void)
 
 Error audio_load(const AudioId id)
 {
-	ASSERT(id >= SFX_HIT && id < AUDIO_COUNT);
+	ASSERT(id >= SFX_HIT_LIGHT && id < AUDIO_COUNT);
 	ASSERT(audio_mappings[id].type == AUDIO_TYPE_SFX);
 
 	return sfx_load(id);
@@ -821,7 +885,7 @@ void audio_volume_set(const AudioVolume volume)
 
 void audio_play(const AudioId id)
 {
-	ASSERT(id >= SFX_HIT && id < AUDIO_COUNT);
+	ASSERT(id >= SFX_HIT_LIGHT && id < AUDIO_COUNT);
 
 	if (!available) {
 		return;
@@ -836,7 +900,7 @@ void audio_play(const AudioId id)
 
 void audio_stop(const AudioId id)
 {
-	ASSERT(id >= SFX_HIT && id < AUDIO_COUNT);
+	ASSERT(id >= SFX_HIT_LIGHT && id < AUDIO_COUNT);
 
 	if (audio_mappings[id].type == AUDIO_TYPE_SFX) {
 		sfx_stop(id);
