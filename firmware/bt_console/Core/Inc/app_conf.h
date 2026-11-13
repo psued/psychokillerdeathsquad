@@ -172,6 +172,12 @@
 #undef CONN_P2
 #define CONN_P2 CONN_P(20)
 
+#undef CONN_L1
+#define CONN_L1 CONN_L(5)
+
+#undef CONN_L2
+#define CONN_L2 CONN_L(5)
+
 #undef SUPERV_TIMEOUT
 #define SUPERV_TIMEOUT 60U
 

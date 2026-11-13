@@ -12,8 +12,8 @@
 #define CLIENT_UUID_SIZE      16U
 #define CLIENT_HANDLE_INVALID 0xFFFFU
 
-#define CLIENT_SCAN_INTERVAL          160U
-#define CLIENT_SCAN_WINDOW            64U
+#define CLIENT_SCAN_INTERVAL          32U
+#define CLIENT_SCAN_WINDOW            8U
 #define CLIENT_SCAN_DUPLICATES_FILTER 1U
 #define CLIENT_CONN_LATENCY           0U
 
