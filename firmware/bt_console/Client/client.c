@@ -64,7 +64,7 @@ static ControllerConnection controllers[INPUT_PLAYER_COUNT] = {
 		.connection_handle = CLIENT_HANDLE_INVALID
 	},
 	[INPUT_PLAYER_2] = {
-		.address = {0},
+		.address = {0x7E, 0x9B, 0x22, 0xE1, 0x80, 0x00},
 		.connection_handle = CLIENT_HANDLE_INVALID
 	}
 };
