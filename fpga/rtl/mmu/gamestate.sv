@@ -246,6 +246,21 @@ module gamestate(
         .set_asset_width(set_asset_width1)
     );
 
+    reg bg_write_en;
+    wire [15:0] bg_write_addr = selected_mem ? write_addr1 : write_addr0;
+    wire [23:0] bg_write_data = selected_mem ? write_data1 : write_data0;
+    wire [23:0] bg_data;
+
+    ram #(.ADDR_SIZE(15), .RAM_SIZE(255)) bg_layer (
+        .clk(clk),
+        .write_en(bg_write_en),
+        .read_addr(addr),
+        .write_addr(bg_write_addr),
+
+        .data_in(bg_write_data),
+        .data_out(bg_data)
+    );
+
     // selected_mem is for writing, so it's reversed here
     assign width = selected_mem ? width0 : width1;
     assign height = selected_mem ? height0 : height1;
@@ -257,8 +272,8 @@ module gamestate(
     assign enabled = selected_mem ? enabled0 : enabled1;
     assign flipped = selected_mem ? flipped0 : flipped1;
     assign bits_per_color = selected_mem ? bits_per_color0 : bits_per_color1;
-    assign data = selected_mem ? data0 : data1;
     assign asset_width = selected_mem ? data0 : data1;
+    assign data = layer == 0 ? bg_data : (selected_mem ? data0 : data1);
 
 
     reg READY;
@@ -304,6 +319,8 @@ module gamestate(
             set_color_bits1 <= 0;
             set_asset_width1 <= 0;
 
+            bg_write_en <= 0;
+
             mcu_byte_counter <= 0;
             populate_memory <= 0;
             reading_file <= 0;
@@ -321,6 +338,8 @@ module gamestate(
                 write_en0 <= 0;
             if (write_en1 && !read_mem)
                 write_en1 <= 0;
+            if (bg_write_en)
+                bg_write_en <= 0;
 
             if (fetch_file)
                 fetch_file <= 0;
@@ -379,7 +398,7 @@ module gamestate(
                         write_addr1 <= 0;
                         reading_file <= 1;
 
-                        if (file_name0 == file_name1) begin
+                        if (file_name0 == file_name1 && write_layer_sel != 0) begin
                             read_mem <= 1;
                             addr_end <= mem_size;
                             if (selected_mem)
@@ -440,7 +459,9 @@ module gamestate(
                             write_data0[7:0] <= sd_data;
                         if (sd_byte_counter != file_size - 1) begin
                             sd_byte_counter_mod <= 0;
-                            if (selected_mem)
+                            if (write_layer_sel == 0)
+                                bg_write_en <= 1;
+                            else if (selected_mem)
                                 write_en1 <= 1;
                             else
                                 write_en0 <= 1;
@@ -459,7 +480,9 @@ module gamestate(
                             else
                                 write_data0[7:0] <= 0;
                         end
-                        if (selected_mem)
+                        if (write_layer_sel == 0)
+                            bg_write_en <= 1;
+                        else if (selected_mem)
                             write_en1 <= 1;
                         else
                             write_en0 <= 1;

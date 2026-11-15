@@ -115,7 +115,8 @@ module memory(
                 layers[i] <= 0;
 
             // set start address of each layer and layer size
-            // e.g. layers[1][ADDRH:ADDRL] <= 4; layers[0][MEMSIZEH:MEMSIZEL] <= 4;
+            // layers[0] has size 0 since the ram is separate to save space
+            // e.g. layers[1][ADDRH:ADDRL] <= 0; layers[1][MEMSIZEH:MEMSIZEL] <= 4;
         end else begin
             mcu_byte_done_prev <= mcu_byte_done;
 
