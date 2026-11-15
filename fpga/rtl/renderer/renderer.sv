@@ -15,10 +15,17 @@ module renderer
     input layer_descriptor_t current_layer,
 
     //MMU I/O
-    output logic [IMAGE_ID_WIDTH-1:0] mmu_request_image_id,
-    output logic [PIXEL_SLOT_BITS-1:0] mmu_request_x [0:PIXELS_PER_CYCLE-1],
-    output logic [PIXEL_SLOT_BITS-1:0] mmu_request_y [0:PIXELS_PER_CYCLE-1],
+    output logic [X_COORDINATE_WIDTH-1:0] mmu_request_x,
+    output logic [Y_COORDINATE_WIDTH-1:0] mmu_y_select,
+    output logic [PIXELS_PER_CYCLE-1:0] mmu_request_mask,
+    output logic mmu_prepare_valid,
     output logic mmu_request_valid,
+    output logic mmu_response_ready,
+    input logic mmu_prepare_ready,
+    input logic mmu_request_ready,
+    input logic mmu_response_valid,
+    input logic [X_COORDINATE_WIDTH-1:0] mmu_response_x,
+    input logic [PIXELS_PER_CYCLE-1:0] mmu_response_mask,
     input logic [PIXEL_BITS-1:0] mmu_pixel_output [0:PIXELS_PER_CYCLE-1],
 
     //BRAM I/O              
