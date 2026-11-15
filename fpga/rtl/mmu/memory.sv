@@ -18,13 +18,17 @@ localparam int ENABLED = ZH + 1;
 localparam int FLIPPED = ENABLED + 1;
 localparam int COLORBITSL = FLIPPED + 1;
 localparam int COLORBITSH = COLORBITSL + 7;
-localparam int FILENAMEL = COLORBITSH + 1;
+localparam int ASSETWIDTHL = COLORBITSH + 1;
+localparam int ASSETWIDTHH = ASSETWIDTHL + 15;
+localparam int FILENAMEL = ASSETWIDTHH + 1;
 localparam int FILENAMEH = FILENAMEL + 15;
 localparam int FILENAMEPREVL = FILENAMEH + 1;
 localparam int FILENAMEPREVH = FILENAMEPREVL + 15;
 localparam int ADDRL = FILENAMEPREVH + 1;
 localparam int ADDRH = ADDRL + 7;
-localparam int LAYERSIZE = ADDRH;
+localparam int MEMSIZEL = ADDRH + 1;
+localparam int MEMSIZEH = MEMSIZEL + 15;
+localparam int LAYERSIZE = MEMSIZEH;
 localparam int NUMLAYERS = 24;
 
 module memory(
@@ -42,21 +46,25 @@ module memory(
     output enabled,
     output flipped,
     output [7:0] bits_per_color,
+    output [15:0] asset_width,
 
-    input [7:0] addr, // relative to layer
+    input [15:0] addr, // relative to layer
     output [23:0] data,
 
     output [15:0] file_name,
     output [15:0] file_name_prev,
+    output [15:0] mem_size,
 
     input write_en,
-    input [7:0] write_addr, // relative to layer
+    input [15:0] write_addr, // relative to layer
     input [23:0] write_data,
+    output [23:0] read_write_data,
     input write_mcu,
     input [4:0] layer_write,
     input [7:0] mcu_data,
     input mcu_byte_done,
-    input [7:0] set_color_bits
+    input [7:0] set_color_bits,
+    input [15:0] set_asset_width
     );
 
     reg mcu_byte_done_prev;
@@ -75,13 +83,15 @@ module memory(
     assign enabled = layers[layer][ENABLED];
     assign flipped = layers[layer][FLIPPED];
     assign bits_per_color = layers[layer][COLORBITSH:COLORBITSL];
+    assign asset_width = layers[layer][ASSETWIDTHH:ASSETWIDTHL];
 
     // file name is only used by the writer
     assign file_name = layers[layer_write][FILENAMEH:FILENAMEL];
     assign file_name_prev = layers[layer_write][FILENAMEPREVH:FILENAMEPREVL];
+    assign mem_size = layers[layer_write][MEMSIZEH:MEMSIZEL];
 
-    wire [7:0] address = layers[layer][ADDRH:ADDRL] + addr; // addresses should definitely be bigger
-    wire [7:0] write_address = layers[layer_write][ADDRH:ADDRL] + write_addr; // addresses should definitely be bigger
+    wire [23:0] address = layers[layer][ADDRH:ADDRL] + addr;
+    wire [23:0] write_address = layers[layer_write][ADDRH:ADDRL] + write_addr;
 
     ram d(
         .clk(clk),
@@ -90,7 +100,8 @@ module memory(
         .write_addr(write_address),
 
         .data_in(write_data),
-        .data_out(data)
+        .data_out(data),
+        .write_data_out(read_write_data)
     );
 
     integer i;
@@ -103,13 +114,15 @@ module memory(
             for (i = 0; i < NUMLAYERS; i = i + 1)
                 layers[i] <= 0;
 
-            // set start address of each layer
-            // e.g. layers[1][ADDRH:ADDRL] <= 4;
+            // set start address of each layer and layer size
+            // e.g. layers[1][ADDRH:ADDRL] <= 4; layers[0][MEMSIZEH:MEMSIZEL] <= 4;
         end else begin
             mcu_byte_done_prev <= mcu_byte_done;
 
-            if (write_en)
+            if (write_en) begin
                 layers[layer_write][COLORBITSH:COLORBITSL] <= set_color_bits;
+                layers[layer_write][ASSETWIDTHH:ASSETWIDTHL] <= set_asset_width;
+            end
 
             if (write_mcu && pos_mcu_byte_done) begin
                 mcu_counter <= mcu_counter + 1;

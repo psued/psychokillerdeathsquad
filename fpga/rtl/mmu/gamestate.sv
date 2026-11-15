@@ -16,11 +16,12 @@ module gamestate(
     output enabled,
     output flipped,
     output [7:0] bits_per_color,
+    output [15:0] asset_width,
 
-    input [7:0] addr, // relative to layer
+    input [15:0] addr, // relative to layer
     output [23:0] data,
 
-    // input rendering,
+    input rendering,
     // end: for renderer
 
     output SD_SCLK,
@@ -35,9 +36,7 @@ module gamestate(
     output MCU_READY
     );
 
-    reg selected_mem; // selected for rendering
-    wire selected0 = selected_mem == 0;
-    wire selected1 = selected_mem == 1;
+    reg selected_mem; // selected for writing
 
 
     wire fs_init_done;
@@ -118,8 +117,14 @@ module gamestate(
         .data_received(mcu_byte_done)
     );
 
-    reg [4:0] layer0_sel;
-    wire [4:0] layer0 = selected0 ? layer : layer0_sel;
+    reg [4:0] write_layer_sel;
+
+    // mem_size only depends on layer, not instance.
+    // Since both memories are controlled by write_layer_sel,
+    // only the mem_size from memory0 is used.
+    wire [15:0] mem_size;
+
+
     wire [15:0] width0;
     wire [15:0] height0;
     wire [15:0] src_x0;
@@ -130,24 +135,26 @@ module gamestate(
     wire enabled0;
     wire flipped0;
     wire [7:0] bits_per_color0;
+    wire [15:0] asset_width0;
 
-    wire [7:0] addr0 = selected0 ? addr : 0;
     wire [23:0] data0;
 
     wire [15:0] file_name0;
     wire [15:0] file_name_prev0;
 
     reg write_en0;
-    reg [7:0] write_addr0;
+    reg [15:0] write_addr0;
     reg [23:0] write_data0;
+    wire [23:0] read_write_data0;
     reg write_mcu0;
-    reg set_color_bits0;
+    reg [7:0] set_color_bits0;
+    reg [15:0] set_asset_width0;
 
     memory memory0(
         .clk(clk),
         .rst(rst),
 
-        .layer(layer0),
+        .layer(layer),
         .width(width0),
         .height(height0),
         .src_x(src_x0),
@@ -158,34 +165,100 @@ module gamestate(
         .enabled(enabled0),
         .flipped(flipped0),
         .bits_per_color(bits_per_color0),
+        .asset_width(asset_width0),
 
-        .addr(addr0),
+        .addr(addr),
         .data(data0),
 
         .file_name(file_name0),
         .file_name_prev(file_name_prev0),
+        .mem_size(mem_size),
 
         .write_en(write_en0),
         .write_addr(write_addr0),
         .write_data(write_data0),
+        .read_write_data(read_write_data0),
         .write_mcu(write_mcu0),
-        .layer_write(layer0_sel),
+        .layer_write(write_layer_sel),
         .mcu_data(mcu_data),
         .mcu_byte_done(mcu_byte_done),
-        .set_color_bits(set_color_bits0)
+        .set_color_bits(set_color_bits0),
+        .set_asset_width(set_asset_width0)
     );
 
-    assign width = width0;
-    assign height = height0;
-    assign src_x = src_x0;
-    assign src_y = src_y0;
-    assign dst_x = dst_x0;
-    assign dst_y = dst_y0;
-    assign z = z0;
-    assign enabled = enabled0;
-    assign flipped = flipped0;
-    assign bits_per_color = bits_per_color0;
-    assign data = data0;
+    wire [15:0] width1;
+    wire [15:0] height1;
+    wire [15:0] src_x1;
+    wire [15:0] src_y1;
+    wire [15:0] dst_x1;
+    wire [15:0] dst_y1;
+    wire [7:0] z1;
+    wire enabled1;
+    wire flipped1;
+    wire [7:0] bits_per_color1;
+    wire [15:0] asset_width1;
+
+    wire [23:0] data1;
+
+    wire [15:0] file_name1;
+    wire [15:0] file_name_prev1;
+
+    reg write_en1;
+    reg [15:0] write_addr1;
+    reg [23:0] write_data1;
+    wire [23:0] read_write_data1;
+    reg write_mcu1;
+    reg [7:0] set_color_bits1;
+    reg [15:0] set_asset_width1;
+
+    memory memory1(
+        .clk(clk),
+        .rst(rst),
+
+        .layer(layer),
+        .width(width1),
+        .height(height1),
+        .src_x(src_x1),
+        .src_y(src_y1),
+        .dst_x(dst_x1),
+        .dst_y(dst_y1),
+        .z(z1),
+        .enabled(enabled1),
+        .flipped(flipped1),
+        .bits_per_color(bits_per_color1),
+        .asset_width(asset_width1),
+
+        .addr(addr),
+        .data(data1),
+
+        .file_name(file_name1),
+        .file_name_prev(file_name_prev1),
+
+        .write_en(write_en1),
+        .write_addr(write_addr1),
+        .write_data(write_data1),
+        .read_write_data(read_write_data1),
+        .write_mcu(write_mcu1),
+        .layer_write(write_layer_sel),
+        .mcu_data(mcu_data),
+        .mcu_byte_done(mcu_byte_done),
+        .set_color_bits(set_color_bits1),
+        .set_asset_width(set_asset_width1)
+    );
+
+    // selected_mem is for writing, so it's reversed here
+    assign width = selected_mem ? width0 : width1;
+    assign height = selected_mem ? height0 : height1;
+    assign src_x = selected_mem ? src_x0 : src_x1;
+    assign src_y = selected_mem ? src_y0 : src_y1;
+    assign dst_x = selected_mem ? dst_x0 : dst_x1;
+    assign dst_y = selected_mem ? dst_y0 : dst_y1;
+    assign z = selected_mem ? z0 : z1;
+    assign enabled = selected_mem ? enabled0 : enabled1;
+    assign flipped = selected_mem ? flipped0 : flipped1;
+    assign bits_per_color = selected_mem ? bits_per_color0 : bits_per_color1;
+    assign data = selected_mem ? data0 : data1;
+    assign asset_width = selected_mem ? data0 : data1;
 
 
     reg READY;
@@ -198,11 +271,14 @@ module gamestate(
     reg reading_file;
     reg [31:0] sd_byte_counter;
     reg [1:0] sd_byte_counter_mod;
+    reg read_mem;
+    reg [23:0] addr_end;
+    reg state_written;
 
     always @ (posedge rst, posedge clk) begin
         if (rst) begin
             READY <= 1;
-            selected_mem <= 1;
+            selected_mem <= 0;
 
             file_name <= 0;
             fetch_file <= 0;
@@ -212,25 +288,39 @@ module gamestate(
             sd_byte_ready_prev <= 0;
             mcu_byte_done_prev <= 0;
 
-            layer0_sel <= 0;
+            write_layer_sel <= 0;
+
             write_en0 <= 0;
             write_addr0 <= 0;
             write_data0 <= 0;
             write_mcu0 <= 1;
             set_color_bits0 <= 0;
+            set_asset_width0 <= 0;
+
+            write_en1 <= 0;
+            write_addr1 <= 0;
+            write_data1 <= 0;
+            write_mcu1 <= 0;
+            set_color_bits1 <= 0;
+            set_asset_width1 <= 0;
 
             mcu_byte_counter <= 0;
             populate_memory <= 0;
             reading_file <= 0;
             sd_byte_counter <= 0;
             sd_byte_counter_mod <= 0;
+            read_mem <= 0;
+            addr_end <= 0;
+            state_written <= 0;
         end else begin
             mcu_byte_done_prev <= mcu_byte_done;
             sd_byte_ready_prev <= sd_byte_ready;
             if (sd_reading)
                 sd_read <= 0;
-            if (write_en0)
+            if (write_en0 && !read_mem)
                 write_en0 <= 0;
+            if (write_en1 && !read_mem)
+                write_en1 <= 0;
 
             if (fetch_file)
                 fetch_file <= 0;
@@ -240,6 +330,18 @@ module gamestate(
                 sd_read <= 1;
             end
 
+            if (state_written && !rendering) begin
+                READY <= 1;
+                selected_mem <= !selected_mem;
+                state_written <= 0;
+
+                // inverted since the control signal hasn't changed yet
+                if (selected_mem)
+                    write_mcu0 <= 1;
+                else
+                    write_mcu1 <= 1;
+            end
+
             if (pos_mcu_byte_done) begin
                 mcu_byte_counter <= mcu_byte_counter + 1;
 
@@ -247,38 +349,64 @@ module gamestate(
                     READY <= 0;
 
                 if (mcu_byte_counter_mod == 15) begin
-                    if (write_mcu0)
-                        layer0_sel <= layer0_sel + 1;
+                    if (write_mcu0 || write_mcu1)
+                        write_layer_sel <= write_layer_sel + 1;
                 end
 
                 if (mcu_byte_counter == 383) begin
                     write_mcu0 <= 0;
+                    write_mcu1 <= 0;
                 end else if (mcu_byte_counter == 385) begin
                     mcu_byte_counter <= 0;
-                    layer0_sel <= 0;
+                    write_layer_sel <= 0;
                     populate_memory <= 1;
                 end
             end
 
             if (populate_memory && !reading_file && !sd_reading) begin
-                if (layer0_sel == 24) begin
-                    layer0_sel <= 0;
+                if (write_layer_sel == 24) begin
+                    write_layer_sel <= 0;
                     populate_memory <= 0;
 
-                    // TODO: change this to only set when memory changes
-                    READY <= 1;
+                    state_written <= 1;
                 end else begin
-                    if (file_name0 == file_name_prev0 || file_name0 != 'h3030) begin
-                        layer0_sel <= layer0_sel + 1;
-                    end else begin
+                    if ((!selected_mem && (file_name0 == file_name_prev0 || !enabled0))
+                            || (selected_mem && (file_name1 == file_name_prev1 || !enabled1)))
+                        write_layer_sel <= write_layer_sel + 1;
+                    else begin
                         sd_byte_counter <= 0;
                         write_addr0 <= 0;
+                        write_addr1 <= 0;
                         reading_file <= 1;
 
-                        file_name <= file_name0;
-                        fetch_file <= 1;
-                        fs_reading <= 1;
+                        if (file_name0 == file_name1) begin
+                            read_mem <= 1;
+                            addr_end <= mem_size;
+                            if (selected_mem)
+                                write_en1 <= 1;
+                            else
+                                write_en0 <= 1;
+                        end else begin
+                            file_name <= selected_mem ? file_name1 : file_name0;
+                            fetch_file <= 1;
+                            fs_reading <= 1;
+                        end
                     end
+                end
+            end
+
+            if (read_mem) begin
+                if (write_addr0 == addr_end) begin // write_addr1 always equals write_addr0
+                    write_layer_sel <= write_layer_sel + 1;
+                    reading_file <= 0;
+                    read_mem <= 0;
+                end else begin
+                    if (selected_mem)
+                        write_data1 <= read_write_data0;
+                    else
+                        write_data0 <= read_write_data1;
+                    write_addr0 <= write_addr0 + 1;
+                    write_addr1 <= write_addr1 + 1;
                 end
             end
 
@@ -286,36 +414,74 @@ module gamestate(
                 sd_byte_counter <= sd_byte_counter + 1;
                 if (sd_byte_counter > 4) begin
                     if (sd_byte_counter_mod == 0) begin
-                        write_data0[23:16] <= sd_data;
+                        if (selected_mem)
+                            write_data1[23:16] <= sd_data;
+                        else
+                            write_data0[23:16] <= sd_data;
                         if (sd_byte_counter != file_size - 1)
                             sd_byte_counter_mod <= 1;
-                        if (sd_byte_counter != 5) // first byte written to ram is offset 5
-                            write_addr0 <= write_addr0 + 1;
+                        if (sd_byte_counter != 5) begin // first byte written to ram is offset 5
+                            if (selected_mem)
+                                write_addr1 <= write_addr1 + 1;
+                            else
+                                write_addr0 <= write_addr0 + 1;
+                        end
                     end else if (sd_byte_counter_mod == 1) begin
-                        write_data0[15:8] <= sd_data;
+                        if (selected_mem)
+                            write_data1[15:8] <= sd_data;
+                        else
+                            write_data0[15:8] <= sd_data;
                         if (sd_byte_counter != file_size - 1)
                             sd_byte_counter_mod <= 2;
                     end else if (sd_byte_counter_mod == 2) begin
-                        write_data0[7:0] <= sd_data;
+                        if (selected_mem)
+                            write_data1[7:0] <= sd_data;
+                        else
+                            write_data0[7:0] <= sd_data;
                         if (sd_byte_counter != file_size - 1) begin
                             sd_byte_counter_mod <= 0;
-                            write_en0 <= 1;
+                            if (selected_mem)
+                                write_en1 <= 1;
+                            else
+                                write_en0 <= 1;
                         end
                     end
 
                     if (sd_byte_counter == file_size - 1) begin
                         if (sd_byte_counter_mod == 0) begin
-                            write_data0[15:0] <= 0;
+                            if (selected_mem)
+                                write_data1[15:0] <= 0;
+                            else
+                                write_data0[15:0] <= 0;
                         end else if (sd_byte_counter_mod == 1) begin
-                            write_data0[7:0] <= 0;
+                            if (selected_mem)
+                                write_data1[7:0] <= 0;
+                            else
+                                write_data0[7:0] <= 0;
                         end
-                        write_en0 <= 1;
+                        if (selected_mem)
+                            write_en1 <= 1;
+                        else
+                            write_en0 <= 1;
                         sd_byte_counter_mod <= 0;
-                        layer0_sel <= layer0_sel + 1;
+                        write_layer_sel <= write_layer_sel + 1;
                         reading_file <= 0;
                     end
                 end else if (sd_byte_counter == 4) begin
-                    set_color_bits0 <= sd_data;
+                    if (selected_mem)
+                        set_color_bits1 <= sd_data;
+                    else
+                        set_color_bits0 <= sd_data;
+                end else if (sd_byte_counter == 1) begin
+                    if (selected_mem)
+                        set_asset_width1[15:8] <= sd_data;
+                    else
+                        set_asset_width0[15:8] <= sd_data;
+                end else if (sd_byte_counter == 0) begin
+                    if (selected_mem)
+                        set_asset_width1[7:0] <= sd_data;
+                    else
+                        set_asset_width0[7:0] <= sd_data;
                 end
             end
         end
