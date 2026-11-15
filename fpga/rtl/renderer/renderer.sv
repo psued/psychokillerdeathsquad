@@ -2,11 +2,8 @@ module renderer
     import renderer_pkg::*;
 #(
     parameter int PIXELS_PER_CYCLE = 2,
-    parameter int LATENCY = 3,
 
-    localparam int WORD_WIDTH = PIXEL_SLOT_BITS * PIXELS_PER_CYCLE,
-    localparam int LAST_GROUP_X = LINE_PIXELS - PIXELS_PER_CYCLE,
-    localparam int LAST_LINE = FRAME_LINES - 1
+    localparam int WORD_WIDTH = PIXEL_SLOT_BITS * PIXELS_PER_CYCLE
 )(
     input logic clk,
     input logic reset,
@@ -42,7 +39,29 @@ module renderer
     logic [X_COORDINATE_WIDTH-1:0] x_counter;
     logic [Y_COORDINATE_WIDTH-1:0] y_counter;
 
-    logic line_issue_finished;
+    logic writeback_empty;
+    logic clear_valid;
+    logic clear_ready;
+    logic sort_start;
+    logic sort_done;
+    logic frame_setup;
+    logic [LAYER_INDEX_WIDTH-1:0] layer_order_counter;
+    logic [LAYER_INDEX_WIDTH-1:0] sort_read_layer;
+    logic [LAYER_INDEX_WIDTH-1:0] sorted_layer;
+
+    assign mmu_y_select = y_counter;
+    assign layer_counter = frame_setup ? sort_read_layer : sorted_layer;
+
+    layer_sorter sorter (
+        .clk(clk),
+        .reset(reset),
+        .start(sort_start),
+        .layer_z(current_layer.z),
+        .order_index(layer_order_counter),
+        .read_layer_index(sort_read_layer),
+        .sorted_layer_index(sorted_layer),
+        .done(sort_done)
+    );
 
     scanline_scheduler #(
         .PIXELS_PER_CYCLE(PIXELS_PER_CYCLE)
@@ -50,51 +69,57 @@ module renderer
         .clk(clk),
         .reset(reset),
         .stall(stall),
-        .line_done(line_done),
+        .writeback_empty(writeback_empty),
+        .clear_ready(clear_ready),
+        .sort_done(sort_done),
+        .mmu_prepare_ready(mmu_prepare_ready),
+        .mmu_request_ready(mmu_request_ready),
         .current_layer(current_layer),
 
         .x_counter(x_counter),
         .y_counter(y_counter),
-        .layer_counter(layer_counter),
+        .layer_order_counter(layer_order_counter),
+        .sort_start(sort_start),
+        .frame_setup(frame_setup),
+        .clear_valid(clear_valid),
+        .mmu_prepare_valid(mmu_prepare_valid),
         .mmu_request_valid(mmu_request_valid),
-        .line_issue_finished(line_issue_finished),
+        .line_done(line_done),
         .frame_done(frame_done)
     );
             
-    logic [PIXELS_PER_CYCLE-1:0] pixel_group_mask;
-    logic [X_COORDINATE_WIDTH-1:0] destination_x;
-
     layer_mapper #(
         .PIXELS_PER_CYCLE(PIXELS_PER_CYCLE)
     ) mapper (
         .x_counter(x_counter),
-        .y_counter(y_counter),
         .current_layer(current_layer),
         .mmu_request_valid(mmu_request_valid),
 
-        .mmu_request_image_id(mmu_request_image_id),
-        .mmu_request_x(mmu_request_x),
-        .mmu_request_y(mmu_request_y),
-        .pixel_group_mask(pixel_group_mask),
-        .destination_x(destination_x)
+        .pixel_group_mask(mmu_request_mask),
+        .destination_x(mmu_request_x)
     );
 
     pixel_pipeline #(
-        .PIXELS_PER_CYCLE(PIXELS_PER_CYCLE),
-        .LATENCY(LATENCY)
+        .PIXELS_PER_CYCLE(PIXELS_PER_CYCLE)
     ) pipeline (
         .clk(clk),
         .reset(reset),
-        .destination_x(destination_x),
-        .pixel_group_mask(pixel_group_mask),
-        .line_issue_finished(line_issue_finished),
+        .stall(stall),
+        .clear_valid(clear_valid),
+        .clear_x(x_counter),
+        .clear_ready(clear_ready),
         .mmu_request_valid(mmu_request_valid),
+        .mmu_request_ready(mmu_request_ready),
+        .mmu_response_valid(mmu_response_valid),
+        .mmu_response_ready(mmu_response_ready),
+        .mmu_response_x(mmu_response_x),
+        .mmu_response_mask(mmu_response_mask),
         .mmu_pixel_output(mmu_pixel_output),
+        .writeback_empty(writeback_empty),
 
         .bram_write_x(bram_write_x),
         .bram_write_enable(bram_write_enable),
         .bram_pixel_in(bram_pixel_in),
-        .bram_write_mask(bram_write_mask),
-        .line_done(line_done)
+        .bram_write_mask(bram_write_mask)
     );
 endmodule
