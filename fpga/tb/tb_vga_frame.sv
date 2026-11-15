@@ -16,6 +16,33 @@ module tb_vga_frame;
     integer image_file;
     int pixel_count = 0;
 
+    function automatic logic [11:0] expected_pixel(
+        input int logical_x,
+        input int logical_y
+    );
+        int source_x;
+        int source_y;
+
+        expected_pixel = 12'h000;
+        if (logical_x >= 112 && logical_x < 208
+            && logical_y >= 88 && logical_y < 152) begin
+            source_x = logical_x - 112;
+            source_y = logical_y - 88;
+            expected_pixel = {
+                4'(((source_x / 12) * 15) / 7),
+                4'((source_y / 16) * 5),
+                4'h4
+            };
+        end
+        if (logical_x >= 80 && logical_x < 144
+            && logical_y >= 64 && logical_y < 128) begin
+            source_x = logical_x - 80;
+            source_y = logical_y - 64;
+            if (((source_x / 8) ^ (source_y / 8)) & 1)
+                expected_pixel = 12'hFFF;
+        end
+    endfunction
+
     // Model the board's 100 MHz oscillator. The DUT generates vga_clk.
     always #5 clk = ~clk;
 
@@ -38,7 +65,7 @@ module tb_vga_frame;
     initial begin
         wait (dut.vga_timing_reset === 1'b0);
 
-        // Skip the startup frame: buffer 0 initially contains unwritten data.
+        // Capture a complete frame after startup.
         // Wait for vertical sync, then the start of the following frame.
         @(negedge dut.vsync_raw);
         do begin
@@ -73,6 +100,12 @@ module tb_vga_frame;
 
                 if (pixel_count >= WIDTH * HEIGHT)
                     $fatal(1, "Too many visible pixels in one frame");
+
+                if ({red, green, blue} !== expected_pixel(
+                    (pixel_count % WIDTH) / 2, (pixel_count / WIDTH) / 2))
+                    $fatal(1, "Unexpected RGB at pixel (%0d,%0d): %03h",
+                           pixel_count % WIDTH, pixel_count / WIDTH,
+                           {red, green, blue});
 
                 // Expand each 4-bit channel to 8 bits: 0..15 -> 0..255.
                 $fwrite(image_file, "%0d %0d %0d\n",

@@ -14,7 +14,7 @@ module mock_snapshot
                 current_layer.width = LINE_PIXELS;
                 current_layer.height = FRAME_LINES;
                 current_layer.z = 8'd0;
-                current_layer.flags = FLAG_ENABLED;
+                current_layer.flags = '0;
             end
 
             5'd1: begin
@@ -24,7 +24,7 @@ module mock_snapshot
                 current_layer.dst_x = 16'd112;
                 current_layer.dst_y = 16'd88;
                 current_layer.z = 8'd1;
-                current_layer.flags = FLAG_ENABLED | FLAG_FLIP_X;
+                current_layer.flags = FLAG_ENABLED;
             end
 
             5'd2: begin

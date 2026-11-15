@@ -60,8 +60,8 @@ module top #(
     logic hsync_raw;
     logic vsync_raw;
     logic video_on_raw;
-    logic [9:0] x; // VGA raster: 0–799, including blanking.
-    logic [9:0] y; // VGA raster: 0–524, including blanking.
+    logic [9:0] x; // VGA raster: 0?799, including blanking.
+    logic [9:0] y; // VGA raster: 0?524, including blanking.
 
     vga_sync vga_sync_inst (
         .clk(vga_clk),
@@ -94,6 +94,7 @@ module top #(
     logic write_buffer;
     logic [X_WIDTH-1:0] write_x;
     logic line_done;
+    logic frame_done;
     logic write_enable;
     logic [WORD_WIDTH-1:0] pixel_in;
     logic [PIXELS_PER_CYCLE-1:0] write_mask;
@@ -101,11 +102,25 @@ module top #(
 
     renderer_pkg::layer_descriptor_t current_layer;
     logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] layer_counter;
-    logic [renderer_pkg::IMAGE_ID_WIDTH-1:0] mmu_request_image_id;
-    logic [15:0] mmu_request_x [0:PIXELS_PER_CYCLE-1];
-    logic [15:0] mmu_request_y [0:PIXELS_PER_CYCLE-1];
+    logic [renderer_pkg::X_COORDINATE_WIDTH-1:0] mmu_request_x;
+    logic [renderer_pkg::Y_COORDINATE_WIDTH-1:0] mmu_y_select;
+    logic [PIXELS_PER_CYCLE-1:0] mmu_request_mask;
+    logic mmu_prepare_valid;
+    logic mmu_prepare_ready;
     logic mmu_request_valid;
+    logic mmu_request_ready;
+    logic mmu_response_valid;
+    logic mmu_response_ready;
+    logic [renderer_pkg::X_COORDINATE_WIDTH-1:0] mmu_response_x;
+    logic [PIXELS_PER_CYCLE-1:0] mmu_response_mask;
     logic [PIXEL_BITS-1:0] mmu_pixel_output [0:PIXELS_PER_CYCLE-1];
+
+    renderer_pkg::layer_descriptor_t fetch_layer;
+    logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] mmu_layer;
+    logic [15:0] mmu_read_address;
+    logic [23:0] mmu_data;
+    logic [15:0] mmu_asset_width;
+    logic [7:0] mmu_bits_per_color;
 
     line_buffer_write_controller write_controller (
         .clk(system_clk),
@@ -134,10 +149,17 @@ module top #(
         .current_layer(current_layer),
         .layer_counter(layer_counter),
 
-        .mmu_request_image_id(mmu_request_image_id),
         .mmu_request_x(mmu_request_x),
-        .mmu_request_y(mmu_request_y),
+        .mmu_y_select(mmu_y_select),
+        .mmu_request_mask(mmu_request_mask),
+        .mmu_prepare_valid(mmu_prepare_valid),
+        .mmu_prepare_ready(mmu_prepare_ready),
         .mmu_request_valid(mmu_request_valid),
+        .mmu_request_ready(mmu_request_ready),
+        .mmu_response_valid(mmu_response_valid),
+        .mmu_response_ready(mmu_response_ready),
+        .mmu_response_x(mmu_response_x),
+        .mmu_response_mask(mmu_response_mask),
         .mmu_pixel_output(mmu_pixel_output),
 
         .bram_write_x(write_x),
@@ -145,20 +167,54 @@ module top #(
         .bram_pixel_in(pixel_in),
         .bram_write_mask(write_mask),
         .line_done(line_done),
-        .frame_done()
+        .frame_done(frame_done)
     );
 
-    mock_mmu #(
-        .LATENCY(3),
+    asset_fetcher #(
         .PIXELS_PER_CYCLE(PIXELS_PER_CYCLE)
-    ) mock_mmu_inst (
+    ) asset_fetcher_inst (
         .clk(system_clk),
         .reset(system_reset),
-        .x(mmu_request_x),
-        .y(mmu_request_y),
-        .image_id(mmu_request_image_id),
+        .data(mmu_data),
+        .y_select(mmu_y_select),
+        .prepare_valid(mmu_prepare_valid),
+        .prepare_ready(mmu_prepare_ready),
         .request_valid(mmu_request_valid),
-        .pixel_out(mmu_pixel_output)
+        .request_ready(mmu_request_ready),
+        .request_x(mmu_request_x),
+        .request_mask(mmu_request_mask),
+        .response_valid(mmu_response_valid),
+        .response_ready(mmu_response_ready),
+        .response_x(mmu_response_x),
+        .response_mask(mmu_response_mask),
+        .pixel_output(mmu_pixel_output),
+
+        .layer(layer_counter),
+        .width(fetch_layer.width),
+        .asset_width(mmu_asset_width),
+        .height(fetch_layer.height),
+        .src_x(fetch_layer.src_x),
+        .src_y(fetch_layer.src_y),
+        .dst_x(fetch_layer.dst_x),
+        .dst_y(fetch_layer.dst_y),
+        .z(fetch_layer.z),
+        .enabled((fetch_layer.flags & renderer_pkg::FLAG_ENABLED) != 0),
+        .flipped((fetch_layer.flags & renderer_pkg::FLAG_FLIP_X) != 0),
+        .bits_per_color(mmu_bits_per_color),
+        .mmu_layer(mmu_layer),
+        .read_address(mmu_read_address)
+    );
+
+    // The renderer's snapshot lookup stays independent of asset reads.
+    mock_mmu mock_mmu_inst (
+        .clk(system_clk),
+        .reset(system_reset),
+        .layer(mmu_layer),
+        .read_address(mmu_read_address),
+        .current_layer(fetch_layer),
+        .asset_width(mmu_asset_width),
+        .bits_per_color(mmu_bits_per_color),
+        .data(mmu_data)
     );
 
     logic buffer_ready;
