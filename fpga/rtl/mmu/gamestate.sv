@@ -141,12 +141,14 @@ module gamestate(
 
     wire [15:0] file_name0;
     wire [15:0] file_name_prev0;
+    wire enabled_fetch0;
 
     reg write_en0;
     reg [15:0] write_addr0;
     reg [23:0] write_data0;
     wire [23:0] read_write_data0;
     reg write_mcu0;
+    reg write_metadata0;
     reg [7:0] set_color_bits0;
     reg [15:0] set_asset_width0;
 
@@ -173,6 +175,7 @@ module gamestate(
         .file_name(file_name0),
         .file_name_prev(file_name_prev0),
         .mem_size(mem_size),
+        .enabled_fetch(enabled_fetch0),
 
         .write_en(write_en0),
         .write_addr(write_addr0),
@@ -182,6 +185,7 @@ module gamestate(
         .layer_write(write_layer_sel),
         .mcu_data(mcu_data),
         .mcu_byte_done(mcu_byte_done),
+        .write_metadata(write_metadata0),
         .set_color_bits(set_color_bits0),
         .set_asset_width(set_asset_width0)
     );
@@ -202,12 +206,14 @@ module gamestate(
 
     wire [15:0] file_name1;
     wire [15:0] file_name_prev1;
+    wire enabled_fetch1;
 
     reg write_en1;
     reg [15:0] write_addr1;
     reg [23:0] write_data1;
     wire [23:0] read_write_data1;
     reg write_mcu1;
+    reg write_metadata1;
     reg [7:0] set_color_bits1;
     reg [15:0] set_asset_width1;
 
@@ -233,6 +239,7 @@ module gamestate(
 
         .file_name(file_name1),
         .file_name_prev(file_name_prev1),
+        .enabled_fetch(enabled_fetch1),
 
         .write_en(write_en1),
         .write_addr(write_addr1),
@@ -242,6 +249,7 @@ module gamestate(
         .layer_write(write_layer_sel),
         .mcu_data(mcu_data),
         .mcu_byte_done(mcu_byte_done),
+        .write_metadata(write_metadata1),
         .set_color_bits(set_color_bits1),
         .set_asset_width(set_asset_width1)
     );
@@ -272,7 +280,7 @@ module gamestate(
     assign enabled = selected_mem ? enabled0 : enabled1;
     assign flipped = selected_mem ? flipped0 : flipped1;
     assign bits_per_color = selected_mem ? bits_per_color0 : bits_per_color1;
-    assign asset_width = selected_mem ? data0 : data1;
+    assign asset_width = selected_mem ? asset_width0 : asset_width1;
     assign data = layer == 0 ? bg_data : (selected_mem ? data0 : data1);
 
 
@@ -288,6 +296,7 @@ module gamestate(
     reg [1:0] sd_byte_counter_mod;
     reg read_mem;
     reg [23:0] addr_end;
+    reg ram_wait;
     reg state_written;
 
     always @ (posedge rst, posedge clk) begin
@@ -309,6 +318,7 @@ module gamestate(
             write_addr0 <= 0;
             write_data0 <= 0;
             write_mcu0 <= 1;
+            write_metadata0 <= 0;
             set_color_bits0 <= 0;
             set_asset_width0 <= 0;
 
@@ -316,6 +326,7 @@ module gamestate(
             write_addr1 <= 0;
             write_data1 <= 0;
             write_mcu1 <= 0;
+            write_metadata1 <= 0;
             set_color_bits1 <= 0;
             set_asset_width1 <= 0;
 
@@ -328,6 +339,7 @@ module gamestate(
             sd_byte_counter_mod <= 0;
             read_mem <= 0;
             addr_end <= 0;
+            ram_wait <= 0;
             state_written <= 0;
         end else begin
             mcu_byte_done_prev <= mcu_byte_done;
@@ -340,6 +352,10 @@ module gamestate(
                 write_en1 <= 0;
             if (bg_write_en)
                 bg_write_en <= 0;
+            if (write_metadata0)
+                write_metadata0 <= 1;
+            if (write_metadata1)
+                write_metadata1 <= 1;
 
             if (fetch_file)
                 fetch_file <= 0;
@@ -389,8 +405,8 @@ module gamestate(
 
                     state_written <= 1;
                 end else begin
-                    if ((!selected_mem && (file_name0 == file_name_prev0 || !enabled0))
-                            || (selected_mem && (file_name1 == file_name_prev1 || !enabled1)))
+                    if ((!selected_mem && (file_name0 == file_name_prev0 || !enabled_fetch0))
+                            || (selected_mem && (file_name1 == file_name_prev1 || !enabled_fetch1)))
                         write_layer_sel <= write_layer_sel + 1;
                     else begin
                         sd_byte_counter <= 0;
@@ -401,10 +417,18 @@ module gamestate(
                         if (file_name0 == file_name1 && write_layer_sel != 0) begin
                             read_mem <= 1;
                             addr_end <= mem_size;
-                            if (selected_mem)
+                            ram_wait <= 1;
+                            if (selected_mem) begin
                                 write_en1 <= 1;
-                            else
+                                set_asset_width1 <= asset_width0;
+                                set_color_bits1 <= bits_per_color0;
+                                write_metadata0 <= 1;
+                            end else begin
                                 write_en0 <= 1;
+                                set_asset_width0 <= asset_width1;
+                                set_color_bits0 <= bits_per_color1;
+                                write_metadata1 <= 1;
+                            end
                         end else begin
                             file_name <= selected_mem ? file_name1 : file_name0;
                             fetch_file <= 1;
@@ -415,7 +439,8 @@ module gamestate(
             end
 
             if (read_mem) begin
-                if (write_addr0 == addr_end) begin // write_addr1 always equals write_addr0
+                if ((!selected_mem && write_addr0 == addr_end)
+                        || (selected_mem && write_addr1 == addr_end)) begin
                     write_layer_sel <= write_layer_sel + 1;
                     reading_file <= 0;
                     read_mem <= 0;
@@ -424,9 +449,25 @@ module gamestate(
                         write_data1 <= read_write_data0;
                     else
                         write_data0 <= read_write_data1;
-                    write_addr0 <= write_addr0 + 1;
-                    write_addr1 <= write_addr1 + 1;
+
+                    if (ram_wait) begin
+                        ram_wait <= 0;
+
+                        // put the address read from ahead to account for synchronous ram
+                        if (selected_mem)
+                            write_addr0 <= write_addr0 + 1;
+                        else
+                            write_addr1 <= write_addr1 + 1;
+                    end else begin
+                        write_addr0 <= write_addr0 + 1;
+                        write_addr1 <= write_addr1 + 1;
+                    end
                 end
+            end
+
+            if (reading_file && sd_byte_counter == file_size) begin
+                write_layer_sel <= write_layer_sel + 1;
+                reading_file <= 0;
             end
 
             if (pos_sd_byte_ready && !fs_reading && sd_byte_counter < file_size) begin
@@ -487,14 +528,15 @@ module gamestate(
                         else
                             write_en0 <= 1;
                         sd_byte_counter_mod <= 0;
-                        write_layer_sel <= write_layer_sel + 1;
-                        reading_file <= 0;
                     end
                 end else if (sd_byte_counter == 4) begin
-                    if (selected_mem)
+                    if (selected_mem) begin
                         set_color_bits1 <= sd_data;
-                    else
+                        write_metadata1 <= 1;
+                    end else begin
                         set_color_bits0 <= sd_data;
+                        write_metadata0 <= 1;
+                    end
                 end else if (sd_byte_counter == 1) begin
                     if (selected_mem)
                         set_asset_width1[15:8] <= sd_data;

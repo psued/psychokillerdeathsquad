@@ -25,7 +25,7 @@ localparam int FILENAMEH = FILENAMEL + 15;
 localparam int FILENAMEPREVL = FILENAMEH + 1;
 localparam int FILENAMEPREVH = FILENAMEPREVL + 15;
 localparam int ADDRL = FILENAMEPREVH + 1;
-localparam int ADDRH = ADDRL + 7;
+localparam int ADDRH = ADDRL + 23;
 localparam int MEMSIZEL = ADDRH + 1;
 localparam int MEMSIZEH = MEMSIZEL + 15;
 localparam int LAYERSIZE = MEMSIZEH;
@@ -79,6 +79,7 @@ module memory(
     output [15:0] file_name,
     output [15:0] file_name_prev,
     output [15:0] mem_size,
+    output enabled_fetch,
 
     input write_en,
     input [15:0] write_addr, // relative to layer
@@ -88,6 +89,7 @@ module memory(
     input [4:0] layer_write,
     input [7:0] mcu_data,
     input mcu_byte_done,
+    input write_metadata,
     input [7:0] set_color_bits,
     input [15:0] set_asset_width
     );
@@ -114,6 +116,7 @@ module memory(
     assign file_name = layers[layer_write][FILENAMEH:FILENAMEL];
     assign file_name_prev = layers[layer_write][FILENAMEPREVH:FILENAMEPREVL];
     assign mem_size = layers[layer_write][MEMSIZEH:MEMSIZEL];
+    assign enabled_fetch = layers[layer][ENABLED];
 
     wire [23:0] address = layers[layer][ADDRH:ADDRL] + addr;
     wire [23:0] write_address = layers[layer_write][ADDRH:ADDRL] + write_addr;
@@ -192,7 +195,7 @@ module memory(
         end else begin
             mcu_byte_done_prev <= mcu_byte_done;
 
-            if (write_en) begin
+            if (write_metadata) begin
                 layers[layer_write][COLORBITSH:COLORBITSL] <= set_color_bits;
                 layers[layer_write][ASSETWIDTHH:ASSETWIDTHL] <= set_asset_width;
             end
