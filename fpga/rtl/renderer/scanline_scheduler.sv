@@ -30,12 +30,20 @@ module scanline_scheduler
 
 
     logic [15:0] line_end;
-    assign line_end =
-        (current_layer.width == 0) ? '0 :
-        ((current_layer.width - 1 
-        + (current_layer.dst_x % PIXELS_PER_CYCLE))
-        / PIXELS_PER_CYCLE) 
-        * PIXELS_PER_CYCLE;
+
+    always_ff @(posedge clk) begin
+        if (reset) begin
+            line_end <= '0;
+        end
+        else if (mmu_prepare_valid && mmu_prepare_ready) begin
+            line_end <=
+                (current_layer.width == 0) ? '0 :
+                ((current_layer.width - 1
+                + (current_layer.dst_x % PIXELS_PER_CYCLE))
+                / PIXELS_PER_CYCLE)
+                * PIXELS_PER_CYCLE;
+        end
+    end
 
 
     logic layer_row_intersect;

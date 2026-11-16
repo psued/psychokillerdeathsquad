@@ -1,5 +1,6 @@
 module top #(
     parameter int PIXELS_PER_CYCLE = 2,
+    parameter bit USE_MOCK_MMU = 1'b0,
 
     localparam int LINE_PIXELS = 320,
     localparam int FRAME_LINES = 240,
@@ -127,7 +128,7 @@ module top #(
     logic [PIXELS_PER_CYCLE-1:0] mmu_response_mask;
     logic [PIXEL_BITS-1:0] mmu_pixel_output [0:PIXELS_PER_CYCLE-1];
 
-    // renderer_pkg::layer_descriptor_t fetch_layer;
+    renderer_pkg::layer_descriptor_t fetch_layer;
     logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] mmu_layer;
     logic [15:0] mmu_read_address;
     logic [23:0] mmu_data;
@@ -135,7 +136,6 @@ module top #(
     logic [7:0] mmu_bits_per_color;
     logic mmu_enabled;
     logic mmu_flipped;
-    assign current_layer.flags = 8'h00 | (mmu_flipped << 1) | mmu_enabled;
 
     line_buffer_write_controller write_controller (
         .clk(system_clk),
@@ -200,16 +200,16 @@ module top #(
         .pixel_output(mmu_pixel_output),
 
         .layer(layer_counter),
-        .width(current_layer.width),
+        .width(fetch_layer.width),
         .asset_width(mmu_asset_width),
-        .height(current_layer.height),
-        .src_x(current_layer.src_x),
-        .src_y(current_layer.src_y),
-        .dst_x(current_layer.dst_x),
-        .dst_y(current_layer.dst_y),
-        .z(current_layer.z),
-        .enabled(mmu_enabled),
-        .flipped(mmu_flipped),
+        .height(fetch_layer.height),
+        .src_x(fetch_layer.src_x),
+        .src_y(fetch_layer.src_y),
+        .dst_x(fetch_layer.dst_x),
+        .dst_y(fetch_layer.dst_y),
+        .z(fetch_layer.z),
+        .enabled((fetch_layer.flags & renderer_pkg::FLAG_ENABLED) != 0),
+        .flipped((fetch_layer.flags & renderer_pkg::FLAG_FLIP_X) != 0),
         .bits_per_color(mmu_bits_per_color),
         .mmu_layer(mmu_layer),
         .read_address(mmu_read_address)
@@ -276,43 +276,74 @@ module top #(
     );
 
 
-    // power-on reset
-    logic por = 1;
-    logic rst = reset || por;
-    always_ff @ (posedge system_clk)
-        por <= 0;
+    generate
+        if (USE_MOCK_MMU) begin : mock_memory
+            mock_snapshot snapshot_source (
+                .layer_counter(layer_counter),
+                .current_layer(current_layer)
+            );
 
-    gamestate state(
-        .clk(system_clk),
-        .rst(rst),
+            mock_mmu memory_source (
+                .clk(system_clk),
+                .reset(system_reset),
+                .layer(mmu_layer),
+                .read_address(mmu_read_address),
+                .current_layer(fetch_layer),
+                .asset_width(mmu_asset_width),
+                .bits_per_color(mmu_bits_per_color),
+                .data(mmu_data)
+            );
 
-        .layer(layer_counter),
-        .width(current_layer.width),
-        .height(current_layer.height),
-        .src_x(current_layer.src_x),
-        .src_y(current_layer.src_y),
-        .dst_x(current_layer.dst_x),
-        .dst_y(current_layer.dst_y),
-        .z(current_layer.z),
-        .enabled(mmu_enabled),
-        .flipped(mmu_flipped),
-        .bits_per_color(mmu_bits_per_color),
-        .asset_width(mmu_asset_width),
+            assign SD_SCLK = 1'b0;
+            assign SD_DI = 1'b1;
+            assign SD_CS = 1'b1;
+            assign MCU_MISO = 1'b0;
+            assign MCU_READY = 1'b0;
+        end
+        else begin : real_memory
+            assign fetch_layer = current_layer;
+            assign current_layer.flags =
+                8'h00 | (mmu_flipped << 1) | mmu_enabled;
 
-        .addr(mmu_read_address),
-        .data(mmu_data),
+            // power-on reset
+            logic por = 1;
+            logic rst = reset || por;
+            always_ff @ (posedge system_clk)
+                por <= 0;
 
-        .rendering(0),
+            gamestate state(
+                .clk(system_clk),
+                .rst(rst),
 
-        .SD_SCLK(SD_SCLK),
-        .SD_DI(SD_DI),
-        .SD_DO(SD_DO),
-        .SD_CS(SD_CS),
+                .layer(layer_counter),
+                .width(current_layer.width),
+                .height(current_layer.height),
+                .src_x(current_layer.src_x),
+                .src_y(current_layer.src_y),
+                .dst_x(current_layer.dst_x),
+                .dst_y(current_layer.dst_y),
+                .z(current_layer.z),
+                .enabled(mmu_enabled),
+                .flipped(mmu_flipped),
+                .bits_per_color(mmu_bits_per_color),
+                .asset_width(mmu_asset_width),
 
-        .MCU_SCLK(MCU_SCLK),
-        .MCU_MISO(MCU_MISO),
-        .MCU_MOSI(MCU_MOSI),
-        .MCU_CS(MCU_CS),
-        .MCU_READY(MCU_READY)
-    );
+                .addr(mmu_read_address),
+                .data(mmu_data),
+
+                .rendering(0),
+
+                .SD_SCLK(SD_SCLK),
+                .SD_DI(SD_DI),
+                .SD_DO(SD_DO),
+                .SD_CS(SD_CS),
+
+                .MCU_SCLK(MCU_SCLK),
+                .MCU_MISO(MCU_MISO),
+                .MCU_MOSI(MCU_MOSI),
+                .MCU_CS(MCU_CS),
+                .MCU_READY(MCU_READY)
+            );
+        end
+    endgenerate
 endmodule

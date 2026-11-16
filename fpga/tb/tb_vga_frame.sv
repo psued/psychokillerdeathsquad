@@ -16,44 +16,40 @@ module tb_vga_frame;
     integer image_file;
     int pixel_count = 0;
 
+    logic [11:0] expected_frame [0:(WIDTH/2)*(HEIGHT/2)-1];
+
+    initial begin
+        integer reference_file;
+        reference_file = $fopen("expected_frame.mem", "r");
+        if (reference_file == 0)
+            $fatal(1, "Run setup_asset_test.tcl before launching simulation");
+        $fclose(reference_file);
+        $readmemh("expected_frame.mem", expected_frame,
+                  0, (WIDTH/2)*(HEIGHT/2)-1);
+    end
+
     function automatic logic [11:0] expected_pixel(
         input int logical_x,
         input int logical_y
     );
-        int source_x;
-        int source_y;
-
-        expected_pixel = 12'h000;
-        if (logical_x >= 112 && logical_x < 208
-            && logical_y >= 88 && logical_y < 152) begin
-            source_x = logical_x - 112;
-            source_y = logical_y - 88;
-            expected_pixel = {
-                4'(((source_x / 12) * 15) / 7),
-                4'((source_y / 16) * 5),
-                4'h4
-            };
-        end
-        if (logical_x >= 80 && logical_x < 144
-            && logical_y >= 64 && logical_y < 128) begin
-            source_x = logical_x - 80;
-            source_y = logical_y - 64;
-            if (((source_x / 8) ^ (source_y / 8)) & 1)
-                expected_pixel = 12'hFFF;
-        end
+        expected_pixel = expected_frame[logical_y*(WIDTH/2) + logical_x];
     endfunction
 
     // Model the board's 100 MHz oscillator. The DUT generates vga_clk.
     always #5 clk = ~clk;
 
-    top dut (
+    top #(.USE_MOCK_MMU(1'b1)) dut (
         .clk   (clk),
         .reset (reset),
         .hsync (hsync),
         .vsync (vsync),
         .red   (red),
         .green (green),
-        .blue  (blue)
+        .blue  (blue),
+        .SD_DO (1'b1),
+        .MCU_SCLK (1'b0),
+        .MCU_MOSI (1'b0),
+        .MCU_CS (1'b1)
     );
 
     initial begin
