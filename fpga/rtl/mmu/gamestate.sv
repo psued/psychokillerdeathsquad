@@ -251,7 +251,7 @@ module gamestate(
     wire [23:0] bg_write_data = selected_mem ? write_data1 : write_data0;
     wire [23:0] bg_data;
 
-    ram #(.ADDR_SIZE(15), .RAM_SIZE(255)) bg_layer (
+    ram #(.ADDR_SIZE(15), .RAM_SIZE(24050)) bg_layer (
         .clk(clk),
         .write_en(bg_write_en),
         .read_addr(addr),
