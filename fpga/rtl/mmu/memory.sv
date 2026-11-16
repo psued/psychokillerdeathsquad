@@ -31,6 +31,31 @@ localparam int MEMSIZEH = MEMSIZEL + 15;
 localparam int LAYERSIZE = MEMSIZEH;
 localparam int NUMLAYERS = 24;
 
+localparam int LAYER1START  = 0;
+localparam int LAYER2START  = LAYER1START + 11535;
+localparam int LAYER3START  = LAYER2START + 12000;
+localparam int LAYER4START  = LAYER3START + 12000;
+localparam int LAYER5START  = LAYER4START;
+localparam int LAYER6START  = LAYER5START;
+localparam int LAYER7START  = LAYER6START;
+localparam int LAYER8START  = LAYER7START;
+localparam int LAYER9START  = LAYER8START;
+localparam int LAYER10START = LAYER9START;
+localparam int LAYER11START = LAYER10START;
+localparam int LAYER12START = LAYER11START + 10810;
+localparam int LAYER13START = LAYER12START;
+localparam int LAYER14START = LAYER13START;
+localparam int LAYER15START = LAYER14START;
+localparam int LAYER16START = LAYER15START + 1160;
+localparam int LAYER17START = LAYER16START;
+localparam int LAYER18START = LAYER17START;
+localparam int LAYER19START = LAYER18START;
+localparam int LAYER20START = LAYER19START;
+localparam int LAYER21START = LAYER20START;
+localparam int LAYER22START = LAYER21START;
+localparam int LAYER23START = LAYER22START;
+localparam int LAYER23END   = LAYER23START + 17610;
+
 module memory(
     input clk,
     input rst,
@@ -93,7 +118,7 @@ module memory(
     wire [23:0] address = layers[layer][ADDRH:ADDRL] + addr;
     wire [23:0] write_address = layers[layer_write][ADDRH:ADDRL] + write_addr;
 
-    ram d(
+    ram #(.RAM_SIZE(LAYER23END)) d(
         .clk(clk),
         .write_en(write_en),
         .read_addr(address),
@@ -112,11 +137,58 @@ module memory(
             mcu_counter <= 0;
 
             for (i = 0; i < NUMLAYERS; i = i + 1)
-                layers[i] <= 0;
+                layers[i][FILENAMEPREVH:WIDTHL] <= 0;
 
             // set start address of each layer and layer size
             // layers[0] has size 0 since the ram is separate to save space
-            // e.g. layers[1][ADDRH:ADDRL] <= 0; layers[1][MEMSIZEH:MEMSIZEL] <= 4;
+            layers[0][ADDRH:ADDRL]          <= 0;
+            layers[0][MEMSIZEH:MEMSIZEL]    <= 0;
+            layers[1][ADDRH:ADDRL]          <= LAYER1START;
+            layers[1][MEMSIZEH:MEMSIZEL]    <= LAYER2START - LAYER1START;
+            layers[2][ADDRH:ADDRL]          <= LAYER2START;
+            layers[2][MEMSIZEH:MEMSIZEL]    <= LAYER3START - LAYER2START;
+            layers[3][ADDRH:ADDRL]          <= LAYER3START;
+            layers[3][MEMSIZEH:MEMSIZEL]    <= LAYER4START - LAYER3START;
+            layers[4][ADDRH:ADDRL]          <= LAYER4START;
+            layers[4][MEMSIZEH:MEMSIZEL]    <= LAYER12START - LAYER4START;
+            layers[5][ADDRH:ADDRL]          <= LAYER5START;
+            layers[5][MEMSIZEH:MEMSIZEL]    <= LAYER12START - LAYER5START;
+            layers[6][ADDRH:ADDRL]          <= LAYER6START;
+            layers[6][MEMSIZEH:MEMSIZEL]    <= LAYER12START - LAYER6START;
+            layers[7][ADDRH:ADDRL]          <= LAYER7START;
+            layers[7][MEMSIZEH:MEMSIZEL]    <= LAYER12START - LAYER7START;
+            layers[8][ADDRH:ADDRL]          <= LAYER8START;
+            layers[8][MEMSIZEH:MEMSIZEL]    <= LAYER12START - LAYER8START;
+            layers[9][ADDRH:ADDRL]          <= LAYER9START;
+            layers[9][MEMSIZEH:MEMSIZEL]    <= LAYER12START - LAYER9START;
+            layers[10][ADDRH:ADDRL]         <= LAYER10START;
+            layers[10][MEMSIZEH:MEMSIZEL]   <= LAYER12START - LAYER10START;
+            layers[11][ADDRH:ADDRL]         <= LAYER11START;
+            layers[11][MEMSIZEH:MEMSIZEL]   <= LAYER12START - LAYER11START;
+            layers[12][ADDRH:ADDRL]         <= LAYER12START;
+            layers[12][MEMSIZEH:MEMSIZEL]   <= LAYER16START - LAYER12START;
+            layers[13][ADDRH:ADDRL]         <= LAYER13START;
+            layers[13][MEMSIZEH:MEMSIZEL]   <= LAYER16START - LAYER13START;
+            layers[14][ADDRH:ADDRL]         <= LAYER14START;
+            layers[14][MEMSIZEH:MEMSIZEL]   <= LAYER16START - LAYER14START;
+            layers[15][ADDRH:ADDRL]         <= LAYER15START;
+            layers[15][MEMSIZEH:MEMSIZEL]   <= LAYER16START - LAYER15START;
+            layers[16][ADDRH:ADDRL]         <= LAYER16START;
+            layers[16][MEMSIZEH:MEMSIZEL]   <= LAYER23END - LAYER16START;
+            layers[17][ADDRH:ADDRL]         <= LAYER17START;
+            layers[17][MEMSIZEH:MEMSIZEL]   <= LAYER23END - LAYER17START;
+            layers[18][ADDRH:ADDRL]         <= LAYER18START;
+            layers[18][MEMSIZEH:MEMSIZEL]   <= LAYER23END - LAYER18START;
+            layers[19][ADDRH:ADDRL]         <= LAYER19START;
+            layers[19][MEMSIZEH:MEMSIZEL]   <= LAYER23END - LAYER19START;
+            layers[20][ADDRH:ADDRL]         <= LAYER20START;
+            layers[20][MEMSIZEH:MEMSIZEL]   <= LAYER23END - LAYER20START;
+            layers[21][ADDRH:ADDRL]         <= LAYER21START;
+            layers[21][MEMSIZEH:MEMSIZEL]   <= LAYER23END - LAYER21START;
+            layers[22][ADDRH:ADDRL]         <= LAYER22START;
+            layers[22][MEMSIZEH:MEMSIZEL]   <= LAYER23END - LAYER22START;
+            layers[23][ADDRH:ADDRL]         <= LAYER23START;
+            layers[23][MEMSIZEH:MEMSIZEL]   <= LAYER23END - LAYER23START;
         end else begin
             mcu_byte_done_prev <= mcu_byte_done;
 

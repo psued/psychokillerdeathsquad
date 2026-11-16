@@ -331,7 +331,7 @@ module top #(
                 .addr(mmu_read_address),
                 .data(mmu_data),
 
-                .rendering(0),
+        .frame_rendered(frame_done),
 
                 .SD_SCLK(SD_SCLK),
                 .SD_DI(SD_DI),

@@ -21,7 +21,7 @@ module gamestate(
     input [15:0] addr, // relative to layer
     output [23:0] data,
 
-    input rendering,
+    input frame_rendered,
     // end: for renderer
 
     output SD_SCLK,
@@ -251,7 +251,7 @@ module gamestate(
     wire [23:0] bg_write_data = selected_mem ? write_data1 : write_data0;
     wire [23:0] bg_data;
 
-    ram #(.ADDR_SIZE(15), .RAM_SIZE(255)) bg_layer (
+    ram #(.ADDR_SIZE(15), .RAM_SIZE(24050)) bg_layer (
         .clk(clk),
         .write_en(bg_write_en),
         .read_addr(addr),
@@ -349,7 +349,7 @@ module gamestate(
                 sd_read <= 1;
             end
 
-            if (state_written && !rendering) begin
+            if (state_written && frame_rendered) begin
                 READY <= 1;
                 selected_mem <= !selected_mem;
                 state_written <= 0;
