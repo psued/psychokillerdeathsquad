@@ -17,6 +17,8 @@ module asset_fetcher
 )(
     input logic clk,
     input logic reset,
+    input logic pause,
+    output logic idle,
 
     input logic [WORD_WIDTH-1:0] data,
 
@@ -92,6 +94,7 @@ module asset_fetcher
     logic [4:0] active_layer;
 
     assign mmu_layer = (state == IDLE) ? layer : active_layer;
+    assign idle = !reset && (state == IDLE);
 
     logic [11:0] palette [0:31];
     logic [$clog2(MAX_PALETTE_COLOURS)-2:0] palette_word_counter;    
@@ -400,7 +403,7 @@ module asset_fetcher
 
         case (state)
             IDLE: begin
-                prepare_ready = !reset;
+                prepare_ready = !reset && !pause;
 
                 if (prepare_ready && prepare_valid) begin
                     next_state = SETUP;
@@ -437,12 +440,13 @@ module asset_fetcher
             end
 
             STREAM: begin
-                request_ready = !reset && !prepare_valid && request_space;
+                request_ready = !reset && !pause && !prepare_valid && request_space;
 
-                read_enable = !reset && !word_status[write_pointer] && (pixel_word_counter < words_needed);
+                read_enable = !reset && !pause && !word_status[write_pointer]
+                           && (pixel_word_counter < words_needed);
                 read_address = pixel_word_address;
 
-                if (prepare_valid) begin
+                if (pause || prepare_valid) begin
                     next_state = DRAIN;
                 end
             end

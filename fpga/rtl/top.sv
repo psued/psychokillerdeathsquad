@@ -128,7 +128,14 @@ module top #(
     logic [PIXELS_PER_CYCLE-1:0] mmu_response_mask;
     logic [PIXEL_BITS-1:0] mmu_pixel_output [0:PIXELS_PER_CYCLE-1];
 
-    renderer_pkg::layer_descriptor_t fetch_layer;
+    renderer_pkg::layer_descriptor_t mmu_current_layer;
+    logic snapshot_start;
+    logic snapshot_ready;
+    logic frame_setup;
+    logic fetcher_idle;
+    logic [15:0] cached_asset_width;
+    logic [7:0] cached_bits_per_color;
+    logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] gamestate_layer;
     logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] mmu_layer;
     logic [15:0] mmu_read_address;
     logic [23:0] mmu_data;
@@ -158,6 +165,9 @@ module top #(
         .stall(stall),
         .current_layer(current_layer),
         .layer_counter(layer_counter),
+        .snapshot_ready(snapshot_ready),
+        .snapshot_start(snapshot_start),
+        .frame_setup(frame_setup),
 
         .mmu_request_x(mmu_request_x),
         .mmu_y_select(mmu_y_select),
@@ -180,11 +190,30 @@ module top #(
         .frame_done(frame_done)
     );
 
+    snapshot_cache snapshot_cache_inst (
+        .clk(system_clk),
+        .reset(system_reset),
+        .load_start(snapshot_start),
+        .fetcher_idle(fetcher_idle),
+        .source_layer(mmu_current_layer),
+        .source_asset_width(mmu_asset_width),
+        .source_bits_per_color(mmu_bits_per_color),
+        .layer_index(layer_counter),
+        .fetch_layer_index(mmu_layer),
+        .mmu_layer(gamestate_layer),
+        .current_layer(current_layer),
+        .asset_width(cached_asset_width),
+        .bits_per_color(cached_bits_per_color),
+        .ready(snapshot_ready)
+    );
+
     asset_fetcher #(
         .PIXELS_PER_CYCLE(PIXELS_PER_CYCLE)
     ) asset_fetcher_inst (
         .clk(system_clk),
         .reset(system_reset),
+        .pause(frame_setup),
+        .idle(fetcher_idle),
         .data(mmu_data),
         .y_select(mmu_y_select),
         .prepare_valid(mmu_prepare_valid),
@@ -200,17 +229,17 @@ module top #(
         .pixel_output(mmu_pixel_output),
 
         .layer(layer_counter),
-        .width(fetch_layer.width),
-        .asset_width(mmu_asset_width),
-        .height(fetch_layer.height),
-        .src_x(fetch_layer.src_x),
-        .src_y(fetch_layer.src_y),
-        .dst_x(fetch_layer.dst_x),
-        .dst_y(fetch_layer.dst_y),
-        .z(fetch_layer.z),
-        .enabled((fetch_layer.flags & renderer_pkg::FLAG_ENABLED) != 0),
-        .flipped((fetch_layer.flags & renderer_pkg::FLAG_FLIP_X) != 0),
-        .bits_per_color(mmu_bits_per_color),
+        .width(current_layer.width),
+        .asset_width(cached_asset_width),
+        .height(current_layer.height),
+        .src_x(current_layer.src_x),
+        .src_y(current_layer.src_y),
+        .dst_x(current_layer.dst_x),
+        .dst_y(current_layer.dst_y),
+        .z(current_layer.z),
+        .enabled((current_layer.flags & renderer_pkg::FLAG_ENABLED) != 0),
+        .flipped((current_layer.flags & renderer_pkg::FLAG_FLIP_X) != 0),
+        .bits_per_color(cached_bits_per_color),
         .mmu_layer(mmu_layer),
         .read_address(mmu_read_address)
     );
@@ -278,17 +307,12 @@ module top #(
 
     generate
         if (USE_MOCK_MMU) begin : mock_memory
-            mock_snapshot snapshot_source (
-                .layer_counter(layer_counter),
-                .current_layer(current_layer)
-            );
-
             mock_mmu memory_source (
                 .clk(system_clk),
                 .reset(system_reset),
-                .layer(mmu_layer),
+                .layer(gamestate_layer),
                 .read_address(mmu_read_address),
-                .current_layer(fetch_layer),
+                .current_layer(mmu_current_layer),
                 .asset_width(mmu_asset_width),
                 .bits_per_color(mmu_bits_per_color),
                 .data(mmu_data)
@@ -301,8 +325,8 @@ module top #(
             assign MCU_READY = 1'b0;
         end
         else begin : real_memory
-            assign fetch_layer = current_layer;
-            assign current_layer.flags =
+            assign mmu_current_layer.image_id = '0;
+            assign mmu_current_layer.flags =
                 8'h00 | (mmu_flipped << 1) | mmu_enabled;
 
             // power-on reset
@@ -315,14 +339,14 @@ module top #(
                 .clk(system_clk),
                 .rst(rst),
 
-                .layer(layer_counter),
-                .width(current_layer.width),
-                .height(current_layer.height),
-                .src_x(current_layer.src_x),
-                .src_y(current_layer.src_y),
-                .dst_x(current_layer.dst_x),
-                .dst_y(current_layer.dst_y),
-                .z(current_layer.z),
+                .layer(gamestate_layer),
+                .width(mmu_current_layer.width),
+                .height(mmu_current_layer.height),
+                .src_x(mmu_current_layer.src_x),
+                .src_y(mmu_current_layer.src_y),
+                .dst_x(mmu_current_layer.dst_x),
+                .dst_y(mmu_current_layer.dst_y),
+                .z(mmu_current_layer.z),
                 .enabled(mmu_enabled),
                 .flipped(mmu_flipped),
                 .bits_per_color(mmu_bits_per_color),

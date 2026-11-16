@@ -11,6 +11,7 @@ module scanline_scheduler
     input logic writeback_empty,
     input logic clear_ready,
     input logic sort_done,
+    input logic snapshot_ready,
     input logic mmu_prepare_ready,
     input logic mmu_request_ready,
     input layer_descriptor_t current_layer,
@@ -18,6 +19,7 @@ module scanline_scheduler
     output logic [X_COORDINATE_WIDTH-1:0] x_counter,
     output logic [Y_COORDINATE_WIDTH-1:0] y_counter,
     output logic [LAYER_INDEX_WIDTH-1:0] layer_order_counter,
+    output logic snapshot_start,
     output logic sort_start,
     output logic frame_setup,
     output logic clear_valid,
@@ -58,6 +60,8 @@ module scanline_scheduler
 
     typedef enum logic [3:0] {
         START_FRAME,
+        WAIT_SNAPSHOT,
+        START_SORT,
         WAIT_SORT,
         WAIT_BUFFER,
         CLEAR_LINE,
@@ -85,6 +89,16 @@ module scanline_scheduler
 
         case (state)
             START_FRAME: begin
+                next_state = WAIT_SNAPSHOT;
+            end
+
+            WAIT_SNAPSHOT: begin
+                if (snapshot_ready) begin
+                    next_state = START_SORT;
+                end
+            end
+
+            START_SORT: begin
                 next_state = WAIT_SORT;
             end
 
@@ -212,8 +226,10 @@ module scanline_scheduler
 
     assign line_done = !reset && (state == COMPLETE);
     assign frame_done = line_done && (y_counter == FRAME_LINES - 1);
-    assign sort_start = !reset && (state == START_FRAME);
-    assign frame_setup = (state == START_FRAME) || (state == WAIT_SORT);
+    assign snapshot_start = !reset && (state == START_FRAME);
+    assign sort_start = !reset && (state == START_SORT);
+    assign frame_setup = (state == START_FRAME) || (state == WAIT_SNAPSHOT)
+                      || (state == START_SORT) || (state == WAIT_SORT);
     assign clear_valid = !reset && (state == CLEAR_LINE);
     assign mmu_prepare_valid = !reset && (state == PREPARE_LAYER);
     assign mmu_request_valid = !reset && (state == DRAW);

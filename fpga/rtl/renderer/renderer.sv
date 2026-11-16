@@ -10,6 +10,9 @@ module renderer
     input logic stall,
 
     input layer_descriptor_t current_layer,
+    input logic snapshot_ready,
+    output logic snapshot_start,
+    output logic frame_setup,
 
     //MMU I/O
     output logic [X_COORDINATE_WIDTH-1:0] mmu_request_x,
@@ -44,7 +47,6 @@ module renderer
     logic clear_ready;
     logic sort_start;
     logic sort_done;
-    logic frame_setup;
     logic [LAYER_INDEX_WIDTH-1:0] layer_order_counter;
     logic [LAYER_INDEX_WIDTH-1:0] sort_read_layer;
     logic [LAYER_INDEX_WIDTH-1:0] sorted_layer;
@@ -72,6 +74,7 @@ module renderer
         .writeback_empty(writeback_empty),
         .clear_ready(clear_ready),
         .sort_done(sort_done),
+        .snapshot_ready(snapshot_ready),
         .mmu_prepare_ready(mmu_prepare_ready),
         .mmu_request_ready(mmu_request_ready),
         .current_layer(current_layer),
@@ -79,6 +82,7 @@ module renderer
         .x_counter(x_counter),
         .y_counter(y_counter),
         .layer_order_counter(layer_order_counter),
+        .snapshot_start(snapshot_start),
         .sort_start(sort_start),
         .frame_setup(frame_setup),
         .clear_valid(clear_valid),
