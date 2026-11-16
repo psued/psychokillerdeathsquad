@@ -21,7 +21,7 @@ module gamestate(
     input [15:0] addr, // relative to layer
     output [23:0] data,
 
-    input rendering,
+    input frame_rendered,
     // end: for renderer
 
     output SD_SCLK,
@@ -349,7 +349,7 @@ module gamestate(
                 sd_read <= 1;
             end
 
-            if (state_written && !rendering) begin
+            if (state_written && frame_rendered) begin
                 READY <= 1;
                 selected_mem <= !selected_mem;
                 state_written <= 0;
