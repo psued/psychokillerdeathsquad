@@ -24,3 +24,5 @@ fpga/ip/*/*
 !fpga/ip/*/ip/
 fpga/ip/*/ip/*/*
 !fpga/ip/*/ip/*/*.xci
+
+/fpga/assets/
