@@ -134,7 +134,7 @@ module fat32(
                             end
                         end
                         
-                        if (counter == 511) begin // addr not fetched and end reached
+                        if (counter == 511 && !match) begin // addr not fetched and end reached
                             if (rootdir_sectors_read < sects_per_clus) begin
                                 addr <= addr + 1;
                                 rootdir_sectors_read <= rootdir_sectors_read + 1;

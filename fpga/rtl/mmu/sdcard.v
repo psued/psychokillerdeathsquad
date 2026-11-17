@@ -74,6 +74,7 @@ module sdcard(
     reg [6:0] dummy_counter;
     
     reg [15:0] multiread_counter;
+    reg [1:0] awaiting_crc;
     
     task send_cmd;
         input [5:0] cmd;
@@ -225,6 +226,7 @@ module sdcard(
             byte_count <= 0;
             
             multiread_counter <= 0;
+            awaiting_crc <= 0;
         end else begin
             clk_div <= clk_div + 1;
             SCLK_prev <= SCLK;
@@ -267,6 +269,15 @@ module sdcard(
                         resp_ext_stage <= 0;
                     end
                 end
+
+                if (awaiting_crc != 0) begin
+                    if (awaiting_crc == 1)
+                        awaiting_crc <= 2;
+                    else begin
+                        awaiting_crc <= 0;
+                        send_cmd(12, 0, 0);
+                    end
+                end
                 
                 if (reading && !awaiting_resp && data_recv == 8'b11111110) begin // data token received
                     reading_data_block_start <= 1;
@@ -280,7 +291,7 @@ module sdcard(
                             reading <= 0;
                             cmd_ready <= 1;
                         end else if (multiread_counter == size) begin
-                            send_cmd(12, 0, 0);
+                            awaiting_crc <= 1;
                         end else begin
                             multiread_counter <= multiread_counter + 1;
                         end
