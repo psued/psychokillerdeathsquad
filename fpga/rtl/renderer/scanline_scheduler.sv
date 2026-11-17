@@ -49,10 +49,10 @@ module scanline_scheduler
     end
 
 
-    logic layer_row_intersect;
-    logic layer_disabled;
+    (* MARK_DEBUG = "TRUE" *) logic layer_row_intersect;
+    (* MARK_DEBUG = "TRUE" *) logic layer_disabled;
     logic layer_finished;
-    logic layer_skip;
+    (* MARK_DEBUG = "TRUE" *) logic layer_skip;
     logic last_layer;
     logic request_fire;
     logic clear_fire;
@@ -71,15 +71,16 @@ module scanline_scheduler
         PREPARE_LAYER,
         DRAW,
         DRAIN,
-        COMPLETE
+        COMPLETE,
+        STARTUP
     } state_t;
 
-    state_t state;
+    (* MARK_DEBUG = "TRUE" *) state_t state;
     state_t next_state;
 
     always_ff @(posedge clk) begin
         if (reset) begin
-            state <= START_FRAME;
+            state <= STARTUP;
         end
         else begin
             state <= next_state;
@@ -90,6 +91,10 @@ module scanline_scheduler
         next_state = state;
 
         case (state)
+            STARTUP: begin
+                next_state = START_FRAME;
+            end
+
             START_FRAME: begin
                 next_state = WAIT_SNAPSHOT;
             end
@@ -238,7 +243,8 @@ module scanline_scheduler
     assign frame_done = line_done && (y_counter == FRAME_LINES - 1);
     assign snapshot_start = !reset && (state == START_FRAME);
     assign sort_start = !reset && (state == START_SORT);
-    assign frame_setup = (state == START_FRAME) || (state == WAIT_SNAPSHOT)
+    assign frame_setup = (state == STARTUP) || (state == START_FRAME)
+                      || (state == WAIT_SNAPSHOT)
                       || (state == START_SORT) || (state == WAIT_SORT);
     assign clear_valid = !reset && (state == CLEAR_LINE);
     assign mmu_prepare_valid = !reset && (state == PREPARE_LAYER);

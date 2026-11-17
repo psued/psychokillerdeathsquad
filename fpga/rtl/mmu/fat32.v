@@ -18,7 +18,7 @@ module fat32(
     input fetch_addr,
     output reg [31:0] file_size,
     output reg addr_fetched,
-    output reg addr_fetch_failed
+    (* MARK_DEBUG = "TRUE" *) output reg addr_fetch_failed
     );
     
     reg byte_ready_prev;

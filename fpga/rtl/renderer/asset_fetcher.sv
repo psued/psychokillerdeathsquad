@@ -8,8 +8,8 @@ module asset_fetcher
     localparam int TOTAL_WORDS = 4,
     localparam int MAX_PALETTE_COLOURS = 32,
     localparam int MAX_INDEX_WIDTH = $clog2(MAX_PALETTE_COLOURS),
-    localparam int MAX_ASSET_WIDTH = 600,
-    localparam int MAX_ASSET_HEIGHT = 240,
+    localparam int MAX_ASSET_WIDTH = 960,
+    localparam int MAX_ASSET_HEIGHT = 320,
     localparam int MAX_PIXELS = MAX_ASSET_WIDTH * MAX_ASSET_HEIGHT,
     localparam int MAX_PIXEL_WORDS = (MAX_PIXELS * MAX_INDEX_WIDTH + WORD_WIDTH - 1) / WORD_WIDTH,
     localparam int PIXEL_BIT_WIDTH = $clog2(MAX_PIXELS * MAX_INDEX_WIDTH),
@@ -60,7 +60,7 @@ module asset_fetcher
     logic [15:0] src_y_reg;
     logic [15:0] dst_y_reg;
     logic [15:0] y_select_reg;
-    logic [15:0] width_reg;
+    (* MARK_DEBUG = "TRUE" *) logic [15:0] width_reg;
     logic [15:0] asset_width_reg;
     logic [7:0] bits_per_color_reg;
     logic flipped_reg;
@@ -77,7 +77,7 @@ module asset_fetcher
         DRAIN
     } state_t;
 
-    state_t state;
+    (* MARK_DEBUG = "TRUE" *) state_t state;
     state_t next_state;
     logic [$clog2(SETUP_LAST_CYCLE+1)-1:0] setup_counter;
 

@@ -46,9 +46,10 @@ module gamestate(
     reg fetch_file;
     wire [31:0] file_size;
     wire file_addr_fetched;
-    reg fs_reading;
+    (* MARK_DEBUG = "TRUE" *) reg fs_reading;
 
     wire sd_init_done;
+    wire sd_error;
     wire [31:0] sd_size = fs_reading ? 0 : (file_size - 1) >> 9;
     reg sd_read;
     wire sd_read_signal = fs_reading ? fs_read : sd_read;
@@ -87,8 +88,7 @@ module gamestate(
         .DO(SD_DO),
         .CS(SD_CS),
 
-        // TODO: deal with sd_error
-        // .error(sd_error),
+        .error(sd_error),
         .init_done(sd_init_done),
 
         .addr(file_addr),
@@ -217,6 +217,46 @@ module gamestate(
     reg [7:0] set_color_bits1;
     reg [15:0] set_asset_width1;
 
+    // Entry 0 is shared background; 1..6 and 7..12 cover the two banks.
+    localparam int CACHE_ENTRIES = 13;
+    reg [CACHE_ENTRIES-1:0] cache_valid;
+    reg [15:0] cache_image_id [0:CACHE_ENTRIES-1];
+    reg [15:0] cache_asset_width [0:CACHE_ENTRIES-1];
+    reg [7:0] cache_color_bits [0:CACHE_ENTRIES-1];
+    reg [3:0] loading_cache_slot;
+    reg cache_metadata_pending;
+
+    function automatic [3:0] cache_slot_for_layer(
+        input [4:0] slot,
+        input bank
+    );
+        reg [3:0] region;
+        begin
+            case (slot)
+                0: region = 0;
+                1: region = 1;
+                2: region = 2;
+                3: region = 3;
+                default: begin
+                    if (slot < 12)
+                        region = 4;
+                    else if (slot < 16)
+                        region = 5;
+                    else
+                        region = 6;
+                end
+            endcase
+            cache_slot_for_layer = (region == 0) ? 4'd0
+                                 : region + (bank ? 4'd6 : 4'd0);
+        end
+    endfunction
+
+    wire [3:0] cache_slot = cache_slot_for_layer(write_layer_sel, selected_mem);
+    wire [15:0] requested_image_id = selected_mem ? file_name1 : file_name0;
+    wire requested_enabled = selected_mem ? enabled_fetch1 : enabled_fetch0;
+    wire cache_hit = cache_valid[cache_slot]
+                  && cache_image_id[cache_slot] == requested_image_id;
+
     memory memory1(
         .clk(clk),
         .rst(rst),
@@ -341,6 +381,9 @@ module gamestate(
             addr_end <= 0;
             ram_wait <= 0;
             state_written <= 0;
+            cache_valid <= '0;
+            loading_cache_slot <= 0;
+            cache_metadata_pending <= 0;
         end else begin
             mcu_byte_done_prev <= mcu_byte_done;
             sd_byte_ready_prev <= sd_byte_ready;
@@ -360,7 +403,8 @@ module gamestate(
             if (fetch_file)
                 fetch_file <= 0;
 
-            if (file_addr_fetched && reading_file && !fetch_file && !sd_reading) begin
+            if (file_addr_fetched && reading_file && fs_reading
+                    && !fetch_file && !sd_reading) begin
                 fs_reading <= 0;
                 sd_read <= 1;
             end
@@ -399,42 +443,37 @@ module gamestate(
             end
 
             if (populate_memory && !reading_file && !sd_reading) begin
-                if (write_layer_sel == 24) begin
+                if (cache_metadata_pending) begin
+                    // The memory module writes metadata using the current layer index.
+                    cache_metadata_pending <= 0;
+                    write_layer_sel <= write_layer_sel + 1;
+                end else if (write_layer_sel == 24) begin
                     write_layer_sel <= 0;
                     populate_memory <= 0;
-
                     state_written <= 1;
-                end else begin
-                    if ((!selected_mem && (file_name0 == file_name_prev0 || !enabled_fetch0))
-                            || (selected_mem && (file_name1 == file_name_prev1 || !enabled_fetch1)))
-                        write_layer_sel <= write_layer_sel + 1;
-                    else begin
-                        sd_byte_counter <= 0;
-                        write_addr0 <= 0;
-                        write_addr1 <= 0;
-                        reading_file <= 1;
-
-                        // if (file_name0 == file_name1 && write_layer_sel != 0) begin
-                        //     read_mem <= 1;
-                        //     addr_end <= mem_size;
-                        //     ram_wait <= 1;
-                        //     if (selected_mem) begin
-                        //         write_en1 <= 1;
-                        //         set_asset_width1 <= asset_width0;
-                        //         set_color_bits1 <= bits_per_color0;
-                        //         write_metadata1 <= 1;
-                        //     end else begin
-                        //         write_en0 <= 1;
-                        //         set_asset_width0 <= asset_width1;
-                        //         set_color_bits0 <= bits_per_color1;
-                        //         write_metadata0 <= 1;
-                        //     end
-                        // end else begin
-                            file_name <= selected_mem ? file_name1 : file_name0;
-                            fetch_file <= 1;
-                            fs_reading <= 1;
-                        // end
+                end else if (!requested_enabled) begin
+                    write_layer_sel <= write_layer_sel + 1;
+                end else if (cache_hit) begin
+                    if (selected_mem) begin
+                        set_asset_width1 <= cache_asset_width[cache_slot];
+                        set_color_bits1 <= cache_color_bits[cache_slot];
+                        write_metadata1 <= 1;
+                    end else begin
+                        set_asset_width0 <= cache_asset_width[cache_slot];
+                        set_color_bits0 <= cache_color_bits[cache_slot];
+                        write_metadata0 <= 1;
                     end
+                    cache_metadata_pending <= 1;
+                end else begin
+                    cache_valid[cache_slot] <= 0;
+                    loading_cache_slot <= cache_slot;
+                    sd_byte_counter <= 0;
+                    write_addr0 <= 0;
+                    write_addr1 <= 0;
+                    reading_file <= 1;
+                    file_name <= requested_image_id;
+                    fetch_file <= 1;
+                    fs_reading <= 1;
                 end
             end
 
@@ -465,7 +504,17 @@ module gamestate(
                 end
             end
 
-            if (reading_file && sd_byte_counter == file_size) begin
+            if (reading_file && !fs_reading && sd_byte_counter == file_size
+                    && !sd_read && !sd_reading && !sd_error
+                    && !write_en0 && !write_en1 && !bg_write_en) begin
+                if (file_size >= 7) begin
+                    cache_image_id[loading_cache_slot] <= file_name;
+                    cache_asset_width[loading_cache_slot] <=
+                        selected_mem ? set_asset_width1 : set_asset_width0;
+                    cache_color_bits[loading_cache_slot] <=
+                        selected_mem ? set_color_bits1 : set_color_bits0;
+                    cache_valid[loading_cache_slot] <= 1;
+                end
                 write_layer_sel <= write_layer_sel + 1;
                 reading_file <= 0;
             end

@@ -30,7 +30,7 @@ module snapshot_cache
         LOAD_LAYERS
     } state_t;
 
-    state_t state;
+    (* MARK_DEBUG = "TRUE" *) state_t state;
 
     // Metadata loading owns the MMU selection only after the fetcher is idle.
     assign mmu_layer = (state == LOAD_LAYERS) ? load_index : fetch_layer_index;

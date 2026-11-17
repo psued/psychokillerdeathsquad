@@ -62,12 +62,35 @@ module top #(
         .locked   (clk_locked)
     );
 
-    logic system_reset;
+    (* MARK_DEBUG = "TRUE" *) logic system_reset;
+    logic vga_reset;
+    logic reset_request;
     logic vga_timing_reset;
     logic vga_started;
 
-    assign system_reset = reset | ~clk_locked;
-    assign vga_timing_reset = system_reset | ~vga_started;
+    (* ASYNC_REG = "TRUE" *) logic [1:0] system_reset_pipe = 2'b11;
+    (* ASYNC_REG = "TRUE" *) logic [1:0] vga_reset_pipe = 2'b11;
+
+    assign reset_request = reset | ~clk_locked;
+
+    // Assert immediately; release on each domain's clock.
+    always_ff @(posedge system_clk or posedge reset_request) begin
+        if (reset_request)
+            system_reset_pipe <= 2'b11;
+        else
+            system_reset_pipe <= {system_reset_pipe[0], 1'b0};
+    end
+
+    always_ff @(posedge vga_clk or posedge reset_request) begin
+        if (reset_request)
+            vga_reset_pipe <= 2'b11;
+        else
+            vga_reset_pipe <= {vga_reset_pipe[0], 1'b0};
+    end
+
+    assign system_reset = system_reset_pipe[1];
+    assign vga_reset = vga_reset_pipe[1];
+    assign vga_timing_reset = vga_reset | ~vga_started;
 
     logic hsync_raw;
     logic vsync_raw;
@@ -106,19 +129,19 @@ module top #(
     logic write_buffer;
     logic [X_WIDTH-1:0] write_x;
     logic line_done;
-    logic frame_done;
+    (* MARK_DEBUG = "TRUE" *) logic frame_done;
     logic write_enable;
     logic [WORD_WIDTH-1:0] pixel_in;
     logic [PIXELS_PER_CYCLE-1:0] write_mask;
-    logic stall;
+    (* MARK_DEBUG = "TRUE" *) logic stall;
 
     renderer_pkg::layer_descriptor_t current_layer;
-    logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] layer_counter;
+    (* MARK_DEBUG = "TRUE" *) logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] layer_counter;
     logic [renderer_pkg::X_COORDINATE_WIDTH-1:0] mmu_request_x;
-    logic [renderer_pkg::Y_COORDINATE_WIDTH-1:0] mmu_y_select;
+    (* MARK_DEBUG = "TRUE" *) logic [renderer_pkg::Y_COORDINATE_WIDTH-1:0] mmu_y_select;
     logic [PIXELS_PER_CYCLE-1:0] mmu_request_mask;
-    logic mmu_prepare_valid;
-    logic mmu_prepare_ready;
+    (* MARK_DEBUG = "TRUE" *) logic mmu_prepare_valid;
+    (* MARK_DEBUG = "TRUE" *) logic mmu_prepare_ready;
     logic mmu_request_valid;
     logic mmu_request_ready;
     logic mmu_response_valid;
@@ -128,20 +151,64 @@ module top #(
     logic [PIXEL_BITS-1:0] mmu_pixel_output [0:PIXELS_PER_CYCLE-1];
 
     renderer_pkg::layer_descriptor_t mmu_current_layer;
-    logic snapshot_start;
-    logic snapshot_ready;
-    logic frame_setup;
-    logic fetcher_idle;
+    (* MARK_DEBUG = "TRUE" *) logic snapshot_start;
+    (* MARK_DEBUG = "TRUE" *) logic snapshot_ready;
+    (* MARK_DEBUG = "TRUE" *) logic frame_setup;
+    (* MARK_DEBUG = "TRUE" *) logic fetcher_idle;
     logic [15:0] cached_asset_width;
     logic [7:0] cached_bits_per_color;
-    logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] gamestate_layer;
-    logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] mmu_layer;
+    (* MARK_DEBUG = "TRUE" *) logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] gamestate_layer;
+    (* MARK_DEBUG = "TRUE" *) logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] mmu_layer;
     logic [15:0] mmu_read_address;
     logic [23:0] mmu_data;
     logic [15:0] mmu_asset_width;
     logic [7:0] mmu_bits_per_color;
-    logic mmu_enabled;
+    (* MARK_DEBUG = "TRUE" *) logic mmu_enabled;
     logic mmu_flipped;
+
+    (* MARK_DEBUG = "TRUE" *) wire [15:0] debug_mmu_width;
+    (* MARK_DEBUG = "TRUE" *) wire [15:0] debug_cached_width;
+    (* MARK_DEBUG = "TRUE" *) wire [7:0] debug_cached_flags;
+
+    (* MARK_DEBUG = "TRUE" *) wire debug_mcu_ready;
+    (* MARK_DEBUG = "TRUE" *) wire debug_mmu_state_written;
+    (* MARK_DEBUG = "TRUE" *) wire debug_mmu_selected_mem;
+    (* MARK_DEBUG = "TRUE" *) wire [15:0] debug_mmu_file_name;
+    (* MARK_DEBUG = "TRUE" *) wire debug_mmu_reading_file;
+    (* MARK_DEBUG = "TRUE" *) wire [31:0] debug_mmu_sd_byte_counter;
+    (* MARK_DEBUG = "TRUE" *) wire [31:0] debug_mmu_file_size;
+
+    (* MARK_DEBUG = "TRUE" *) wire debug_sd_reading;
+    (* MARK_DEBUG = "TRUE" *) wire debug_fs_read;
+    (* MARK_DEBUG = "TRUE" *) wire debug_file_addr_fetched;
+    (* MARK_DEBUG = "TRUE" *) wire debug_sd_cmd_ready;
+    (* MARK_DEBUG = "TRUE" *) wire debug_sd_awaiting_resp;
+    (* MARK_DEBUG = "TRUE" *) wire debug_sd_byte_ready;
+    (* MARK_DEBUG = "TRUE" *) wire debug_sd_error;
+    (* MARK_DEBUG = "TRUE" *) wire [2:0] debug_sd_cmd12_state;
+    (* MARK_DEBUG = "TRUE" *) wire [5:0] debug_sd_cmd12_bits_left;
+
+    assign debug_mmu_width = mmu_current_layer.width;
+    assign debug_cached_width = current_layer.width;
+    assign debug_cached_flags = current_layer.flags;
+
+    assign debug_mcu_ready = MCU_READY;
+    assign debug_mmu_state_written = real_memory.state.state_written;
+    assign debug_mmu_selected_mem = real_memory.state.selected_mem;
+    assign debug_mmu_file_name = real_memory.state.file_name;
+    assign debug_mmu_reading_file = real_memory.state.reading_file;
+    assign debug_mmu_sd_byte_counter = real_memory.state.sd_byte_counter;
+    assign debug_mmu_file_size = real_memory.state.file_size;
+
+    assign debug_sd_reading = real_memory.state.sd_reading;
+    assign debug_fs_read = real_memory.state.fs_read;
+    assign debug_file_addr_fetched = real_memory.state.file_addr_fetched;
+    assign debug_sd_cmd_ready = real_memory.state.sd.cmd_ready;
+    assign debug_sd_awaiting_resp = real_memory.state.sd.awaiting_resp;
+    assign debug_sd_byte_ready = real_memory.state.sd_byte_ready;
+    assign debug_sd_error = real_memory.state.sd.error;
+    assign debug_sd_cmd12_state = real_memory.state.sd.cmd12_state;
+    assign debug_sd_cmd12_bits_left = real_memory.state.sd.cmd12_bits_left;
 
     line_buffer_write_controller write_controller (
         .clk(system_clk),
@@ -248,7 +315,7 @@ module top #(
 
     line_buffer_read_controller read_controller (
         .clk(vga_clk),
-        .reset(system_reset),
+        .reset(vga_reset),
         .x(x),
         .y(y),
         .video_on_raw(video_on_raw),
@@ -266,7 +333,7 @@ module top #(
 
     line_buffer_reader line_buffer_reader_inst (
         .clk(vga_clk),
-        .reset(system_reset),
+        .reset(vga_reset),
 
         .pixel_out(pixel_out),
         .buffer_ready(buffer_ready),

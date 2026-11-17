@@ -75,6 +75,17 @@ module sdcard(
     
     reg [15:0] multiread_counter;
     reg [1:0] awaiting_crc;
+
+    localparam [2:0] CMD12_IDLE     = 3'd0,
+                     CMD12_QUEUED   = 3'd1,
+                     CMD12_SEND     = 3'd2,
+                     CMD12_STUFF    = 3'd3,
+                     CMD12_RESPONSE = 3'd4,
+                     CMD12_BUSY     = 3'd5,
+                     CMD12_FAILED   = 3'd6;
+
+    reg [2:0] cmd12_state;
+    reg [5:0] cmd12_bits_left;
     
     task send_cmd;
         input [5:0] cmd;
@@ -91,6 +102,8 @@ module sdcard(
         
         cmd_ready <= 0;
         awaiting_resp <= 1;
+        if (cmd == 12)
+            cmd12_state <= CMD12_QUEUED;
         if (cmd == 8 || cmd == 58)
             resp_ext <= 1;
         else
@@ -227,6 +240,8 @@ module sdcard(
             
             multiread_counter <= 0;
             awaiting_crc <= 0;
+            cmd12_state <= CMD12_IDLE;
+            cmd12_bits_left <= 0;
         end else begin
             clk_div <= clk_div + 1;
             SCLK_prev <= SCLK;
@@ -241,20 +256,25 @@ module sdcard(
             if (posSCLK && data_sent) begin
                 data_send <= send_queue[47:40];
                 send_queue <= (send_queue << 8) | 8'b11111111;
+
+                if (cmd12_state == CMD12_QUEUED) begin
+                    // The first command byte starts after this SCLK edge.
+                    cmd12_state <= CMD12_SEND;
+                    cmd12_bits_left <= 6'd48;
+                end
             end
+
+            if (posSCLK && cmd12_state == CMD12_SEND && cmd12_bits_left != 0)
+                cmd12_bits_left <= cmd12_bits_left - 1'b1;
             
             if (negSCLK && data_received) begin
-                if (awaiting_resp && data_recv[7] == 0 && !resp_ext_stage) begin
+                if (cmd12_state == CMD12_IDLE && awaiting_resp
+                        && data_recv[7] == 0 && !resp_ext_stage) begin
                     resp_status <= data_recv[6:0];
                     if (resp_ext)
                         resp_ext_stage <= 1;
                     else begin
                         awaiting_resp <= 0;
-                    end
-                    
-                    if (size != 0 && multiread_counter == size) begin // CMD12 only
-                        cmd_ready <= 1;
-                        reading <= 0;
                     end
                 end
                 
@@ -270,31 +290,64 @@ module sdcard(
                     end
                 end
 
-                if (awaiting_crc != 0) begin
-                    if (awaiting_crc == 1)
-                        awaiting_crc <= 2;
-                    else begin
-                        awaiting_crc <= 0;
-                        send_cmd(12, 0, 0);
+                case (cmd12_state)
+                    CMD12_SEND: begin
+                        if (cmd12_bits_left == 0)
+                            cmd12_state <= CMD12_STUFF;
                     end
-                end
-                
-                if (reading && !awaiting_resp && data_recv == 8'b11111110) begin // data token received
-                    reading_data_block_start <= 1;
-                end
-                
-                if (reading && reading_data_block) begin
-                    byte_count <= byte_count + 1;
-                    if (byte_count == 511) begin
-                        reading_data_block <= 0;
+
+                    CMD12_STUFF: begin
+                        cmd12_state <= CMD12_RESPONSE;
+                    end
+
+                    CMD12_RESPONSE: begin
+                        if (data_recv[7] == 0) begin
+                            resp_status <= data_recv[6:0];
+                            if (data_recv == 8'h00) begin
+                                cmd12_state <= CMD12_BUSY;
+                            end else begin
+                                error <= 1;
+                                cmd12_state <= CMD12_FAILED;
+                            end
+                        end
+                    end
+
+                    CMD12_BUSY: begin
+                        if (data_recv != 8'h00) begin
+                            awaiting_resp <= 0;
+                            reading <= 0;
+                            cmd_ready <= 1;
+                            cmd12_state <= CMD12_IDLE;
+                        end
+                    end
+
+                    default: begin end
+                endcase
+
+                // Consume both CRC bytes after every block.
+                if (awaiting_crc != 0) begin
+                    awaiting_crc <= awaiting_crc - 1'b1;
+                    if (awaiting_crc == 1) begin
                         if (size == 0) begin
                             reading <= 0;
                             cmd_ready <= 1;
                         end else if (multiread_counter == size) begin
-                            awaiting_crc <= 1;
+                            send_cmd(12, 0, 0);
                         end else begin
                             multiread_counter <= multiread_counter + 1;
                         end
+                    end
+                end else if (reading && !awaiting_resp) begin
+                    if (reading_data_block) begin
+                        byte_count <= byte_count + 1;
+                        if (byte_count == 511) begin
+                            reading_data_block <= 0;
+                            awaiting_crc <= 2;
+                        end
+                    end else if (!reading_data_block_start && data_recv == 8'hFE) begin
+                        // Start on the next SCLK edge, after the token.
+                        byte_count <= 0;
+                        reading_data_block_start <= 1;
                     end
                 end
             end
