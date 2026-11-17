@@ -116,7 +116,7 @@ module memory(
     assign file_name = layers[layer_write][FILENAMEH:FILENAMEL];
     assign file_name_prev = layers[layer_write][FILENAMEPREVH:FILENAMEPREVL];
     assign mem_size = layers[layer_write][MEMSIZEH:MEMSIZEL];
-    assign enabled_fetch = layers[layer][ENABLED];
+    assign enabled_fetch = layers[layer_write][ENABLED];
 
     wire [23:0] address = layers[layer][ADDRH:ADDRL] + addr;
     wire [23:0] write_address = layers[layer_write][ADDRH:ADDRL] + write_addr;

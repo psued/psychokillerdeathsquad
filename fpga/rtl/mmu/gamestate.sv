@@ -353,9 +353,9 @@ module gamestate(
             if (bg_write_en)
                 bg_write_en <= 0;
             if (write_metadata0)
-                write_metadata0 <= 1;
+                write_metadata0 <= 0;
             if (write_metadata1)
-                write_metadata1 <= 1;
+                write_metadata1 <= 0;
 
             if (fetch_file)
                 fetch_file <= 0;
@@ -414,26 +414,26 @@ module gamestate(
                         write_addr1 <= 0;
                         reading_file <= 1;
 
-                        if (file_name0 == file_name1 && write_layer_sel != 0) begin
-                            read_mem <= 1;
-                            addr_end <= mem_size;
-                            ram_wait <= 1;
-                            if (selected_mem) begin
-                                write_en1 <= 1;
-                                set_asset_width1 <= asset_width0;
-                                set_color_bits1 <= bits_per_color0;
-                                write_metadata0 <= 1;
-                            end else begin
-                                write_en0 <= 1;
-                                set_asset_width0 <= asset_width1;
-                                set_color_bits0 <= bits_per_color1;
-                                write_metadata1 <= 1;
-                            end
-                        end else begin
+                        // if (file_name0 == file_name1 && write_layer_sel != 0) begin
+                        //     read_mem <= 1;
+                        //     addr_end <= mem_size;
+                        //     ram_wait <= 1;
+                        //     if (selected_mem) begin
+                        //         write_en1 <= 1;
+                        //         set_asset_width1 <= asset_width0;
+                        //         set_color_bits1 <= bits_per_color0;
+                        //         write_metadata1 <= 1;
+                        //     end else begin
+                        //         write_en0 <= 1;
+                        //         set_asset_width0 <= asset_width1;
+                        //         set_color_bits0 <= bits_per_color1;
+                        //         write_metadata0 <= 1;
+                        //     end
+                        // end else begin
                             file_name <= selected_mem ? file_name1 : file_name0;
                             fetch_file <= 1;
                             fs_reading <= 1;
-                        end
+                        // end
                     end
                 end
             end
