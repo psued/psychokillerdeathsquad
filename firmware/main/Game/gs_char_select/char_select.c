@@ -159,15 +159,10 @@ void build_char_select_render(
     render_add(builder, LAYER_CHAR_SELECT_NAME_P1, TEX_CHAR_SELECT_UI, p1_name.x, p1_name.y, p1_name.w, p1_name.h, 0, 10, Z_CHAR_SELECT_NAME_P1, false);
     render_add(builder, LAYER_CHAR_SELECT_NAME_P2, TEX_CHAR_SELECT_UI, p2_name.x, p2_name.y, p2_name.w, p2_name.h, 176, 10, Z_CHAR_SELECT_NAME_P2, false);
 
-    /* Draw rings around the currently hovered characters */
-    // ScreenPos p1_ring = ring_positions[p1_char_selection->hovered_char_id];
-    // ScreenPos p2_ring = ring_positions[p2_char_selection->hovered_char_id];
-
-    // render_add(builder, TEX_P1_FLAME, 0, 0, 75, 75, p1_ring.x, p1_ring.y, Z_CHAR_SELECT_RING_P1, false);
-    // render_add(builder, TEX_P2_FLAME, 0, 0, 75, 75, p2_ring.x, p2_ring.y, Z_CHAR_SELECT_RING_P2, false);
 
     /* Add small character icons */
     render_add(builder, LAYER_CHAR_SELECT_SMALL_ICONS, TEX_CHAR_SELECT_SMALL_ICONS, 0, 0, 291, 71, 13, 143, Z_CHAR_SELECT_SMALL_ICONS, false);
 
+    /* Draw animated hover icons */
     animation_render(builder);
 }

@@ -20,7 +20,6 @@ typedef struct {
 
 typedef struct {
     RenderSnapshot snapshot;
-    uint8_t count;
 } RenderBuilder;
 
 /* Clears all snapshot data */

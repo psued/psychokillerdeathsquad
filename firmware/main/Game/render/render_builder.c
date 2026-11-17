@@ -6,7 +6,6 @@
 
 void render_begin(RenderBuilder *builder){
     memset(&builder->snapshot, 0, sizeof(builder->snapshot));
-    builder->count = 0;
 }
 
 bool render_add(
@@ -57,11 +56,6 @@ bool render_add(
     /* Dont add layer if image is entirely off screen*/
     if (width <= 0 || height <= 0){
         return true;
-    }
-
-    /* Dont add layer if the snapshot is already full */
-    if (builder->count >= RENDER_LAYER_COUNT){
-        return false;
     }
 
     /* Finally add layer with dimensions inside screen size */
