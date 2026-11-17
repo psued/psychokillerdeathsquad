@@ -1,6 +1,5 @@
 module top #(
     parameter int PIXELS_PER_CYCLE = 2,
-    parameter bit USE_MOCK_MMU = 1'b0,
 
     localparam int LINE_PIXELS = 320,
     localparam int FRAME_LINES = 240,
@@ -306,25 +305,7 @@ module top #(
 
 
     generate
-        if (USE_MOCK_MMU) begin : mock_memory
-            mock_mmu memory_source (
-                .clk(system_clk),
-                .reset(system_reset),
-                .layer(gamestate_layer),
-                .read_address(mmu_read_address),
-                .current_layer(mmu_current_layer),
-                .asset_width(mmu_asset_width),
-                .bits_per_color(mmu_bits_per_color),
-                .data(mmu_data)
-            );
-
-            assign SD_SCLK = 1'b0;
-            assign SD_DI = 1'b1;
-            assign SD_CS = 1'b1;
-            assign MCU_MISO = 1'b0;
-            assign MCU_READY = 1'b0;
-        end
-        else begin : real_memory
+        begin : real_memory
             assign mmu_current_layer.image_id = '0;
             assign mmu_current_layer.flags =
                 8'h00 | (mmu_flipped << 1) | mmu_enabled;
