@@ -42,6 +42,8 @@ module renderer
     logic [X_COORDINATE_WIDTH-1:0] x_counter;
     logic [Y_COORDINATE_WIDTH-1:0] y_counter;
 
+    layer_descriptor_t current_layer_reg;
+    logic layer_load;
     logic writeback_empty;
     logic clear_valid;
     logic clear_ready;
@@ -53,6 +55,15 @@ module renderer
 
     assign mmu_y_select = y_counter;
     assign layer_counter = frame_setup ? sort_read_layer : sorted_layer;
+
+    always_ff @(posedge clk) begin
+        if (reset) begin
+            current_layer_reg <= '0;
+        end
+        else if (layer_load) begin
+            current_layer_reg <= current_layer;
+        end
+    end
 
     layer_sorter sorter (
         .clk(clk),
@@ -77,11 +88,12 @@ module renderer
         .snapshot_ready(snapshot_ready),
         .mmu_prepare_ready(mmu_prepare_ready),
         .mmu_request_ready(mmu_request_ready),
-        .current_layer(current_layer),
+        .current_layer(current_layer_reg),
 
         .x_counter(x_counter),
         .y_counter(y_counter),
         .layer_order_counter(layer_order_counter),
+        .layer_load(layer_load),
         .snapshot_start(snapshot_start),
         .sort_start(sort_start),
         .frame_setup(frame_setup),
@@ -96,7 +108,7 @@ module renderer
         .PIXELS_PER_CYCLE(PIXELS_PER_CYCLE)
     ) mapper (
         .x_counter(x_counter),
-        .current_layer(current_layer),
+        .current_layer(current_layer_reg),
         .mmu_request_valid(mmu_request_valid),
 
         .pixel_group_mask(mmu_request_mask),

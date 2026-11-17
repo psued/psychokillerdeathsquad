@@ -19,6 +19,7 @@ module scanline_scheduler
     output logic [X_COORDINATE_WIDTH-1:0] x_counter,
     output logic [Y_COORDINATE_WIDTH-1:0] y_counter,
     output logic [LAYER_INDEX_WIDTH-1:0] layer_order_counter,
+    output logic layer_load,
     output logic snapshot_start,
     output logic sort_start,
     output logic frame_setup,
@@ -65,6 +66,7 @@ module scanline_scheduler
         WAIT_SORT,
         WAIT_BUFFER,
         CLEAR_LINE,
+        LOAD_LAYER,
         SELECT_LAYER,
         PREPARE_LAYER,
         DRAW,
@@ -116,14 +118,21 @@ module scanline_scheduler
 
             CLEAR_LINE: begin
                 if (clear_fire && (x_counter == LAST_CLEAR_X)) begin
-                    next_state = SELECT_LAYER;
+                    next_state = LOAD_LAYER;
                 end
+            end
+
+            LOAD_LAYER: begin
+                next_state = SELECT_LAYER;
             end
 
             SELECT_LAYER: begin
                 if (layer_skip) begin
                     if (last_layer) begin
                         next_state = DRAIN;
+                    end
+                    else begin
+                        next_state = LOAD_LAYER;
                     end
                 end
                 else begin
@@ -143,7 +152,7 @@ module scanline_scheduler
                         next_state = DRAIN;
                     end
                     else begin
-                        next_state = SELECT_LAYER;
+                        next_state = LOAD_LAYER;
                     end
                 end
             end
@@ -224,6 +233,7 @@ module scanline_scheduler
         end
     end
 
+    assign layer_load = !reset && (state == LOAD_LAYER);
     assign line_done = !reset && (state == COMPLETE);
     assign frame_done = line_done && (y_counter == FRAME_LINES - 1);
     assign snapshot_start = !reset && (state == START_FRAME);

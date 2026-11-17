@@ -91,32 +91,25 @@ module asset_fetcher
     end
 
     logic [15:0] read_address_reg;
+    logic [WORD_WIDTH-1:0] read_data_reg;
     logic [4:0] active_layer;
 
-    assign mmu_layer = (state == IDLE) ? layer : active_layer;
+    assign mmu_layer = active_layer;
     assign idle = !reset && (state == IDLE);
 
     logic [11:0] palette [0:31];
     logic [$clog2(MAX_PALETTE_COLOURS)-2:0] palette_word_counter;    
 
-    always_ff @(posedge clk) begin
-        if (reset) begin
-            read_address_reg <= '0;
-        end
-        else begin
-            read_address_reg <= read_address;
-        end
-    end
-
     logic read_enable;
+    logic read_pending;
     logic write_enable;
-    logic [7:0] write_address;
+    logic [15:0] write_address;
     logic palette_reads_finished;
     logic last_palette_request;
     logic last_palette_response;
 
     assign last_palette_request = palette_word_counter == (palette_words - 1);
-    assign last_palette_response = (read_address_reg == (palette_words - 1));
+    assign last_palette_response = (write_address == (palette_words - 1));
 
     
     //BUFFER FILL LOGIC
@@ -147,6 +140,7 @@ module asset_fetcher
     logic [$clog2(TOTAL_WORDS)-1:0] read_pointer;
     logic [$clog2(TOTAL_WORDS)-1:0] write_pointer;
     logic [$clog2(TOTAL_WORDS)-1:0] write_pointer_reg;
+    logic [$clog2(TOTAL_WORDS)-1:0] buffer_write_slot;
 
     logic [$clog2(TOTAL_WORDS)-1:0] next_read_pointer;
     logic [2*WORD_WIDTH-1:0] pixel_window;
@@ -215,6 +209,21 @@ module asset_fetcher
     assign request_space = !request_stage_valid || decode_fire;
     assign request_fire = request_valid && request_ready;
 
+    // Keep each returned word aligned with its address and reserved buffer slot.
+    always_ff @(posedge clk) begin
+        if (reset) begin
+            read_address_reg <= '0;
+            write_address <= '0;
+            read_data_reg <= '0;
+            buffer_write_slot <= '0;
+        end
+        else begin
+            read_address_reg <= read_address;
+            write_address <= read_address_reg;
+            read_data_reg <= data;
+            buffer_write_slot <= write_pointer_reg;
+        end
+    end
 
     always_ff @(posedge clk) begin
         if (reset) begin
@@ -223,19 +232,22 @@ module asset_fetcher
             flipped_reg <= 1'b0;
             palette_word_counter <= '0;
             palette_words <= '0;
+            read_pending <= 1'b0;
             write_enable <= '0;
             palette_reads_finished <= '0;
 
             word_status <= '0;
             read_pointer <= '0;
             write_pointer <= '0;
+            write_pointer_reg <= '0;
             response_valid <= '0;
             request_stage_valid <= 1'b0;
             index_stage_valid <= 1'b0;
 
         end
         else begin
-            write_enable <= read_enable;
+            read_pending <= read_enable;
+            write_enable <= read_pending;
 
             // Transfer each stage only when its destination has space.
             if (response_space) begin
@@ -352,8 +364,8 @@ module asset_fetcher
                 end
 
                 if(write_enable) begin
-                    palette[read_address_reg*2] <= data[23:12];
-                    palette[read_address_reg*2 + 1] <= data[11:0];
+                    palette[write_address*2] <= read_data_reg[23:12];
+                    palette[write_address*2 + 1] <= read_data_reg[11:0];
                 end
 
                 if(write_enable && last_palette_response) begin
@@ -378,8 +390,8 @@ module asset_fetcher
                 end
 
                 if(write_enable) begin
-                    word_status[write_pointer_reg] <= 1'b1;
-                    buffer[write_pointer_reg] <= data;
+                    word_status[buffer_write_slot] <= 1'b1;
+                    buffer[buffer_write_slot] <= read_data_reg;
                 end
 
                 if (decode_fire) begin
@@ -456,7 +468,7 @@ module asset_fetcher
                            && !word_status[write_pointer] && (pixel_word_counter < words_needed);
                 read_address = pixel_word_address;
 
-                if (!write_enable && !request_stage_valid
+                if (!read_pending && !write_enable && !request_stage_valid
                     && !index_stage_valid && !response_valid) begin
                     next_state = IDLE;
                 end
