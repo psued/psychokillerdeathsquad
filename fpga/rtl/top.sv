@@ -318,7 +318,7 @@ module top #(
 
             gamestate state(
                 .clk(system_clk),
-                .rst(rst),
+                .rst(system_reset),
 
                 .layer(gamestate_layer),
                 .width(mmu_current_layer.width),
