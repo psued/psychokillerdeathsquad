@@ -607,7 +607,7 @@ const CharacterDef character_table[NUM_CHARACTERS] = {
 			.damage = 40,
 			.stun = 20,
 			.damage_frame = 7,
-			.knockdown_duration = 40,
+			.knockdown_duration = 4,
 		},
 	},
 	[CHAR_JENS] = {
@@ -705,7 +705,7 @@ const CharacterDef character_table[NUM_CHARACTERS] = {
 			.damage = 40,
 			.stun = 20,
 			.damage_frame = 7,
-			.knockdown_duration = 40,
+			.knockdown_duration = 6,
 		},
 	},
 	[CHAR_EIRIK] = {
@@ -803,7 +803,7 @@ const CharacterDef character_table[NUM_CHARACTERS] = {
 			.damage = 40,
 			.stun = 20,
 			.damage_frame = 7,
-			.knockdown_duration = 40,
+			.knockdown_duration = 6,
 		},
 	},
 	[CHAR_PERNILLE] = {
@@ -901,7 +901,7 @@ const CharacterDef character_table[NUM_CHARACTERS] = {
 			.damage = 40,
 			.stun = 20,
 			.damage_frame = 7,
-			.knockdown_duration = 40,
+			.knockdown_duration = 6,
 		},
 	},
 	[CHAR_ARI] = {
@@ -999,7 +999,7 @@ const CharacterDef character_table[NUM_CHARACTERS] = {
 			.damage = 40,
 			.stun = 20,
 			.damage_frame = 7,
-			.knockdown_duration = 40,
+			.knockdown_duration = 6,
 		},
 	},
 	[CHAR_SONDRE] = {
@@ -1097,7 +1097,7 @@ const CharacterDef character_table[NUM_CHARACTERS] = {
 			.damage = 40,
 			.stun = 20,
 			.damage_frame = 7,
-			.knockdown_duration = 40,
+			.knockdown_duration = 2,
 		},
 	},
 };
