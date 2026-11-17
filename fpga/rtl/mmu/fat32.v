@@ -33,6 +33,8 @@ module fat32(
     reg [31:0] fat_size;
     reg [31:0] data_start;
     reg [31:0] clus;
+    reg [31:0] clus_idx;
+    reg [31:0] clus_sect;
     
     reg mbr_read;
     reg [8:0] counter;
@@ -118,8 +120,10 @@ module fat32(
                             clus[15:8] <= data;
                         end else if (counter_mod == 28) begin
                             file_size[7:0] <= data;
+                            clus_idx <= clus - 2;
                         end else if (counter_mod == 29) begin
                             file_size[15:8] <= data;
+                            clus_sect <= clus_idx * sects_per_clus;
                         end else if (counter_mod == 30) begin
                             file_size[23:16] <= data;
                         end else if (counter_mod == 31) begin
@@ -127,7 +131,7 @@ module fat32(
                             
                             if (match) begin
                                 addr_fetched <= 1;
-                                addr <= data_start + (clus - 2) * sects_per_clus;
+                                addr <= data_start + clus_sect;
                             end
                         end
                         
