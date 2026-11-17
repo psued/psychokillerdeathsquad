@@ -1,6 +1,5 @@
 #include "game.h"
 
-#include "audio.h"
 #include "input.h"
 #include "fpga.h"
 #include "time.h"
@@ -33,7 +32,6 @@ static void reset_game_state(Game *game){
 
 static void enter_state(Game *game) {
     animation_clear_all();
-    audio_free();
 
     switch (game->state) {
         case GS_START_SCREEN:
