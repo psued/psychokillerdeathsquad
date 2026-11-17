@@ -89,7 +89,7 @@ void apply_hit(Player *defender, const CharacterDef * defender_def, MoveDef move
 
         /* Either reduce by damage from move or set to 0 if move takes more damage than hp left */
         defender->hp -= (defender->hp > damage) ? damage : defender->hp;
-        audio_play(SFX_HIT_HEAVY);
+        audio_play(SFX_HIT);
         debug_printf("OUCH! Player was hit for %d damage, remaining hp: %d \r\n", damage, defender->hp);
         debug_printf("combo count: %d \r\n", defender->combo_hit_count);
 

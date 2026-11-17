@@ -1,7 +1,6 @@
 #include <stdint.h>
 #include "debug.h"
 #include "audio.h"
-#include "game_random.h"
 #include "game_audio.h"
 
 #include "start_screen.h"
@@ -24,13 +23,7 @@ void enter_start_screen(StartScreenState *state) {
     state->press_start = ANIMATION_HANDLE_NONE;
     state->press_start_started = false;
 
-    uint8_t music_select_bit = random_bit();
-
-    if (music_select_bit) {
-    	audio_play(MUSIC_MENU_1);
-    } else {
-    	audio_play(MUSIC_MENU_2);
-    }
+    audio_play(MUSIC_MENU);
     audio_load(SFX_SELECT);
 }
 
@@ -55,6 +48,5 @@ void update_start_screen(GameState *game_state, StartScreenState *state, const P
 }
 
 void build_start_screen_render(RenderBuilder *builder){
-    // render_add(builder, TEX_START_SCREEN_BG, 0, 0, GAME_WIDTH, GAME_HEIGHT, 0, 0, 0, false);
     animation_render(builder);
 }

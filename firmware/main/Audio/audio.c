@@ -18,7 +18,7 @@
 #define AUDIO_DMA_SAMPLES  (AUDIO_HALF_SAMPLES * AUDIO_DMA_HALF_COUNT)
 
 #define AUDIO_SFX_VOICE_COUNT 4U
-#define AUDIO_SFX_POOL_SIZE   (64U * 1024U)
+#define AUDIO_SFX_POOL_SIZE   (80U * 1024U)
 #define AUDIO_LOAD_CHUNK_SIZE 512U
 
 #define AUDIO_SFX_UPSAMPLE_FACTOR 2
@@ -83,12 +83,8 @@ typedef struct {
 } MusicStream;
 
 static const AudioMapping audio_mappings[AUDIO_COUNT] = {
-	[SFX_HIT_LIGHT] = {
-		.path = "AUDIO/SFX/SFX_HIT_LIGHT.PCM",
-		.type = AUDIO_TYPE_SFX
-	},
-	[SFX_HIT_HEAVY] = {
-		.path = "AUDIO/SFX/SFX_HIT_HEAVY.PCM",
+	[SFX_HIT] = {
+		.path = "AUDIO/SFX/SFX_HIT.PCM",
 		.type = AUDIO_TYPE_SFX
 	},
 	[SFX_BLOCK] = {
@@ -111,12 +107,8 @@ static const AudioMapping audio_mappings[AUDIO_COUNT] = {
 		.path = "AUDIO/SFX/SFX_SELECT.PCM",
 		.type = AUDIO_TYPE_SFX
 	},
-	[MUSIC_MENU_1] = {
-		.path = "AUDIO/MUSIC/MUSIC_MENU_1.PCM",
-		.type = AUDIO_TYPE_MUSIC
-	},
-	[MUSIC_MENU_2] = {
-		.path = "AUDIO/MUSIC/MUSIC_MENU_2.PCM",
+	[MUSIC_MENU] = {
+		.path = "AUDIO/MUSIC/MUSIC_MENU.PCM",
 		.type = AUDIO_TYPE_MUSIC
 	},
 	[MUSIC_SELECT] = {
@@ -861,7 +853,7 @@ void audio_process(void)
 
 Error audio_load(const AudioId id)
 {
-	ASSERT(id >= SFX_HIT_LIGHT && id < AUDIO_COUNT);
+	ASSERT(id >= SFX_HIT && id < AUDIO_COUNT);
 	ASSERT(audio_mappings[id].type == AUDIO_TYPE_SFX);
 
 	return sfx_load(id);
@@ -885,7 +877,7 @@ void audio_volume_set(const AudioVolume volume)
 
 void audio_play(const AudioId id)
 {
-	ASSERT(id >= SFX_HIT_LIGHT && id < AUDIO_COUNT);
+	ASSERT(id >= SFX_HIT && id < AUDIO_COUNT);
 
 	if (!available) {
 		return;
@@ -900,7 +892,7 @@ void audio_play(const AudioId id)
 
 void audio_stop(const AudioId id)
 {
-	ASSERT(id >= SFX_HIT_LIGHT && id < AUDIO_COUNT);
+	ASSERT(id >= SFX_HIT && id < AUDIO_COUNT);
 
 	if (audio_mappings[id].type == AUDIO_TYPE_SFX) {
 		sfx_stop(id);
