@@ -73,7 +73,7 @@ void update_char_select(
     const PlayerGameInput *p2_input
 ){
     /* Back to start screen */
-    if (p1_input->button2_pressed || p2_input->button2_pressed){
+    if ((p1_input->button2_pressed && p1_char_selection == false) || (p2_input->button2_pressed && p2_char_selection == false )){
         *game_state = GS_START_SCREEN;
         return;
     }
@@ -99,7 +99,7 @@ void update_char_select(
         }
     } else {
         /* Deselect choice */
-        if (p1_input->button1_pressed){
+        if (p1_input->button2_pressed){
             p1_char_selection->confirmed = false;
             audio_play(SFX_SWITCH);
         }
@@ -118,7 +118,7 @@ void update_char_select(
         }
     } else {
         /* Deselect choice */
-        if (p2_input->button1_pressed){
+        if (p2_input->button2_pressed){
             p2_char_selection->confirmed = false;
             audio_play(SFX_SWITCH);
         }

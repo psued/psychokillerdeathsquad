@@ -18,15 +18,15 @@ PlayerGameInput read_controller_input(ControllerState controller_state){
     input.dpad_down = (controller_state.held & INPUT_BUTTON_DOWN) != 0;
     input.dpad_left = (controller_state.held & INPUT_BUTTON_LEFT) != 0;
     input.dpad_right = (controller_state.held & INPUT_BUTTON_RIGHT) != 0;
-    input.button2 = (controller_state.held & INPUT_BUTTON_A) != 0;
-    input.button1 = (controller_state.held & INPUT_BUTTON_B) != 0;
+    input.button1 = (controller_state.held & INPUT_BUTTON_A) != 0;
+    input.button2 = (controller_state.held & INPUT_BUTTON_B) != 0;
 
     input.dpad_up_pressed = (controller_state.pressed & INPUT_BUTTON_UP) != 0;
     input.dpad_down_pressed = (controller_state.pressed & INPUT_BUTTON_DOWN) != 0;
     input.dpad_left_pressed = (controller_state.pressed & INPUT_BUTTON_LEFT) != 0;
     input.dpad_right_pressed = (controller_state.pressed & INPUT_BUTTON_RIGHT) != 0;
-    input.button2_pressed = (controller_state.pressed & INPUT_BUTTON_A) != 0;
-    input.button1_pressed = (controller_state.pressed & INPUT_BUTTON_B) != 0;
+    input.button1_pressed = (controller_state.pressed & INPUT_BUTTON_A) != 0;
+    input.button2_pressed = (controller_state.pressed & INPUT_BUTTON_B) != 0;
 
     return input;
 }
