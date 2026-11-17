@@ -88,8 +88,6 @@ module fat32(
                     flag_match <= 0;
                     
                     rootdir_sectors_read <= 0;
-                end else begin
-                    read <= 0;
                 end
                 
                 if (pos_byte_ready) begin
@@ -132,16 +130,17 @@ module fat32(
                             if (match) begin
                                 addr_fetched <= 1;
                                 addr <= data_start + clus_sect;
+                                read <= 0;
                             end
                         end
                         
                         if (counter == 511) begin // addr not fetched and end reached
                             if (rootdir_sectors_read < sects_per_clus) begin
                                 addr <= addr + 1;
-                                read <= 1;
                                 rootdir_sectors_read <= rootdir_sectors_read + 1;
                             end else begin
                                 addr_fetch_failed <= 1;
+                                read <= 0;
                             end
                         end
                     end
