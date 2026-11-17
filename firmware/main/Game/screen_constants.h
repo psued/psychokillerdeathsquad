@@ -1,0 +1,10 @@
+#ifndef SCREEN_CONSTANTS_H
+#define SCREEN_CONSTANTS_H
+
+#define GAME_WIDTH 320
+#define GAME_HEIGHT 240
+#define SCALE 4
+#define MAX_LAYERS_PER_STAGE 5
+#define MAX_PROPS_PER_STAGE 5
+
+#endif
