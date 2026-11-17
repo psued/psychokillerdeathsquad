@@ -1,6 +1,5 @@
 #include <stdint.h>
 #include <stdbool.h>
-#include "debug.h"
 #include "audio.h"
 
 #include "start_screen.h"
@@ -50,7 +49,6 @@ void update_start_screen(GameState *game_state, StartScreenState *state, const P
     if(any_button_pressed){
         audio_play(SFX_SELECT);
         *game_state = GS_CHARACTER_SELECTION;
-        debug_printf("TRANSITION: START SCREEN -> CHAR SELECT\n");
         return;
     }
 }

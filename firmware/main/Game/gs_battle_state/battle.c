@@ -1,5 +1,4 @@
 #include <stdbool.h>
-#include "debug.h"
 #include "audio.h"
 
 #include "game_state.h"
@@ -84,9 +83,7 @@ void update_battle_state(
 
         if (match_state->ko_freeze_timer == 0) {
             resolve_round_result(match_state, p1->hp == 0, p2->hp == 0, p1, p2);
-            audio_play(SFX_SLAM);
             *game_state = GS_ROUND_OVER;
-            debug_printf("TRANSITION: BATTLE -> ROUND OVER\n");
         }
 
         return;

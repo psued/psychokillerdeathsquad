@@ -1,5 +1,4 @@
 #include <stdbool.h>
-#include "debug.h"
 
 #include "battle_round.h"
 #include "battle_constants.h"
@@ -55,7 +54,6 @@ void check_round_end_conditions(GameState *game_state, MatchState *match_state, 
         match_state->ko_freeze_timer = KO_FREEZE_DURATION;
     } else if (timer_expired){
         resolve_round_result(match_state, false, false, p1, p2);
-        debug_printf("TRANSITION: BATTLE -> ROUND OVER\n");
         *game_state = GS_ROUND_OVER;
         return;
     }

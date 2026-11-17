@@ -1,4 +1,3 @@
-#include "debug.h"
 #include <stdbool.h>
 #include "audio.h"
 
@@ -78,14 +77,10 @@ void update_player_state_from_input(
         /* Check if player was walking in a direction when jumping */
         if (check_input_sequence(player_buffer, jump_left_motion, 1, JUMP_DIRECTION_WINDOW, true)) {
             player->velocity_x = -def->jump_horizontal_speed;
-            debug_printf("left jump\n");
-
         } else if (check_input_sequence(player_buffer, jump_right_motion, 1, JUMP_DIRECTION_WINDOW, true)) {
             player->velocity_x = def->jump_horizontal_speed;
-            debug_printf("right jump\n");
         } else {
             player->velocity_x = 0;
-            debug_printf("up jump\n");
         }
 
 

@@ -1,6 +1,5 @@
 #include <stdbool.h>
 #include <stdint.h>
-#include "debug.h"
 #include "audio.h"
 
 #include "battle_throw.h"
@@ -155,7 +154,6 @@ void update_throw(
         defender->hp -= (defender->hp > throw->damage) ? throw->damage : defender->hp;
         attacker->attack_has_hit = true;
         audio_play(SFX_SLAM);
-        debug_printf("THROWN for %d damage, remaining hp: %d\n", throw->damage, defender->hp);
 
         /* Fill stun meter */
         if (!defender->stun_immune){

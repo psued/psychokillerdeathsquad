@@ -1,6 +1,5 @@
 #include <stdint.h>
 #include "audio.h"
-#include "debug.h"
 
 #include "stage_select.h"
 #include "char_select.h"
@@ -108,7 +107,6 @@ void update_stage_select(
 
         audio_play(SFX_SELECT);
         *game_state = GS_BATTLE;
-        debug_printf("TRANSITION: STAGE SELECT -> BATTLE\n");
         return;
     }
 
@@ -129,7 +127,7 @@ void build_stage_select_render(RenderBuilder *builder, const StageSelectionState
     render_add(builder, LAYER_BACKGROUND, TEX_STAGE_SELECT_BG, 0, 0, GAME_WIDTH, GAME_HEIGHT, 0, 0, Z_STAGE_SELECT_BG, false);
 
     ScreenPos ring_stage_pos = ring_positions[stage_selection->hovered_stage_id];
-    ImageRect ring_src = {320, 0, 64, 48};
+    ImageRect ring_src = {0, 0, 64, 48};
 
     render_add(builder, LAYER_STAGE_SELECT_HOVER_ICON, TEX_STAGE_SELECT_UI, ring_src.x, ring_src.y, ring_src.w, ring_src.h, ring_stage_pos.x, ring_stage_pos.y, Z_STAGE_SELECT_RING, false);
     animation_render(builder);

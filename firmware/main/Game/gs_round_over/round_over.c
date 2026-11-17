@@ -1,4 +1,3 @@
-#include "debug.h"
 #include <stdbool.h>
 #include "game_random.h"
 #include "audio.h"
@@ -44,8 +43,6 @@ void update_round_over(
 
     if (match_over && confirm_pressed) {
         *game_state = GS_MATCH_OVER;
-        debug_printf("TRANSITION: ROUND OVER -> MATCH OVER\n");
-        debug_printf("SCORE: P1: %d | P2: %d\n", match_state->p1_round_wins, match_state->p2_round_wins);
         return;
     }
 
@@ -54,8 +51,6 @@ void update_round_over(
     }
 
     reset_state_for_round(p1, p2, match_state, stage_def->stage_width);
-    debug_printf("TRANSITION: ROUND OVER -> BATTLE\n");
-    debug_printf("SCORE: P1: %d | P2: %d\n", match_state->p1_round_wins, match_state->p2_round_wins);
     *game_state = GS_BATTLE;
 }
 
