@@ -8,7 +8,6 @@
 #include "battle_setup.h"
 
 #include "game_state.h"
-#include "game_audio.h"
 #include "player_game_input.h"
 #include "player.h"
 
@@ -36,7 +35,6 @@ static const ScreenPos ring_positions[NUM_STAGES] = {
 };
 
 void enter_stage_select(StageSelectionState *stage_selection) {
-    stage_selection->confirmed = false;
     stage_selection->hovered_stage_id = STAGE_CHINA;
 
     for (uint8_t i = 0; i < STAGE_SELECT_NUM_FLAGS_1; i++){
@@ -67,36 +65,23 @@ void update_stage_select(
     const PlayerGameInput *p2_input
 ) {
     /* Back to character selection  */
-    if ((p1_input->button2_pressed || p2_input->button2_pressed) && !stage_selection->confirmed){
+    if (p1_input->button2_pressed || p2_input->button2_pressed){
         p1_char_selection->confirmed = false;
         p2_char_selection->confirmed = false;
         *game_state = GS_CHARACTER_SELECTION;
         return;
     }
 
-    /* Adjust volume */
-	if (p1_input->dpad_up_pressed || p2_input->dpad_up_pressed) {
-		increase_game_volume();
-	} else if (p1_input->dpad_down_pressed || p2_input->dpad_down_pressed){
-		decrease_game_volume();
-	}
-
-    if (!stage_selection->confirmed && p1_input->dpad_right_pressed){
+    if (p1_input->dpad_right_pressed || p2_input->dpad_right_pressed){
         stage_selection->hovered_stage_id = (stage_selection->hovered_stage_id + 1) % NUM_STAGES;
         audio_play(SFX_SWITCH);
-    } else if (!stage_selection->confirmed && p1_input->dpad_left_pressed){
-        stage_selection->hovered_stage_id = (stage_selection->hovered_stage_id + NUM_STAGES - 1) % NUM_STAGES;
-        audio_play(SFX_SWITCH);
-    } else if (!stage_selection->confirmed && p2_input->dpad_right_pressed){
-        stage_selection->hovered_stage_id = (stage_selection->hovered_stage_id + 1) % NUM_STAGES;
-        audio_play(SFX_SWITCH);
-    } else if (!stage_selection->confirmed && p2_input->dpad_left_pressed){
+    } else if (p1_input->dpad_left_pressed || p2_input->dpad_left_pressed){
         stage_selection->hovered_stage_id = (stage_selection->hovered_stage_id + NUM_STAGES - 1) % NUM_STAGES;
         audio_play(SFX_SWITCH);
     }
 
     /* Transition to battle */
-    if (p1_input->button1_pressed && stage_selection->confirmed){
+    if (p1_input->button1_pressed || p2_input->button1_pressed){
         p1->character_id = p1_char_selection->hovered_char_id;
         p2->character_id = p2_char_selection->hovered_char_id;
         match_state->stage_id = stage_selection->hovered_stage_id;
@@ -109,25 +94,13 @@ void update_stage_select(
         *game_state = GS_BATTLE;
         return;
     }
-
-    /* Confirm choice */
-    if (p1_input->button1_pressed){
-        stage_selection->confirmed = true;
-        audio_play(SFX_SELECT);
-    } 
-
-    /* Cancel choice */
-    if (stage_selection->confirmed && p1_input->button2_pressed){
-        stage_selection->confirmed = false;
-        audio_play(SFX_SWITCH);
-    }
 };
 
 void build_stage_select_render(RenderBuilder *builder, const StageSelectionState *stage_selection){
     render_add(builder, LAYER_BACKGROUND, TEX_STAGE_SELECT_BG, 0, 0, GAME_WIDTH, GAME_HEIGHT, 0, 0, Z_STAGE_SELECT_BG, false);
 
     ScreenPos ring_stage_pos = ring_positions[stage_selection->hovered_stage_id];
-    ImageRect ring_src = {0, 0, 64, 48};
+    ImageRect ring_src = {320, 0, 64, 48};
 
     render_add(builder, LAYER_STAGE_SELECT_HOVER_ICON, TEX_STAGE_SELECT_UI, ring_src.x, ring_src.y, ring_src.w, ring_src.h, ring_stage_pos.x, ring_stage_pos.y, Z_STAGE_SELECT_RING, false);
     animation_render(builder);

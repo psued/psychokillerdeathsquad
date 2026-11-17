@@ -1,8 +1,6 @@
 #ifndef STAGE_H
 #define STAGE_H
 
-#include <stdbool.h>
-
 #include "stage_def.h"
 #include "game_state.h"
 #include "player_game_input.h"
@@ -15,7 +13,6 @@
 
 typedef struct {
     StageID hovered_stage_id;
-    bool confirmed;
 } StageSelectionState;
 
 void enter_stage_select(StageSelectionState *stage_selection);

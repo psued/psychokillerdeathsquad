@@ -28,9 +28,9 @@ const AnimationFrame fredrik_dizzy[4] = {
 	{ 48,0,48,112,  10,6,20,104,  0,0,0,0,  18,100,  4,  false },
 };
 const AnimationFrame fredrik_grab[3] = {
-	{ 0,0,84,128,  10,29,25,95,  0,0,0,0,  22,120,  4,  false },
+	{ 0,0,84,128,  10,29,25,95,  0,0,0,0,  22,120,  8,  false },
 	{ 84,0,84,128,  10,32,26,91,  60,20,24,29,  22,120,  4,  false },
-	{ 168,0,84,128,  10,29,25,95,  0,0,0,0,  22,120,  15,  false },
+	{ 168,0,84,128,  10,29,25,95,  0,0,0,0,  22,120,  18,  false },
 };
 const AnimationFrame fredrik_grabbed[NUM_THROWN_POSES] = {
 	[THROWN_POSE_GRABBED] = { 0,0,96,112,  29,2,26,102,  0,0,0,0,  40,104,  6,  false },
@@ -73,8 +73,8 @@ const ThrowConnectFrame fredrik_throw[8] = {
 	{{ 100,0,100,128,  19,14,32,88,  0,0,0,0,  32,100,  1,  false }, {30,-60, THROWN_POSE_LIFTED}},
 	{{ 200,0,100,128,  18,14,28,91,  0,0,0,0,  32,100,  1,  false }, {15,-30, THROWN_POSE_AIR}},
 	{{ 200,0,100,128,  18,14,28,91,  0,0,0,0,  32,100,  1,  false }, {0,-15, THROWN_POSE_AIR}},
-	{{ 300,0,100,128,  12,23,30,80,  0,0,0,0,  32,100,  1,  false }, {-60,0, THROWN_POSE_IMPACT}},
-	{{ 300,0,100,128,  12,23,30,80,  0,0,0,0,  32,100,  12,  false }, {-60,0, THROWN_POSE_IMPACT}},
+	{{ 300,0,100,128,  12,23,30,80,  0,0,0,0,  32,100,  1,  false }, {-80,0, THROWN_POSE_IMPACT}},
+	{{ 300,0,100,128,  12,23,30,80,  0,0,0,0,  32,100,  12,  false }, {-100,0, THROWN_POSE_IMPACT}},
 };
 const AnimationFrame fredrik_wakeup[1] = {
 	{ 0,0,64,64,  6,12,49,43,  0,0,0,0,  24,50,  6,  false },
@@ -607,7 +607,7 @@ const CharacterDef character_table[NUM_CHARACTERS] = {
 			.damage = 40,
 			.stun = 20,
 			.damage_frame = 7,
-			.knockdown_duration = 4,
+			.knockdown_duration = 6,
 		},
 	},
 	[CHAR_JENS] = {
