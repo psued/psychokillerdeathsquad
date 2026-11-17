@@ -1,7 +1,7 @@
 #include <stdint.h>
+#include <stdbool.h>
 #include "debug.h"
 #include "audio.h"
-#include "game_audio.h"
 
 #include "start_screen.h"
 #include "game_state.h"
@@ -33,17 +33,25 @@ void update_start_screen(GameState *game_state, StartScreenState *state, const P
         state->press_start_started = true;
     }
     
-    if(p1_input->button1_pressed || p2_input->button1_pressed){
+    bool any_button_pressed =
+    		p1_input->button1_pressed ||
+			p1_input->button2_pressed ||
+			p1_input->dpad_up_pressed ||
+			p1_input->dpad_down_pressed ||
+			p1_input->dpad_left_pressed ||
+			p1_input->dpad_right_pressed ||
+			p2_input->button1_pressed ||
+			p2_input->button2_pressed ||
+			p2_input->dpad_up_pressed ||
+			p2_input->dpad_down_pressed ||
+			p2_input->dpad_left_pressed ||
+			p2_input->dpad_right_pressed;
+
+    if(any_button_pressed){
         audio_play(SFX_SELECT);
         *game_state = GS_CHARACTER_SELECTION;
         debug_printf("TRANSITION: START SCREEN -> CHAR SELECT\n");
         return;
-    }
-
-    if (p1_input->dpad_up_pressed || p2_input->dpad_up_pressed) {
-    	increase_game_volume();
-    } else if (p1_input->dpad_down_pressed || p2_input->dpad_down_pressed){
-    	decrease_game_volume();
     }
 }
 

@@ -3,6 +3,7 @@
 
 #include "char_select.h"
 #include "game_state.h"
+#include "game_audio.h"
 #include "player.h"
 #include "player_game_input.h"
 #include "character.h"
@@ -77,6 +78,13 @@ void update_char_select(
         *game_state = GS_START_SCREEN;
         return;
     }
+
+    /* Adjust volume */
+    if (p1_input->dpad_up_pressed || p2_input->dpad_up_pressed) {
+		increase_game_volume();
+	} else if (p1_input->dpad_down_pressed || p2_input->dpad_down_pressed){
+		decrease_game_volume();
+	}
 
     /* Move between characters and select */
     if (!p1_char_selection->confirmed){

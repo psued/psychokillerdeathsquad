@@ -9,6 +9,7 @@
 #include "battle_setup.h"
 
 #include "game_state.h"
+#include "game_audio.h"
 #include "player_game_input.h"
 #include "player.h"
 
@@ -73,6 +74,13 @@ void update_stage_select(
         *game_state = GS_CHARACTER_SELECTION;
         return;
     }
+
+    /* Adjust volume */
+	if (p1_input->dpad_up_pressed || p2_input->dpad_up_pressed) {
+		increase_game_volume();
+	} else if (p1_input->dpad_down_pressed || p2_input->dpad_down_pressed){
+		decrease_game_volume();
+	}
 
     if (!stage_selection->confirmed && p1_input->dpad_right_pressed){
         stage_selection->hovered_stage_id = (stage_selection->hovered_stage_id + 1) % NUM_STAGES;
