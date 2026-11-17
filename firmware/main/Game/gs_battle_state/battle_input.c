@@ -1,5 +1,6 @@
 #include "debug.h"
 #include <stdbool.h>
+#include "audio.h"
 
 #include "battle_input.h"
 #include "battle_combat.h"
@@ -68,6 +69,7 @@ void update_player_state_from_input(
         player->velocity_x = 0;
         player->animation_frame = 0;
         player->frame_timer = get_current_frame(player, def).duration;
+        audio_play(SFX_GRAB);
     } else if (player_input->dpad_up_pressed) {
         player->state = PS_JUMP;
         player->current_move_id = MOVE_NONE;

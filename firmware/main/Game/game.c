@@ -3,6 +3,7 @@
 #include "audio.h"
 #include "input.h"
 #include "fpga.h"
+#include "time.h"
 
 #include "game_state.h"
 #include "game_audio.h"
@@ -14,6 +15,7 @@
 #include "battle_render.h"
 #include "round_over.h"
 #include "match_over.h"
+#include "game_random.h"
 
 static RenderBuilder builder;
 static Game game;
@@ -210,6 +212,9 @@ static void game_build_render(const Game *game, RenderBuilder *builder){
 void game_init(){
     game = (Game){ .state = GS_START_SCREEN };
     init_game_volume_level();
+
+    uint32_t time_now = time_us();
+    random_seed(time_now);
 
     enter_state(&game);
 }

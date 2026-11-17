@@ -1,6 +1,6 @@
-#include <stdio.h>
 #include <stdint.h>
 #include "audio.h"
+#include "debug.h"
 
 #include "stage_select.h"
 #include "char_select.h"
@@ -100,7 +100,7 @@ void update_stage_select(
 
         audio_play(SFX_SELECT);
         *game_state = GS_BATTLE;
-        printf("TRANSITION: STAGE SELECT -> BATTLE\n");
+        debug_printf("TRANSITION: STAGE SELECT -> BATTLE\n");
         return;
     }
 

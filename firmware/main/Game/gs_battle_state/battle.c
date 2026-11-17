@@ -65,6 +65,7 @@ void enter_battle_state(MatchState *match_state) {
     audio_load(SFX_HIT_HEAVY);
     audio_load(SFX_SLAM);
     audio_load(SFX_BLOCK);
+    audio_load(SFX_GRAB);
 }
 
 void update_battle_state(

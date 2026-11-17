@@ -1,6 +1,7 @@
 #include "debug.h"
 #include <stdbool.h>
 #include "game_random.h"
+#include "audio.h"
 
 #include "round_over.h"
 #include "game_state.h"
@@ -26,6 +27,7 @@ static uint8_t random_text_value = 0;
 
 void enter_round_over(void){
     random_text_value = random_bit();
+    audio_play(MUSIC_ROUND_OVER);
 }
 
 void update_round_over(

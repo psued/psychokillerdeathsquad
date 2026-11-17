@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include "debug.h"
 #include "audio.h"
 #include "game_random.h"
@@ -22,22 +23,24 @@ void enter_start_screen(StartScreenState *state) {
     state->flames = animation_play(&flame_animation, 0, 240, Z_START_SCREEN_FLAMES, LAYER_START_SCREEN_FLAMES);
     state->press_start = ANIMATION_HANDLE_NONE;
     state->press_start_started = false;
-    state->ticks_before_click = 0;
 
-    audio_play(MUSIC_MENU_1);
+    uint8_t music_select_bit = random_bit();
+
+    if (music_select_bit) {
+    	audio_play(MUSIC_MENU_1);
+    } else {
+    	audio_play(MUSIC_MENU_2);
+    }
     audio_load(SFX_SELECT);
 }
 
 void update_start_screen(GameState *game_state, StartScreenState *state, const PlayerGameInput *p1_input, const PlayerGameInput *p2_input){
-    state->ticks_before_click++;
-
     if (!state->press_start_started && animation_point(state->title) >= 1){
         state->press_start = animation_play(&press_start_animation, 45, 140, Z_START_SCREEN_TEXT_PROMPT, LAYER_START_SCREEN_TEXT_PROMPT);
         state->press_start_started = true;
     }
     
     if(p1_input->button1_pressed || p2_input->button1_pressed){
-        random_seed(state->ticks_before_click);
         audio_play(SFX_SELECT);
         *game_state = GS_CHARACTER_SELECTION;
         debug_printf("TRANSITION: START SCREEN -> CHAR SELECT\n");

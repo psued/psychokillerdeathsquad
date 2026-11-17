@@ -80,13 +80,12 @@
 /* Match Over */
 #define LAYER_MATCH_OVER_FLAME_1 1U
 #define LAYER_MATCH_OVER_FLAME_2 2U
+#define LAYER_MATCH_OVER_QUOTES 3U
 
 /* Shared Group 1 */
 #define LAYER_MATCH_OVER_NAME 8U
 
 /* Shared Group 2 */
-#define LAYER_MATCH_OVER_QUOTES 12U
-
 /* Shared Group 3 */
 #define LAYER_MATCH_OVER_LARGE_ICON 16U
 

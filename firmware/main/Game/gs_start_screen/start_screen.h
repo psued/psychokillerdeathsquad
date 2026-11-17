@@ -12,7 +12,6 @@ typedef struct {
     AnimationHandle press_start;
 
     bool press_start_started;
-    uint32_t ticks_before_click;
 } StartScreenState;
 
 void enter_start_screen(StartScreenState *state);

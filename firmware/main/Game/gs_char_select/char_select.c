@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "audio.h"
+#include "debug.h"
 
 #include "char_select.h"
 #include "game_state.h"
@@ -121,7 +121,7 @@ void update_char_select(
     if (p1_char_selection->confirmed && p2_char_selection->confirmed){
         audio_play(SFX_SELECT);
         *game_state = GS_STAGE_SELECT;
-        printf("TRANSITION: CHAR SELECT -> STAGE SELECT\n");
+        debug_printf("TRANSITION: CHAR SELECT -> STAGE SELECT\n");
         return;
     }
 

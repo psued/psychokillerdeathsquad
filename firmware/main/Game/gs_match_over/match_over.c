@@ -1,7 +1,7 @@
-#include <stdio.h>
 #include <stdint.h>
 
 #include "audio.h"
+#include "debug.h"
 #include "match_over.h"
 #include "game_state.h"
 
@@ -45,7 +45,7 @@ void update_match_over(
 ) {
     bool confirm_pressed = p1_input->button1_pressed || p2_input->button1_pressed;
     if (confirm_pressed) {
-        printf("TRANSITION: MATCH OVER -> START SCREEN\n");
+        debug_printf("TRANSITION: MATCH OVER -> START SCREEN\n");
         *game_state = GS_START_SCREEN;
     }
     return;
