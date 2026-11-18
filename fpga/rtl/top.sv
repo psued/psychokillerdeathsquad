@@ -62,7 +62,7 @@ module top #(
         .locked   (clk_locked)
     );
 
-    (* MARK_DEBUG = "TRUE" *) logic system_reset;
+    logic system_reset;
     logic vga_reset;
     logic reset_request;
     logic vga_timing_reset;
@@ -129,19 +129,19 @@ module top #(
     logic write_buffer;
     logic [X_WIDTH-1:0] write_x;
     logic line_done;
-    (* MARK_DEBUG = "TRUE" *) logic frame_done;
+    logic frame_done;
     logic write_enable;
     logic [WORD_WIDTH-1:0] pixel_in;
     logic [PIXELS_PER_CYCLE-1:0] write_mask;
-    (* MARK_DEBUG = "TRUE" *) logic stall;
+    logic stall;
 
     renderer_pkg::layer_descriptor_t current_layer;
-    (* MARK_DEBUG = "TRUE" *) logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] layer_counter;
+    logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] layer_counter;
     logic [renderer_pkg::X_COORDINATE_WIDTH-1:0] mmu_request_x;
-    (* MARK_DEBUG = "TRUE" *) logic [renderer_pkg::Y_COORDINATE_WIDTH-1:0] mmu_y_select;
+    logic [renderer_pkg::Y_COORDINATE_WIDTH-1:0] mmu_y_select;
     logic [PIXELS_PER_CYCLE-1:0] mmu_request_mask;
-    (* MARK_DEBUG = "TRUE" *) logic mmu_prepare_valid;
-    (* MARK_DEBUG = "TRUE" *) logic mmu_prepare_ready;
+    logic mmu_prepare_valid;
+    logic mmu_prepare_ready;
     logic mmu_request_valid;
     logic mmu_request_ready;
     logic mmu_response_valid;
@@ -151,42 +151,42 @@ module top #(
     logic [PIXEL_BITS-1:0] mmu_pixel_output [0:PIXELS_PER_CYCLE-1];
 
     renderer_pkg::layer_descriptor_t mmu_current_layer;
-    (* MARK_DEBUG = "TRUE" *) logic snapshot_start;
-    (* MARK_DEBUG = "TRUE" *) logic snapshot_ready;
-    (* MARK_DEBUG = "TRUE" *) logic frame_setup;
-    (* MARK_DEBUG = "TRUE" *) logic fetcher_idle;
+    logic snapshot_start;
+    logic snapshot_ready;
+    logic frame_setup;
+    logic fetcher_idle;
     logic [15:0] cached_asset_width;
     logic [7:0] cached_bits_per_color;
-    (* MARK_DEBUG = "TRUE" *) logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] gamestate_layer;
-    (* MARK_DEBUG = "TRUE" *) logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] mmu_layer;
+    logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] gamestate_layer;
+    logic [renderer_pkg::LAYER_INDEX_WIDTH-1:0] mmu_layer;
     logic [15:0] mmu_read_address;
     logic [23:0] mmu_data;
     logic [15:0] mmu_asset_width;
     logic [7:0] mmu_bits_per_color;
-    (* MARK_DEBUG = "TRUE" *) logic mmu_enabled;
+    logic mmu_enabled;
     logic mmu_flipped;
 
-    (* MARK_DEBUG = "TRUE" *) wire [15:0] debug_mmu_width;
-    (* MARK_DEBUG = "TRUE" *) wire [15:0] debug_cached_width;
-    (* MARK_DEBUG = "TRUE" *) wire [7:0] debug_cached_flags;
+    wire [15:0] debug_mmu_width;
+    wire [15:0] debug_cached_width;
+    wire [7:0] debug_cached_flags;
 
-    (* MARK_DEBUG = "TRUE" *) wire debug_mcu_ready;
-    (* MARK_DEBUG = "TRUE" *) wire debug_mmu_state_written;
-    (* MARK_DEBUG = "TRUE" *) wire debug_mmu_selected_mem;
-    (* MARK_DEBUG = "TRUE" *) wire [15:0] debug_mmu_file_name;
-    (* MARK_DEBUG = "TRUE" *) wire debug_mmu_reading_file;
-    (* MARK_DEBUG = "TRUE" *) wire [31:0] debug_mmu_sd_byte_counter;
-    (* MARK_DEBUG = "TRUE" *) wire [31:0] debug_mmu_file_size;
+    wire debug_mcu_ready;
+    wire debug_mmu_state_written;
+    wire debug_mmu_selected_mem;
+    wire [15:0] debug_mmu_file_name;
+    wire debug_mmu_reading_file;
+    wire [31:0] debug_mmu_sd_byte_counter;
+    wire [31:0] debug_mmu_file_size;
 
-    (* MARK_DEBUG = "TRUE" *) wire debug_sd_reading;
-    (* MARK_DEBUG = "TRUE" *) wire debug_fs_read;
-    (* MARK_DEBUG = "TRUE" *) wire debug_file_addr_fetched;
-    (* MARK_DEBUG = "TRUE" *) wire debug_sd_cmd_ready;
-    (* MARK_DEBUG = "TRUE" *) wire debug_sd_awaiting_resp;
-    (* MARK_DEBUG = "TRUE" *) wire debug_sd_byte_ready;
-    (* MARK_DEBUG = "TRUE" *) wire debug_sd_error;
-    (* MARK_DEBUG = "TRUE" *) wire [2:0] debug_sd_cmd12_state;
-    (* MARK_DEBUG = "TRUE" *) wire [5:0] debug_sd_cmd12_bits_left;
+    wire debug_sd_reading;
+    wire debug_fs_read;
+    wire debug_file_addr_fetched;
+    wire debug_sd_cmd_ready;
+    wire debug_sd_awaiting_resp;
+    wire debug_sd_byte_ready;
+    wire debug_sd_error;
+    wire [2:0] debug_sd_cmd12_state;
+    wire [5:0] debug_sd_cmd12_bits_left;
 
     assign debug_mmu_width = mmu_current_layer.width;
     assign debug_cached_width = current_layer.width;

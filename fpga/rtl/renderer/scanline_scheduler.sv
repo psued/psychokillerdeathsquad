@@ -49,10 +49,10 @@ module scanline_scheduler
     end
 
 
-    (* MARK_DEBUG = "TRUE" *) logic layer_row_intersect;
-    (* MARK_DEBUG = "TRUE" *) logic layer_disabled;
+    logic layer_row_intersect;
+    logic layer_disabled;
     logic layer_finished;
-    (* MARK_DEBUG = "TRUE" *) logic layer_skip;
+    logic layer_skip;
     logic last_layer;
     logic request_fire;
     logic clear_fire;
@@ -75,7 +75,7 @@ module scanline_scheduler
         STARTUP
     } state_t;
 
-    (* MARK_DEBUG = "TRUE" *) state_t state;
+    state_t state;
     state_t next_state;
 
     always_ff @(posedge clk) begin

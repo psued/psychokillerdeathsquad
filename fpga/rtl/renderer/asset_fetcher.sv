@@ -60,7 +60,7 @@ module asset_fetcher
     logic [15:0] src_y_reg;
     logic [15:0] dst_y_reg;
     logic [15:0] y_select_reg;
-    (* MARK_DEBUG = "TRUE" *) logic [15:0] width_reg;
+    logic [15:0] width_reg;
     logic [15:0] asset_width_reg;
     logic [7:0] bits_per_color_reg;
     logic flipped_reg;
@@ -77,7 +77,7 @@ module asset_fetcher
         DRAIN
     } state_t;
 
-    (* MARK_DEBUG = "TRUE" *) state_t state;
+    state_t state;
     state_t next_state;
     logic [$clog2(SETUP_LAST_CYCLE+1)-1:0] setup_counter;
 

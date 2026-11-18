@@ -46,7 +46,7 @@ module gamestate(
     reg fetch_file;
     wire [31:0] file_size;
     wire file_addr_fetched;
-    (* MARK_DEBUG = "TRUE" *) reg fs_reading;
+    reg fs_reading;
 
     wire sd_init_done;
     wire sd_error;
