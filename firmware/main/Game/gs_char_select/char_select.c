@@ -73,7 +73,7 @@ void update_char_select(
     const PlayerGameInput *p2_input
 ){
     /* Back to start screen */
-    if ((p1_input->button2_pressed && p1_char_selection == false) || (p2_input->button2_pressed && p2_char_selection == false )){
+    if ((p1_input->button2_pressed && p1_char_selection->confirmed == false) || (p2_input->button2_pressed && p2_char_selection->confirmed == false )){
         *game_state = GS_START_SCREEN;
         return;
     }

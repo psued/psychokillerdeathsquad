@@ -8,7 +8,7 @@ void render_begin(RenderBuilder *builder){
     memset(&builder->snapshot, 0, sizeof(builder->snapshot));
 }
 
-bool render_add(
+void render_add(
     RenderBuilder *builder,
     uint8_t layer_index,
     uint16_t image_id,
@@ -55,7 +55,7 @@ bool render_add(
 
     /* Dont add layer if image is entirely off screen*/
     if (width <= 0 || height <= 0){
-        return true;
+        return;
     }
 
     /* Finally add layer with dimensions inside screen size */
@@ -69,8 +69,6 @@ bool render_add(
     layer->dst_y = (uint16_t) dst_y;
     layer->z = z;
     layer->flags = RENDER_FLAG_ENABLED | (flip_x ? RENDER_FLAG_FLIP_X : 0U);
-
-    return true;
 }
 
 void render_add_meter(

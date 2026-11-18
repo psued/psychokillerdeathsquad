@@ -31,7 +31,7 @@ void render_begin(RenderBuilder *builder);
  * Cut off parts of the image that would be drawn outside of the screen, 
  * to only send draw data to the fpga that will be visible on screen
  */
-bool render_add(
+void render_add(
     RenderBuilder *builder,
     uint8_t layer_index,
     uint16_t image_id,
