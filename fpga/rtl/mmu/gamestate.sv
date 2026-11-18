@@ -217,46 +217,6 @@ module gamestate(
     reg [7:0] set_color_bits1;
     reg [15:0] set_asset_width1;
 
-    // Entry 0 is shared background; 1..6 and 7..12 cover the two banks.
-    localparam int CACHE_ENTRIES = 13;
-    reg [CACHE_ENTRIES-1:0] cache_valid;
-    reg [15:0] cache_image_id [0:CACHE_ENTRIES-1];
-    reg [15:0] cache_asset_width [0:CACHE_ENTRIES-1];
-    reg [7:0] cache_color_bits [0:CACHE_ENTRIES-1];
-    reg [3:0] loading_cache_slot;
-    reg cache_metadata_pending;
-
-    function automatic [3:0] cache_slot_for_layer(
-        input [4:0] slot,
-        input bank
-    );
-        reg [3:0] region;
-        begin
-            case (slot)
-                0: region = 0;
-                1: region = 1;
-                2: region = 2;
-                3: region = 3;
-                default: begin
-                    if (slot < 12)
-                        region = 4;
-                    else if (slot < 16)
-                        region = 5;
-                    else
-                        region = 6;
-                end
-            endcase
-            cache_slot_for_layer = (region == 0) ? 4'd0
-                                 : region + (bank ? 4'd6 : 4'd0);
-        end
-    endfunction
-
-    wire [3:0] cache_slot = cache_slot_for_layer(write_layer_sel, selected_mem);
-    wire [15:0] requested_image_id = selected_mem ? file_name1 : file_name0;
-    wire requested_enabled = selected_mem ? enabled_fetch1 : enabled_fetch0;
-    wire cache_hit = cache_valid[cache_slot]
-                  && cache_image_id[cache_slot] == requested_image_id;
-
     memory memory1(
         .clk(clk),
         .rst(rst),
@@ -324,6 +284,47 @@ module gamestate(
     assign data = layer == 0 ? bg_data : (selected_mem ? data0 : data1);
 
 
+    // Entry 0 is shared background; 1..6 and 7..12 cover the two banks.
+    localparam int CACHE_ENTRIES = 13;
+    reg [CACHE_ENTRIES-1:0] cache_valid;
+    reg [15:0] cache_image_id [0:CACHE_ENTRIES-1];
+    reg [15:0] cache_asset_width [0:CACHE_ENTRIES-1];
+    reg [7:0] cache_color_bits [0:CACHE_ENTRIES-1];
+    reg [3:0] loading_cache_slot;
+    reg cache_metadata_pending;
+
+    function automatic [3:0] cache_slot_for_layer(
+        input [4:0] slot,
+        input bank
+    );
+        reg [3:0] region;
+        begin
+            case (slot)
+                0: region = 0;
+                1: region = 1;
+                2: region = 2;
+                3: region = 3;
+                default: begin
+                    if (slot < 12)
+                        region = 4;
+                    else if (slot < 16)
+                        region = 5;
+                    else
+                        region = 6;
+                end
+            endcase
+            cache_slot_for_layer = (region == 0) ? 4'd0
+                                 : region + (bank ? 4'd6 : 4'd0);
+        end
+    endfunction
+
+    wire [3:0] cache_slot = cache_slot_for_layer(write_layer_sel, selected_mem);
+    wire [15:0] requested_image_id = selected_mem ? file_name1 : file_name0;
+    wire requested_enabled = selected_mem ? enabled_fetch1 : enabled_fetch0;
+    wire cache_hit = cache_valid[cache_slot]
+                  && cache_image_id[cache_slot] == requested_image_id;
+
+
     reg READY;
     assign MCU_READY = READY && fs_init_done;
 
@@ -334,9 +335,6 @@ module gamestate(
     reg reading_file;
     reg [31:0] sd_byte_counter;
     reg [1:0] sd_byte_counter_mod;
-    reg read_mem;
-    reg [23:0] addr_end;
-    reg ram_wait;
     reg state_written;
 
     always @ (posedge rst, posedge clk) begin
@@ -377,9 +375,6 @@ module gamestate(
             reading_file <= 0;
             sd_byte_counter <= 0;
             sd_byte_counter_mod <= 0;
-            read_mem <= 0;
-            addr_end <= 0;
-            ram_wait <= 0;
             state_written <= 0;
             cache_valid <= '0;
             loading_cache_slot <= 0;
@@ -389,9 +384,9 @@ module gamestate(
             sd_byte_ready_prev <= sd_byte_ready;
             if (sd_reading)
                 sd_read <= 0;
-            if (write_en0 && !read_mem)
+            if (write_en0)
                 write_en0 <= 0;
-            if (write_en1 && !read_mem)
+            if (write_en1)
                 write_en1 <= 0;
             if (bg_write_en)
                 bg_write_en <= 0;
@@ -474,33 +469,6 @@ module gamestate(
                     file_name <= requested_image_id;
                     fetch_file <= 1;
                     fs_reading <= 1;
-                end
-            end
-
-            if (read_mem) begin
-                if ((!selected_mem && write_addr0 == addr_end)
-                        || (selected_mem && write_addr1 == addr_end)) begin
-                    write_layer_sel <= write_layer_sel + 1;
-                    reading_file <= 0;
-                    read_mem <= 0;
-                end else begin
-                    if (selected_mem)
-                        write_data1 <= read_write_data0;
-                    else
-                        write_data0 <= read_write_data1;
-
-                    if (ram_wait) begin
-                        ram_wait <= 0;
-
-                        // put the address read from ahead to account for synchronous ram
-                        if (selected_mem)
-                            write_addr0 <= write_addr0 + 1;
-                        else
-                            write_addr1 <= write_addr1 + 1;
-                    end else begin
-                        write_addr0 <= write_addr0 + 1;
-                        write_addr1 <= write_addr1 + 1;
-                    end
                 end
             end
 

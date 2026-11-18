@@ -166,50 +166,6 @@ module top #(
     logic mmu_enabled;
     logic mmu_flipped;
 
-    wire [15:0] debug_mmu_width;
-    wire [15:0] debug_cached_width;
-    wire [7:0] debug_cached_flags;
-
-    wire debug_mcu_ready;
-    wire debug_mmu_state_written;
-    wire debug_mmu_selected_mem;
-    wire [15:0] debug_mmu_file_name;
-    wire debug_mmu_reading_file;
-    wire [31:0] debug_mmu_sd_byte_counter;
-    wire [31:0] debug_mmu_file_size;
-
-    wire debug_sd_reading;
-    wire debug_fs_read;
-    wire debug_file_addr_fetched;
-    wire debug_sd_cmd_ready;
-    wire debug_sd_awaiting_resp;
-    wire debug_sd_byte_ready;
-    wire debug_sd_error;
-    wire [2:0] debug_sd_cmd12_state;
-    wire [5:0] debug_sd_cmd12_bits_left;
-
-    assign debug_mmu_width = mmu_current_layer.width;
-    assign debug_cached_width = current_layer.width;
-    assign debug_cached_flags = current_layer.flags;
-
-    assign debug_mcu_ready = MCU_READY;
-    assign debug_mmu_state_written = real_memory.state.state_written;
-    assign debug_mmu_selected_mem = real_memory.state.selected_mem;
-    assign debug_mmu_file_name = real_memory.state.file_name;
-    assign debug_mmu_reading_file = real_memory.state.reading_file;
-    assign debug_mmu_sd_byte_counter = real_memory.state.sd_byte_counter;
-    assign debug_mmu_file_size = real_memory.state.file_size;
-
-    assign debug_sd_reading = real_memory.state.sd_reading;
-    assign debug_fs_read = real_memory.state.fs_read;
-    assign debug_file_addr_fetched = real_memory.state.file_addr_fetched;
-    assign debug_sd_cmd_ready = real_memory.state.sd.cmd_ready;
-    assign debug_sd_awaiting_resp = real_memory.state.sd.awaiting_resp;
-    assign debug_sd_byte_ready = real_memory.state.sd_byte_ready;
-    assign debug_sd_error = real_memory.state.sd.error;
-    assign debug_sd_cmd12_state = real_memory.state.sd.cmd12_state;
-    assign debug_sd_cmd12_bits_left = real_memory.state.sd.cmd12_bits_left;
-
     line_buffer_write_controller write_controller (
         .clk(system_clk),
         .reset(system_reset),
@@ -376,12 +332,6 @@ module top #(
             assign mmu_current_layer.image_id = '0;
             assign mmu_current_layer.flags =
                 8'h00 | (mmu_flipped << 1) | mmu_enabled;
-
-            // power-on reset
-            logic por = 1;
-            logic rst = reset || por;
-            always_ff @ (posedge system_clk)
-                por <= 0;
 
             gamestate state(
                 .clk(system_clk),
