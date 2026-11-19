@@ -60,7 +60,8 @@ typedef struct {
 
 static ControllerConnection controllers[INPUT_PLAYER_COUNT] = {
 	[INPUT_PLAYER_1] = {
-		.address = {0x96, 0x8C, 0x22, 0xE1, 0x80, 0x00},
+		.address = {0x49, 0x00, 0x22, 0xE1, 0x80, 0x00},
+		// third controller .address = {0x96, 0x8C, 0x22, 0xE1, 0x80, 0x00},
 		.connection_handle = CLIENT_HANDLE_INVALID
 	},
 	[INPUT_PLAYER_2] = {
